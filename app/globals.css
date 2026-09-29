@@ -83,10 +83,8 @@ nav a:hover {
 }
 
 /* HERO */
-
 .hero {
-  min-height: 570px;
-  padding: 65px 7%;
+  padding: 45px 7% 70px;
   background:
     linear-gradient(
       115deg,
@@ -94,10 +92,10 @@ nav a:hover {
       #f5f0e5 58%,
       #eadfc9 100%
     );
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 55px;
+  gap: 38px;
   overflow: hidden;
 }
 
