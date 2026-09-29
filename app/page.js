@@ -31,13 +31,12 @@ export default function Home() {
     <main>
       <header>
         <div className="brand">
-          <div className="logoMark">BH</div>
-          <div>
-            <div className="brandName">Billings Home Pros</div>
-            <div className="tagline">LOCAL PROS • BILLINGS, MONTANA</div>
-          </div>
-        </div>
-
+  <img
+    className="headerLogo"
+    src="/billings-home-pros-logo.png"
+    alt="Billings Home Pros"
+  />
+</div>
         <nav>
           <a href="#services">Find a Pro</a>
           <a href="#why">Why Home Pros?</a>
