@@ -1,4 +1,5 @@
-export const metadata = {
+import "./globals.css";
+const metadata = {
   title: "Billings Home Pros",
   description:
     "Find trusted home-service professionals in Billings and the surrounding Yellowstone County area.",
