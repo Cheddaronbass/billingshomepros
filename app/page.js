@@ -1,9 +1,10 @@
 const services = [
-  {
-    name: "Plumbing",
-    icon: "🔧",
-    description: "Repairs, water heaters, drains, fixtures & more",
-  },
+{
+  name: "Plumbing",
+  icon: "🔧",
+  description: "Repairs, water heaters, drains, fixtures & more",
+  href: "/plumbing",
+},
   {
     name: "Heating & Cooling",
     icon: "🔥",
@@ -93,7 +94,11 @@ export default function Home() {
 
         <div className="serviceGrid">
           {services.map((service) => (
-            <a className="serviceCard" href="#" key={service.name}>
+         <a
+  className="serviceCard"
+  href={service.href || "#"}
+  key={service.name}
+>
               <div className="serviceIcon">{service.icon}</div>
               <h3>{service.name}</h3>
               <p>{service.description}</p>
