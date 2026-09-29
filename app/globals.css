@@ -467,3 +467,153 @@ footer small {
     flex-direction: column;
   }
 }
+/* PLUMBING / CATEGORY PAGES */
+
+.categoryHero {
+  padding: 75px 7%;
+  background: linear-gradient(
+    115deg,
+    #f8f5ed 0%,
+    #f5f0e5 60%,
+    #eadfc9 100%
+  );
+}
+
+.categoryHeroInner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.categoryHero h1 {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  color: var(--forest);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.categoryHero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #58625d;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.categoryContent {
+  padding: 75px 7% 90px;
+  background: var(--white);
+}
+
+.categoryIntro {
+  max-width: 1100px;
+  margin: 0 auto 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.categoryIntro h2 {
+  margin-bottom: 0;
+  color: var(--forest);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.categoryIntro > p {
+  margin-bottom: 0;
+  color: #626a66;
+  line-height: 1.7;
+}
+
+.filterBar {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 18px;
+  background: var(--cream);
+  border: 1px solid #e3ddcf;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filterBar button {
+  padding: 11px 17px;
+  background: var(--white);
+  color: var(--forest);
+  border: 1px solid #d8d2c5;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.filterBar button:first-child {
+  background: var(--forest);
+  color: var(--white);
+  border-color: var(--forest);
+}
+
+.comingSoon {
+  max-width: 1100px;
+  min-height: 220px;
+  margin: 0 auto;
+  padding: 45px;
+  background: #fbfaf6;
+  border: 1px solid #e2ded5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.comingSoonIcon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--sand);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+}
+
+.comingSoon h2 {
+  margin-bottom: 10px;
+  color: var(--forest);
+  font-size: 1.7rem;
+}
+
+.comingSoon p {
+  max-width: 700px;
+  margin-bottom: 0;
+  color: #68706c;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .categoryHero {
+    padding: 55px 6%;
+  }
+
+  .categoryContent {
+    padding: 55px 6% 70px;
+  }
+
+  .categoryIntro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .comingSoon {
+    padding: 30px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filterBar {
+    padding: 14px;
+  }
+}
