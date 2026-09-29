@@ -6,6 +6,7 @@
   --rust: #b65c32;
   --charcoal: #25312c;
   --white: #ffffff;
+  --muted: #68706c;
 }
 
 * {
@@ -28,11 +29,16 @@ a {
   text-decoration: none;
 }
 
+button,
+input {
+  font: inherit;
+}
+
 /* HEADER */
 
-header {
-  min-height: 82px;
-  padding: 14px 6%;
+.siteHeader {
+  min-height: 86px;
+  padding: 14px 7%;
   background: var(--forest);
   color: var(--white);
   display: flex;
@@ -41,37 +47,35 @@ header {
   gap: 30px;
 }
 
-.brand {
+.textBrand {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-.headerLogo {
-  display: block;
-  width: 500px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.brandName {
+.brandMain {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
 }
 
-.tagline {
-  margin-top: 3px;
+.brandSub {
+  margin-top: 4px;
   color: var(--sand);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
+  font-weight: 700;
   letter-spacing: 1.6px;
 }
 
 nav {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 30px;
   font-size: 0.9rem;
   font-weight: 700;
+}
+
+nav a {
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
@@ -81,31 +85,32 @@ nav a:hover {
 /* HERO */
 
 .hero {
-  min-height: 520px;
-  padding: 85px 8% 70px;
-  position: relative;
-  overflow: hidden;
+  min-height: 570px;
+  padding: 65px 7%;
   background:
     linear-gradient(
-      90deg,
-      rgba(245, 240, 229, 1) 0%,
-      rgba(245, 240, 229, 0.96) 48%,
-      rgba(229, 216, 189, 0.8) 100%
+      115deg,
+      #f8f5ed 0%,
+      #f5f0e5 58%,
+      #eadfc9 100%
     );
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  align-items: center;
+  gap: 55px;
+  overflow: hidden;
 }
 
-.heroContent {
+.heroCopy {
   max-width: 720px;
-  position: relative;
-  z-index: 5;
 }
 
 .eyebrow {
+  margin-bottom: 15px;
   color: var(--rust);
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
-  margin-bottom: 15px;
 }
 
 .eyebrow.light {
@@ -121,15 +126,15 @@ p {
 
 h1,
 h2,
-.brandName {
+.brandMain {
   font-family: Georgia, "Times New Roman", serif;
 }
 
 h1 {
-  max-width: 650px;
+  max-width: 670px;
   margin-bottom: 22px;
   color: var(--forest);
-  font-size: clamp(3.1rem, 7vw, 5.7rem);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
   line-height: 0.96;
   letter-spacing: -3px;
 }
@@ -141,18 +146,35 @@ h1 span {
 .heroText {
   max-width: 630px;
   margin-bottom: 30px;
-  font-size: 1.15rem;
+  color: #4f5b55;
+  font-size: 1.12rem;
   line-height: 1.7;
 }
 
+.heroLogoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroLogo {
+  display: block;
+  width: 100%;
+  max-width: 610px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(32, 53, 43, 0.12);
+}
+
 .searchBox {
+  width: 100%;
   max-width: 680px;
   padding: 7px;
   background: var(--white);
   border: 1px solid #d7ccb5;
   border-radius: 10px;
   display: flex;
-  box-shadow: 0 12px 35px rgba(35, 48, 42, 0.12);
+  box-shadow: 0 12px 35px rgba(35, 48, 42, 0.1);
 }
 
 .searchBox input {
@@ -161,8 +183,8 @@ h1 span {
   padding: 17px;
   border: 0;
   outline: none;
-  font-size: 1rem;
   background: transparent;
+  font-size: 1rem;
 }
 
 .searchBox button,
@@ -185,51 +207,11 @@ h1 span {
 
 .searchHint {
   margin: 12px 5px 0;
-  color: #6c716d;
+  color: #727873;
   font-size: 0.78rem;
 }
 
-.mountainArt {
-  position: absolute;
-  right: -40px;
-  bottom: -30px;
-  width: 48%;
-  height: 95%;
-  opacity: 0.18;
-}
-
-.sun {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  right: 12%;
-  top: 8%;
-  border-radius: 50%;
-  background: var(--rust);
-}
-
-.mountain {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 330px solid transparent;
-  border-right: 330px solid transparent;
-}
-
-.mountainBack {
-  right: -100px;
-  border-bottom: 440px solid var(--forest-light);
-}
-
-.mountainFront {
-  right: 160px;
-  border-left-width: 260px;
-  border-right-width: 260px;
-  border-bottom: 340px solid var(--forest);
-}
-
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
 .servicesSection,
 .whySection {
@@ -271,9 +253,9 @@ h1 span {
 .serviceCard {
   min-height: 245px;
   padding: 27px 23px;
+  background: #fbfaf6;
   border: 1px solid #e2ded5;
   border-radius: 10px;
-  background: #fbfaf6;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -298,7 +280,7 @@ h1 span {
 
 .serviceCard p {
   min-height: 75px;
-  color: #68706c;
+  color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -399,21 +381,23 @@ footer small {
   color: #98a69f;
 }
 
-/* MOBILE */
+/* TABLET */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
+  .hero {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px;
+  }
+
   .serviceGrid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .mountainArt {
-    width: 60%;
-    opacity: 0.1;
-  }
 }
 
-@media (max-width: 700px) {
-  header {
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .siteHeader {
     padding: 15px 5%;
   }
 
@@ -421,16 +405,34 @@ footer small {
     display: none;
   }
 
-  .brandName {
-    font-size: 1.15rem;
+  .brandMain {
+    font-size: 1.25rem;
+  }
+
+  .brandSub {
+    font-size: 0.55rem;
   }
 
   .hero {
-    min-height: auto;
-    padding: 70px 6%;
+    padding: 55px 6% 65px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heroCopy {
+    order: 1;
+  }
+
+  .heroLogoWrap {
+    order: 2;
+  }
+
+  .heroLogo {
+    max-width: 550px;
   }
 
   h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
     letter-spacing: -2px;
   }
 
@@ -440,6 +442,11 @@ footer small {
 
   .searchBox button {
     padding: 16px;
+  }
+
+  .servicesSection,
+  .whySection {
+    padding: 65px 6%;
   }
 
   .serviceGrid,
@@ -456,6 +463,7 @@ footer small {
   }
 
   .proSection {
+    padding: 55px 7%;
     align-items: flex-start;
     flex-direction: column;
   }
