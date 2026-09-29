@@ -29,14 +29,12 @@ const services = [
 export default function Home() {
   return (
     <main>
-      <header>
-        <div className="brand">
-  <img
-    className="headerLogo"
-    src="/billings-home-pros-logo.png"
-    alt="Billings Home Pros"
-  />
-</div>
+      <header className="siteHeader">
+        <a className="textBrand" href="/">
+          <span className="brandMain">Billings Home Pros</span>
+          <span className="brandSub">LOCAL HOME SERVICES • BILLINGS, MT</span>
+        </a>
+
         <nav>
           <a href="#services">Find a Pro</a>
           <a href="#why">Why Home Pros?</a>
@@ -45,8 +43,10 @@ export default function Home() {
       </header>
 
       <section className="hero">
-        <div className="heroContent">
-          <div className="eyebrow">BILLINGS • LAUREL • YELLOWSTONE COUNTY</div>
+        <div className="heroCopy">
+          <div className="eyebrow">
+            BILLINGS • LAUREL • YELLOWSTONE COUNTY
+          </div>
 
           <h1>
             Find the Right
@@ -54,8 +54,8 @@ export default function Home() {
           </h1>
 
           <p className="heroText">
-            Find local home-service professionals serving Billings and
-            surrounding communities.
+            Find local home-service professionals serving Billings and the
+            surrounding Yellowstone County area.
           </p>
 
           <div className="searchBox">
@@ -72,10 +72,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mountainArt" aria-hidden="true">
-          <div className="sun"></div>
-          <div className="mountain mountainBack"></div>
-          <div className="mountain mountainFront"></div>
+        <div className="heroLogoWrap">
+          <img
+            className="heroLogo"
+            src="/billings-home-pros-logo.png"
+            alt="Billings Home Pros — local home services in Billings, Montana"
+          />
         </div>
       </section>
 
@@ -84,9 +86,8 @@ export default function Home() {
           <div className="eyebrow">START YOUR SEARCH</div>
           <h2>What does your home need?</h2>
           <p>
-            Browse local professionals by service. We&apos;re starting with
-            five of the most important home-service categories in the Billings
-            area.
+            Start with one of our main home-service categories and find
+            professionals serving the Billings area.
           </p>
         </div>
 
@@ -107,8 +108,8 @@ export default function Home() {
           <div className="eyebrow">BUILT FOR BILLINGS</div>
           <h2>Local home services without the runaround.</h2>
           <p>
-            Billings Home Pros is being built to make finding the right local
-            contractor simpler, faster and more useful.
+            Billings Home Pros is being built to make finding local
+            home-service professionals simpler, faster and more useful.
           </p>
         </div>
 
@@ -116,7 +117,7 @@ export default function Home() {
           <div className="feature">
             <strong>Local Focus</strong>
             <p>
-              Search professionals serving Billings and nearby Yellowstone
+              Find professionals serving Billings and nearby Yellowstone
               County communities.
             </p>
           </div>
@@ -124,7 +125,7 @@ export default function Home() {
           <div className="feature">
             <strong>Useful Details</strong>
             <p>
-              Find services, service areas and contact information in one
+              See services, service areas and contact information in one
               straightforward place.
             </p>
           </div>
@@ -132,8 +133,8 @@ export default function Home() {
           <div className="feature">
             <strong>Easy to Compare</strong>
             <p>
-              Browse by the type of work you need instead of digging through
-              unrelated listings.
+              Browse by the work you actually need instead of sorting through
+              unrelated businesses.
             </p>
           </div>
         </div>
@@ -144,8 +145,8 @@ export default function Home() {
           <div className="eyebrow light">BILLINGS CONTRACTORS</div>
           <h2>Are you a local home-service professional?</h2>
           <p>
-            Billings Home Pros is building a better way for local homeowners
-            to discover businesses like yours.
+            Get your business in front of Billings-area homeowners searching
+            for the services you provide.
           </p>
         </div>
 
