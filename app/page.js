@@ -42,44 +42,44 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="hero">
-        <div className="heroCopy">
-          <div className="eyebrow">
-            BILLINGS • LAUREL • YELLOWSTONE COUNTY
-          </div>
+<section className="hero">
+  <div className="heroLogoWrap">
+    <img
+      className="heroLogo"
+      src="/billings-home-pros-logo.png"
+      alt="Billings Home Pros — local home services in Billings, Montana"
+    />
+  </div>
 
-          <h1>
-            Find the Right
-            <span> Home Pro.</span>
-          </h1>
+  <div className="heroCopy">
+    <div className="eyebrow">
+      BILLINGS • LAUREL • YELLOWSTONE COUNTY
+    </div>
 
-          <p className="heroText">
-            Find local home-service professionals serving Billings and the
-            surrounding Yellowstone County area.
-          </p>
+    <h1>
+      Find the Right
+      <span> Home Pro.</span>
+    </h1>
 
-          <div className="searchBox">
-            <input
-              type="text"
-              placeholder="What do you need help with?"
-              aria-label="Search home services"
-            />
-            <button>Find a Pro</button>
-          </div>
+    <p className="heroText">
+      Find local home-service professionals serving Billings and the
+      surrounding Yellowstone County area.
+    </p>
 
-          <p className="searchHint">
-            Try plumbing, furnace repair, roofing, electrical or remodeling
-          </p>
-        </div>
+    <div className="searchBox">
+      <input
+        type="text"
+        placeholder="What do you need help with?"
+        aria-label="Search home services"
+      />
+      <button>Find a Pro</button>
+    </div>
 
-        <div className="heroLogoWrap">
-          <img
-            className="heroLogo"
-            src="/billings-home-pros-logo.png"
-            alt="Billings Home Pros — local home services in Billings, Montana"
-          />
-        </div>
-      </section>
+    <p className="searchHint">
+      Try plumbing, furnace repair, roofing, electrical or remodeling
+    </p>
+  </div>
+</section>
 
       <section className="servicesSection" id="services">
         <div className="sectionHeading">
