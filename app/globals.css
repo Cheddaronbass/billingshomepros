@@ -44,19 +44,14 @@ header {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.logoMark {
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--sand);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--sand);
-  font-weight: 800;
-  letter-spacing: 1px;
+.headerLogo {
+  display: block;
+  width: 230px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 
 .brandName {
