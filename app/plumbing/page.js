@@ -8,17 +8,56 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
-async function getPlumbers() {
+const filters = [
+  { label: "All Plumbing", href: "/plumbing" },
+  {
+    label: "Emergency Service",
+    href: "/plumbing?service=emergency",
+    value: "emergency",
+  },
+  {
+    label: "Water Heaters",
+    href: "/plumbing?service=water-heaters",
+    value: "water-heaters",
+  },
+  {
+    label: "Drain & Sewer",
+    href: "/plumbing?service=drain-sewer",
+    value: "drain-sewer",
+  },
+  {
+    label: "Repairs",
+    href: "/plumbing?service=repairs",
+    value: "repairs",
+  },
+];
+
+const serviceNames = {
+  "water-heaters": "Water Heaters",
+  "drain-sewer": "Drain & Sewer",
+  repairs: "Repairs",
+};
+
+async function getPlumbers(selectedService) {
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.SUPABASE_PUBLISHABLE_KEY
   );
 
-  const { data, error } = await supabase
+  let query = supabase
     .from("businesses")
     .select("*")
-    .eq("category", "plumbing")
-    .order("name");
+    .eq("category", "plumbing");
+
+  if (selectedService === "emergency") {
+    query = query.eq("emergency_service", true);
+  }
+
+  if (serviceNames[selectedService]) {
+    query = query.contains("services", [serviceNames[selectedService]]);
+  }
+
+  const { data, error } = await query.order("name");
 
   if (error) {
     console.error("Supabase error:", error);
@@ -28,15 +67,19 @@ async function getPlumbers() {
   return data || [];
 }
 
-export default async function PlumbingPage() {
-  const plumbers = await getPlumbers();
+export default async function PlumbingPage({ searchParams }) {
+  const params = await searchParams;
+  const selectedService = params?.service || "";
+  const plumbers = await getPlumbers(selectedService);
 
   return (
     <main>
       <header className="siteHeader">
         <a className="textBrand" href="/">
           <span className="brandMain">Billings Home Pros</span>
-          <span className="brandSub">LOCAL HOME SERVICES • BILLINGS, MT</span>
+          <span className="brandSub">
+            LOCAL HOME SERVICES • BILLINGS, MT
+          </span>
         </a>
 
         <nav>
@@ -76,22 +119,33 @@ export default async function PlumbingPage() {
         </div>
 
         <div className="filterBar">
-          <button>All Plumbing</button>
-          <button>Emergency Service</button>
-          <button>Water Heaters</button>
-          <button>Drain & Sewer</button>
-          <button>Repairs</button>
+          {filters.map((filter) => {
+            const isActive =
+              (!selectedService && !filter.value) ||
+              selectedService === filter.value;
+
+            return (
+              <a
+                href={filter.href}
+                className={isActive ? "activeFilter" : ""}
+                key={filter.label}
+              >
+                {filter.label}
+              </a>
+            );
+          })}
         </div>
 
         <div className="contractorList">
           {plumbers.length === 0 ? (
             <div className="comingSoon">
               <div className="comingSoonIcon">🔧</div>
+
               <div>
-                <h2>No plumbing listings yet.</h2>
+                <h2>No matching plumbing listings yet.</h2>
                 <p>
-                  Local plumbing businesses will appear here as they are added
-                  to the Billings Home Pros directory.
+                  Try another plumbing service or view all plumbing
+                  professionals serving the Billings area.
                 </p>
               </div>
             </div>
@@ -119,16 +173,16 @@ export default async function PlumbingPage() {
                   </div>
 
                   <div className="serviceTags">
-  <span>Plumbing</span>
+                    <span>Plumbing</span>
 
-  {business.services?.map((service) => (
-    <span key={service}>{service}</span>
-  ))}
+                    {business.services?.map((service) => (
+                      <span key={service}>{service}</span>
+                    ))}
 
-  {business.emergency_service && (
-    <span>Emergency Service</span>
-  )}
-</div>
+                    {business.emergency_service && (
+                      <span>Emergency Service</span>
+                    )}
+                  </div>
 
                   {business.description && (
                     <p className="contractorDescription">
