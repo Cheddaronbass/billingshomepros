@@ -617,3 +617,163 @@ footer small {
     padding: 14px;
   }
 }
+/* CONTRACTOR LISTINGS */
+
+.contractorList {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contractorCard {
+  padding: 32px;
+  background: #fbfaf6;
+  border: 1px solid #e2ded5;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(32, 53, 43, 0.07);
+}
+
+.contractorTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.sampleBadge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 9px;
+  background: var(--sand);
+  color: var(--forest);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.contractorCard h2 {
+  margin-bottom: 7px;
+  color: var(--forest);
+  font-size: 1.7rem;
+}
+
+.contractorLocation {
+  margin-bottom: 0;
+  color: #68706c;
+  font-size: 0.9rem;
+}
+
+.ratingBox {
+  flex-shrink: 0;
+  min-width: 150px;
+  padding: 13px 16px;
+  background: var(--white);
+  border: 1px solid #e2ded5;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.ratingBox strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--rust);
+  font-size: 1.2rem;
+}
+
+.ratingBox span {
+  color: #68706c;
+  font-size: 0.75rem;
+}
+
+.serviceTags {
+  margin: 25px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.serviceTags span {
+  padding: 7px 11px;
+  background: #edf1ed;
+  color: var(--forest);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.contractorDescription {
+  max-width: 750px;
+  color: #626a66;
+  line-height: 1.65;
+}
+
+.homeProsRating {
+  margin: 22px 0;
+  padding: 15px 0;
+  border-top: 1px solid #e2ded5;
+  border-bottom: 1px solid #e2ded5;
+  display: flex;
+  gap: 15px;
+}
+
+.homeProsRating strong {
+  color: var(--forest);
+}
+
+.homeProsRating span {
+  color: #777d79;
+}
+
+.contractorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contractorActions button {
+  padding: 12px 18px;
+  background: var(--white);
+  color: var(--forest);
+  border: 1px solid #cbc5b9;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.contractorActions .quoteButton {
+  background: var(--rust);
+  color: var(--white);
+  border-color: var(--rust);
+}
+
+.contractorActions button:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .contractorCard {
+    padding: 23px;
+  }
+
+  .contractorTop {
+    flex-direction: column;
+  }
+
+  .ratingBox {
+    width: 100%;
+    text-align: left;
+  }
+
+  .homeProsRating {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contractorActions button {
+    flex: 1;
+  }
+
+  .contractorActions .quoteButton {
+    flex-basis: 100%;
+  }
+}
