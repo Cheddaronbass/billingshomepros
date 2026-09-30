@@ -70,6 +70,7 @@ async function getPlumbers(selectedService) {
 export default async function PlumbingPage({ searchParams }) {
   const params = await searchParams;
   const selectedService = params?.service || "";
+  console.log("SELECTED SERVICE:", selectedService);
   const plumbers = await getPlumbers(selectedService);
 
   return (
