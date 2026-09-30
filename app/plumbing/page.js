@@ -119,12 +119,16 @@ export default async function PlumbingPage() {
                   </div>
 
                   <div className="serviceTags">
-                    <span>Plumbing</span>
+  <span>Plumbing</span>
 
-                    {business.emergency_service && (
-                      <span>Emergency Service</span>
-                    )}
-                  </div>
+  {business.services?.map((service) => (
+    <span key={service}>{service}</span>
+  ))}
+
+  {business.emergency_service && (
+    <span>Emergency Service</span>
+  )}
+</div>
 
                   {business.description && (
                     <p className="contractorDescription">
