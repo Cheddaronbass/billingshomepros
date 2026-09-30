@@ -540,7 +540,7 @@ footer small {
   gap: 10px;
 }
 
-.filterBar button {
+.filterBar a {
   padding: 11px 17px;
   background: var(--white);
   color: var(--forest);
@@ -548,9 +548,14 @@ footer small {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.filterBar button:first-child {
+.filterBar a:hover {
+  background: #edf1ed;
+}
+
+.filterBar a.activeFilter {
   background: var(--forest);
   color: var(--white);
   border-color: var(--forest);
