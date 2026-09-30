@@ -556,7 +556,7 @@ footer small {
 }
 
 .filterBar a.activeFilter {
-  background: var(--forest);
+  background: red !important;
   color: var(--white);
   border-color: var(--forest);
 }
