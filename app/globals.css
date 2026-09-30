@@ -556,9 +556,9 @@ footer small {
 }
 
 .filterBar a.activeFilter {
-  background: red !important;
-  color: var(--white);
-  border-color: var(--forest);
+  background: #234d3c !important;
+  color: white !important;
+  border-color: #234d3c;
 }
 
 .comingSoon {
