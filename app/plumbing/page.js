@@ -1,10 +1,36 @@
+import { createClient } from "@supabase/supabase-js";
+
 export const metadata = {
   title: "Plumbers in Billings, MT | Billings Home Pros",
   description:
     "Find plumbers serving Billings, Laurel and surrounding Yellowstone County communities.",
 };
 
-export default function PlumbingPage() {
+export const dynamic = "force-dynamic";
+
+async function getPlumbers() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_PUBLISHABLE_KEY
+  );
+
+  const { data, error } = await supabase
+    .from("businesses")
+    .select("*")
+    .eq("category", "plumbing")
+    .order("name");
+
+  if (error) {
+    console.error("Supabase error:", error);
+    return [];
+  }
+
+  return data || [];
+}
+
+export default async function PlumbingPage() {
+  const plumbers = await getPlumbers();
+
   return (
     <main>
       <header className="siteHeader">
@@ -44,8 +70,8 @@ export default function PlumbingPage() {
 
           <p>
             Browse local plumbing companies and find the services you need.
-            Business listings will appear here as we build the Billings Home
-            Pros directory.
+            Use Billings Home Pros to compare local businesses serving the
+            Billings area.
           </p>
         </div>
 
@@ -57,53 +83,86 @@ export default function PlumbingPage() {
           <button>Repairs</button>
         </div>
 
-   <div className="contractorList">
+        <div className="contractorList">
+          {plumbers.length === 0 ? (
+            <div className="comingSoon">
+              <div className="comingSoonIcon">🔧</div>
+              <div>
+                <h2>No plumbing listings yet.</h2>
+                <p>
+                  Local plumbing businesses will appear here as they are added
+                  to the Billings Home Pros directory.
+                </p>
+              </div>
+            </div>
+          ) : (
+            plumbers.map((business) => (
+              <article className="contractorCard" key={business.id}>
+                <div className="contractorMain">
+                  <div className="contractorTop">
+                    <div>
+                      <h2>{business.name}</h2>
 
-  <article className="contractorCard">
-    <div className="contractorMain">
+                      <p className="contractorLocation">
+                        {business.service_area || "Billings, Montana"}
+                      </p>
+                    </div>
 
-      <div className="contractorTop">
-        <div>
-          <span className="sampleBadge">SAMPLE LISTING</span>
-          <h2>Yellowstone Plumbing Co.</h2>
-          <p className="contractorLocation">
-            Billings, Montana • Serving Yellowstone County
-          </p>
+                    {business.google_rating && (
+                      <div className="ratingBox">
+                        <strong>★ {business.google_rating}</strong>
+                        <span>
+                          {business.google_review_count || 0} Google reviews
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="serviceTags">
+                    <span>Plumbing</span>
+
+                    {business.emergency_service && (
+                      <span>Emergency Service</span>
+                    )}
+                  </div>
+
+                  {business.description && (
+                    <p className="contractorDescription">
+                      {business.description}
+                    </p>
+                  )}
+
+                  <div className="homeProsRating">
+                    <strong>Billings Home Pros Reviews</strong>
+                    <span>No reviews yet</span>
+                  </div>
+
+                  <div className="contractorActions">
+                    {business.phone && (
+                      <a href={`tel:${business.phone}`}>
+                        <button>Call</button>
+                      </a>
+                    )}
+
+                    {business.website && (
+                      <a
+                        href={business.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button>Visit Website</button>
+                      </a>
+                    )}
+
+                    <button className="quoteButton">
+                      Request a Quote
+                    </button>
+                  </div>
+                </div>
+              </article>
+            ))
+          )}
         </div>
-
-        <div className="ratingBox">
-          <strong>★ 4.8</strong>
-          <span>127 Google reviews</span>
-        </div>
-      </div>
-
-      <div className="serviceTags">
-        <span>Plumbing Repairs</span>
-        <span>Water Heaters</span>
-        <span>Drain Cleaning</span>
-        <span>Emergency Service</span>
-      </div>
-
-      <p className="contractorDescription">
-        Sample contractor listing showing how local plumbing businesses
-        will appear in the Billings Home Pros directory.
-      </p>
-
-      <div className="homeProsRating">
-        <strong>Billings Home Pros Reviews</strong>
-        <span>No reviews yet</span>
-      </div>
-
-      <div className="contractorActions">
-        <button>Call</button>
-        <button>Visit Website</button>
-        <button className="quoteButton">Request a Quote</button>
-      </div>
-
-    </div>
-  </article>
-
-</div>
       </section>
 
       <section className="proSection">
