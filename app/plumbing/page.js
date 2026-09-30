@@ -57,17 +57,53 @@ export default function PlumbingPage() {
           <button>Repairs</button>
         </div>
 
-        <div className="comingSoon">
-          <div className="comingSoonIcon">🔧</div>
+   <div className="contractorList">
 
-          <div>
-            <h2>Local plumber listings are coming next.</h2>
-            <p>
-              We're building our directory of plumbing professionals serving
-              Billings and surrounding Yellowstone County communities.
-            </p>
-          </div>
+  <article className="contractorCard">
+    <div className="contractorMain">
+
+      <div className="contractorTop">
+        <div>
+          <span className="sampleBadge">SAMPLE LISTING</span>
+          <h2>Yellowstone Plumbing Co.</h2>
+          <p className="contractorLocation">
+            Billings, Montana • Serving Yellowstone County
+          </p>
         </div>
+
+        <div className="ratingBox">
+          <strong>★ 4.8</strong>
+          <span>127 Google reviews</span>
+        </div>
+      </div>
+
+      <div className="serviceTags">
+        <span>Plumbing Repairs</span>
+        <span>Water Heaters</span>
+        <span>Drain Cleaning</span>
+        <span>Emergency Service</span>
+      </div>
+
+      <p className="contractorDescription">
+        Sample contractor listing showing how local plumbing businesses
+        will appear in the Billings Home Pros directory.
+      </p>
+
+      <div className="homeProsRating">
+        <strong>Billings Home Pros Reviews</strong>
+        <span>No reviews yet</span>
+      </div>
+
+      <div className="contractorActions">
+        <button>Call</button>
+        <button>Visit Website</button>
+        <button className="quoteButton">Request a Quote</button>
+      </div>
+
+    </div>
+  </article>
+
+</div>
       </section>
 
       <section className="proSection">
