@@ -196,20 +196,7 @@ export default async function CategoryPage({
   </button>
 </div>
 
-                    {business.website && (
-                      <a
-                        href={business.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <button>Visit Website</button>
-                      </a>
-                    )}
-
-                    <button className="quoteButton">
-                      Request a Quote
-                    </button>
-                  </div>
+          
                 </div>
               </article>
             ))
