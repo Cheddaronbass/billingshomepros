@@ -1,9 +1,12 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "General Contractors & Remodeling in Billings, MT | Billings Home Pros",
+  title: "General Contractors & Remodeling in Billings, MT",
   description:
-    "Find general contractors and remodeling professionals serving Billings, Laurel and surrounding Yellowstone County communities.",
+    "Find general contractors and remodeling companies in Billings, Montana for renovations, home additions, repairs, and general contracting. Compare local professionals and request a quote.",
+  alternates: {
+    canonical: "/contractors-remodeling",
+  },
 };
 
 export const dynamic = "force-dynamic";
