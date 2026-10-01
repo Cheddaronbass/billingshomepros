@@ -1,0 +1,275 @@
+"use client";
+
+import { useState } from "react";
+
+export default function GetListedPage() {
+  const [requestType, setRequestType] = useState("claim");
+
+  const [formData, setFormData] = useState({
+    business_name: "",
+    contact_name: "",
+    contact_email: "",
+    contact_phone: "",
+    website: "",
+    category: "",
+    service_area: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("idle");
+  const [message, setMessage] = useState("");
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    setStatus("submitting");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/contractor-request", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          request_type: requestType,
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(
+          result.error || "Unable to submit your request."
+        );
+        return;
+      }
+
+      setStatus("success");
+
+      setMessage(
+        requestType === "claim"
+          ? "Your claim request has been submitted. We'll review the information before making any changes to the listing."
+          : "Your business listing request has been submitted for review."
+      );
+
+      setFormData({
+        business_name: "",
+        contact_name: "",
+        contact_email: "",
+        contact_phone: "",
+        website: "",
+        category: "",
+        service_area: "",
+        message: "",
+      });
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  }
+
+  return (
+    <main>
+      <header className="siteHeader">
+        <a className="textBrand" href="/">
+          <span className="brandMain">Billings Home Pros</span>
+          <span className="brandSub">
+            LOCAL HOME SERVICES • BILLINGS, MT
+          </span>
+        </a>
+
+        <nav>
+          <a href="/">Home</a>
+          <a href="/#services">Find a Pro</a>
+          <a href="/get-listed">For Contractors</a>
+        </nav>
+      </header>
+
+      <section className="quotePage">
+        <div className="quoteFormCard">
+          <div className="eyebrow">
+            FOR BILLINGS HOME-SERVICE PROFESSIONALS
+          </div>
+
+          <h1>Get Listed on Billings Home Pros</h1>
+
+          <p className="quoteBusiness">
+            Already see your business on our site? Claim the listing.
+            Otherwise, request a new business listing.
+          </p>
+
+          <div className="contractorRequestChoices">
+            <button
+              type="button"
+              className={
+                requestType === "claim"
+                  ? "requestChoice activeRequestChoice"
+                  : "requestChoice"
+              }
+              onClick={() => setRequestType("claim")}
+            >
+              Claim My Business
+            </button>
+
+            <button
+              type="button"
+              className={
+                requestType === "new_listing"
+                  ? "requestChoice activeRequestChoice"
+                  : "requestChoice"
+              }
+              onClick={() => setRequestType("new_listing")}
+            >
+              Add My Business
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="quoteForm">
+            <label>
+              Business Name *
+              <input
+                type="text"
+                name="business_name"
+                value={formData.business_name}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            <label>
+              Your Name *
+              <input
+                type="text"
+                name="contact_name"
+                value={formData.contact_name}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            <div className="quoteFormRow">
+              <label>
+                Email *
+                <input
+                  type="email"
+                  name="contact_email"
+                  value={formData.contact_email}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+
+              <label>
+                Phone
+                <input
+                  type="tel"
+                  name="contact_phone"
+                  value={formData.contact_phone}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
+
+            <label>
+              Business Website
+              <input
+                type="url"
+                name="website"
+                placeholder="https://"
+                value={formData.website}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Primary Service
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+              >
+                <option value="">Select a service</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="hvac">Heating & Cooling</option>
+                <option value="electrical">Electrical</option>
+                <option value="roofing">Roofing</option>
+                <option value="contractors-remodeling">
+                  Contractors & Remodeling
+                </option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Service Area
+              <input
+                type="text"
+                name="service_area"
+                placeholder="Example: Billings, Laurel and surrounding areas"
+                value={formData.service_area}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              {requestType === "claim"
+                ? "Anything we should know about your claim?"
+                : "Tell us about your business and services"}
+              <textarea
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+              />
+            </label>
+
+            <button
+              type="submit"
+              className="quoteSubmitButton"
+              disabled={status === "submitting"}
+            >
+              {status === "submitting"
+                ? "Sending..."
+                : requestType === "claim"
+                ? "Submit Claim Request"
+                : "Submit Listing Request"}
+            </button>
+
+            {message && (
+              <div
+                className={
+                  status === "success"
+                    ? "quoteMessage success"
+                    : "quoteMessage error"
+                }
+              >
+                {message}
+              </div>
+            )}
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <strong>Billings Home Pros</strong>
+        <p>
+          Connecting Billings-area homeowners with local home-service
+          professionals.
+        </p>
+        <small>© 2026 BillingsHomePros.com</small>
+      </footer>
+    </main>
+  );
+}
