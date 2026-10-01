@@ -782,3 +782,37 @@ footer small {
     flex-basis: 100%;
   }
 }
+.businessNameRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.businessNameRow h2 {
+  margin: 0;
+}
+
+.featuredBadge,
+.claimedBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.featuredBadge {
+  background: #f2e4bd;
+  color: #704b16;
+  border: 1px solid #dfc77f;
+}
+
+.claimedBadge {
+  background: #e6efe9;
+  color: #234d3c;
+  border: 1px solid #b9d0c1;
+}
