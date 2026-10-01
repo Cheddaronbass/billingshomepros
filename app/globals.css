@@ -918,3 +918,139 @@ footer small {
     justify-content: flex-start;
   }
 }
+.quotePage {
+  min-height: 70vh;
+  padding: 60px 20px 80px;
+  background: #f7f4ec;
+}
+
+.quoteFormCard {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 38px;
+  background: white;
+  border: 1px solid #e3ddcf;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(35, 77, 60, 0.08);
+}
+
+.quoteFormCard h1 {
+  margin: 8px 0 10px;
+  color: #234d3c;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+}
+
+.quoteBusiness {
+  margin: 0 0 30px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.quoteBusiness strong {
+  color: #234d3c;
+}
+
+.quoteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quoteForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #2f3b35;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.quoteForm input,
+.quoteForm textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ccc6b8;
+  border-radius: 7px;
+  background: white;
+  color: #222;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.quoteForm input:focus,
+.quoteForm textarea:focus {
+  outline: none;
+  border-color: #234d3c;
+  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
+}
+
+.quoteForm textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.quoteFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contactHint {
+  margin: -10px 0 0;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.quoteSubmitButton {
+  min-height: 48px;
+  padding: 13px 20px;
+  border: 1px solid #234d3c;
+  border-radius: 7px;
+  background: #234d3c;
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quoteSubmitButton:hover {
+  background: #18382c;
+}
+
+.quoteSubmitButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.quoteMessage {
+  padding: 13px 15px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.quoteMessage.success {
+  background: #e6efe9;
+  border: 1px solid #b9d0c1;
+  color: #234d3c;
+}
+
+.quoteMessage.error {
+  background: #f8e7e5;
+  border: 1px solid #e4bbb6;
+  color: #8a3027;
+}
+
+@media (max-width: 600px) {
+  .quotePage {
+    padding: 35px 14px 60px;
+  }
+
+  .quoteFormCard {
+    padding: 25px 18px;
+  }
+
+  .quoteFormRow {
+    grid-template-columns: 1fr;
+  }
+}
