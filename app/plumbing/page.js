@@ -1,9 +1,12 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "Plumbers in Billings, MT | Billings Home Pros",
+  title: "Plumbers in Billings, MT",
   description:
-    "Find plumbers serving Billings, Laurel and surrounding Yellowstone County communities.",
+    "Find local plumbers in Billings, Montana for plumbing repairs, water heaters, drain and sewer service, and emergency plumbing. Compare local professionals and request a quote.",
+  alternates: {
+    canonical: "/plumbing",
+  },
 };
 
 export const dynamic = "force-dynamic";
