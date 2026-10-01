@@ -17,11 +17,12 @@ const services = [
   description: "Repairs, panels, lighting, wiring & installation",
   href: "/electrical",
 },
-  {
-    name: "Roofing",
-    icon: "🏠",
-    description: "Roof repair, replacement, inspections & storm damage",
-  },
+{
+  name: "Roofing",
+  icon: "🏠",
+  description: "Roof repair, replacement, inspections & storm damage",
+  href: "/roofing",
+},
   {
     name: "Contractors & Remodeling",
     icon: "🛠️",
