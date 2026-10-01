@@ -158,7 +158,9 @@ export default function Home() {
           </p>
         </div>
 
-        <button className="lightButton">Get Listed</button>
+        <a className="lightButton" href="/get-listed">
+  Get Listed
+</a>
       </section>
 
       <footer>
