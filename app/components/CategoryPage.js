@@ -170,12 +170,31 @@ export default async function CategoryPage({
                     <span>No reviews yet</span>
                   </div>
 
-                  <div className="contractorActions">
-                    {business.phone && (
-                      <a href={`tel:${business.phone}`}>
-                        <button>Call</button>
-                      </a>
-                    )}
+                <div className="contractorActions">
+  {business.phone && (
+    <a
+      className="actionButton callButton"
+      href={`tel:${business.phone}`}
+    >
+      Call {business.phone}
+    </a>
+  )}
+
+  {business.website && (
+    <a
+      className="actionButton websiteButton"
+      href={business.website}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Visit Website
+    </a>
+  )}
+
+  <button className="actionButton quoteButton">
+    Request a Quote
+  </button>
+</div>
 
                     {business.website && (
                       <a
