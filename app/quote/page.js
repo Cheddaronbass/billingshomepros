@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function QuotePage() {
+function QuoteForm() {
   const searchParams = useSearchParams();
 
   const businessId = searchParams.get("businessId");
-  const businessName = searchParams.get("businessName") || "a local contractor";
+  const businessName =
+    searchParams.get("businessName") || "a local contractor";
 
   const [formData, setFormData] = useState({
     customer_name: "",
@@ -57,9 +58,7 @@ export default function QuotePage() {
       }
 
       setStatus("success");
-      setMessage(
-        "Your quote request has been submitted successfully."
-      );
+      setMessage("Your quote request has been submitted successfully.");
 
       setFormData({
         customer_name: "",
@@ -74,6 +73,106 @@ export default function QuotePage() {
     }
   }
 
+  return (
+    <section className="quotePage">
+      <div className="quoteFormCard">
+        <div className="eyebrow">REQUEST A QUOTE</div>
+
+        <h1>Tell us about your project</h1>
+
+        <p className="quoteBusiness">
+          Requesting a quote from <strong>{businessName}</strong>
+        </p>
+
+        <form onSubmit={handleSubmit} className="quoteForm">
+          <label>
+            Your Name *
+            <input
+              type="text"
+              name="customer_name"
+              value={formData.customer_name}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <div className="quoteFormRow">
+            <label>
+              Email
+              <input
+                type="email"
+                name="customer_email"
+                value={formData.customer_email}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Phone
+              <input
+                type="tel"
+                name="customer_phone"
+                value={formData.customer_phone}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
+          <p className="contactHint">
+            Please provide at least an email address or phone number.
+          </p>
+
+          <label>
+            Project Type
+            <input
+              type="text"
+              name="project_type"
+              placeholder="Example: Water heater replacement"
+              value={formData.project_type}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Tell us about the project *
+            <textarea
+              name="project_details"
+              rows="6"
+              placeholder="Describe what you need help with..."
+              value={formData.project_details}
+              onChange={handleChange}
+              required
+            />
+          </label>
+
+          <button
+            type="submit"
+            className="quoteSubmitButton"
+            disabled={status === "submitting"}
+          >
+            {status === "submitting"
+              ? "Sending..."
+              : "Send Quote Request"}
+          </button>
+
+          {message && (
+            <div
+              className={
+                status === "success"
+                  ? "quoteMessage success"
+                  : "quoteMessage error"
+              }
+            >
+              {message}
+            </div>
+          )}
+        </form>
+      </div>
+    </section>
+  );
+}
+
+export default function QuotePage() {
   return (
     <main>
       <header className="siteHeader">
@@ -91,101 +190,17 @@ export default function QuotePage() {
         </nav>
       </header>
 
-      <section className="quotePage">
-        <div className="quoteFormCard">
-          <div className="eyebrow">REQUEST A QUOTE</div>
-
-          <h1>Tell us about your project</h1>
-
-          <p className="quoteBusiness">
-            Requesting a quote from <strong>{businessName}</strong>
-          </p>
-
-          <form onSubmit={handleSubmit} className="quoteForm">
-            <label>
-              Your Name *
-              <input
-                type="text"
-                name="customer_name"
-                value={formData.customer_name}
-                onChange={handleChange}
-                required
-              />
-            </label>
-
-            <div className="quoteFormRow">
-              <label>
-                Email
-                <input
-                  type="email"
-                  name="customer_email"
-                  value={formData.customer_email}
-                  onChange={handleChange}
-                />
-              </label>
-
-              <label>
-                Phone
-                <input
-                  type="tel"
-                  name="customer_phone"
-                  value={formData.customer_phone}
-                  onChange={handleChange}
-                />
-              </label>
+      <Suspense
+        fallback={
+          <section className="quotePage">
+            <div className="quoteFormCard">
+              <p>Loading quote form...</p>
             </div>
-
-            <p className="contactHint">
-              Please provide at least an email address or phone number.
-            </p>
-
-            <label>
-              Project Type
-              <input
-                type="text"
-                name="project_type"
-                placeholder="Example: Water heater replacement"
-                value={formData.project_type}
-                onChange={handleChange}
-              />
-            </label>
-
-            <label>
-              Tell us about the project *
-              <textarea
-                name="project_details"
-                rows="6"
-                placeholder="Describe what you need help with..."
-                value={formData.project_details}
-                onChange={handleChange}
-                required
-              />
-            </label>
-
-            <button
-              type="submit"
-              className="quoteSubmitButton"
-              disabled={status === "submitting"}
-            >
-              {status === "submitting"
-                ? "Sending..."
-                : "Send Quote Request"}
-            </button>
-
-            {message && (
-              <div
-                className={
-                  status === "success"
-                    ? "quoteMessage success"
-                    : "quoteMessage error"
-                }
-              >
-                {message}
-              </div>
-            )}
-          </form>
-        </div>
-      </section>
+          </section>
+        }
+      >
+        <QuoteForm />
+      </Suspense>
 
       <footer>
         <strong>Billings Home Pros</strong>
