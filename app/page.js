@@ -1,14 +1,15 @@
 const services = [
-{
-  name: "Plumbing",
-  icon: "🔧",
-  description: "Repairs, water heaters, drains, fixtures & more",
-  href: "/plumbing",
-},
+  {
+    name: "Plumbing",
+    icon: "🔧",
+    description: "Repairs, water heaters, drains, fixtures & more",
+    href: "/plumbing",
+  },
   {
     name: "Heating & Cooling",
     icon: "🔥",
     description: "Furnaces, air conditioning, maintenance & repair",
+    href: "/hvac",
   },
   {
     name: "Electrical",
