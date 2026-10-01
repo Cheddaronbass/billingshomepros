@@ -199,9 +199,14 @@ export default async function CategoryPage({
     </a>
   )}
 
-  <button className="actionButton quoteButton">
-    Request a Quote
-  </button>
+  <a
+  className="actionButton quoteButton"
+  href={`/quote?businessId=${business.id}&businessName=${encodeURIComponent(
+    business.name
+  )}`}
+>
+  Request a Quote
+</a>
 </div>
 
           
