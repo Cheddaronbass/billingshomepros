@@ -1054,3 +1054,63 @@ footer small {
     grid-template-columns: 1fr;
   }
 }
+/* Contractor Get Listed / Claim buttons */
+
+.contractorRequestChoices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0 30px;
+}
+
+.requestChoice {
+  min-height: 54px;
+  padding: 13px 18px;
+  border: 2px solid #d8d1c1;
+  border-radius: 8px;
+  background: #faf7ef;
+  color: #234d3c;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.requestChoice:hover {
+  border-color: #234d3c;
+  background: #edf1ed;
+  transform: translateY(-1px);
+}
+
+.requestChoice.activeRequestChoice {
+  background: #234d3c;
+  color: white;
+  border-color: #234d3c;
+  box-shadow: 0 4px 12px rgba(35, 77, 60, 0.18);
+}
+
+.quoteForm select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ccc6b8;
+  border-radius: 7px;
+  background: white;
+  color: #222;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.quoteForm select:focus {
+  outline: none;
+  border-color: #234d3c;
+  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
+}
+
+@media (max-width: 600px) {
+  .contractorRequestChoices {
+    grid-template-columns: 1fr;
+  }
+}
