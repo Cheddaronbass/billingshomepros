@@ -11,11 +11,12 @@ const services = [
     description: "Furnaces, air conditioning, maintenance & repair",
     href: "/hvac",
   },
-  {
-    name: "Electrical",
-    icon: "⚡",
-    description: "Repairs, panels, lighting, wiring & installation",
-  },
+{
+  name: "Electrical",
+  icon: "⚡",
+  description: "Repairs, panels, lighting, wiring & installation",
+  href: "/electrical",
+},
   {
     name: "Roofing",
     icon: "🏠",
