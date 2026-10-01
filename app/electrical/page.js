@@ -1,9 +1,12 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "Electricians in Billings, MT | Billings Home Pros",
+  title: "Electricians in Billings, MT",
   description:
-    "Find electricians serving Billings, Laurel and surrounding Yellowstone County communities.",
+    "Find local electricians in Billings, Montana for electrical repairs, panels and breakers, lighting, wiring, and installations. Compare local professionals and request a quote.",
+  alternates: {
+    canonical: "/electrical",
+  },
 };
 
 export const dynamic = "force-dynamic";
