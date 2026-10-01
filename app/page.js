@@ -23,11 +23,12 @@ const services = [
   description: "Roof repair, replacement, inspections & storm damage",
   href: "/roofing",
 },
-  {
-    name: "Contractors & Remodeling",
-    icon: "🛠️",
-    description: "Remodeling, additions, repairs & general contracting",
-  },
+{
+  name: "Contractors & Remodeling",
+  icon: "🛠️",
+  description: "Remodeling, additions, repairs & general contracting",
+  href: "/contractors-remodeling",
+},
 ];
 
 export default function Home() {
