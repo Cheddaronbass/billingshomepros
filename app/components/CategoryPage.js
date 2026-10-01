@@ -119,13 +119,23 @@ export default async function CategoryPage({
               <article className="contractorCard" key={business.id}>
                 <div className="contractorMain">
                   <div className="contractorTop">
-                    <div>
-                      <h2>{business.name}</h2>
+                 <div>
+  <div className="businessNameRow">
+    <h2>{business.name}</h2>
 
-                      <p className="contractorLocation">
-                        {business.service_area || "Billings, Montana"}
-                      </p>
-                    </div>
+    {business.featured && (
+      <span className="featuredBadge">Featured</span>
+    )}
+
+    {business.claimed && (
+      <span className="claimedBadge">✓ Claimed</span>
+    )}
+  </div>
+
+  <p className="contractorLocation">
+    {business.service_area || "Billings, Montana"}
+  </p>
+</div>
 
                     {business.google_rating && (
                       <div className="ratingBox">
