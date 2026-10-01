@@ -1,9 +1,12 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "HVAC Companies in Billings, MT | Billings Home Pros",
+  title: "HVAC Companies in Billings, MT",
   description:
-    "Find HVAC professionals serving Billings, Laurel and surrounding Yellowstone County communities.",
+    "Find local HVAC companies in Billings, Montana for heating, air conditioning, furnace repair, and maintenance. Compare local professionals and request a quote.",
+  alternates: {
+    canonical: "/hvac",
+  },
 };
 
 export const dynamic = "force-dynamic";
