@@ -1,9 +1,12 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "Roofers in Billings, MT | Billings Home Pros",
+  title: "Roofers in Billings, MT",
   description:
-    "Find roofing companies serving Billings, Laurel and surrounding Yellowstone County communities.",
+    "Find local roofing companies in Billings, Montana for roof repair, roof replacement, inspections, and storm damage. Compare local roofers and request a quote.",
+  alternates: {
+    canonical: "/roofing",
+  },
 };
 
 export const dynamic = "force-dynamic";
