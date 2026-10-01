@@ -865,3 +865,56 @@ footer small {
     width: 100%;
   }
 }
+.ratingBox {
+  min-width: 115px;
+  padding: 10px 12px;
+  background: #faf7ef;
+  border: 1px solid #e3ddcf;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.ratingScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.1rem;
+}
+
+.ratingStar {
+  color: #b7791f;
+  font-size: 1.15rem;
+}
+
+.ratingScore strong {
+  color: #234d3c;
+}
+
+.ratingSource,
+.ratingCount {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.ratingSource {
+  margin-top: 3px;
+  font-weight: 700;
+  color: #555;
+}
+
+.ratingCount {
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .ratingBox {
+    text-align: left;
+    width: fit-content;
+  }
+
+  .ratingScore {
+    justify-content: flex-start;
+  }
+}
