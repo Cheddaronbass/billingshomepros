@@ -138,13 +138,21 @@ export default async function CategoryPage({
 </div>
 
                     {business.google_rating && (
-                      <div className="ratingBox">
-                        <strong>★ {business.google_rating}</strong>
-                        <span>
-                          {business.google_review_count || 0} Google reviews
-                        </span>
-                      </div>
-                    )}
+  <div className="ratingBox">
+    <div className="ratingScore">
+      <span className="ratingStar">★</span>
+      <strong>{business.google_rating}</strong>
+    </div>
+
+    <span className="ratingSource">
+      Google rating
+    </span>
+
+    <span className="ratingCount">
+      {business.google_review_count || 0} reviews
+    </span>
+  </div>
+)}
                   </div>
 
                   <div className="serviceTags">
