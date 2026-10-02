@@ -37,9 +37,9 @@ export async function POST(request) {
     }
 
     const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.SUPABASE_PUBLISHABLE_KEY
-    );
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.SUPABASE_SECRET_KEY
+);
 
     const { data: businesses, error } = await supabase
       .from("businesses")
