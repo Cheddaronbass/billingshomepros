@@ -22,6 +22,35 @@ function normalizeName(name) {
     .replace(/[^a-z0-9]/g, "");
 }
 
+async function searchGoogle(textQuery) {
+  const response = await fetch(
+    "https://places.googleapis.com/v1/places:searchText",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY,
+        "X-Goog-FieldMask":
+          "places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.websiteUri,places.rating,places.userRatingCount",
+      },
+      body: JSON.stringify({
+        textQuery,
+        pageSize: 3,
+      }),
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(
+      data?.error?.message || "Google Places search failed."
+    );
+  }
+
+  return data.places || [];
+}
+
 export async function POST(request) {
   try {
     const adminSecret = request.headers.get("x-admin-secret");
@@ -37,9 +66,9 @@ export async function POST(request) {
     }
 
     const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SECRET_KEY
-);
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SECRET_KEY
+    );
 
     const { data: businesses, error } = await supabase
       .from("businesses")
@@ -51,41 +80,44 @@ export async function POST(request) {
       .limit(5);
 
     if (error) {
-  console.error("Business lookup error:", error);
+      console.error("Business lookup error:", error);
 
-  return Response.json(
-    {
-      error: "Unable to load businesses.",
-      details: error.message,
-      code: error.code,
-    },
-    { status: 500 }
-  );
-}
+      return Response.json(
+        {
+          error: "Unable to load businesses.",
+          details: error.message,
+          code: error.code,
+        },
+        { status: 500 }
+      );
+    }
 
     const results = [];
 
     for (const business of businesses) {
-      const response = await fetch(
-        "https://places.googleapis.com/v1/places:searchText",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY,
-            "X-Goog-FieldMask":
-              "places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.websiteUri,places.rating,places.userRatingCount",
-          },
-          body: JSON.stringify({
-            textQuery: `${business.name} Billings Montana`,
-            pageSize: 3,
-          }),
+      let candidates = [];
+      let searchMethod = "name";
+
+      try {
+        // First try the normal business-name search.
+        candidates = await searchGoogle(
+          `${business.name} Billings Montana`
+        );
+
+        // If Google found nothing, retry using the phone number.
+        if (!candidates.length && business.phone) {
+          searchMethod = "phone";
+
+          candidates = await searchGoogle(
+            `${business.phone} Billings Montana`
+          );
         }
-      );
+      } catch (googleError) {
+        console.error(
+          `Google search error for business ${business.id}:`,
+          googleError
+        );
 
-      const googleData = await response.json();
-
-      if (!response.ok) {
         results.push({
           id: business.id,
           name: business.name,
@@ -95,24 +127,49 @@ export async function POST(request) {
         continue;
       }
 
-      const candidate = googleData.places?.[0];
-
-      if (!candidate) {
-        await supabase
+      if (!candidates.length) {
+        const { error: updateError } = await supabase
           .from("businesses")
           .update({
             google_match_status: "not_found",
           })
           .eq("id", business.id);
 
+        if (updateError) {
+          results.push({
+            id: business.id,
+            name: business.name,
+            status: "database_error",
+          });
+
+          continue;
+        }
+
         results.push({
           id: business.id,
           name: business.name,
           status: "not_found",
+          searchMethod,
         });
 
         continue;
       }
+
+      // Prefer a candidate whose phone or website matches our record.
+      let candidate =
+        candidates.find((place) => {
+          const phoneMatch =
+            normalizePhone(business.phone) &&
+            normalizePhone(business.phone) ===
+              normalizePhone(place.nationalPhoneNumber);
+
+          const websiteMatch =
+            normalizeDomain(business.website) &&
+            normalizeDomain(business.website) ===
+              normalizeDomain(place.websiteUri);
+
+          return phoneMatch || websiteMatch;
+        }) || candidates[0];
 
       const nameMatch =
         normalizeName(business.name) ===
@@ -157,14 +214,25 @@ export async function POST(request) {
           status: "matched",
           rating: candidate.rating ?? null,
           reviews: candidate.userRatingCount ?? null,
+          searchMethod,
         });
       } else {
-        await supabase
+        const { error: updateError } = await supabase
           .from("businesses")
           .update({
             google_match_status: "review",
           })
           .eq("id", business.id);
+
+        if (updateError) {
+          results.push({
+            id: business.id,
+            name: business.name,
+            status: "database_error",
+          });
+
+          continue;
+        }
 
         results.push({
           id: business.id,
@@ -175,6 +243,7 @@ export async function POST(request) {
           phoneMatch: Boolean(phoneMatch),
           websiteMatch: Boolean(websiteMatch),
           nameMatch: Boolean(nameMatch),
+          searchMethod,
         });
       }
     }
@@ -187,7 +256,10 @@ export async function POST(request) {
     console.error("Places update error:", error);
 
     return Response.json(
-      { error: "Something went wrong." },
+      {
+        error: "Something went wrong.",
+        details: error.message,
+      },
       { status: 500 }
     );
   }
