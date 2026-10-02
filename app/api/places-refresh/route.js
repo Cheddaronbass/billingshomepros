@@ -2,17 +2,22 @@ import { createClient } from "@supabase/supabase-js";
 
 export async function POST(request) {
   try {
-    const adminSecret = request.headers.get("x-admin-secret");
+   const adminSecret = request.headers.get("x-admin-secret");
+const authorization = request.headers.get("authorization");
 
-    if (
-      !adminSecret ||
-      adminSecret !== process.env.ADMIN_API_SECRET
-    ) {
-      return Response.json(
-        { error: "Unauthorized." },
-        { status: 401 }
-      );
-    }
+const manualAuthorized =
+  adminSecret &&
+  adminSecret === process.env.ADMIN_API_SECRET;
+
+const cronAuthorized =
+  authorization === `Bearer ${process.env.CRON_SECRET}`;
+
+if (!manualAuthorized && !cronAuthorized) {
+  return Response.json(
+    { error: "Unauthorized." },
+    { status: 401 }
+  );
+}
 
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -142,4 +147,7 @@ export async function POST(request) {
       { status: 500 }
     );
   }
+}
+export async function GET(request) {
+  return POST(request);
 }
