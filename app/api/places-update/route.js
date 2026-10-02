@@ -19,6 +19,8 @@ function normalizeDomain(url) {
 function normalizeName(name) {
   return (name || "")
     .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/\b(incorporated|inc|llc|ltd|corp|corporation|co|company)\b/g, "")
     .replace(/[^a-z0-9]/g, "");
 }
 
