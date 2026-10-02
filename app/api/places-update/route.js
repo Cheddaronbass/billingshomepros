@@ -51,13 +51,17 @@ export async function POST(request) {
       .limit(5);
 
     if (error) {
-      console.error("Business lookup error:", error);
+  console.error("Business lookup error:", error);
 
-      return Response.json(
-        { error: "Unable to load businesses." },
-        { status: 500 }
-      );
-    }
+  return Response.json(
+    {
+      error: "Unable to load businesses.",
+      details: error.message,
+      code: error.code,
+    },
+    { status: 500 }
+  );
+}
 
     const results = [];
 
