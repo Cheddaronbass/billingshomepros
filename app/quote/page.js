@@ -92,6 +92,7 @@ function QuoteForm() {
               name="customer_name"
               value={formData.customer_name}
               onChange={handleChange}
+              autoComplete="name"
               required
             />
           </label>
@@ -104,6 +105,7 @@ function QuoteForm() {
   name="customer_email"
   value={formData.customer_email}
   onChange={handleChange}
+  autoComplete="email"
   pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
   title="Please enter a complete email address, such as name@example.com"
 />
