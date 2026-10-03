@@ -99,12 +99,14 @@ function QuoteForm() {
           <div className="quoteFormRow">
             <label>
               Email
-              <input
-                type="email"
-                name="customer_email"
-                value={formData.customer_email}
-                onChange={handleChange}
-              />
+       <input
+  type="email"
+  name="customer_email"
+  value={formData.customer_email}
+  onChange={handleChange}
+  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+  title="Please enter a complete email address, such as name@example.com"
+/>
             </label>
 
             <label>
