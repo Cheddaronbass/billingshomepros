@@ -58,7 +58,9 @@ function QuoteForm() {
       }
 
       setStatus("success");
-      setMessage("Your quote request has been submitted successfully.");
+      setMessage(
+   `Request sent! Your quote request for ${businessName} has been received.`
+);
 
       setFormData({
         customer_name: "",
