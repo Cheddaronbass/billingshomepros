@@ -28,7 +28,16 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-
+    
+if (
+  customer_email &&
+  !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer_email)
+) {
+  return Response.json(
+    { error: "Please enter a valid email address." },
+    { status: 400 }
+  );
+}
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.SUPABASE_PUBLISHABLE_KEY
