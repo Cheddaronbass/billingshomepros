@@ -10,95 +10,145 @@ export default function HomeSearch() {
   function handleSearch(event) {
     event.preventDefault();
 
-    const query = search.trim().toLowerCase();
+    const query = search
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " ");
 
     if (!query) return;
 
     let destination = null;
 
+    // PLUMBING — Water heaters
     if (
       query.includes("water heater") ||
+      query.includes("waterheater") ||
+      query.includes("waater heater") ||
+      query.includes("watter heater") ||
       query.includes("hot water")
     ) {
       destination = "/plumbing?service=water-heaters";
+
+    // PLUMBING — Drain / sewer
     } else if (
       query.includes("drain") ||
       query.includes("sewer") ||
       query.includes("clog")
     ) {
       destination = "/plumbing?service=drain-sewer";
+
+    // PLUMBING — General
     } else if (
       query.includes("plumb") ||
+      query.includes("plumer") ||
+      query.includes("plummer") ||
       query.includes("pipe") ||
       query.includes("faucet") ||
-      query.includes("toilet")
+      query.includes("toilet") ||
+      query.includes("leak")
     ) {
       destination = "/plumbing";
+
+    // HVAC — Furnace
     } else if (
       query.includes("furnace")
     ) {
       destination = "/hvac?service=furnace-repair";
+
+    // HVAC — Air conditioning
     } else if (
       query.includes("air conditioning") ||
-      query === "ac" ||
+      query.includes("air conditioner") ||
       query.includes("a/c") ||
-      query.includes("air conditioner")
+      query === "ac" ||
+      query.includes("ac repair")
     ) {
       destination = "/hvac?service=air-conditioning";
+
+    // HVAC — General
     } else if (
-      query.includes("heat") ||
-      query.includes("hvac")
+      query.includes("hvac") ||
+      query === "heating" ||
+      query.includes("heating repair") ||
+      query.includes("heater repair")
     ) {
       destination = "/hvac";
+
+    // ELECTRICAL — Panels
     } else if (
       query.includes("panel") ||
       query.includes("breaker")
     ) {
       destination = "/electrical?service=panels-breakers";
+
+    // ELECTRICAL — Lighting
     } else if (
       query.includes("light")
     ) {
       destination = "/electrical?service=lighting";
+
+    // ELECTRICAL — Wiring
     } else if (
       query.includes("wiring") ||
       query.includes("wire")
     ) {
       destination = "/electrical?service=wiring";
+
+    // ELECTRICAL — General
     } else if (
-      query.includes("electric")
+      query.includes("electric") ||
+      query.includes("electrician")
     ) {
       destination = "/electrical";
+
+    // ROOFING — Storm damage
     } else if (
       query.includes("storm") ||
       query.includes("hail")
     ) {
       destination = "/roofing?service=storm-damage";
+
+    // ROOFING — Repair
     } else if (
       query.includes("roof repair") ||
       query.includes("leaking roof") ||
       query.includes("roof leak")
     ) {
       destination = "/roofing?service=roof-repair";
+
+    // ROOFING — Replacement
     } else if (
       query.includes("roof replacement") ||
       query.includes("new roof")
     ) {
       destination = "/roofing?service=roof-replacement";
+
+    // ROOFING — General
     } else if (
-      query.includes("roof")
+      query.includes("roof") ||
+      query.includes("roofer")
     ) {
       destination = "/roofing";
+
+    // CONTRACTORS — Additions
     } else if (
       query.includes("addition")
     ) {
-      destination = "/contractors-remodeling?service=home-additions";
+      destination =
+        "/contractors-remodeling?service=home-additions";
+
+    // CONTRACTORS — Remodeling
     } else if (
       query.includes("remodel") ||
+      query.includes("remodle") ||
       query.includes("renovation") ||
       query.includes("kitchen") ||
       query.includes("bathroom")
     ) {
-      destination = "/contractors-remodeling?service=remodeling";
+      destination =
+        "/contractors-remodeling?service=remodeling";
+
+    // CONTRACTORS — General
     } else if (
       query.includes("contractor") ||
       query.includes("construction")
@@ -111,6 +161,8 @@ export default function HomeSearch() {
       return;
     }
 
+    // Unknown searches return to service choices
+    // instead of guessing the wrong category.
     router.push("/#services");
   }
 
