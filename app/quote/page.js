@@ -118,6 +118,7 @@ function QuoteForm() {
                 name="customer_phone"
                 value={formData.customer_phone}
                 onChange={handleChange}
+                autoComplete="tel"
               />
             </label>
           </div>
