@@ -3,7 +3,21 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    icon: "🔧",
+icon: (
+  <svg
+    viewBox="0 0 24 24"
+    width="32"
+    height="32"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14.7 6.3a4 4 0 0 0-5-5L7.5 3.5l3 3L8 9l-3-3-2.2 2.2a4 4 0 0 0 5 5L16.5 22l5.5-5.5-8.7-8.7a4 4 0 0 0 1.4-1.5Z" />
+  </svg>
+),
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
   },
