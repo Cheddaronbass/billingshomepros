@@ -117,6 +117,14 @@ export default function GetListedPage() {
   <span>✓ Showcase your services</span>
   <span>✓ Receive quote requests</span>
 </div>
+    <p className="requestChoiceHelp">
+  Choose the option that fits your business:
+</p>
+  <p className="requestChoiceHelp">
+  Choose the option that fits your business:
+</p>
+
+<div className="contractorRequestChoices">
           <div className="contractorRequestChoices">
             <button
               type="button"
@@ -127,7 +135,7 @@ export default function GetListedPage() {
               }
               onClick={() => setRequestType("claim")}
             >
-              Claim My Business
+              Claim an Existing Business
             </button>
 
             <button
