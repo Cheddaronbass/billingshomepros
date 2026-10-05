@@ -3,33 +3,38 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-icon: "🔧",
+    image: "/services/plumbing.png",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
+    theme: "plumbing",
   },
   {
     name: "Heating & Cooling",
-    icon: "🔥",
+    image: "/services/hvac.png",
     description: "Furnaces, air conditioning, maintenance & repair",
     href: "/hvac",
+    theme: "hvac",
   },
   {
     name: "Electrical",
-    icon: "⚡",
+    image: "/services/electrical.png",
     description: "Repairs, panels, lighting, wiring & installation",
     href: "/electrical",
+    theme: "electrical",
   },
   {
     name: "Roofing",
-    icon: "🏠",
+    image: "/services/roofing.png",
     description: "Roof repair, replacement, inspections & storm damage",
     href: "/roofing",
+    theme: "roofing",
   },
   {
     name: "Contractors & Remodeling",
-    icon: "🛠️",
+    image: "/services/remodeling.png",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
+    theme: "remodeling",
   },
 ];
 
@@ -91,20 +96,32 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="serviceGrid">
-          {services.map((service) => (
-            <a
-              className="serviceCard"
-              href={service.href}
-              key={service.name}
-            >
-              <div className="serviceIcon">{service.icon}</div>
-              <h3>{service.name}</h3>
-              <p>{service.description}</p>
-              <span>Browse Pros →</span>
-            </a>
-          ))}
-        </div>
+       <div className="serviceGrid">
+  {services.map((service) => (
+    <a
+      className={`serviceCard ${service.theme}`}
+      href={service.href}
+      key={service.name}
+    >
+      <div className="serviceArtwork">
+        <img
+          src={service.image}
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
+
+      <div className="serviceCardContent">
+        <h3>{service.name}</h3>
+        <p>{service.description}</p>
+
+        <span className="serviceBrowse">
+          Browse Pros →
+        </span>
+      </div>
+    </a>
+  ))}
+</div>
       </section>
 
       <section className="whySection" id="why">
