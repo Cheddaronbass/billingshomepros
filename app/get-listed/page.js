@@ -103,13 +103,20 @@ export default function GetListedPage() {
             FOR BILLINGS HOME-SERVICE PROFESSIONALS
           </div>
 
-          <h1>Get Listed on Billings Home Pros</h1>
+          <h1>Reach More Billings-Area Homeowners</h1>
 
-          <p className="quoteBusiness">
-            Already see your business on our site? Claim the listing.
-            Otherwise, request a new business listing.
-          </p>
+<p className="quoteBusiness">
+  Billings Home Pros helps local homeowners find trusted professionals
+  for the work they need. Claim your existing listing or add your
+  business to make sure customers can find accurate information about
+  your services.
+</p>
 
+<div className="contractorBenefits">
+  <span>✓ Local Billings-area visibility</span>
+  <span>✓ Showcase your services</span>
+  <span>✓ Receive quote requests</span>
+</div>
           <div className="contractorRequestChoices">
             <button
               type="button"
