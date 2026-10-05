@@ -126,7 +126,7 @@ export default function Home() {
 
       <section className="whySection" id="why">
         <div className="sectionHeading">
-          <div className="eyebrow">BUILT FOR BILLINGS</div>
+          <div className="eyebrow builtForBillings">BUILT FOR BILLINGS</div>
 
           <h2>Local home services without the runaround.</h2>
 
