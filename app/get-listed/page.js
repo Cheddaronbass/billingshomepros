@@ -280,6 +280,30 @@ export default function GetListedPage() {
               </div>
             )}
           </form>
+            <div className="featuredUpgrade">
+  <div className="eyebrow">STAND OUT TO LOCAL HOMEOWNERS</div>
+
+  <h2>Upgrade to a Featured Listing</h2>
+
+  <p>
+    Put your business above standard listings and make it easier
+    for Billings-area homeowners to find you.
+  </p>
+
+  <div className="featuredPrice">
+    <strong>$29.99</strong>
+    <span>/ month</span>
+  </div>
+
+  <a
+    className="featuredUpgradeButton"
+    href="https://buy.stripe.com/test_fZu7sF6wS3E43Lv39p3sI00"
+  >
+    Upgrade to Featured
+  </a>
+
+  <small>Cancel anytime.</small>
+</div>
         </div>
       </section>
 
