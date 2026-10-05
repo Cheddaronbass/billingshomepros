@@ -1288,3 +1288,27 @@ footer small {
   margin-top: 12px;
   color: var(--muted);
 }
+/* Featured business name input */
+
+.featuredBusinessInput {
+  width: 100%;
+  min-height: 52px;
+  padding: 15px 16px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc6b8;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #222222;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.featuredBusinessInput::placeholder {
+  color: #777777;
+}
+
+.featuredBusinessInput:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
+}
