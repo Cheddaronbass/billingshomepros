@@ -5,6 +5,10 @@ import { useState } from "react";
 export default function GetListedPage() {
   const [requestType, setRequestType] = useState("claim");
 
+  const [featuredBusinessName, setFeaturedBusinessName] = useState("");
+  const [featuredStatus, setFeaturedStatus] = useState("idle");
+  const [featuredMessage, setFeaturedMessage] = useState("");
+
   const [formData, setFormData] = useState({
     business_name: "",
     contact_name: "",
@@ -26,6 +30,46 @@ export default function GetListedPage() {
       ...current,
       [name]: value,
     }));
+  }
+
+  async function handleFeaturedCheckout() {
+    if (!featuredBusinessName.trim()) {
+      setFeaturedStatus("error");
+      setFeaturedMessage("Please enter your business name.");
+      return;
+    }
+
+    setFeaturedStatus("loading");
+    setFeaturedMessage("");
+
+    try {
+      const response = await fetch("/api/create-featured-checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          businessName: featuredBusinessName,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        setFeaturedStatus("error");
+        setFeaturedMessage(
+          result.error || "Unable to start checkout."
+        );
+        return;
+      }
+
+      window.location.href = result.url;
+    } catch {
+      setFeaturedStatus("error");
+      setFeaturedMessage(
+        "Something went wrong. Please try again."
+      );
+    }
   }
 
   async function handleSubmit(event) {
@@ -113,20 +157,20 @@ export default function GetListedPage() {
           </p>
 
           <div className="contractorBenefits">
-  <span>✓ Local Billings-area visibility</span>
-  <span>✓ Showcase your services</span>
-  <span>✓ Receive quote requests</span>
-</div>
+            <span>✓ Local Billings-area visibility</span>
+            <span>✓ Showcase your services</span>
+            <span>✓ Receive quote requests</span>
+          </div>
 
-<div className="listingTrustNote">
-  <strong>Claiming or adding a business is free.</strong>
-  <span>
-    We review submissions to help keep Billings Home Pros accurate
-    and useful for local homeowners.
-  </span>
-</div>
+          <div className="listingTrustNote">
+            <strong>Claiming or adding a business is free.</strong>
+            <span>
+              We review submissions to help keep Billings Home Pros accurate
+              and useful for local homeowners.
+            </span>
+          </div>
 
-<p className="requestChoiceHelp">
+          <p className="requestChoiceHelp">
             Choose the option that fits your business:
           </p>
 
@@ -280,30 +324,53 @@ export default function GetListedPage() {
               </div>
             )}
           </form>
-            <div className="featuredUpgrade">
-  <div className="eyebrow">STAND OUT TO LOCAL HOMEOWNERS</div>
 
-  <h2>Upgrade to a Featured Listing</h2>
+          <div className="featuredUpgrade">
+            <div className="eyebrow">
+              STAND OUT TO LOCAL HOMEOWNERS
+            </div>
 
-  <p>
-    Put your business above standard listings and make it easier
-    for Billings-area homeowners to find you.
-  </p>
+            <h2>Upgrade to a Featured Listing</h2>
 
-  <div className="featuredPrice">
-    <strong>$29.99</strong>
-    <span>/ month</span>
-  </div>
+            <p>
+              Put your business above standard listings and make it easier
+              for Billings-area homeowners to find you.
+            </p>
 
-  <a
-    className="featuredUpgradeButton"
-    href="https://buy.stripe.com/test_fZu7sF6wS3E43Lv39p3sI00"
-  >
-    Upgrade to Featured
-  </a>
+            <div className="featuredPrice">
+              <strong>$29.99</strong>
+              <span>/ month</span>
+            </div>
 
-  <small>Cancel anytime.</small>
-</div>
+            <input
+              type="text"
+              className="featuredBusinessInput"
+              placeholder="Enter your business name"
+              value={featuredBusinessName}
+              onChange={(event) =>
+                setFeaturedBusinessName(event.target.value)
+              }
+            />
+
+            <button
+              type="button"
+              className="featuredUpgradeButton"
+              onClick={handleFeaturedCheckout}
+              disabled={featuredStatus === "loading"}
+            >
+              {featuredStatus === "loading"
+                ? "Opening Checkout..."
+                : "Upgrade to Featured"}
+            </button>
+
+            {featuredMessage && (
+              <p className="featuredMessage">
+                {featuredMessage}
+              </p>
+            )}
+
+            <small>Cancel anytime.</small>
+          </div>
         </div>
       </section>
 
