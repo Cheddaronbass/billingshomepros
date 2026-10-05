@@ -241,9 +241,28 @@ h1 span {
   font-size: 0.95rem;
   font-weight: 700;
 }
-
 .contractorBenefits span {
   white-space: nowrap;
+}
+.listingTrustNote {
+  margin: 0 0 26px;
+  padding: 15px 18px;
+  background: #f8f1df;
+  border: 1px solid #ded3bc;
+  border-radius: 8px;
+  color: var(--charcoal);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.listingTrustNote strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--forest);
+}
+
+.listingTrustNote span {
+  font-size: 0.9rem;
 }
 .sectionHeading h2 {
   margin-bottom: 15px;
