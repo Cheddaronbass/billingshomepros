@@ -66,10 +66,9 @@ export default function Home() {
         </div>
 
         <div className="heroCopy">
-          <div className="eyebrow">
-            BILLINGS • LAUREL • YELLOWSTONE COUNTY
-          </div>
-
+          <div className="eyebrow builtForBillings">
+  BILLINGS • LAUREL • YELLOWSTONE COUNTY
+</div>
           <h1>
             Find the Right
             <span> Home Pro.</span>
@@ -86,7 +85,7 @@ export default function Home() {
 
       <section className="servicesSection" id="services">
         <div className="sectionHeading">
-          <div className="eyebrow">START YOUR SEARCH</div>
+          <div className="eyebrow builtForBillings">START YOUR SEARCH</div>
 
           <h2>What does your home need?</h2>
 
