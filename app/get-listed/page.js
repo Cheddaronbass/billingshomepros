@@ -113,12 +113,20 @@ export default function GetListedPage() {
           </p>
 
           <div className="contractorBenefits">
-            <span>✓ Local Billings-area visibility</span>
-            <span>✓ Showcase your services</span>
-            <span>✓ Receive quote requests</span>
-          </div>
+  <span>✓ Local Billings-area visibility</span>
+  <span>✓ Showcase your services</span>
+  <span>✓ Receive quote requests</span>
+</div>
 
-          <p className="requestChoiceHelp">
+<div className="listingTrustNote">
+  <strong>Claiming or adding a business is free.</strong>
+  <span>
+    We review submissions to help keep Billings Home Pros accurate
+    and useful for local homeowners.
+  </span>
+</div>
+
+<p className="requestChoiceHelp">
             Choose the option that fits your business:
           </p>
 
