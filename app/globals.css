@@ -226,7 +226,11 @@ h1 span {
   margin: 0 auto 45px;
   text-align: center;
 }
-
+.builtForBillings {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
 .sectionHeading h2 {
   margin-bottom: 15px;
   color: var(--forest);
