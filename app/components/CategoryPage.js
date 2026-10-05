@@ -40,7 +40,9 @@ export default async function CategoryPage({
     query = query.contains("services", [serviceNames[selectedService]]);
   }
 
-  const { data, error } = await query.order("name");
+ const { data, error } = await query
+  .order("featured", { ascending: false })
+  .order("name", { ascending: true });
 
   if (error) {
     console.error("Supabase error:", error);
