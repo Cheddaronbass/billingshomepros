@@ -231,6 +231,20 @@ h1 span {
   font-weight: 800;
   letter-spacing: 0.12em;
 }
+.contractorBenefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  margin: 22px 0 28px;
+  color: var(--forest);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contractorBenefits span {
+  white-space: nowrap;
+}
 .sectionHeading h2 {
   margin-bottom: 15px;
   color: var(--forest);
