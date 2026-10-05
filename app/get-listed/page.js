@@ -105,26 +105,23 @@ export default function GetListedPage() {
 
           <h1>Reach More Billings-Area Homeowners</h1>
 
-<p className="quoteBusiness">
-  Billings Home Pros helps local homeowners find trusted professionals
-  for the work they need. Claim your existing listing or add your
-  business to make sure customers can find accurate information about
-  your services.
-</p>
+          <p className="quoteBusiness">
+            Billings Home Pros helps local homeowners find trusted
+            professionals for the work they need. Claim your existing
+            listing or add your business to make sure customers can find
+            accurate information about your services.
+          </p>
 
-<div className="contractorBenefits">
-  <span>✓ Local Billings-area visibility</span>
-  <span>✓ Showcase your services</span>
-  <span>✓ Receive quote requests</span>
-</div>
-    <p className="requestChoiceHelp">
-  Choose the option that fits your business:
-</p>
-  <p className="requestChoiceHelp">
-  Choose the option that fits your business:
-</p>
+          <div className="contractorBenefits">
+            <span>✓ Local Billings-area visibility</span>
+            <span>✓ Showcase your services</span>
+            <span>✓ Receive quote requests</span>
+          </div>
 
-<div className="contractorRequestChoices">
+          <p className="requestChoiceHelp">
+            Choose the option that fits your business:
+          </p>
+
           <div className="contractorRequestChoices">
             <button
               type="button"
@@ -242,6 +239,7 @@ export default function GetListedPage() {
               {requestType === "claim"
                 ? "Anything we should know about your claim?"
                 : "Tell us about your business and services"}
+
               <textarea
                 name="message"
                 rows="5"
