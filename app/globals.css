@@ -314,7 +314,7 @@ h1 span {
   width: 100%;
   padding: 13px 10px;
   border-radius: 8px;
-  color: white;
+  color: #ffffff !important;
   font-size: 0.9rem;
   font-weight: 800;
   text-align: center;
