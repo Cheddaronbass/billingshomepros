@@ -338,6 +338,11 @@ export default function GetListedPage() {
               already be listed on Billings Home Pros before upgrading.
             </p>
 
+                <div className="featuredBenefits">
+  <span>✓ Priority placement above standard listings</span>
+  <span>✓ Featured badge that stands out to homeowners</span>
+  <span>✓ Receive homeowner quote requests</span>
+</div>
             <div className="featuredPrice">
               <strong>$29.99</strong>
               <span>/ month</span>
