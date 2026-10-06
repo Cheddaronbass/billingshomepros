@@ -19,7 +19,7 @@ export async function POST(request) {
 
     const { data: businesses, error: businessError } = await supabase
       .from("businesses")
-      .select("id, name")
+      .select("id, name, claimed")
       .ilike("name", businessName.trim())
       .limit(2);
 
@@ -53,6 +53,16 @@ export async function POST(request) {
     }
 
     const business = businesses[0];
+
+    if (business.claimed !== true) {
+      return Response.json(
+        {
+          error:
+            "This business must be claimed and verified before upgrading to Featured.",
+        },
+        { status: 403 }
+      );
+    }
 
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
