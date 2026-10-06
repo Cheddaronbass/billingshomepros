@@ -332,13 +332,11 @@ export default function GetListedPage() {
 
             <h2>Upgrade to a Featured Listing</h2>
 
-            <p>
-<p>
+           <p>
   Put your business above standard listings and make it easier
   for Billings-area homeowners to find you. Your business must
   already be listed on Billings Home Pros before upgrading.
 </p>
-            </p>
 
             <div className="featuredPrice">
               <strong>$29.99</strong>
