@@ -341,7 +341,7 @@ export default function GetListedPage() {
                 <div className="featuredBenefits">
   <span>✓ Priority placement above standard listings</span>
   <span>✓ Featured badge that stands out to homeowners</span>
-  <span>✓ Receive homeowner quote requests</span>
+<span>✓ Receive homeowner quote requests directly</span>
 </div>
             <div className="featuredPrice">
               <strong>$29.99</strong>
