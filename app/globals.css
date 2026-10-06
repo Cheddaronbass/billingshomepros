@@ -1329,3 +1329,25 @@ footer small {
 .featuredBenefits span {
   display: block;
 }
+/* CONTRACTOR GET LISTED CTA */
+
+.proSection .lightButton {
+  display: inline-block;
+  padding: 15px 26px;
+  background: var(--rust);
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.proSection .lightButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.24);
+}
