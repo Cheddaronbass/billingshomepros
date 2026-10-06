@@ -1333,12 +1333,12 @@ footer small {
 
 .proSection .lightButton {
   display: inline-block;
-  padding: 15px 26px;
+  padding: 18px 34px;
   background: var(--rust);
   border: 2px solid #ffffff;
   border-radius: 8px;
   color: #ffffff !important;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 800;
   text-decoration: none;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
