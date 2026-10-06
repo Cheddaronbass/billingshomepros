@@ -104,7 +104,8 @@ export default function GetListedPage() {
 
       setMessage(
         requestType === "claim"
-? "Your claim request has been submitted. We'll review and verify your connection to the business. Once approved, your listing can be upgraded to Featured."
+          ? "Your claim request has been submitted. We'll review and verify your connection to the business. Once approved, your listing can be upgraded to Featured."
+          : "Your business listing request has been submitted for review."
       );
 
       setFormData({
@@ -331,11 +332,11 @@ export default function GetListedPage() {
 
             <h2>Upgrade to a Featured Listing</h2>
 
-           <p>
-  Put your business above standard listings and make it easier
-  for Billings-area homeowners to find you. Your business must
-  already be listed on Billings Home Pros before upgrading.
-</p>
+            <p>
+              Put your business above standard listings and make it easier
+              for Billings-area homeowners to find you. Your business must
+              already be listed on Billings Home Pros before upgrading.
+            </p>
 
             <div className="featuredPrice">
               <strong>$29.99</strong>
