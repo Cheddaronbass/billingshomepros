@@ -104,8 +104,7 @@ export default function GetListedPage() {
 
       setMessage(
         requestType === "claim"
-          ? "Your claim request has been submitted. We'll review the information before making any changes to the listing."
-          : "Your business listing request has been submitted for review."
+? "Your claim request has been submitted. We'll review and verify your connection to the business. Once approved, your listing can be upgraded to Featured."
       );
 
       setFormData({
