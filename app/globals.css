@@ -1312,3 +1312,20 @@ footer small {
   border-color: var(--forest);
   box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
 }
+/* FEATURED LISTING BENEFITS */
+
+.featuredBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 480px;
+  margin: 0 auto 22px;
+  color: var(--forest);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.featuredBenefits span {
+  display: block;
+}
