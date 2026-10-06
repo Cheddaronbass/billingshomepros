@@ -226,7 +226,9 @@ export default async function CategoryPage({
           <p>{contractorDescription}</p>
         </div>
 
-        <button className="lightButton">Get Listed</button>
+        <a className="lightButton" href="/get-listed">
+  Get Listed
+</a>
       </section>
 
       <footer>
