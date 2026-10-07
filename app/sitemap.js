@@ -21,6 +21,11 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/hvac/ac-repair`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },    {
       url: `${baseUrl}/electrical`,
       lastModified: new Date(),
       changeFrequency: "weekly",
