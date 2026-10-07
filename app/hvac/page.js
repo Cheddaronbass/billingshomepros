@@ -3,7 +3,7 @@ import CategoryPage from "../components/CategoryPage";
 export const metadata = {
   title: "HVAC Repair, Heating & AC Companies in Billings, MT",
   description:
-    "Find local HVAC companies in Billings, Montana for heating, air conditioning, furnace repair, and maintenance. Compare local professionals and request a quote.",
+  "Find local HVAC repair companies in Billings, MT for AC repair, furnace repair, heating, air conditioning, installation, and maintenance. Compare local pros and request a quote.",
   alternates: {
     canonical: "/hvac",
   },
