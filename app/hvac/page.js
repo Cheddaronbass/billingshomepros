@@ -54,7 +54,12 @@ export default function HVACPage({ searchParams }) {
       heroDescription="Find local HVAC professionals for heating, air conditioning, furnace repair, maintenance and more."
       eyebrow="FIND A LOCAL HVAC PROFESSIONAL"
       introTitle="HVAC professionals serving the Billings area"
-      introDescription="Compare local HVAC companies serving Billings for AC repair, furnace repair, heating and cooling, installation, and routine maintenance. Find the right local professional for your home and request a quote."      emptyTitle="No matching HVAC listings yet."
+introDescription="Compare local HVAC companies serving Billings for AC repair, furnace repair, heating and cooling, installation, and routine maintenance. Find the right local professional for your home and request a quote."
+seoLink={{
+  href: "/hvac/ac-repair",
+  label: "Looking for AC repair in Billings? View local AC repair professionals",
+}}
+emptyTitle="No matching HVAC listings yet."
       emptyDescription="Try another HVAC service or view all HVAC professionals serving the Billings area."
       icon="❄️"
       contractorEyebrow="BILLINGS HVAC COMPANIES"
