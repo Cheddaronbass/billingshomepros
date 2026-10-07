@@ -16,8 +16,9 @@ export default async function CategoryPage({
   icon,
   contractorEyebrow,
   contractorTitle,
-  contractorDescription,
-  supportsEmergency = false,
+ contractorDescription,
+seoLink,
+supportsEmergency = false,
 }) {
   const params = await searchParams;
   const selectedService = params?.service || "";
@@ -105,6 +106,11 @@ export default async function CategoryPage({
             );
           })}
         </div>
+                  {seoLink && (
+          <div className="categorySeoLink">
+            <a href={seoLink.href}>{seoLink.label} →</a>
+          </div>
+        )}
 
         <div className="contractorList">
           {businesses.length === 0 ? (
