@@ -234,15 +234,19 @@ export default async function CategoryPage({
                     )}
 
                     {business.website && (
-                      <a
-                        className="actionButton websiteButton"
-                        href={business.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Visit Website
-                      </a>
-                    )}
+  <TrackedLink
+    className="actionButton websiteButton"
+    href={business.website}
+    eventName="contractor_website_click"
+    businessId={business.id}
+    businessName={business.name}
+    category={category}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Visit Website
+  </TrackedLink>
+)}
 
                     <a
                       className="actionButton quoteButton"
