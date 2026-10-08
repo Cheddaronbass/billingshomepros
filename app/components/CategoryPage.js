@@ -1,4 +1,6 @@
+
 import { createClient } from "@supabase/supabase-js";
+import TrackedLink from "./TrackedLink";
 
 export default async function CategoryPage({
   searchParams,
@@ -16,9 +18,9 @@ export default async function CategoryPage({
   icon,
   contractorEyebrow,
   contractorTitle,
- contractorDescription,
-seoLink,
-supportsEmergency = false,
+  contractorDescription,
+  seoLink,
+  supportsEmergency = false,
 }) {
   const params = await searchParams;
   const selectedService = params?.service || "";
@@ -38,12 +40,14 @@ supportsEmergency = false,
   }
 
   if (serviceNames[selectedService]) {
-    query = query.contains("services", [serviceNames[selectedService]]);
+    query = query.contains("services", [
+      serviceNames[selectedService],
+    ]);
   }
 
- const { data, error } = await query
-  .order("featured", { ascending: false })
-  .order("name", { ascending: true });
+  const { data, error } = await query
+    .order("featured", { ascending: false })
+    .order("name", { ascending: true });
 
   if (error) {
     console.error("Supabase error:", error);
@@ -55,7 +59,9 @@ supportsEmergency = false,
     <main>
       <header className="siteHeader">
         <a className="textBrand" href="/">
-          <span className="brandMain">Billings Home Pros</span>
+          <span className="brandMain">
+            Billings Home Pros
+          </span>
           <span className="brandSub">
             LOCAL HOME SERVICES • BILLINGS, MT
           </span>
@@ -98,7 +104,9 @@ supportsEmergency = false,
             return (
               <a
                 href={filter.href}
-                className={isActive ? "activeFilter" : ""}
+                className={
+                  isActive ? "activeFilter" : ""
+                }
                 key={filter.label}
               >
                 {filter.label}
@@ -106,16 +114,21 @@ supportsEmergency = false,
             );
           })}
         </div>
-                  {seoLink && (
+
+        {seoLink && (
           <div className="categorySeoLink">
-            <a href={seoLink.href}>{seoLink.label} →</a>
+            <a href={seoLink.href}>
+              {seoLink.label} →
+            </a>
           </div>
         )}
 
         <div className="contractorList">
           {businesses.length === 0 ? (
             <div className="comingSoon">
-              <div className="comingSoonIcon">{icon}</div>
+              <div className="comingSoonIcon">
+                {icon}
+              </div>
 
               <div>
                 <h2>{emptyTitle}</h2>
@@ -124,51 +137,69 @@ supportsEmergency = false,
             </div>
           ) : (
             businesses.map((business) => (
-              <article className="contractorCard" key={business.id}>
+              <article
+                className="contractorCard"
+                key={business.id}
+              >
                 <div className="contractorMain">
                   <div className="contractorTop">
-                 <div>
-  <div className="businessNameRow">
-    <h2>{business.name}</h2>
+                    <div>
+                      <div className="businessNameRow">
+                        <h2>{business.name}</h2>
 
-    {business.featured && (
-      <span className="featuredBadge">Featured</span>
-    )}
+                        {business.featured && (
+                          <span className="featuredBadge">
+                            Featured
+                          </span>
+                        )}
 
-    {business.claimed && (
-      <span className="claimedBadge">✓ Claimed</span>
-    )}
-  </div>
+                        {business.claimed && (
+                          <span className="claimedBadge">
+                            ✓ Claimed
+                          </span>
+                        )}
+                      </div>
 
-  <p className="contractorLocation">
-    {business.service_area || "Billings, Montana"}
-  </p>
-</div>
+                      <p className="contractorLocation">
+                        {business.service_area ||
+                          "Billings, Montana"}
+                      </p>
+                    </div>
 
                     {business.google_rating && (
-  <div className="ratingBox">
-    <div className="ratingScore">
-      <span className="ratingStar">★</span>
-      <strong>{business.google_rating}</strong>
-    </div>
+                      <div className="ratingBox">
+                        <div className="ratingScore">
+                          <span className="ratingStar">
+                            ★
+                          </span>
+                          <strong>
+                            {business.google_rating}
+                          </strong>
+                        </div>
 
-    <span className="ratingSource">
-      Google rating
-    </span>
+                        <span className="ratingSource">
+                          Google rating
+                        </span>
 
-    <span className="ratingCount">
-      {business.google_review_count || 0} reviews
-    </span>
-  </div>
-)}
+                        <span className="ratingCount">
+                          {business.google_review_count ||
+                            0}{" "}
+                          reviews
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="serviceTags">
                     <span>{categoryLabel}</span>
 
-                    {business.services?.map((service) => (
-                      <span key={service}>{service}</span>
-                    ))}
+                    {business.services?.map(
+                      (service) => (
+                        <span key={service}>
+                          {service}
+                        </span>
+                      )
+                    )}
 
                     {business.emergency_service && (
                       <span>Emergency Service</span>
@@ -182,51 +213,46 @@ supportsEmergency = false,
                   )}
 
                   <div className="homeProsRating">
-                    <strong>Billings Home Pros Reviews</strong>
+                    <strong>
+                      Billings Home Pros Reviews
+                    </strong>
                     <span>No reviews yet</span>
                   </div>
 
-                <div className="contractorActions">
-  {business.phone && (
-    <a
-      className="actionButton callButton"
-      href={`tel:${business.phone}`}
-onClick={() => {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", "contractor_call_click", {
-      business_id: String(business.id),
-      business_name: business.name,
-      category: category,
-    });
-  }
-}}
-    >
-      Call {business.phone}
-    </a>
-  )}
+                  <div className="contractorActions">
+                    {business.phone && (
+                      <TrackedLink
+                        className="actionButton callButton"
+                        href={`tel:${business.phone}`}
+                        eventName="contractor_call_click"
+                        businessId={business.id}
+                        businessName={business.name}
+                        category={category}
+                      >
+                        Call {business.phone}
+                      </TrackedLink>
+                    )}
 
-  {business.website && (
-    <a
-      className="actionButton websiteButton"
-      href={business.website}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Visit Website
-    </a>
-  )}
+                    {business.website && (
+                      <a
+                        className="actionButton websiteButton"
+                        href={business.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit Website
+                      </a>
+                    )}
 
-  <a
-  className="actionButton quoteButton"
-  href={`/quote?businessId=${business.id}&businessName=${encodeURIComponent(
-    business.name
-  )}`}
->
-  Request a Quote
-</a>
-</div>
-
-          
+                    <a
+                      className="actionButton quoteButton"
+                      href={`/quote?businessId=${business.id}&businessName=${encodeURIComponent(
+                        business.name
+                      )}`}
+                    >
+                      Request a Quote
+                    </a>
+                  </div>
                 </div>
               </article>
             ))
@@ -236,21 +262,24 @@ onClick={() => {
 
       <section className="proSection">
         <div>
-          <div className="eyebrow light">{contractorEyebrow}</div>
+          <div className="eyebrow light">
+            {contractorEyebrow}
+          </div>
+
           <h2>{contractorTitle}</h2>
           <p>{contractorDescription}</p>
         </div>
 
         <a className="lightButton" href="/get-listed">
-  Get Listed
-</a>
+          Get Listed
+        </a>
       </section>
 
       <footer>
         <strong>Billings Home Pros</strong>
         <p>
-          Connecting Billings-area homeowners with local home-service
-          professionals.
+          Connecting Billings-area homeowners with
+          local home-service professionals.
         </p>
         <small>© 2026 BillingsHomePros.com</small>
       </footer>
