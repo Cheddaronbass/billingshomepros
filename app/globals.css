@@ -1630,3 +1630,9 @@ footer small {
   border-color: #087fbd;
   color: #ffffff !important;
 }
+/* BHP RESTYLE — PHASE 12: CATEGORY TITLE */
+
+.categoryIntro h2 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1.05;
+}
