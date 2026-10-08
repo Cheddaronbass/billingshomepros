@@ -1500,3 +1500,19 @@ footer small {
 .featuredUpgradeButton:hover {
   background: #64d0ff;
 }
+
+/* COMPACT MOBILE CATEGORY FILTERS */
+
+@media (max-width: 760px) {
+  .filterBar {
+    padding: 10px;
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+
+  .filterBar a {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+    border-radius: 7px;
+  }
+}
