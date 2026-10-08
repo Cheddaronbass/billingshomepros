@@ -1498,3 +1498,22 @@ footer small {
   object-fit: cover;
   object-position: center;
 }
+/* BHP RESTYLE — PHASE 6: WHY SECTION */
+
+.whySection {
+  background: #ffffff;
+}
+
+.whySection .sectionHeading h2,
+.whySection .feature strong {
+  color: #0b1117;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.whySection .eyebrow {
+  color: #009de0;
+}
+
+.whySection .feature {
+  border-top: 3px solid #25b9ff;
+}
