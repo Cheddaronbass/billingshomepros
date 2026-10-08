@@ -1391,3 +1391,30 @@ footer small {
   font-weight: 800;
   line-height: 1.1;
 }
+
+/* BHP RESTYLE — COMPACT CATEGORY LISTINGS */
+
+.categoryContent {
+  padding-top: 35px;
+  padding-bottom: 60px;
+}
+
+.categoryIntro {
+  margin-bottom: 22px;
+  gap: 30px;
+}
+
+.categoryIntro h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.12;
+}
+
+.categoryIntro > p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.filterBar {
+  margin-bottom: 25px;
+  padding: 12px;
+}
