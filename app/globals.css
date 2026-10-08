@@ -1572,3 +1572,28 @@ footer small {
 .categoryHero p {
   color: #c4d2df;
 }
+
+/* BHP RESTYLE — PHASE 10: CONTRACTOR CARDS */
+
+.contractorCard {
+  background: #ffffff;
+  border: 1px solid #dce5ec;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(11, 17, 23, 0.08);
+}
+
+.contractorCard h2 {
+  color: #101b27;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.serviceTags span {
+  background: #eaf7ff;
+  color: #075b89;
+}
+
+.contractorActions .quoteButton {
+  background: #25b9ff;
+  border-color: #25b9ff;
+  color: #0b1117;
+}
