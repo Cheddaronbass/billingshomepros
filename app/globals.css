@@ -1517,3 +1517,23 @@ footer small {
 .whySection .feature {
   border-top: 3px solid #25b9ff;
 }
+/* BHP RESTYLE — PHASE 7: CONTRACTOR SECTION */
+
+.proSection {
+  background: #101b27;
+  border-top: 1px solid #273d50;
+}
+
+.proSection .eyebrow {
+  color: #25b9ff;
+}
+
+.proSection .lightButton {
+  background: #25b9ff;
+  color: #0b1117 !important;
+  border-color: #25b9ff;
+}
+
+.proSection .lightButton:hover {
+  background: #64d0ff;
+}
