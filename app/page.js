@@ -70,8 +70,9 @@ export default function Home() {
   BILLINGS • LAUREL • YELLOWSTONE COUNTY
 </div>
           <h1>
-            Find the Right
-            <span> Home Pro.</span>
+          Find the Right
+<br />
+<span>Home Pro.</span>
           </h1>
 
           <p className="heroText">
