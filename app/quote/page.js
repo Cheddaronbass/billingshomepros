@@ -58,6 +58,12 @@ function QuoteForm() {
       }
 
       setStatus("success");
+            if (typeof window.gtag === "function") {
+        window.gtag("event", "quote_request_submitted", {
+          business_id: businessId || "",
+          business_name: businessName,
+        });
+      }
       setMessage(
    `Request sent! Your quote request for ${businessName} has been received.`
 );
