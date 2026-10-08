@@ -1597,3 +1597,14 @@ footer small {
   border-color: #25b9ff;
   color: #0b1117;
 }
+
+/* BHP RESTYLE — PHASE 11: CATEGORY TEXT */
+
+.categoryHero .eyebrow {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.categoryHero h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+}
