@@ -1454,3 +1454,23 @@ footer small {
 .serviceCard p {
   color: #526170;
 }
+/* BHP RESTYLE — PHASE 4B: MODERN SERVICE CARDS */
+
+.serviceCard {
+  background: #101b27;
+  border: 1px solid #273d50;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.serviceCard h3 {
+  color: #ffffff;
+}
+
+.serviceCard p {
+  color: #c4d2df;
+}
+
+.serviceCard .serviceBrowse {
+  background: #25b9ff !important;
+  color: #0b1117 !important;
+}
