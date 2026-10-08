@@ -1608,3 +1608,25 @@ footer small {
 .categoryHero h1 {
   font-size: clamp(3.5rem, 7vw, 6rem);
 }
+
+/* BHP RESTYLE — PHASE 12: CATEGORY FILTERS */
+
+.filterBar {
+  background: #f0f6fa;
+  border-color: #dce5ec;
+}
+
+.filterBar a {
+  border-radius: 8px;
+  color: #101b27;
+}
+
+.filterBar a:hover {
+  background: #e0f4ff;
+}
+
+.filterBar a.activeFilter {
+  background: #087fbd !important;
+  border-color: #087fbd;
+  color: #ffffff !important;
+}
