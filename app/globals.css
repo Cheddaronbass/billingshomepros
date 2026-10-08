@@ -1474,3 +1474,20 @@ footer small {
   background: #25b9ff !important;
   color: #0b1117 !important;
 }
+/* BHP RESTYLE — PHASE 5: SERVICES BACKGROUND */
+
+.servicesSection {
+  background: #0b1117;
+}
+
+.servicesSection .sectionHeading h2 {
+  color: #ffffff;
+}
+
+.servicesSection .sectionHeading p {
+  color: #c4d2df;
+}
+
+.servicesSection .eyebrow {
+  color: #25b9ff;
+}
