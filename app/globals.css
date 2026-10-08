@@ -1537,3 +1537,23 @@ footer small {
 .proSection .lightButton:hover {
   background: #64d0ff;
 }
+/* BHP RESTYLE — PHASE 8: FOOTER */
+
+footer {
+  background: #080d12;
+  border-top: 1px solid #273d50;
+}
+
+footer strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+footer p {
+  color: #c4d2df;
+}
+
+footer small {
+  color: #8296a8;
+}
