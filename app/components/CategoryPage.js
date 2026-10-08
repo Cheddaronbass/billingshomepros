@@ -191,6 +191,15 @@ supportsEmergency = false,
     <a
       className="actionButton callButton"
       href={`tel:${business.phone}`}
+onClick={() => {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", "contractor_call_click", {
+      business_id: String(business.id),
+      business_name: business.name,
+      category: category,
+    });
+  }
+}}
     >
       Call {business.phone}
     </a>
