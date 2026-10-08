@@ -1557,3 +1557,18 @@ footer p {
 footer small {
   color: #8296a8;
 }
+/* BHP RESTYLE — PHASE 9: CATEGORY HERO */
+
+.categoryHero {
+  background: #101b27;
+}
+
+.categoryHero h1 {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -2px;
+}
+
+.categoryHero p {
+  color: #c4d2df;
+}
