@@ -1436,3 +1436,21 @@ footer small {
 .hero .searchBox button:hover {
   background: #64d0ff;
 }
+/* BHP RESTYLE — PHASE 4: SERVICE CARDS */
+
+.serviceCard {
+  background: #ffffff;
+  border: 1px solid #dce5ec;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(11, 17, 23, 0.08);
+}
+
+.serviceCard h3 {
+  color: #0b1117;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+.serviceCard p {
+  color: #526170;
+}
