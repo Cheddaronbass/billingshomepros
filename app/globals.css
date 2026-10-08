@@ -1470,3 +1470,33 @@ footer small {
   border-color: #25b9ff;
   color: #0b1117;
 }
+
+/* BHP RESTYLE — FEATURED LISTING */
+
+.featuredUpgrade {
+  background: #eaf7ff;
+  border: 1px solid #b9e5ff;
+  border-radius: 14px;
+}
+
+.featuredUpgrade h2 {
+  color: #101b27;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+.featuredUpgrade p,
+.featuredBenefits,
+.featuredPrice {
+  color: #101b27;
+}
+
+.featuredUpgradeButton {
+  background: #25b9ff;
+  color: #0b1117 !important;
+  border: 1px solid #009de0;
+}
+
+.featuredUpgradeButton:hover {
+  background: #64d0ff;
+}
