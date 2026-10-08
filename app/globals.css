@@ -1425,3 +1425,14 @@ footer small {
   margin-right: auto;
   border-color: #25b9ff;
 }
+/* BHP RESTYLE — PHASE 3: SEARCH BUTTON */
+
+.hero .searchBox button {
+  background: #25b9ff;
+  color: #0b1117;
+  border-radius: 7px;
+}
+
+.hero .searchBox button:hover {
+  background: #64d0ff;
+}
