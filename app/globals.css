@@ -1,3 +1,9 @@
+
+/* BILLINGS HOME PROS — GLOBAL STYLES */
+/* Modern charcoal, white, and electric-blue theme */
+
+/* BASE */
+
 :root {
   --forest: #18382d;
   --forest-light: #285343;
@@ -7,6 +13,9 @@
   --charcoal: #25312c;
   --white: #ffffff;
   --muted: #68706c;
+  --dark: #0b1117;
+  --navy: #101b27;
+  --blue: #25b9ff;
 }
 
 * {
@@ -34,17 +43,44 @@ input {
   font: inherit;
 }
 
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  max-width: 670px;
+  margin-bottom: 22px;
+  color: var(--forest);
+  font-size: clamp(3.2rem, 6vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -3px;
+}
+
+h1 span {
+  color: var(--rust);
+}
+
 /* HEADER */
 
 .siteHeader {
   min-height: 86px;
   padding: 14px 7%;
-  background: var(--forest);
-  color: var(--white);
+  background: var(--dark);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 5px 24px rgba(0,0,0,0.18);
 }
 
 .textBrand {
@@ -53,17 +89,19 @@ input {
 }
 
 .brandMain {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.55rem;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: white;
 }
 
 .brandSub {
   margin-top: 4px;
-  color: var(--sand);
+  color: var(--blue);
   font-size: 0.64rem;
   font-weight: 700;
-  letter-spacing: 1.6px;
+  letter-spacing: 2px;
 }
 
 nav {
@@ -82,25 +120,29 @@ nav a:hover {
   color: var(--sand);
 }
 
-/* HERO */
+.siteHeader nav a {
+  color: white;
+}
+
+.siteHeader nav a:hover {
+  color: var(--blue);
+}
+
+/* HOMEPAGE HERO */
+
 .hero {
-  padding: 45px 7% 70px;
-  background:
-    linear-gradient(
-      115deg,
-      #f8f5ed 0%,
-      #f5f0e5 58%,
-      #eadfc9 100%
-    );
+  padding: 55px 7% 80px;
+  background: var(--dark);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 38px;
+  gap: 30px;
   overflow: hidden;
 }
 
 .heroCopy {
-  max-width: 720px;
+  max-width: 900px;
+  text-align: center;
 }
 
 .eyebrow {
@@ -115,36 +157,26 @@ nav a:hover {
   color: var(--sand);
 }
 
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
+.hero .eyebrow {
+  color: var(--blue);
 }
 
-h1,
-h2,
-.brandMain {
-  font-family: Georgia, "Times New Roman", serif;
+.hero h1 {
+  max-width: 900px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  letter-spacing: -2px;
 }
 
-h1 {
-  max-width: 670px;
-  margin-bottom: 22px;
-  color: var(--forest);
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
-  line-height: 0.96;
-  letter-spacing: -3px;
-}
-
-h1 span {
-  color: var(--rust);
+.hero h1 span {
+  color: var(--blue);
 }
 
 .heroText {
   max-width: 630px;
-  margin-bottom: 30px;
-  color: #4f5b55;
+  margin: 0 auto 30px;
+  color: #c4d2df;
   font-size: 1.12rem;
   line-height: 1.7;
 }
@@ -155,6 +187,7 @@ h1 span {
   justify-content: center;
   align-items: center;
 }
+
 .heroLogo {
   display: block;
   width: 100%;
@@ -162,18 +195,26 @@ h1 span {
   margin: 0 auto;
   height: auto;
   border-radius: 14px;
-  box-shadow: 0 18px 45px rgba(32, 53, 43, 0.12);
+  box-shadow: 0 18px 45px rgba(32,53,43,0.12);
 }
+
+/* SEARCH */
 
 .searchBox {
   width: 100%;
   max-width: 680px;
   padding: 7px;
-  background: var(--white);
+  background: white;
   border: 1px solid #d7ccb5;
   border-radius: 10px;
   display: flex;
-  box-shadow: 0 12px 35px rgba(35, 48, 42, 0.1);
+  box-shadow: 0 12px 35px rgba(35,48,42,0.1);
+}
+
+.hero .searchBox {
+  margin-left: auto;
+  margin-right: auto;
+  border-color: var(--blue);
 }
 
 .searchBox input {
@@ -197,11 +238,20 @@ h1 span {
 .searchBox button {
   padding: 0 28px;
   background: var(--rust);
-  color: var(--white);
+  color: white;
 }
 
 .searchBox button:hover {
   opacity: 0.9;
+}
+
+.hero .searchBox button {
+  background: var(--blue);
+  color: var(--dark);
+}
+
+.hero .searchBox button:hover {
+  background: #64d0ff;
 }
 
 .searchHint {
@@ -210,7 +260,7 @@ h1 span {
   font-size: 0.78rem;
 }
 
-/* SECTIONS */
+/* HOMEPAGE SECTIONS */
 
 .servicesSection,
 .whySection {
@@ -218,7 +268,7 @@ h1 span {
 }
 
 .servicesSection {
-  background: var(--white);
+  background: var(--dark);
 }
 
 .sectionHeading {
@@ -226,11 +276,13 @@ h1 span {
   margin: 0 auto 45px;
   text-align: center;
 }
+
 .builtForBillings {
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
+
 .contractorBenefits {
   display: flex;
   flex-wrap: wrap;
@@ -241,9 +293,11 @@ h1 span {
   font-size: 0.95rem;
   font-weight: 700;
 }
+
 .contractorBenefits span {
   white-space: nowrap;
 }
+
 .listingTrustNote {
   margin: 0 0 26px;
   padding: 15px 18px;
@@ -264,6 +318,7 @@ h1 span {
 .listingTrustNote span {
   font-size: 0.9rem;
 }
+
 .sectionHeading h2 {
   margin-bottom: 15px;
   color: var(--forest);
@@ -276,7 +331,17 @@ h1 span {
   line-height: 1.7;
 }
 
-/* SERVICE CARDS */
+.servicesSection .sectionHeading h2 {
+  color: white;
+}
+
+.servicesSection .sectionHeading p {
+  color: #c4d2df;
+}
+
+.servicesSection .eyebrow {
+  color: var(--blue);
+}
 
 /* SERVICE CARDS */
 
@@ -293,18 +358,17 @@ h1 span {
   flex-direction: column;
   overflow: hidden;
   min-width: 0;
-  background: #f8f1df;
-  border: 1px solid #ded3bc;
-  border-radius: 14px;
-  box-shadow: 0 8px 22px rgba(32, 53, 43, 0.12);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  background: var(--navy);
+  border: 1px solid #273d50;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .serviceCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(32, 53, 43, 0.16);
+  transform: translateY(-5px);
+  border-color: var(--sand);
+  box-shadow: 0 14px 30px rgba(32,53,43,0.1);
 }
 
 .serviceArtwork {
@@ -331,19 +395,20 @@ h1 span {
 
 .serviceCard h3 {
   margin: 0 0 10px;
-  color: #0b3154;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
   line-height: 1.1;
 }
 
 .serviceCard p {
   flex: 1;
-  min-height: 72px;
+  min-height: 75px;
   margin: 0 0 18px;
-  color: #26394a;
+  color: #c4d2df;
   font-size: 0.9rem;
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
 .serviceBrowse {
@@ -351,36 +416,14 @@ h1 span {
   width: 100%;
   padding: 13px 10px;
   border-radius: 8px;
-  color: #ffffff !important;
   font-size: 0.9rem;
   font-weight: 800;
   text-align: center;
 }
 
-.serviceCard.plumbing .serviceBrowse {
-  background: #075181;
-}
-
-.serviceCard.hvac .serviceBrowse {
-  background: #d8440d;
-}
-
-.serviceCard.electrical .serviceBrowse {
-  background: #c88900;
-}
-
-.serviceCard.roofing .serviceBrowse {
-  background: #08654f;
-}
-
-.serviceCard.remodeling .serviceBrowse {
-  background: #71310e;
-}
-
-.serviceCard:hover {
-  transform: translateY(-5px);
-  border-color: var(--sand);
-  box-shadow: 0 14px 30px rgba(32, 53, 43, 0.1);
+.serviceCard .serviceBrowse {
+  background: var(--blue);
+  color: var(--dark);
 }
 
 .serviceIcon {
@@ -388,28 +431,20 @@ h1 span {
   font-size: 2rem;
 }
 
-.serviceCard h3 {
-  color: var(--forest);
-  font-size: 1.2rem;
-}
-
-.serviceCard p {
-  min-height: 75px;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-
-.serviceCard span {
-  color: var(--rust);
-  font-size: 0.85rem;
-  font-weight: 800;
-}
-
-/* WHY */
+/* WHY HOME PROS */
 
 .whySection {
-  background: var(--cream);
+  background: white;
+}
+
+.whySection .sectionHeading h2,
+.whySection .feature strong {
+  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.whySection .eyebrow {
+  color: #009de0;
 }
 
 .featureGrid {
@@ -422,12 +457,12 @@ h1 span {
 
 .feature {
   padding-top: 22px;
-  border-top: 3px solid var(--rust);
+  border-top: 3px solid var(--blue);
 }
 
 .feature strong {
-  color: var(--forest);
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--dark);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.35rem;
 }
 
@@ -437,16 +472,17 @@ h1 span {
   line-height: 1.65;
 }
 
-/* CONTRACTOR CTA */
+/* CONTRACTOR SECTION */
 
 .proSection {
   padding: 65px 8%;
-  background: var(--forest);
-  color: var(--white);
+  background: var(--navy);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+  border-top: 1px solid #273d50;
 }
 
 .proSection > div {
@@ -464,6 +500,10 @@ h1 span {
   line-height: 1.7;
 }
 
+.proSection .eyebrow {
+  color: var(--blue);
+}
+
 .lightButton {
   flex-shrink: 0;
   padding: 16px 28px;
@@ -472,127 +512,58 @@ h1 span {
   font-size: 0.95rem;
 }
 
+.proSection .lightButton {
+  display: inline-block;
+  padding: 18px 34px;
+  background: var(--blue);
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  color: var(--dark);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proSection .lightButton:hover {
+  transform: translateY(-2px);
+  background: #64d0ff;
+  box-shadow: 0 9px 20px rgba(0,0,0,0.24);
+}
+
 /* FOOTER */
 
 footer {
   padding: 45px 7%;
-  background: #10261f;
+  background: #080d12;
   color: #dce2de;
   text-align: center;
+  border-top: 1px solid #273d50;
 }
 
 footer strong {
-  color: var(--white);
-  font-family: Georgia, "Times New Roman", serif;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.35rem;
+  font-weight: 900;
 }
 
 footer p {
   margin: 10px auto 18px;
+  color: #c4d2df;
   font-size: 0.85rem;
 }
 
 footer small {
-  color: #98a69f;
+  color: #8296a8;
 }
 
-/* TABLET */
-
-@media (max-width: 1050px) {
-  .hero {
-    grid-template-columns: 1fr 0.8fr;
-    gap: 30px;
-  }
-
-  .serviceGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 760px) {
-  .siteHeader {
-    padding: 15px 5%;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .brandMain {
-    font-size: 1.25rem;
-  }
-
-  .brandSub {
-    font-size: 0.55rem;
-  }
-
-  .hero {
-    padding: 55px 6% 65px;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-.heroCopy {
-  width: 100%;
-  max-width: 760px;
-  text-align: center;
-}
-  .heroLogoWrap {
-    order: 2;
-  }
-
-  .heroLogo {
-    max-width: 550px;
-  }
-
-  h1 {
-    font-size: clamp(3rem, 15vw, 4.5rem);
-    letter-spacing: -2px;
-  }
-
-  .searchBox {
-    flex-direction: column;
-  }
-
-  .searchBox button {
-    padding: 16px;
-  }
-
-  .servicesSection,
-  .whySection {
-    padding: 65px 6%;
-  }
-
-  .serviceGrid,
-  .featureGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .serviceCard {
-    min-height: auto;
-  }
-
-  .serviceCard p {
-    min-height: auto;
-  }
-
-  .proSection {
-    padding: 55px 7%;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-/* PLUMBING / CATEGORY PAGES */
+/* CATEGORY PAGES */
 
 .categoryHero {
   padding: 75px 7%;
-  background: linear-gradient(
-    115deg,
-    #f8f5ed 0%,
-    #f5f0e5 60%,
-    #eadfc9 100%
-  );
+  background: var(--navy);
 }
 
 .categoryHeroInner {
@@ -601,25 +572,34 @@ footer small {
   text-align: center;
 }
 
+/* Match location line and category title sizes */
+
+.categoryHero .eyebrow,
+.categoryHero h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
 .categoryHero h1 {
   max-width: 900px;
   margin: 0 auto 22px;
-  color: var(--forest);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.12em;
 }
 
 .categoryHero p {
   max-width: 700px;
   margin: 0 auto;
-  color: #58625d;
+  color: #c4d2df;
   font-size: 1.1rem;
   line-height: 1.7;
 }
 
 .categoryContent {
   padding: 75px 7% 90px;
-  background: var(--white);
+  background: white;
 }
 
 .categoryIntro {
@@ -644,12 +624,14 @@ footer small {
   line-height: 1.7;
 }
 
+/* CATEGORY FILTERS */
+
 .filterBar {
   max-width: 1100px;
   margin: 0 auto 40px;
   padding: 18px;
-  background: var(--cream);
-  border: 1px solid #e3ddcf;
+  background: #f0f6fa;
+  border: 1px solid #dce5ec;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -658,23 +640,22 @@ footer small {
 
 .filterBar a {
   padding: 11px 17px;
-  background: var(--white);
-  color: var(--forest);
+  background: white;
+  color: var(--navy);
   border: 1px solid #d8d2c5;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 700;
-  text-decoration: none;
 }
 
 .filterBar a:hover {
-  background: #edf1ed;
+  background: #e0f4ff;
 }
 
 .filterBar a.activeFilter {
-  background: #234d3c !important;
+  background: #087fbd !important;
+  border-color: #087fbd;
   color: white !important;
-  border-color: #234d3c;
 }
 
 .comingSoon {
@@ -714,31 +695,7 @@ footer small {
   line-height: 1.65;
 }
 
-@media (max-width: 760px) {
-  .categoryHero {
-    padding: 55px 6%;
-  }
-
-  .categoryContent {
-    padding: 55px 6% 70px;
-  }
-
-  .categoryIntro {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .comingSoon {
-    padding: 30px;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .filterBar {
-    padding: 14px;
-  }
-}
-/* CONTRACTOR LISTINGS */
+/* BUSINESS LISTINGS */
 
 .contractorList {
   max-width: 1100px;
@@ -747,10 +704,10 @@ footer small {
 
 .contractorCard {
   padding: 32px;
-  background: #fbfaf6;
-  border: 1px solid #e2ded5;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(32, 53, 43, 0.07);
+  background: white;
+  border: 1px solid #dce5ec;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(11,17,23,0.08);
 }
 
 .contractorTop {
@@ -774,7 +731,8 @@ footer small {
 
 .contractorCard h2 {
   margin-bottom: 7px;
-  color: var(--forest);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
 }
 
@@ -786,10 +744,10 @@ footer small {
 
 .ratingBox {
   flex-shrink: 0;
-  min-width: 150px;
-  padding: 13px 16px;
-  background: var(--white);
-  border: 1px solid #e2ded5;
+  min-width: 115px;
+  padding: 10px 12px;
+  background: #faf7ef;
+  border: 1px solid #e3ddcf;
   border-radius: 8px;
   text-align: center;
 }
@@ -804,190 +762,6 @@ footer small {
 .ratingBox span {
   color: #68706c;
   font-size: 0.75rem;
-}
-
-.serviceTags {
-  margin: 25px 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.serviceTags span {
-  padding: 7px 11px;
-  background: #edf1ed;
-  color: var(--forest);
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.contractorDescription {
-  max-width: 750px;
-  color: #626a66;
-  line-height: 1.65;
-}
-
-.homeProsRating {
-  margin: 22px 0;
-  padding: 15px 0;
-  border-top: 1px solid #e2ded5;
-  border-bottom: 1px solid #e2ded5;
-  display: flex;
-  gap: 15px;
-}
-
-.homeProsRating strong {
-  color: var(--forest);
-}
-
-.homeProsRating span {
-  color: #777d79;
-}
-
-.contractorActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.contractorActions button {
-  padding: 12px 18px;
-  background: var(--white);
-  color: var(--forest);
-  border: 1px solid #cbc5b9;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 800;
-}
-
-.contractorActions .quoteButton {
-  background: var(--rust);
-  color: var(--white);
-  border-color: var(--rust);
-}
-
-.contractorActions button:hover {
-  opacity: 0.85;
-}
-
-@media (max-width: 700px) {
-  .contractorCard {
-    padding: 23px;
-  }
-
-  .contractorTop {
-    flex-direction: column;
-  }
-
-  .ratingBox {
-    width: 100%;
-    text-align: left;
-  }
-
-  .homeProsRating {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .contractorActions button {
-    flex: 1;
-  }
-
-  .contractorActions .quoteButton {
-    flex-basis: 100%;
-  }
-}
-.businessNameRow {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.businessNameRow h2 {
-  margin: 0;
-}
-
-.featuredBadge,
-.claimedBadge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 9px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.featuredBadge {
-  background: #f2e4bd;
-  color: #704b16;
-  border: 1px solid #dfc77f;
-}
-
-.claimedBadge {
-  background: #e6efe9;
-  color: #234d3c;
-  border: 1px solid #b9d0c1;
-}
-.contractorActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.contractorActions .actionButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 11px 18px;
-  border-radius: 7px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
-.contractorActions .callButton,
-.contractorActions .websiteButton {
-  background: white;
-  color: #234d3c;
-  border: 1px solid #234d3c;
-}
-
-.contractorActions .callButton:hover,
-.contractorActions .websiteButton:hover {
-  background: #edf1ed;
-}
-
-.contractorActions .quoteButton {
-  background: #234d3c;
-  color: white;
-  border: 1px solid #234d3c;
-}
-
-.contractorActions .quoteButton:hover {
-  background: #18382c;
-}
-
-@media (max-width: 600px) {
-  .contractorActions .actionButton {
-    width: 100%;
-  }
-}
-.ratingBox {
-  min-width: 115px;
-  padding: 10px 12px;
-  background: #faf7ef;
-  border: 1px solid #e3ddcf;
-  border-radius: 8px;
-  text-align: center;
 }
 
 .ratingScore {
@@ -1024,16 +798,143 @@ footer small {
   color: #777;
 }
 
-@media (max-width: 600px) {
-  .ratingBox {
-    text-align: left;
-    width: fit-content;
-  }
-
-  .ratingScore {
-    justify-content: flex-start;
-  }
+.serviceTags {
+  margin: 25px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
+
+.serviceTags span {
+  padding: 7px 11px;
+  background: #eaf7ff;
+  color: #075b89;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.contractorDescription {
+  max-width: 750px;
+  color: #626a66;
+  line-height: 1.65;
+}
+
+.homeProsRating {
+  margin: 22px 0;
+  padding: 15px 0;
+  border-top: 1px solid #e2ded5;
+  border-bottom: 1px solid #e2ded5;
+  display: flex;
+  gap: 15px;
+}
+
+.homeProsRating strong {
+  color: var(--forest);
+}
+
+.homeProsRating span {
+  color: #777d79;
+}
+
+.businessNameRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.businessNameRow h2 {
+  margin: 0;
+}
+
+/* FEATURED / CLAIMED BADGES */
+
+.featuredBadge,
+.claimedBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.featuredBadge {
+  background: #f2e4bd;
+  color: #704b16;
+  border: 1px solid #dfc77f;
+}
+
+.claimedBadge {
+  background: #e6efe9;
+  color: #234d3c;
+  border: 1px solid #b9d0c1;
+}
+
+/* CONTRACTOR ACTIONS */
+
+.contractorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.contractorActions button {
+  padding: 12px 18px;
+  background: white;
+  color: var(--forest);
+  border: 1px solid #cbc5b9;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.contractorActions .actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.contractorActions .callButton,
+.contractorActions .websiteButton {
+  background: white;
+  color: #234d3c;
+  border: 1px solid #234d3c;
+}
+
+.contractorActions .callButton:hover,
+.contractorActions .websiteButton:hover {
+  background: #edf1ed;
+}
+
+.contractorActions .quoteButton {
+  background: var(--blue);
+  color: var(--dark);
+  border: 1px solid var(--blue);
+}
+
+.contractorActions .quoteButton:hover {
+  background: #18382c;
+}
+
+.contractorActions button:hover {
+  opacity: 0.85;
+}
+
+/* QUOTE / CONTACT FORMS */
+
 .quotePage {
   min-height: 70vh;
   padding: 60px 20px 80px;
@@ -1047,7 +948,7 @@ footer small {
   background: white;
   border: 1px solid #e3ddcf;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(35, 77, 60, 0.08);
+  box-shadow: 0 10px 30px rgba(35,77,60,0.08);
 }
 
 .quoteFormCard h1 {
@@ -1083,7 +984,8 @@ footer small {
 }
 
 .quoteForm input,
-.quoteForm textarea {
+.quoteForm textarea,
+.quoteForm select {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid #ccc6b8;
@@ -1091,14 +993,14 @@ footer small {
   background: white;
   color: #222;
   font: inherit;
-  box-sizing: border-box;
 }
 
 .quoteForm input:focus,
-.quoteForm textarea:focus {
+.quoteForm textarea:focus,
+.quoteForm select:focus {
   outline: none;
   border-color: #234d3c;
-  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
+  box-shadow: 0 0 0 3px rgba(35,77,60,0.1);
 }
 
 .quoteForm textarea {
@@ -1157,20 +1059,7 @@ footer small {
   color: #8a3027;
 }
 
-@media (max-width: 600px) {
-  .quotePage {
-    padding: 35px 14px 60px;
-  }
-
-  .quoteFormCard {
-    padding: 25px 18px;
-  }
-
-  .quoteFormRow {
-    grid-template-columns: 1fr;
-  }
-}
-/* Contractor Get Listed / Claim buttons */
+/* GET LISTED / CLAIM */
 
 .contractorRequestChoices {
   display: grid;
@@ -1189,10 +1078,9 @@ footer small {
   font: inherit;
   font-weight: 800;
   cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    transform 0.15s ease;
+  transition: background 0.15s ease,
+              border-color 0.15s ease,
+              transform 0.15s ease;
 }
 
 .requestChoice:hover {
@@ -1205,32 +1093,10 @@ footer small {
   background: #234d3c;
   color: white;
   border-color: #234d3c;
-  box-shadow: 0 4px 12px rgba(35, 77, 60, 0.18);
+  box-shadow: 0 4px 12px rgba(35,77,60,0.18);
 }
 
-.quoteForm select {
-  width: 100%;
-  padding: 13px 14px;
-  border: 1px solid #ccc6b8;
-  border-radius: 7px;
-  background: white;
-  color: #222;
-  font: inherit;
-  box-sizing: border-box;
-}
-
-.quoteForm select:focus {
-  outline: none;
-  border-color: #234d3c;
-  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
-}
-
-@media (max-width: 600px) {
-  .contractorRequestChoices {
-    grid-template-columns: 1fr;
-  }
-}
-/* FEATURED LISTING UPGRADE */
+/* FEATURED LISTING SUBSCRIPTION */
 
 .featuredUpgrade {
   margin-top: 40px;
@@ -1274,7 +1140,7 @@ footer small {
   padding: 14px 24px;
   background: var(--rust);
   border-radius: 8px;
-  color: #ffffff !important;
+  color: white !important;
   font-weight: 800;
   text-decoration: none;
 }
@@ -1288,7 +1154,6 @@ footer small {
   margin-top: 12px;
   color: var(--muted);
 }
-/* Featured business name input */
 
 .featuredBusinessInput {
   width: 100%;
@@ -1297,22 +1162,20 @@ footer small {
   margin-bottom: 14px;
   border: 1px solid #ccc6b8;
   border-radius: 7px;
-  background: #ffffff;
-  color: #222222;
+  background: white;
+  color: #222;
   font: inherit;
-  box-sizing: border-box;
 }
 
 .featuredBusinessInput::placeholder {
-  color: #777777;
+  color: #777;
 }
 
 .featuredBusinessInput:focus {
   outline: none;
   border-color: var(--forest);
-  box-shadow: 0 0 0 3px rgba(35, 77, 60, 0.1);
+  box-shadow: 0 0 0 3px rgba(35,77,60,0.1);
 }
-/* FEATURED LISTING BENEFITS */
 
 .featuredBenefits {
   display: flex;
@@ -1329,310 +1192,169 @@ footer small {
 .featuredBenefits span {
   display: block;
 }
-/* CONTRACTOR GET LISTED CTA */
 
-.proSection .lightButton {
-  display: inline-block;
-  padding: 18px 34px;
-  background: var(--rust);
-  border: 2px solid #ffffff;
-  border-radius: 8px;
-  color: #ffffff !important;
-  font-size: 1.1rem;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+/* RESPONSIVE — TABLET */
+
+@media (max-width: 1050px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.proSection .lightButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.24);
+/* RESPONSIVE — MOBILE */
+
+@media (max-width: 760px) {
+  .siteHeader {
+    padding: 15px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .brandMain {
+    font-size: 1.25rem;
+  }
+
+  .brandSub {
+    font-size: 0.55rem;
+  }
+
+  .hero {
+    padding: 55px 6% 65px;
+    gap: 40px;
+  }
+
+  .heroCopy {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .heroLogoWrap {
+    order: 2;
+  }
+
+  .heroLogo {
+    max-width: 550px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+    letter-spacing: -2px;
+  }
+
+  .searchBox {
+    flex-direction: column;
+  }
+
+  .searchBox button {
+    padding: 16px;
+  }
+
+  .servicesSection,
+  .whySection {
+    padding: 65px 6%;
+  }
+
+  .serviceGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard {
+    min-height: auto;
+  }
+
+  .serviceCard p {
+    min-height: auto;
+  }
+
+  .proSection {
+    padding: 55px 7%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .categoryHero {
+    padding: 55px 6%;
+  }
+
+  .categoryContent {
+    padding: 55px 6% 70px;
+  }
+
+  .categoryIntro {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .comingSoon {
+    padding: 30px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filterBar {
+    padding: 14px;
+  }
 }
 
-/* ====================================
-   BHP MODERN RESTYLE — PHASE 1
-   Header and navigation
-   ==================================== */
+@media (max-width: 700px) {
+  .contractorCard {
+    padding: 23px;
+  }
 
-.siteHeader {
-  background: #0b1117;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.18);
+  .contractorTop {
+    flex-direction: column;
+  }
+
+  .ratingBox {
+    width: 100%;
+    text-align: left;
+  }
+
+  .homeProsRating {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contractorActions button {
+    flex: 1;
+  }
+
+  .contractorActions .quoteButton {
+    flex-basis: 100%;
+  }
 }
 
-.brandMain {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-}
+@media (max-width: 600px) {
+  .contractorActions .actionButton {
+    width: 100%;
+  }
 
-.brandSub {
-  color: #25b9ff;
-  letter-spacing: 2px;
-}
+  .ratingBox {
+    width: fit-content;
+    text-align: left;
+  }
 
-.siteHeader nav a {
-  color: #ffffff;
-  transition: color 0.2s ease;
-}
+  .ratingScore {
+    justify-content: flex-start;
+  }
 
-.siteHeader nav a:hover {
-  color: #25b9ff;
-}
+  .quotePage {
+    padding: 35px 14px 60px;
+  }
 
-/* BHP MODERN RESTYLE — PHASE 2: HERO */
+  .quoteFormCard {
+    padding: 25px 18px;
+  }
 
-.hero {
-  background: #0b1117;
-  padding: 55px 7% 80px;
-  gap: 30px;
-}
+  .quoteFormRow {
+    grid-template-columns: 1fr;
+  }
 
-.heroCopy {
-  max-width: 900px;
-  text-align: center;
-}
-
-.hero .eyebrow {
-  color: #25b9ff;
-}
-
-.hero h1 {
-  max-width: 900px;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  letter-spacing: -2px;
-}
-
-.hero h1 span {
-  color: #25b9ff;
-}
-
-.heroText {
-  margin-left: auto;
-  margin-right: auto;
-  color: #c4d2df;
-}
-
-.hero .searchBox {
-  margin-left: auto;
-  margin-right: auto;
-  border-color: #25b9ff;
-}
-/* BHP RESTYLE — PHASE 3: SEARCH BUTTON */
-
-.hero .searchBox button {
-  background: #25b9ff;
-  color: #0b1117;
-  border-radius: 7px;
-}
-
-.hero .searchBox button:hover {
-  background: #64d0ff;
-}
-/* BHP RESTYLE — PHASE 4: SERVICE CARDS */
-
-.serviceCard {
-  background: #ffffff;
-  border: 1px solid #dce5ec;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(11, 17, 23, 0.08);
-}
-
-.serviceCard h3 {
-  color: #0b1117;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 800;
-}
-
-.serviceCard p {
-  color: #526170;
-}
-/* BHP RESTYLE — PHASE 4B: MODERN SERVICE CARDS */
-
-.serviceCard {
-  background: #101b27;
-  border: 1px solid #273d50;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-}
-
-.serviceCard h3 {
-  color: #ffffff;
-}
-
-.serviceCard p {
-  color: #c4d2df;
-}
-
-.serviceCard .serviceBrowse {
-  background: #25b9ff !important;
-  color: #0b1117 !important;
-}
-/* BHP RESTYLE — PHASE 5: SERVICES BACKGROUND */
-
-.servicesSection {
-  background: #0b1117;
-}
-
-.servicesSection .sectionHeading h2 {
-  color: #ffffff;
-}
-
-.servicesSection .sectionHeading p {
-  color: #c4d2df;
-}
-
-.servicesSection .eyebrow {
-  color: #25b9ff;
-}
-/* FIX PLUMBING IMAGE */
-.serviceCard.plumbing .serviceArtwork img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-/* BHP RESTYLE — PHASE 6: WHY SECTION */
-
-.whySection {
-  background: #ffffff;
-}
-
-.whySection .sectionHeading h2,
-.whySection .feature strong {
-  color: #0b1117;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.whySection .eyebrow {
-  color: #009de0;
-}
-
-.whySection .feature {
-  border-top: 3px solid #25b9ff;
-}
-/* BHP RESTYLE — PHASE 7: CONTRACTOR SECTION */
-
-.proSection {
-  background: #101b27;
-  border-top: 1px solid #273d50;
-}
-
-.proSection .eyebrow {
-  color: #25b9ff;
-}
-
-.proSection .lightButton {
-  background: #25b9ff;
-  color: #0b1117 !important;
-  border-color: #25b9ff;
-}
-
-.proSection .lightButton:hover {
-  background: #64d0ff;
-}
-/* BHP RESTYLE — PHASE 8: FOOTER */
-
-footer {
-  background: #080d12;
-  border-top: 1px solid #273d50;
-}
-
-footer strong {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  color: #ffffff;
-}
-
-footer p {
-  color: #c4d2df;
-}
-
-footer small {
-  color: #8296a8;
-}
-/* BHP RESTYLE — PHASE 9: CATEGORY HERO */
-
-.categoryHero {
-  background: #101b27;
-}
-
-.categoryHero h1 {
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: -2px;
-}
-
-.categoryHero p {
-  color: #c4d2df;
-}
-
-/* BHP RESTYLE — PHASE 10: CONTRACTOR CARDS */
-
-.contractorCard {
-  background: #ffffff;
-  border: 1px solid #dce5ec;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(11, 17, 23, 0.08);
-}
-
-.contractorCard h2 {
-  color: #101b27;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.serviceTags span {
-  background: #eaf7ff;
-  color: #075b89;
-}
-
-.contractorActions .quoteButton {
-  background: #25b9ff;
-  border-color: #25b9ff;
-  color: #0b1117;
-}
-
-/* BHP RESTYLE — PHASE 11: CATEGORY TEXT */
-
-.categoryHero .eyebrow {
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-.categoryHero h1 {
-  font-size: clamp(3.5rem, 7vw, 6rem);
-}
-
-/* BHP RESTYLE — PHASE 12: CATEGORY FILTERS */
-
-.filterBar {
-  background: #f0f6fa;
-  border-color: #dce5ec;
-}
-
-.filterBar a {
-  border-radius: 8px;
-  color: #101b27;
-}
-
-.filterBar a:hover {
-  background: #e0f4ff;
-}
-
-.filterBar a.activeFilter {
-  background: #087fbd !important;
-  border-color: #087fbd;
-  color: #ffffff !important;
-}
-/* BHP RESTYLE — PHASE 12: CATEGORY TITLE */
-
-.categoryIntro h2 {
-  font-size: clamp(3.5rem, 7vw, 6rem);
-  line-height: 1.05;
+  .contractorRequestChoices {
+    grid-template-columns: 1fr;
+  }
 }
