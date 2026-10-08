@@ -1358,3 +1358,36 @@ footer small {
     grid-template-columns: 1fr;
   }
 }
+
+/* RESTORE APPROVED CATEGORY TYPOGRAPHY */
+
+/* Billings / Laurel / Yellowstone County */
+.categoryHero .eyebrow {
+  color: #25b9ff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+/* HVAC Companies in Billings, Montana */
+.categoryHero h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.05;
+}
+
+/* Find a Local HVAC Professional */
+.categoryIntro .eyebrow {
+  color: #009de0;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+/* HVAC professionals serving the Billings area */
+.categoryIntro h2 {
+  color: #101b27;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
