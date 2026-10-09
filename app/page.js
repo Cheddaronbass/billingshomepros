@@ -36,6 +36,41 @@ const services = [
     href: "/contractors-remodeling",
     theme: "remodeling",
   },
+  {
+    name: "Landscaping",
+    image: "/landscaping.png",
+    description: "Lawn care, irrigation, landscape design & tree services",
+    href: "/landscaping",
+    theme: "landscaping",
+  },
+  {
+    name: "Painting",
+    image: "/painting.png",
+    description: "Interior, exterior, cabinet & commercial painting",
+    href: "/painting",
+    theme: "painting",
+  },
+  {
+    name: "Concrete",
+    image: "/concrete.png",
+    description: "Driveways, patios, foundations & decorative concrete",
+    href: "/concrete",
+    theme: "concrete",
+  },
+  {
+    name: "Fencing",
+    image: "/fencing.png",
+    description: "Wood, vinyl, chain-link fencing & fence repairs",
+    href: "/fencing",
+    theme: "fencing",
+  },
+  {
+    name: "Handyman",
+    image: "/handyman.png",
+    description: "Home repairs, drywall, maintenance & installations",
+    href: "/handyman",
+    theme: "handyman",
+  },
 ];
 
 export default function Home() {
