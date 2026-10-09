@@ -60,7 +60,7 @@ export default function Home() {
         <div className="heroLogoWrap">
           <img
             className="heroLogo"
-         src="/bhp-logo.png"
+        src="/bhp-logo-transparent.png"
             alt="Billings Home Pros — local home services in Billings, Montana"
           />
         </div>
