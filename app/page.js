@@ -58,12 +58,19 @@ export default function Home() {
 
       <section className="hero">
         <div className="heroLogoWrap">
-          <img
-            className="heroLogo"
-        src="/bhp-logo-transparent.png"
-            alt="Billings Home Pros — local home services in Billings, Montana"
-          />
-        </div>
+  <img
+    className="heroLogo"
+    src="/bhp-logo-clean.png"
+    alt="Billings Home Pros — local home services in Billings, Montana"
+    style={{
+      width: "100%",
+      maxWidth: "420px",
+      height: "auto",
+      display: "block",
+      margin: "0 auto"
+    }}
+  />
+</div>
 
         <div className="heroCopy">
           <div className="eyebrow builtForBillings">
