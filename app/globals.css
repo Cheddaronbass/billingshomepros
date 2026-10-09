@@ -1539,3 +1539,16 @@ footer small {
 .serviceBrowse {
   margin-top: auto;
 }
+/* MOBILE CATEGORY BUTTON SIZE */
+
+@media (max-width: 600px) {
+  .serviceBrowse {
+    padding: 9px 6px;
+    font-size: 0.78rem;
+    border-radius: 7px;
+  }
+
+  .serviceCardContent {
+    padding: 12px 10px;
+  }
+}
