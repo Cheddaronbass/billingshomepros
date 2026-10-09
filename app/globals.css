@@ -413,6 +413,7 @@ nav a:hover {
 
 .serviceBrowse {
   display: block;
+  margin-top: auto;
   width: 100%;
   padding: 13px 10px;
   border-radius: 8px;
@@ -1526,4 +1527,15 @@ footer small {
       rgba(11, 17, 23, 0.30)
     ),
     url("/bhp-hero.png") center / cover no-repeat;
+}
+/* ALIGN CATEGORY BUTTONS */
+
+.serviceCardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceBrowse {
+  margin-top: auto;
 }
