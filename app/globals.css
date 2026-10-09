@@ -1522,7 +1522,7 @@ footer small {
 .hero {
   background:
     linear-gradient(
-      rgba(11, 17, 23, 0.15),
+      rgba(11, 17, 23, 0.10),
       rgba(11, 17, 23, 0.30)
     ),
     url("/bhp-hero.png") center / cover no-repeat;
