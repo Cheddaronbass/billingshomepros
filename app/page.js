@@ -64,7 +64,7 @@ export default function Home() {
     alt="Billings Home Pros — local home services in Billings, Montana"
     style={{
       width: "100%",
-      maxWidth: "420px",
+      maxWidth: "500px",
       height: "auto",
       display: "block",
       margin: "0 auto"
