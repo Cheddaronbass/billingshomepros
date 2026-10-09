@@ -1552,3 +1552,8 @@ footer small {
     padding: 12px 10px;
   }
 }
+/* BHP LOGO CONTRAST */
+
+.heroLogo {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.65));
+}
