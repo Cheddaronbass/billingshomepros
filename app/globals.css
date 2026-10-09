@@ -1516,3 +1516,14 @@ footer small {
     border-radius: 7px;
   }
 }
+
+/* BHP STATIC CONTRACTOR HERO */
+
+.hero {
+  background:
+    linear-gradient(
+      rgba(11, 17, 23, 0.72),
+      rgba(11, 17, 23, 0.88)
+    ),
+    url("/bhp-hero.png") center / cover no-repeat;
+}
