@@ -1691,3 +1691,17 @@ footer small {
   .businessLogo { flex-basis: 56px; width: 56px; height: 56px; border-radius: 10px; }
   .businessLogoFallback { font-size: 1.65rem; }
 }
+
+
+/* Distinctive company-initial fallback when no verified logo is available */
+.businessLogo {
+  background: #0b2340;
+  border: 2px solid #b8d8ea;
+}
+.businessLogoFallback {
+  background: linear-gradient(145deg, #12395c, #071a31);
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
