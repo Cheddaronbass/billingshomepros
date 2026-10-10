@@ -16,8 +16,8 @@ function getBusinessInitials(name = "") {
 export default function ContractorLogo({ name, logoUrl, logoVerified = false }) {
   const [imageFailed, setImageFailed] = useState(false);
   return (
-    <div className="businessLogo" aria-label={logoUrl && logoVerified && !imageFailed ? `${name} logo` : `${name} initials`}>
-      {logoUrl && logoVerified && !imageFailed ? (
+    <div className="businessLogo" aria-label={logoUrl && !imageFailed ? `${name} logo candidate` : `${name} initials`}>
+      {logoUrl && !imageFailed ? (
         <img src={logoUrl} alt={`${name} logo`} loading="lazy" onError={() => setImageFailed(true)} />
       ) : (
         <span className="businessLogoFallback" aria-hidden="true">{getBusinessInitials(name)}</span>
