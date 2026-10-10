@@ -155,7 +155,7 @@ export default async function CategoryPage({
                 <div className="contractorMain">
                   <div className="contractorTop">
                     <div className="contractorIdentity">
-                      <ContractorLogo name={business.name} logoUrl={business.logo_url} />
+                      <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} />
                       <div className="contractorIdentityText">
                       <div className="businessNameRow">
                         <h2>{business.name}</h2>
