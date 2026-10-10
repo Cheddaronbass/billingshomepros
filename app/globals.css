@@ -1705,3 +1705,34 @@ footer small {
   font-weight: 850;
   letter-spacing: -0.04em;
 }
+
+/* Secondary service landing-page link */
+.categorySeoLink {
+  margin: 22px 0 24px;
+}
+.categorySeoLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 13px 18px;
+  border: 1px solid #c6e1f2;
+  border-radius: 12px;
+  background: #eef8ff;
+  color: #135c8c;
+  font-size: 0.96rem;
+  font-weight: 650;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.categorySeoLink a:hover,
+.categorySeoLink a:focus-visible {
+  background: #deeffc;
+  border-color: #83c3eb;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .categorySeoLink { margin: 18px 0 22px; }
+  .categorySeoLink a { padding: 12px 14px; font-size: 0.9rem; }
+}
