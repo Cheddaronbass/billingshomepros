@@ -152,7 +152,28 @@ export default async function CategoryPage({
               >
                 <div className="contractorMain">
                   <div className="contractorTop">
-                    <div>
+                    <div className="contractorIdentity">
+                      <div className="businessLogo" aria-label={business.logo_url ? `${business.name} logo` : `${categoryLabel} category icon`}>
+                        {business.logo_url ? (
+                          <img
+                            src={business.logo_url}
+                            alt={`${business.name} logo`}
+                            loading="lazy"
+                            onError={(event) => {
+                              event.currentTarget.style.display = "none";
+                              event.currentTarget.nextElementSibling.style.display = "flex";
+                            }}
+                          />
+                        ) : null}
+                        <span
+                          className="businessLogoFallback"
+                          style={{ display: business.logo_url ? "none" : "flex" }}
+                          aria-hidden="true"
+                        >
+                          {icon}
+                        </span>
+                      </div>
+                      <div className="contractorIdentityText">
                       <div className="businessNameRow">
                         <h2>{business.name}</h2>
 
@@ -173,6 +194,7 @@ export default async function CategoryPage({
                         {business.service_area ||
                           "Billings, Montana"}
                       </p>
+                      </div>
                     </div>
                   </div>
 
