@@ -22,7 +22,11 @@ export async function POST(request) {
   const { data: claim, error } = await db.from("contractor_requests")
     .select("id,request_type,contact_email,business_name,ownership_approved_at,contact_email_verified_at")
     .eq("id", claim_id).maybeSingle();
-  if (error) {\n    console.error("Verification claim lookup failed:", error.code, error.message);\n    return Response.json({ error: "Claim lookup failed; check server logs" }, { status: 500 });\n  }\n  if (!claim || claim.request_type !== "claim" || !claim.ownership_approved_at) {
+  if (error) {
+    console.error("Verification claim lookup failed:", error.code, error.message);
+    return Response.json({ error: "Claim lookup failed; check server logs" }, { status: 500 });
+  }
+  if (!claim || claim.request_type !== "claim" || !claim.ownership_approved_at) {
     return Response.json({ error: "Claim is not approved" }, { status: 403 });
   }
   if (claim.contact_email_verified_at) {
@@ -41,7 +45,11 @@ export async function POST(request) {
     from: "Billings Home Pros <notifications@billingshomepros.com>",
     to: [claim.contact_email],
     subject: "Verify your Billings Home Pros lead email",
-    text: `Your business claim for ${claim.business_name} has been approved. To verify this email address for quote notifications, visit the following link within 24 hours:\n\n${url}\n\nIf you did not request this, ignore this message.`,
+    text: `Your business claim for ${claim.business_name} has been approved. To verify this email address for quote notifications, visit the following link within 24 hours:
+
+${url}
+
+If you did not request this, ignore this message.`,
   });
   if (emailError) return Response.json({ error: "Verification email failed" }, { status: 502 });
   return Response.json({ success: true });
