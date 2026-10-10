@@ -214,11 +214,6 @@ export default async function CategoryPage({
                       )}
                     </div>
                   )}
-                  <div className="homeProsRating">
-                    <strong>Billings Home Pros Reviews</strong>
-                    <span>No reviews yet</span>
-                  </div>
-
                   <div className="contractorActions">
                     {business.phone && (
                       <TrackedLink
