@@ -1,6 +1,7 @@
 
 import { createClient } from "@supabase/supabase-js";
 import TrackedLink from "./TrackedLink";
+import { getGooglePlaceRating } from "../lib/googlePlaces";
 
 export default async function CategoryPage({
   searchParams,
@@ -54,6 +55,14 @@ export default async function CategoryPage({
   }
 
   const businesses = error ? [] : data || [];
+
+  const googleRatings = await Promise.all(
+    businesses.map((business) =>
+      business.google_match_status === "matched" && business.google_place_id
+        ? getGooglePlaceRating(business.google_place_id)
+        : Promise.resolve(null)
+    )
+  );
 
   return (
     <main>
@@ -136,7 +145,7 @@ export default async function CategoryPage({
               </div>
             </div>
           ) : (
-            businesses.map((business) => (
+            businesses.map((business, index) => (
               <article
                 className="contractorCard"
                 key={business.id}
@@ -189,10 +198,19 @@ export default async function CategoryPage({
                     </p>
                   )}
 
+                  {googleRatings[index] && (
+                    <div className="homeProsRating">
+                      <strong>Google Reviews</strong>
+                      <span>★ {googleRatings[index].rating.toFixed(1)} ({googleRatings[index].count} reviews)</span>
+                      {googleRatings[index].mapsUrl && (
+                        <a href={googleRatings[index].mapsUrl} target="_blank" rel="noopener noreferrer">
+                          View on Google Maps
+                        </a>
+                      )}
+                    </div>
+                  )}
                   <div className="homeProsRating">
-                    <strong>
-                      Billings Home Pros Reviews
-                    </strong>
+                    <strong>Billings Home Pros Reviews</strong>
                     <span>No reviews yet</span>
                   </div>
 
