@@ -248,14 +248,18 @@ export default async function CategoryPage({
   </TrackedLink>
 )}
 
-                    <a
+                    <TrackedLink
                       className="actionButton quoteButton"
                       href={`/quote?businessId=${business.id}&businessName=${encodeURIComponent(
                         business.name
                       )}`}
+                      eventName="contractor_quote_click"
+                      businessId={business.id}
+                      businessName={business.name}
+                      category={category}
                     >
                       Request a Quote
-                    </a>
+                    </TrackedLink>
                   </div>
                 </div>
               </article>
