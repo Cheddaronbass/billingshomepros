@@ -157,12 +157,26 @@ export default function HomeSearch() {
     }
 
     if (destination) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "home_service_search", {
+          search_term: query,
+          destination,
+          search_result: "matched",
+        });
+      }
       router.push(destination);
       return;
     }
 
     // Unknown searches return to service choices
     // instead of guessing the wrong category.
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "home_service_search", {
+        search_term: query,
+        destination: "/#services",
+        search_result: "unmatched",
+      });
+    }
     router.push("/#services");
   }
 
