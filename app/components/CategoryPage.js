@@ -3,6 +3,17 @@ import { createClient } from "@supabase/supabase-js";
 import TrackedLink from "./TrackedLink";
 import { getGooglePlaceRating } from "../lib/googlePlaces";
 
+function getBusinessInitials(name = "") {
+  const ignored = new Set(["and", "&", "the", "of", "llc", "inc", "co", "company", "ltd"]);
+  const words = name.trim().split(/\\s+/).filter((word) => {
+    const clean = word.replace(/[^a-zA-Z0-9]/g, "");
+    return clean && !ignored.has(clean.toLowerCase()) && /[a-zA-Z]/.test(clean);
+  });
+  if (!words.length) return name.trim().slice(0, 2).toUpperCase();
+  if (words.length === 1) return words[0].replace(/[^a-zA-Z]/g, "").slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
+
 export default async function CategoryPage({
   searchParams,
   category,
@@ -170,7 +181,7 @@ export default async function CategoryPage({
                           style={{ display: business.logo_url ? "none" : "flex" }}
                           aria-hidden="true"
                         >
-                          {icon}
+                          {getBusinessInitials(business.name)}
                         </span>
                       </div>
                       <div className="contractorIdentityText">
