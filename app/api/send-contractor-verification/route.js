@@ -22,7 +22,7 @@ export async function POST(request) {
   const { data: claim, error } = await db.from("contractor_requests")
     .select("id,request_type,contact_email,business_name,ownership_approved_at,contact_email_verified_at")
     .eq("id", claim_id).maybeSingle();
-  if (error || !claim || claim.request_type !== "claim" || !claim.ownership_approved_at) {
+  if (error) {\n    console.error("Verification claim lookup failed:", error.code, error.message);\n    return Response.json({ error: "Claim lookup failed; check server logs" }, { status: 500 });\n  }\n  if (!claim || claim.request_type !== "claim" || !claim.ownership_approved_at) {
     return Response.json({ error: "Claim is not approved" }, { status: 403 });
   }
   if (claim.contact_email_verified_at) {
