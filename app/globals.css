@@ -1633,3 +1633,14 @@ footer small {
 @media (max-width: 600px) {
   .contractorActions .actionButton { flex-basis: 100%; }
 }
+
+
+/* Stronger contractor card separation */
+.contractorCard {
+  border: 2px solid #8baec4;
+  box-shadow: 0 7px 22px rgba(11, 27, 45, 0.10);
+}
+.contractorCard:hover {
+  border-color: #087fbd;
+  box-shadow: 0 12px 30px rgba(11, 27, 45, 0.15);
+}
