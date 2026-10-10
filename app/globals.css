@@ -1557,3 +1557,79 @@ footer small {
 .heroLogo {
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.65));
 }
+
+
+/* OCTOBER 2026 — DIRECTORY UI POLISH */
+/* Preserve the previously approved large category headings. */
+.categoryHero h1 {
+  font-size: clamp(2.7rem, 6vw, 5.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.categoryHero .eyebrow {
+  font-size: clamp(0.78rem, 1.5vw, 0.98rem);
+  letter-spacing: 0.12em;
+}
+.contractorCard {
+  border-color: #dce7ef;
+  box-shadow: 0 8px 24px rgba(11, 27, 45, 0.06);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.contractorCard:hover {
+  border-color: #9bcfe9;
+  box-shadow: 0 12px 30px rgba(11, 27, 45, 0.1);
+}
+.contractorCard h2 {
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.contractorCard .homeProsRating {
+  margin: 14px 0;
+  padding: 12px 14px;
+  background: #f5f9fc;
+  border: 1px solid #e1eaf0;
+  border-radius: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contractorCard .homeProsRating strong {
+  color: var(--navy);
+}
+.contractorCard .homeProsRating a {
+  color: #087fbd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contractorActions .callButton,
+.contractorActions .websiteButton {
+  border-color: #b8cbd8;
+  color: var(--navy);
+}
+.contractorActions .callButton:hover,
+.contractorActions .websiteButton:hover {
+  background: #eef8fd;
+}
+.contractorActions .quoteButton:hover {
+  background: #64d0ff;
+  border-color: #64d0ff;
+  color: var(--dark);
+}
+.contractorActions .actionButton:focus-visible,
+.filterBar a:focus-visible,
+.serviceCard:focus-visible {
+  outline: 3px solid #087fbd;
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .categoryHero { padding: 52px 6%; }
+  .categoryContent { padding: 48px 6% 65px; }
+  .categoryHero h1 { font-size: clamp(2.3rem, 9vw, 3.8rem); }
+  .contractorCard { padding: 20px; }
+  .contractorCard h2 { font-size: 1.45rem; }
+  .contractorCard .homeProsRating { align-items: flex-start; }
+  .contractorActions .actionButton { flex: 1 1 145px; }
+}
+@media (max-width: 600px) {
+  .contractorActions .actionButton { flex-basis: 100%; }
+}
