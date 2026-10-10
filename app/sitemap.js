@@ -1,47 +1,25 @@
-export default function sitemap() {
-  const baseUrl = "https://billingshomepros.com";
+const baseUrl = "https://billingshomepros.com";
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/plumbing`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hvac`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/hvac/ac-repair`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },    {
-      url: `${baseUrl}/electrical`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/roofing`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contractors-remodeling`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-  ];
+const pages = [
+  { path: "", priority: 1.0 },
+  { path: "/plumbing", priority: 0.9 },
+  { path: "/hvac", priority: 0.9 },
+  { path: "/hvac/ac-repair", priority: 0.8 },
+  { path: "/electrical", priority: 0.9 },
+  { path: "/roofing", priority: 0.9 },
+  { path: "/contractors-remodeling", priority: 0.9 },
+  { path: "/landscaping", priority: 0.9 },
+  { path: "/painting", priority: 0.9 },
+  { path: "/concrete", priority: 0.9 },
+  { path: "/fencing", priority: 0.9 },
+  { path: "/handyman", priority: 0.9 },
+];
+
+export default function sitemap() {
+  return pages.map(({ path, priority }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority,
+  }));
 }
