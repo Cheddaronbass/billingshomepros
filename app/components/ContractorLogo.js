@@ -13,11 +13,11 @@ function getBusinessInitials(name = "") {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-export default function ContractorLogo({ name, logoUrl }) {
+export default function ContractorLogo({ name, logoUrl, logoVerified = false }) {
   const [imageFailed, setImageFailed] = useState(false);
   return (
-    <div className="businessLogo" aria-label={logoUrl && !imageFailed ? `${name} logo` : `${name} initials`}>
-      {logoUrl && !imageFailed ? (
+    <div className="businessLogo" aria-label={logoUrl && logoVerified && !imageFailed ? `${name} logo` : `${name} initials`}>
+      {logoUrl && logoVerified && !imageFailed ? (
         <img src={logoUrl} alt={`${name} logo`} loading="lazy" onError={() => setImageFailed(true)} />
       ) : (
         <span className="businessLogoFallback" aria-hidden="true">{getBusinessInitials(name)}</span>
