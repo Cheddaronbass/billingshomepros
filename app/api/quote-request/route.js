@@ -44,7 +44,7 @@ if (
     );
 
     // Save the lead first. Supabase is our source of truth.
-    const { data: savedLead, error } = await supabase.from("quote_requests").insert({
+    const { error } = await supabase.from("quote_requests").insert({
       business_id,
       business_name,
       customer_name,
@@ -52,7 +52,7 @@ if (
       customer_phone: customer_phone || null,
       project_type: project_type || null,
       project_details,
-    }).select("id").single();
+    });
 
     if (error) {
       console.error("Quote request database error:", error);
@@ -109,9 +109,6 @@ Submitted through BillingsHomePros.com
       });
 
       if (emailError) console.error("Quote notification email error:", emailError);
-      await supabase.from("quote_requests").update({
-        notification_status: emailError ? "failed" : "sent",
-      }).eq("id", savedLead.id);
 
       if (targetBusiness?.lead_email_verified && targetBusiness.lead_email) {
         const { error: contractorError } = await resend.emails.send({
@@ -122,9 +119,6 @@ Submitted through BillingsHomePros.com
           ...(customer_email ? { replyTo: customer_email } : {}),
         });
         if (contractorError) console.error("Contractor lead email error:", contractorError);
-        await supabase.from("quote_requests").update({
-          contractor_notification_status: contractorError ? "failed" : "sent",
-        }).eq("id", savedLead.id);
       }
     } catch (emailError) {
       console.error("Quote notification email error:", emailError);
