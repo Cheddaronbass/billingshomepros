@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { findGooglePlaceCandidate } from "../../lib/findGooglePlaceCandidate";
+import { findGooglePlaceCandidate } from "../../../lib/findGooglePlaceCandidate";
 
 export const dynamic = "force-dynamic";
 
