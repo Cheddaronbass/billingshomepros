@@ -9,6 +9,10 @@ export default function GooglePlacesAdminPage() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [category, setCategory] = useState("landscaping");
+  const [batchOffset, setBatchOffset] = useState(0);
+  const [batchResult, setBatchResult] = useState(null);
+  const [batchLoading, setBatchLoading] = useState(false);
 
   async function search(event) {
     event.preventDefault();
@@ -35,6 +39,24 @@ export default function GooglePlacesAdminPage() {
     }
   }
 
+  async function searchBatch(offset = 0) {
+    setBatchLoading(true);
+    setError("");
+    try {
+      const response = await fetch("/api/admin/google-place-batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${adminKey}` },
+        body: JSON.stringify({ category, offset }),
+        cache: "no-store",
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(response.status === 401 ? "Incorrect admin key." : data.error || "Batch lookup failed.");
+      setBatchOffset(offset);
+      setBatchResult(data);
+    } catch (err) { setError(err.message || "Batch lookup failed."); }
+    finally { setBatchLoading(false); }
+  }
+
   return (
     <main style={{ maxWidth: 780, margin: "40px auto", padding: "0 20px", color: "#152f3d" }}>
       <h1>Google Places Matching</h1>
@@ -53,6 +75,39 @@ export default function GooglePlacesAdminPage() {
           {loading ? "Searching…" : "Search Google Places"}
         </button>
       </form>
+      <section style={{ borderTop: "2px solid #b9c6ca", marginTop: 36, paddingTop: 20 }}>
+        <h2>Batch matching (read-only)</h2>
+        <p>Search five unmatched businesses at a time. Results are for review only; nothing is saved.</p>
+        <label>Category
+          <select value={category} onChange={(e) => { setCategory(e.target.value); setBatchOffset(0); setBatchResult(null); }} style={inputStyle}>
+            {["landscaping","painting","fencing","handyman","concrete","electrical","plumbing","hvac","roofing","contractors-remodeling"].map((item) => <option key={item} value={item}>{item}</option>)}
+          </select>
+        </label>
+        <button type="button" disabled={!adminKey || batchLoading} onClick={() => searchBatch(0)} style={{ marginTop: 12, padding: 12 }}>
+          {batchLoading ? "Searching…" : "Search first five unmatched"}
+        </button>
+        {batchResult && (
+          <div aria-live="polite">
+            <h3>Batch results</h3>
+            {batchResult.results.map((business) => (
+              <article key={business.id} style={{ padding: 14, margin: "12px 0", border: "1px solid #b9c6ca", borderRadius: 6 }}>
+                <strong>#{business.id} — {business.name}</strong> ({business.phone})
+                {business.error && <p>{business.error}</p>}
+                {!business.error && <p>{business.exactPhoneMatches?.length || 0} exact phone match(es)</p>}
+                {(business.candidates || []).map((place) => (
+                  <p key={place.placeId}>
+                    {place.name} — {place.phone} — {place.address}<br />
+                    Status: {place.businessStatus}; Phone: {place.phoneMatches ? "MATCH" : "different"}; Name: {place.nameMatches ? "MATCH" : "review"}<br />
+                    Place ID: <code style={{ overflowWrap: "anywhere" }}>{place.placeId}</code>
+                  </p>
+                ))}
+                {!business.error && !business.candidates?.length && <p>No candidates returned.</p>}
+              </article>
+            ))}
+            {batchResult.hasMore && <button type="button" disabled={batchLoading} onClick={() => searchBatch(batchResult.nextOffset)}>Next five</button>}
+          </div>
+        )}
+      </section>
       {error && <p role="alert" style={{ color: "#9d2323" }}>{error}</p>}
       {result && (
         <section aria-live="polite" style={{ marginTop: 30 }}>
