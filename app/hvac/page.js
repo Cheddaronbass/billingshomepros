@@ -61,6 +61,15 @@ seoLink={{
 }}
 emptyTitle="No matching HVAC listings yet."
       emptyDescription="Try another HVAC service or view all HVAC professionals serving the Billings area."
+      localGuide={{
+        "title": "Choosing an HVAC Company in Billings, MT",
+        "paragraphs": [
+                "Billings homeowners depend on heating through cold winters and cooling during hot summer weather. If your furnace or air conditioner struggles, ask an HVAC professional whether maintenance or a repair is appropriate before considering replacement.",
+                "When comparing heating and cooling companies, request a written estimate, ask about equipment sizing and efficiency, and confirm applicable credentials and warranty terms.",
+                "For a furnace that stops heating, describe the symptoms and ask about service availability. If you suspect a gas leak or carbon monoxide, leave the area and contact emergency services or your gas utility rather than troubleshooting it yourself."
+        ]
+}}
+
       icon="❄️"
       contractorEyebrow="BILLINGS HVAC COMPANIES"
       contractorTitle="Own an HVAC business?"
