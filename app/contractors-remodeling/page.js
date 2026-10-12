@@ -57,6 +57,15 @@ export default function ContractorsRemodelingPage({ searchParams }) {
       introDescription="Browse local contractors and remodeling companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
       emptyTitle="No matching contractor listings yet."
       emptyDescription="Try another service or view all contractors serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Remodeling Contractor in Billings, MT",
+        "paragraphs": [
+                "For kitchen updates, home additions, or major repairs, begin with a clear description of your goals, budget, and desired schedule. Ask contractors about experience with similar projects in the Billings area.",
+                "Request detailed written proposals showing the scope, materials, payment schedule, and how changes will be handled. Check references and confirm any necessary permits, insurance, and registrations.",
+                "Comparing the same project scope across bids can help you spot missing work and choose a contractor based on fit and communication, not price alone."
+        ]
+}}
+
       icon="🛠️"
       contractorEyebrow="BILLINGS CONTRACTORS"
       contractorTitle="Own a contracting or remodeling business?"
