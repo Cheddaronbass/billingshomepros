@@ -13,6 +13,9 @@ export default function GooglePlacesAdminPage() {
   const [batchOffset, setBatchOffset] = useState(0);
   const [batchResult, setBatchResult] = useState(null);
   const [batchLoading, setBatchLoading] = useState(false);
+  const [approvingId, setApprovingId] = useState(null);
+  const [approvedIds, setApprovedIds] = useState([]);
+  const [approvalMessage, setApprovalMessage] = useState("");
 
   async function search(event) {
     event.preventDefault();
@@ -37,6 +40,25 @@ export default function GooglePlacesAdminPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  async function approveMatch(business, place) {
+    if (!window.confirm(`Save Google match for ${business.name}? This updates the listing in Supabase.`)) return;
+    setApprovingId(business.id);
+    setApprovalMessage("");
+    try {
+      const response = await fetch("/api/admin/approve-google-place", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${adminKey}` },
+        body: JSON.stringify({ businessId: business.id, placeId: place.placeId }),
+        cache: "no-store",
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Approval failed");
+      setApprovedIds((ids) => [...ids, business.id]);
+      setApprovalMessage(`Saved Google match for ${business.name}.`);
+    } catch (err) { setApprovalMessage(`Could not save ${business.name}: ${err.message}`); }
+    finally { setApprovingId(null); }
   }
 
   async function searchBatch(offset = 0) {
@@ -86,6 +108,7 @@ export default function GooglePlacesAdminPage() {
         <button type="button" disabled={!adminKey || batchLoading} onClick={() => searchBatch(0)} style={{ marginTop: 12, padding: 12 }}>
           {batchLoading ? "Searching…" : "Search first five unmatched"}
         </button>
+        {approvalMessage && <p role="status">{approvalMessage}</p>}
         {batchResult && (
           <div aria-live="polite">
             <h3>Batch results</h3>
@@ -99,6 +122,14 @@ export default function GooglePlacesAdminPage() {
                     {place.name} — {place.phone} — {place.address}<br />
                     Status: {place.businessStatus}; Phone: {place.phoneMatches ? "MATCH" : "different"}; Name: {place.nameMatches ? "MATCH" : "review"}<br />
                     Place ID: <code style={{ overflowWrap: "anywhere" }}>{place.placeId}</code>
+                    {place.phoneMatches && place.nameMatches && place.businessStatus === "OPERATIONAL" &&
+                      /\\b(Billings|Laurel)\\b/i.test(place.address) &&
+                      /\\b(MT|Montana)\\b/i.test(place.address) && (
+                        <><br /><button type="button" disabled={approvingId !== null || approvedIds.includes(business.id)}
+                          onClick={() => approveMatch(business, place)}>
+                          {approvedIds.includes(business.id) ? "Saved" : approvingId === business.id ? "Verifying…" : "Approve and save verified match"}
+                        </button></>
+                      )}
                   </p>
                 ))}
                 {!business.error && !business.candidates?.length && <p>No candidates returned.</p>}
