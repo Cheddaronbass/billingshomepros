@@ -58,6 +58,15 @@ export default function ConcretePage({ searchParams }) {
       introDescription="Browse concrete contractors serving Billings, Laurel, and surrounding communities."
       emptyTitle="No matching concrete listings yet."
       emptyDescription="Try another concrete service or view all concrete contractors serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Concrete Contractor in Billings, MT",
+        "paragraphs": [
+                "Driveways, patios, sidewalks, and foundations need planning for drainage, site conditions, and seasonal temperature changes. Describe how the finished surface will be used and ask the contractor about the proposed approach.",
+                "Compare estimates for preparation, base materials, reinforcement where appropriate, concrete finish, curing, and cleanup. Ask about scheduling and any permits that may apply.",
+                "A detailed scope helps homeowners compare concrete bids and understand how the contractor plans to address cracking, drainage, and long-term maintenance."
+        ]
+}}
+
       icon="🧱"
       contractorEyebrow="BILLINGS CONCRETE CONTRACTORS"
       contractorTitle="Own a concrete business?"
