@@ -23,6 +23,7 @@ export default async function CategoryPage({
   contractorTitle,
   contractorDescription,
   seoLink,
+  localGuide,
   supportsEmergency = false,
 }) {
   const params = await searchParams;
@@ -261,6 +262,14 @@ export default async function CategoryPage({
             ))
           )}
         </div>
+        {localGuide && (
+          <section aria-labelledby="local-roofing-guide" style={{ marginTop: "3rem", maxWidth: "850px", lineHeight: 1.7 }}>
+            <h2 id="local-roofing-guide">{localGuide.title}</h2>
+            {localGuide.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </section>
+        )}
       </section>
 
       <section className="proSection">
