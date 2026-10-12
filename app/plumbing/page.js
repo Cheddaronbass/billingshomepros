@@ -57,6 +57,15 @@ export default function PlumbingPage({ searchParams }) {
       introDescription="Browse local plumbing companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
       emptyTitle="No matching plumbing listings yet."
       emptyDescription="Try another plumbing service or view all plumbing professionals serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Plumber in Billings, MT",
+        "paragraphs": [
+                "For leaks, clogged drains, or water-heater trouble, describe the symptoms and ask whether a plumber offers diagnosis, repair, or replacement. For active leaks, locate your water shutoff and avoid affected electrical areas.",
+                "Before hiring, ask for a written estimate, expected timing, and any applicable license or insurance information. Compare the scope of work, parts, and warranty details—not just the price.",
+                "For urgent plumbing problems, confirm emergency availability and any after-hours charges before scheduling."
+        ]
+}}
+
       icon="🔧"
       contractorEyebrow="BILLINGS PLUMBERS"
       contractorTitle="Own a plumbing business?"
