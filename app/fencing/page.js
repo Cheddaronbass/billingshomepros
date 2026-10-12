@@ -58,6 +58,15 @@ export default function FencingPage({ searchParams }) {
       introDescription="Browse fencing contractors serving Billings, Laurel, and surrounding communities."
       emptyTitle="No matching fencing listings yet."
       emptyDescription="Try another fencing service or view all fencing contractors serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Fence Contractor in Billings, MT",
+        "paragraphs": [
+                "Before installing a wood, vinyl, or chain-link fence, identify your goals for privacy, pets, security, and maintenance. Discuss wind exposure, gate placement, and the layout of your property.",
+                "Ask contractors to explain materials, post installation, removal of old fencing, cleanup, and expected timelines in a written estimate. Check property boundaries and local rules before work begins.",
+                "Compare fencing bids based on the full installation scope and long-term upkeep, not just the price per foot."
+        ]
+}}
+
       icon="🏡"
       contractorEyebrow="BILLINGS FENCE CONTRACTORS"
       contractorTitle="Own a fencing business?"
