@@ -123,8 +123,8 @@ export default function GooglePlacesAdminPage() {
                     Status: {place.businessStatus}; Phone: {place.phoneMatches ? "MATCH" : "different"}; Name: {place.nameMatches ? "MATCH" : "review"}<br />
                     Place ID: <code style={{ overflowWrap: "anywhere" }}>{place.placeId}</code>
                     {place.phoneMatches && place.nameMatches && place.businessStatus === "OPERATIONAL" &&
-                      /\\b(Billings|Laurel)\\b/i.test(place.address) &&
-                      /\\b(MT|Montana)\\b/i.test(place.address) && (
+                      /\b(Billings|Laurel)\b/i.test(place.address) &&
+                      /\b(MT|Montana)\b/i.test(place.address) && (
                         <><br /><button type="button" disabled={approvingId !== null || approvedIds.includes(business.id)}
                           onClick={() => approveMatch(business, place)}>
                           {approvedIds.includes(business.id) ? "Saved" : approvingId === business.id ? "Verifying…" : "Approve and save verified match"}
