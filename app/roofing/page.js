@@ -1,7 +1,7 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "Roofers in Billings, MT",
+  title: "Roofing Companies in Billings, MT | Roof Repair & Replacement",
   description:
     "Find local roofing companies in Billings, Montana for roof repair, roof replacement, inspections, and storm damage. Compare local roofers and request a quote.",
   alternates: {
