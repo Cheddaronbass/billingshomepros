@@ -57,6 +57,14 @@ export default function RoofingPage({ searchParams }) {
       introDescription="Browse local roofing companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
       emptyTitle="No matching roofing listings yet."
       emptyDescription="Try another roofing service or view all roofing professionals serving the Billings area."
+      localGuide={{
+        title: "Choosing a Roofing Contractor in Billings, MT",
+        paragraphs: [
+          "Billings-area roofs face changing seasons, wind, hail, and winter weather. If you notice missing shingles, leaks, or possible storm damage, ask a local roofing contractor to inspect the roof and explain the condition before deciding on repairs or replacement.",
+          "When comparing roofing companies, ask for a written estimate that explains materials, labor, cleanup, and timing. Confirm insurance, applicable licensing or registration, and warranty terms, and compare more than one estimate when possible.",
+          "For storm damage, document visible issues safely from the ground and ask how the contractor handles inspections and repair timelines. Browse the Billings-area roofers listed above to find companies offering roof repair, replacement, inspections, or storm-damage services."
+        ]
+      }}
       icon="🏠"
       contractorEyebrow="BILLINGS ROOFERS"
       contractorTitle="Own a roofing business?"
