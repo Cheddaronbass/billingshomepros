@@ -58,6 +58,15 @@ export default function PaintingPage({ searchParams }) {
       introDescription="Browse painting contractors serving Billings, Laurel, and surrounding communities."
       emptyTitle="No matching painting listings yet."
       emptyDescription="Try another painting service or view all painting contractors serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Painting Contractor in Billings, MT",
+        "paragraphs": [
+                "A lasting paint job starts with proper preparation. Ask painters how they will handle cleaning, scraping, repairs, priming, and protection of nearby surfaces.",
+                "For exterior projects in Billings, discuss weather conditions, scheduling, and the products recommended for your siding or trim. Interior and cabinet painting may require different preparation methods.",
+                "Request written estimates that identify surfaces, coats, materials, cleanup, and warranty terms so you can compare bids fairly."
+        ]
+}}
+
       icon="🎨"
       contractorEyebrow="BILLINGS PAINTERS"
       contractorTitle="Own a painting business?"
