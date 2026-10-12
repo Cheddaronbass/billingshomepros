@@ -58,6 +58,15 @@ export default function HandymanPage({ searchParams }) {
       introDescription="Browse handyman services serving Billings, Laurel, and surrounding communities."
       emptyTitle="No matching handyman listings yet."
       emptyDescription="Try another service or view all handyman professionals serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Handyman in Billings, MT",
+        "paragraphs": [
+                "For drywall patches, fixture installation, minor repairs, and home maintenance, make a list of tasks and share photos or measurements when requesting an estimate.",
+                "Ask whether the provider handles each type of work, what materials are included, and how labor and travel charges are calculated. Confirm insurance and any applicable registration requirements.",
+                "Some plumbing, electrical, and structural projects require specialized licensed professionals or permits. Ask before booking if your project may fall into one of those categories."
+        ]
+}}
+
       icon="🔧"
       contractorEyebrow="BILLINGS HANDYMAN SERVICES"
       contractorTitle="Own a handyman business?"
