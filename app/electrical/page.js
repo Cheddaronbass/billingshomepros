@@ -63,6 +63,15 @@ export default function ElectricalPage({ searchParams }) {
       introDescription="Browse local electricians and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
       emptyTitle="No matching electrical listings yet."
       emptyDescription="Try another electrical service or view all electricians serving the Billings area."
+      localGuide={{
+        "title": "Choosing an Electrician in Billings, MT",
+        "paragraphs": [
+                "Whether you need lighting, wiring, a panel upgrade, or an electrical repair, describe the project and ask an electrician to assess the work before beginning.",
+                "Compare written estimates that describe materials, permits when applicable, timing, and cleanup. Verify licensing and insurance requirements for the specific job.",
+                "Flickering lights, warm outlets, or repeatedly tripping breakers can signal a problem worth professional inspection. Avoid opening panels or attempting unsafe electrical repairs yourself."
+        ]
+}}
+
       icon="⚡"
       contractorEyebrow="BILLINGS ELECTRICIANS"
       contractorTitle="Own an electrical business?"
