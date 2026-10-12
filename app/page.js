@@ -230,6 +230,11 @@ export default function Home() {
           professionals.
         </p>
 
+        <nav aria-label="Legal and support" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "18px", margin: "18px 0" }}>
+          <a href="/privacy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</a>
+          <a href="/terms" style={{ color: "inherit", textDecoration: "underline" }}>Terms of Service</a>
+          <a href="mailto:support@billingshomepros.com" style={{ color: "inherit", textDecoration: "underline" }}>Contact Support</a>
+        </nav>
         <small>© 2026 BillingsHomePros.com</small>
       </footer>
     </main>
