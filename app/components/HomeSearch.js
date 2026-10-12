@@ -70,7 +70,8 @@ export default function HomeSearch() {
       query.includes("hvac") ||
       query === "heating" ||
       query.includes("heating repair") ||
-      query.includes("heater repair")
+      query.includes("heater repair") ||
+      /\b(heat|heater|heaters|heating|cool|cooling|cooler|aircon|air con|ac unit|heat pump|thermostat|ventilation)\b/.test(query)
     ) {
       destination = "/hvac";
 
@@ -154,6 +155,35 @@ export default function HomeSearch() {
       query.includes("construction")
     ) {
       destination = "/contractors-remodeling";
+    // LANDSCAPING — Common homeowner searches
+    } else if (
+      /\b(landscap\w*|lawn|mow\w*|grass|sprinkler\w*|irrigation|sod|yard|tree|trees|stump|shrubs?|bushes|hardscap\w*|retaining wall)\b/.test(query)
+    ) {
+      destination = "/landscaping";
+
+    // PAINTING
+    } else if (
+      /\b(paint\w*|painter\w*|repaint\w*|stain\w*|wallpaper)\b/.test(query)
+    ) {
+      destination = "/painting";
+
+    // CONCRETE
+    } else if (
+      /\b(concrete|cement|driveway\w*|sidewalk\w*|walkway\w*|patio\w*|slab\w*|foundation\w*|stamped concrete)\b/.test(query)
+    ) {
+      destination = "/concrete";
+
+    // FENCING
+    } else if (
+      /\b(fenc\w*|fencing|gate|gates|chain link|privacy fence)\b/.test(query)
+    ) {
+      destination = "/fencing";
+
+    // HANDYMAN — General household repairs
+    } else if (
+      /\b(handyman|handywoman|handyperson|drywall|sheetrock|odd jobs?|home maintenance|home repair\w*|small repairs?|fix\s+(?:my|a|the)|door repair|door installation|shelving|mount tv|tv mounting)\b/.test(query)
+    ) {
+      destination = "/handyman";
     }
 
     if (destination) {
