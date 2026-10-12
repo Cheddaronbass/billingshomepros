@@ -58,6 +58,15 @@ export default function LandscapingPage({ searchParams }) {
       introDescription="Browse landscaping companies serving Billings, Laurel, and surrounding communities."
       emptyTitle="No matching landscaping listings yet."
       emptyDescription="Try another landscaping service or view all landscaping professionals serving the Billings area."
+      localGuide={{
+        "title": "Choosing a Landscaping Company in Billings, MT",
+        "paragraphs": [
+                "Billings yards face dry periods, seasonal temperature swings, and changing irrigation needs. Discuss your property's sun exposure, watering requirements, and maintenance goals with a landscaping professional.",
+                "For lawn care, irrigation, tree work, or landscape design, ask for a clear proposal covering plants or materials, installation, cleanup, and ongoing care.",
+                "Compare local providers by the services they actually offer, their project experience, and whether their plan fits your budget and maintenance preferences."
+        ]
+}}
+
       icon="🌿"
       contractorEyebrow="BILLINGS LANDSCAPERS"
       contractorTitle="Own a landscaping business?"
