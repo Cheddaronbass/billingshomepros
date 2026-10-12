@@ -1,7 +1,7 @@
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
-  title: "Plumbers in Billings, MT",
+  title: "Plumbers in Billings, MT | Repairs, Drains & Water Heaters",
   description:
     "Find local plumbers in Billings, Montana for plumbing repairs, water heaters, drain and sewer service, and emergency plumbing. Compare local professionals and request a quote.",
   alternates: {
