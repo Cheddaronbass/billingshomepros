@@ -1,3 +1,5 @@
+import InfoPageLayout from "../components/InfoPageLayout";
+
 export const metadata = {
   title: "Site Map | Billings Home Pros",
   description: "Browse home service categories and useful pages on Billings Home Pros.",
@@ -26,16 +28,18 @@ const otherPages = [
   ["Terms of Service", "/terms"],
 ];
 
+
 export default function SiteMapPage() {
   return (
-    <main style={{ maxWidth: 900, margin: "0 auto", padding: "48px 24px 80px", color: "#243247", lineHeight: 1.7 }}>
-      <a href="/">← Billings Home Pros</a>
-      <h1>Site Map</h1>
-      <p>Explore local home services in Billings, Laurel, and Yellowstone County.</p>
-      <h2>Find a Home Service Professional</h2>
-      <ul>{categories.map(([label, href]) => <li key={href}><a href={href}>{label}</a></li>)}</ul>
-      <h2>More Information</h2>
-      <ul>{otherPages.map(([label, href]) => <li key={href}><a href={href}>{label}</a></li>)}</ul>
-    </main>
+    <InfoPageLayout title="Site Map" eyebrow="Explore Billings Home Pros" intro="Find home service professionals in Billings, Laurel, and Yellowstone County.">
+      <h2 style={{ color: "#101b27", fontFamily: "Arial, Helvetica, sans-serif", fontSize: 25 }}>Find a Home Service Professional</h2>
+      <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "12px 22px", paddingLeft: 22, marginBottom: 36 }}>
+        {categories.map(([label, href]) => <li key={href}><a href={href} style={{ color: "#087fbd", fontWeight: 700, textDecoration: "underline" }}>{label}</a></li>)}
+      </ul>
+      <h2 style={{ color: "#101b27", fontFamily: "Arial, Helvetica, sans-serif", fontSize: 25 }}>More Information</h2>
+      <ul style={{ display: "grid", gap: 12, paddingLeft: 22 }}>
+        {otherPages.map(([label, href]) => <li key={href}><a href={href} style={{ color: "#087fbd", fontWeight: 700, textDecoration: "underline" }}>{label}</a></li>)}
+      </ul>
+    </InfoPageLayout>
   );
 }
