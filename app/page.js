@@ -168,24 +168,23 @@ export default function Home() {
 </div>
       </section>
 
-      <section aria-labelledby="related-services-title" style={{ background: "#0b1117", color: "#fff", padding: "54px 7% 65px", borderTop: "1px solid #273d50" }}>
+      <section aria-labelledby="related-services-title" style={{ background: "#0b1117", borderTop: "1px solid #273d50", padding: "30px 7% 38px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
-          <div className="eyebrow" style={{ color: "#25b9ff" }}>MORE WAYS TO FIND A PRO</div>
-          <h2 id="related-services-title" style={{ color: "#fff", fontFamily: "Arial, Helvetica, sans-serif", fontWeight: 900, fontSize: "clamp(26px, 4vw, 38px)", letterSpacing: "-0.03em", lineHeight: 1.15, marginBottom: 14 }}>Planning a project that needs more than one pro?</h2>
-          <p style={{ color: "#c4d2df", fontSize: 17, lineHeight: 1.6, margin: "0 auto 26px", maxWidth: 720 }}>Explore related Billings home services for projects that often go together.</p>
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 12 }}>
+          <h2 id="related-services-title" style={{ fontFamily: "Arial, Helvetica, sans-serif", color: "#fff", fontSize: "clamp(19px, 2.5vw, 25px)", fontWeight: 800, letterSpacing: "-0.02em", margin: "0 0 10px", lineHeight: 1.3 }}>Need more than one type of pro?</h2>
+          <p style={{ color: "#c4d2df", fontSize: 15, lineHeight: 1.5, margin: "0 0 16px" }}>Explore services that often go together:</p>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexWrap: "wrap", gap: "10px 24px", fontSize: 15, lineHeight: 1.5 }}>
             {[
-              ["Plumbing & Remodeling", "/plumbing", "/contractors-remodeling"],
-              ["Electrical & Heating/Cooling", "/electrical", "/hvac"],
-              ["Roofing & Painting", "/roofing", "/painting"],
-              ["Landscaping & Concrete", "/landscaping", "/concrete"],
-              ["Fencing & Handyman", "/fencing", "/handyman"],
-            ].map(([label, first, second]) => (
-              <div key={label} style={{ background: "#101b27", border: "1px solid #273d50", borderRadius: 10, padding: "12px 18px", color: "#dce2de", fontSize: 16, fontWeight: 700 }}>
-                <a href={first} style={{ color: "#25b9ff", textDecoration: "underline", textUnderlineOffset: 3 }}>{label.split(" & ")[0]}</a>
-                {" & "}
-                <a href={second} style={{ color: "#25b9ff", textDecoration: "underline", textUnderlineOffset: 3 }}>{label.split(" & ")[1]}</a>
-              </div>
+              ["Plumbing", "/plumbing", "Remodeling", "/contractors-remodeling"],
+              ["Electrical", "/electrical", "HVAC", "/hvac"],
+              ["Roofing", "/roofing", "Painting", "/painting"],
+              ["Landscaping", "/landscaping", "Concrete", "/concrete"],
+              ["Fencing", "/fencing", "Handyman", "/handyman"],
+            ].map(([firstLabel, firstHref, secondLabel, secondHref]) => (
+              <span key={firstHref} style={{ color: "#8296a8", whiteSpace: "nowrap" }}>
+                <a href={firstHref} style={{ color: "#25b9ff", fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>{firstLabel}</a>
+                <span style={{ color: "#c4d2df" }}> + </span>
+                <a href={secondHref} style={{ color: "#25b9ff", fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>{secondLabel}</a>
+              </span>
             ))}
           </div>
         </div>
