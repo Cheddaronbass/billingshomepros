@@ -19,9 +19,6 @@ export const metadata = {
     "remodeling contractors Billings MT",
   ],
   metadataBase: new URL("https://billingshomepros.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Billings Home Pros | Local Contractors & Home Services",
     description:
