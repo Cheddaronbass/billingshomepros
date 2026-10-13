@@ -38,7 +38,7 @@ export default function OurProgressPage() {
           <p style={{ color: "#527080", fontWeight: 700, fontSize: 15, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Our ongoing commitment</p>
           <h1 style={{ fontSize: "clamp(30px, 6vw, 44px)", lineHeight: 1.12, margin: "0 0 12px" }}>We keep improving.</h1>
           <p style={{ fontSize: "clamp(18px, 3vw, 21px)", lineHeight: 1.45, margin: 0 }}>We review search performance weekly and keep looking for practical ways to help more homeowners discover local professionals.</p>
-          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Latest update: October 13, 2026 · Reviewed weekly</p>
+          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: October 13, 2026 at 8:18 AM MDT · Reviewed weekly</p>
         </header>
         <div style={{ display: "grid", gap: 14 }}>
           {groups.map((group) => (
