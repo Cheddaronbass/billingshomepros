@@ -10,7 +10,7 @@ function db() {
 }
 
 async function getBusiness(id) {
-  if (!/^\\d+$/.test(String(id))) return null;
+  if (!/^[0-9]+$/.test(String(id))) return null;
   const { data, error } = await db().from("businesses").select("*").eq("id", Number(id)).maybeSingle();
   return error ? null : data;
 }
@@ -34,7 +34,7 @@ export default async function BusinessProfile({ params }) {
   const business = await getBusiness(id);
   if (!business) notFound();
 
-  const categoryLabel = business.category.replaceAll("-", " ").replace(/\\b\\w/g, (c) => c.toUpperCase());
+  const categoryLabel = business.category.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const profileUrl = `https://billingshomepros.com/pros/${business.id}`;
   const schema = {
     "@context": "https://schema.org",
