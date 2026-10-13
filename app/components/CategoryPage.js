@@ -67,8 +67,28 @@ export default async function CategoryPage({
     )
   );
 
+  // Describe this category and its visible listings without claiming that
+  // Billings Home Pros owns, endorses, or verifies the listed businesses.
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: heroTitle,
+    description: heroDescription,
+    about: { "@type": "Service", name: categoryLabel, areaServed: { "@type": "Place", name: "Billings, Montana" } },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: businesses.length,
+      itemListElement: businesses.map((business, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: business.name,
+      })),
+    },
+  };
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/">
           <span className="brandMain">
