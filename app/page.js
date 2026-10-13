@@ -168,6 +168,18 @@ export default function Home() {
 </div>
       </section>
 
+      <section aria-labelledby="related-services-title" style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 20px 40px" }}>
+        <h2 id="related-services-title" style={{ fontSize: "clamp(22px, 3vw, 28px)", marginBottom: 8 }}>Planning a project that needs more than one pro?</h2>
+        <p style={{ fontSize: 17, lineHeight: 1.5, marginTop: 0 }}>Explore related Billings home services for projects that often go together.</p>
+        <ul style={{ display: "flex", flexWrap: "wrap", gap: "12px 24px", paddingLeft: 22, fontSize: 17, lineHeight: 1.6 }}>
+          <li><a href="/plumbing">Plumbing</a> and <a href="/contractors-remodeling">remodeling</a></li>
+          <li><a href="/electrical">Electrical</a> and <a href="/hvac">heating &amp; cooling</a></li>
+          <li><a href="/roofing">Roofing</a> and <a href="/painting">painting</a></li>
+          <li><a href="/landscaping">Landscaping</a> and <a href="/concrete">concrete</a></li>
+          <li><a href="/fencing">Fencing</a> and <a href="/handyman">handyman services</a></li>
+        </ul>
+      </section>
+
       <section className="whySection" id="why">
         <div className="sectionHeading">
           <div className="eyebrow builtForBillings">BUILT FOR BILLINGS</div>
