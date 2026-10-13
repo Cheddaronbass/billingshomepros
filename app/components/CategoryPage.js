@@ -81,7 +81,19 @@ export default async function CategoryPage({
       itemListElement: businesses.map((business, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        name: business.name,
+        item: {
+          "@type": "LocalBusiness",
+          name: business.name,
+          ...(business.description ? { description: business.description } : {}),
+          ...(business.phone ? { telephone: business.phone } : {}),
+          ...(business.website && /^https?:\\/\\//i.test(business.website)
+            ? { url: business.website }
+            : {}),
+          areaServed: business.service_area || "Billings, Montana",
+          ...(Array.isArray(business.services) && business.services.length
+            ? { knowsAbout: business.services }
+            : {}),
+        },
       })),
     },
   };
