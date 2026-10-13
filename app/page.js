@@ -1,3 +1,5 @@
+export const metadata = { alternates: { canonical: "/" } };
+
 import HomeSearch from "./components/HomeSearch";
 
 const services = [
@@ -231,6 +233,7 @@ export default function Home() {
         </p>
 
         <nav aria-label="Legal and support" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "18px", margin: "18px 0" }}>
+          <a href="/site-map" style={{ color: "inherit", textDecoration: "underline" }}>Site Map</a>
           <a href="/privacy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</a>
           <a href="/terms" style={{ color: "inherit", textDecoration: "underline" }}>Terms of Service</a>
           <a href="mailto:support@billingshomepros.com" style={{ color: "inherit", textDecoration: "underline" }}>Contact Support</a>
