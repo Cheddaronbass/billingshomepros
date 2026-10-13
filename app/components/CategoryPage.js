@@ -86,7 +86,7 @@ export default async function CategoryPage({
           name: business.name,
           ...(business.description ? { description: business.description } : {}),
           ...(business.phone ? { telephone: business.phone } : {}),
-          ...(business.website && /^https?:\\/\\//i.test(business.website)
+          ...(business.website && business.website.startsWith("https://") || business.website && business.website.startsWith("http://")
             ? { url: business.website }
             : {}),
           areaServed: business.service_area || "Billings, Montana",
