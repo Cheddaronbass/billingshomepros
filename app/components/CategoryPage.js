@@ -188,29 +188,15 @@ export default async function CategoryPage({
                 <div className="contractorMain">
                   <div className="contractorTop">
                     <div className="contractorIdentity">
-                      <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} />
-                      <div className="contractorIdentityText">
-                      <div className="businessNameRow">
-                        <h2>{business.name}</h2>
-
-                        {business.featured && (
-                          <span className="featuredBadge">
-                            Featured
-                          </span>
-                        )}
-
-                        {business.claimed && (
-                          <span className="claimedBadge">
-                            ✓ Claimed
-                          </span>
-                        )}
-                      </div>
-
-                      <p className="contractorLocation">
-                        {business.service_area ||
-                          "Billings, Montana"}
-                      </p>
-                      </div>
+                      <a href={`/pros/${business.id}`} aria-label={`View ${business.name} contractor profile`} style={{ display: "flex", alignItems: "center", gap: 14, color: "inherit", textDecoration: "none" }}>
+                        <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} />
+                        <div className="contractorIdentityText">
+                          <div className="businessNameRow"><h2>{business.name}</h2></div>
+                          <p className="contractorLocation">{business.service_area || "Billings, Montana"}</p>
+                        </div>
+                      </a>
+                      {business.featured && <span className="featuredBadge">Featured</span>}
+                      {business.claimed && <span className="claimedBadge">✓ Claimed</span>}
                     </div>
                   </div>
 
@@ -247,7 +233,6 @@ export default async function CategoryPage({
                       )}
                     </div>
                   )}
-                  <p style={{ marginTop: 12 }}><a href={`/pros/${business.id}`} style={{ color: "#25b9ff", fontWeight: 700 }}>View contractor profile →</a></p>
                   <div className="contractorActions">
                     {business.phone && (
                       <TrackedLink
