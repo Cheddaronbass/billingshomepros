@@ -247,6 +247,7 @@ export default async function CategoryPage({
                       )}
                     </div>
                   )}
+                  <p style={{ marginTop: 12 }}><a href={`/pros/${business.id}`} style={{ color: "#25b9ff", fontWeight: 700 }}>View contractor profile →</a></p>
                   <div className="contractorActions">
                     {business.phone && (
                       <TrackedLink
