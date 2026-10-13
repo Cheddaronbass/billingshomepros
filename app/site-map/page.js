@@ -21,6 +21,7 @@ const categories = [
 const otherPages = [
   ["Home", "/"],
   ["Get Listed", "/get-listed"],
+  ["Our Partnership Promise", "/our-progress"],
   ["Privacy Policy", "/privacy"],
   ["Terms of Service", "/terms"],
 ];
