@@ -45,6 +45,7 @@ const serviceNames = {
 export default function ACRepairPage() {
   return (
     <CategoryPage
+      fixedService="air-conditioning"
       category="hvac"
       categoryLabel="HVAC"
       filters={filters}
