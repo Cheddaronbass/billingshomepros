@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Our Partnership Promise | Billings Home Pros",
+  title: "Our Progress & Partnership Promise | Billings Home Pros",
   description: "See the improvements we're making to help homeowners discover local Billings service professionals.",
   alternates: { canonical: "/our-progress" },
 };
@@ -36,8 +36,8 @@ export default function OurProgressPage() {
         <a href="/" style={{ color: "#245b72", fontSize: 16 }}>← Billings Home Pros</a>
         <header style={{ margin: "24px 0 20px" }}>
           <p style={{ color: "#527080", fontWeight: 700, fontSize: 15, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Weekly Progress &amp; Transparency Report</p>
-          <h1 style={{ fontSize: "clamp(30px, 6vw, 44px)", lineHeight: 1.12, margin: "0 0 12px" }}>Our Partnership Promise</h1>
-          <p style={{ fontSize: "clamp(18px, 3vw, 21px)", lineHeight: 1.45, margin: 0 }}>Real progress. Real transparency. Continuous improvement. We review search performance weekly and keep looking for practical ways to help more homeowners discover local professionals.</p>
+          <h1 style={{ fontSize: "clamp(30px, 6vw, 44px)", lineHeight: 1.12, margin: "0 0 12px" }}>Our Progress &amp; Partnership Promise</h1>
+          <p style={{ fontSize: "clamp(18px, 3vw, 21px)", lineHeight: 1.45, margin: 0 }}>Our promise is to report what we actually improve, distinguish completed work from plans, and never guarantee rankings or leads. We review search performance weekly and keep looking for practical ways to help more homeowners discover local professionals.</p>
           <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: October 13, 2026 at 8:18 AM MDT · Reviewed weekly</p>
         </header>
         <div style={{ display: "grid", gap: 14 }}>
