@@ -72,6 +72,12 @@ export default function RoofingPage({ searchParams }) {
       contractorTitle="Own a roofing business?"
       contractorDescription="Billings Home Pros is building a local directory designed to help homeowners find businesses like yours."
     />
+    <section aria-label="Specialist services" style={{background:"#0b1117",padding:"20px 18px",borderTop:"1px solid #243c50"}}>
+      <div style={{maxWidth:1000,margin:"0 auto",display:"flex",alignItems:"center",gap:14,flexWrap:"wrap"}}>
+        <strong style={{color:"#fff",fontSize:15}}>Looking for a specific service?</strong>
+        <Link href="/roofing/roof-replacement" style={{color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Roof replacement in Billings →</Link>
+      </div>
+    </section>
     <section style={{ background: "#0b1117", padding: "24px 18px 42px", borderTop: "1px solid #254059" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto", border: "1px solid #2e5875", background: "#102638", borderRadius: 14, padding: "22px 26px", display: "flex", gap: 20, justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
         <div>
