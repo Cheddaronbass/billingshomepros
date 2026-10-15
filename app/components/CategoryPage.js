@@ -25,9 +25,10 @@ export default async function CategoryPage({
   seoLink,
   localGuide,
   supportsEmergency = false,
+  fixedService = "",
 }) {
   const params = await searchParams;
-  const selectedService = params?.service || "";
+  const selectedService = fixedService || params?.service || "";
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
