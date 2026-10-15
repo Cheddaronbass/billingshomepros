@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
 export const metadata = {
@@ -44,6 +45,7 @@ const serviceNames = {
 
 export default function RoofingPage({ searchParams }) {
   return (
+    <>
     <CategoryPage
       searchParams={searchParams}
       category="roofing"
@@ -70,5 +72,16 @@ export default function RoofingPage({ searchParams }) {
       contractorTitle="Own a roofing business?"
       contractorDescription="Billings Home Pros is building a local directory designed to help homeowners find businesses like yours."
     />
+    <section style={{ background: "#0b1117", padding: "24px 18px 42px", borderTop: "1px solid #254059" }}>
+      <div style={{ maxWidth: 1000, margin: "0 auto", border: "1px solid #2e5875", background: "#102638", borderRadius: 14, padding: "22px 26px", display: "flex", gap: 20, justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+        <div>
+          <div style={{ color: "#79d6ff", fontSize: 12, fontWeight: 800, letterSpacing: ".1em" }}>FREE BILLINGS HOMEOWNER GUIDE</div>
+          <h2 style={{ fontSize: "clamp(20px, 3vw, 26px)", color: "#fff", margin: "9px 0 7px" }}>How much does a new roof cost in Billings?</h2>
+          <p style={{ color: "#c9d8e4", margin: 0, lineHeight: 1.5 }}>See estimated 2026 costs and what to ask before hiring a roofer.</p>
+        </div>
+        <Link href="/guides/roof-replacement-cost-billings-mt" style={{ color: "#07151f", background: "#24baff", borderRadius: 9, fontWeight: 800, textDecoration: "none", padding: "13px 18px", whiteSpace: "nowrap" }}>Read the Free Guide →</Link>
+      </div>
+    </section>
+    </>
   );
 }
