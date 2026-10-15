@@ -229,6 +229,16 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-label="Handymen welcome" style={{ background: "#0b1117", padding: "24px 7%" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "22px 26px", border: "1px solid #25b9ff", borderRadius: 12, background: "#101b27", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 18 }}>
+          <div>
+            <strong style={{ display: "block", color: "#25b9ff", fontSize: 20, fontWeight: 900, marginBottom: 6 }}>🔨 Handymen welcome!</strong>
+            <p style={{ margin: 0, color: "#e0eaf2", lineHeight: 1.5 }}>Work for yourself? No website? No problem. Get your business listed on Home Pros.</p>
+          </div>
+          <a href="/get-listed" style={{ display: "inline-block", padding: "13px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none" }}>Get Your Free Listing →</a>
+        </div>
+      </section>
+
       <section className="proSection" id="pros">
         <div>
           <div className="eyebrow light">BILLINGS CONTRACTORS</div>
