@@ -229,31 +229,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-label="Handymen welcome" style={{ background: "#0b1117", padding: "24px 7%" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "22px 26px", border: "1px solid #25b9ff", borderRadius: 12, background: "#101b27", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 18 }}>
-          <div>
-            <strong style={{ display: "block", color: "#25b9ff", fontSize: 20, fontWeight: 900, marginBottom: 6 }}>🔨 Handymen welcome!</strong>
-            <p style={{ margin: 0, color: "#e0eaf2", lineHeight: 1.5 }}>Work for yourself? No website? No problem. Get your business listed on Home Pros.</p>
+      <section id="pros" aria-label="For Billings contractors" style={{ background: "#101b27", borderTop: "1px solid #273d50", padding: "48px 7% 58px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "18px 28px", padding: "22px 26px", background: "#15283b", border: "1px solid #397da4", borderRadius: 12 }}>
+            <div style={{ flex: "1 1 340px", minWidth: 0 }}>
+              <h2 style={{ margin: "0 0 8px", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.25rem, 2.2vw, 1.6rem)", fontWeight: 850, lineHeight: 1.2, color: "#fff", letterSpacing: "-0.02em" }}>Handymen welcome!</h2>
+              <p style={{ margin: 0, color: "#d3e1ea", fontSize: "0.96rem", lineHeight: 1.6 }}>Work for yourself? No website? No problem. Get your business listed on Home Pros.</p>
+            </div>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", textAlign: "center", flexShrink: 0 }}>Get Your Free Listing →</a>
           </div>
-          <a href="/get-listed" style={{ display: "inline-block", padding: "13px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none" }}>Get Your Free Listing →</a>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "22px 32px", padding: "42px 4px 0" }}>
+            <div style={{ flex: "1 1 380px", minWidth: 0 }}>
+              <div style={{ color: "#25b9ff", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.13em", marginBottom: 12 }}>BILLINGS CONTRACTORS</div>
+              <h2 style={{ color: "#fff", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.35rem)", fontWeight: 850, letterSpacing: "-0.035em", lineHeight: 1.2, margin: "0 0 12px" }}>Are you a local home-service professional?</h2>
+              <p style={{ color: "#c4d2df", lineHeight: 1.65, margin: 0 }}>Get your business in front of Billings-area homeowners searching for the services you provide.</p>
+            </div>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 24px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", flexShrink: 0 }}>Get Listed →</a>
+          </div>
         </div>
-      </section>
-
-      <section className="proSection" id="pros">
-        <div>
-          <div className="eyebrow light">BILLINGS CONTRACTORS</div>
-
-          <h2>Are you a local home-service professional?</h2>
-
-          <p>
-            Get your business in front of Billings-area homeowners searching
-            for the services you provide.
-          </p>
-        </div>
-
-        <a className="lightButton" href="/get-listed">
-  Get Listed
-</a>
       </section>
 
       <footer>
