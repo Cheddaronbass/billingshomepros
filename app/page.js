@@ -56,7 +56,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&q=78&fit=crop",
     description: "Interior, exterior, cabinet & commercial painting",
     href: "/painting",
-    iconPath: "M14 11l7-7a2 2 0 0 0-3-3l-7 7 M14 11l-3-3-5 5 3 3z M6 14c-2 0-3 2-3 4 0 2-1 3-2 4 3 0 7-.5 9-3 1.5-2 0-5-4-5z",
+    iconPath: "M3 3h18v6H3z M7 3v6 M12 3v6 M17 3v6 M5 9h14v4H5z M10 13v3h4v-3 M11 16v6h2v-6",
     theme: "painting",
   },
   {
