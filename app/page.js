@@ -5,7 +5,7 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    image: "https://unsplash.com/photos/6rNTDKruMWU/download?w=700",
+    image: "https://images.unsplash.com/photo-1749532125405-70950966b0e5?auto=format&fit=crop&w=700&q=82",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
     iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
@@ -13,7 +13,7 @@ const services = [
   },
   {
     name: "Heating & Cooling",
-    image: "https://unsplash.com/photos/Q4f_0gKTMEk/download?w=700",
+    image: "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?auto=format&fit=crop&w=700&q=82",
     description: "Furnaces, air conditioning, maintenance & repair",
     href: "/hvac",
     iconPath: "M12 2v20 M4.93 4.93l14.14 14.14 M2 12h20 M4.93 19.07 19.07 4.93 M9 5l3 3 3-3 M9 19l3-3 3 3",
@@ -69,7 +69,7 @@ const services = [
   },
   {
     name: "Fencing",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=78&fit=crop",
+    image: "https://images.unsplash.com/photo-1769831190663-95fe8454d8c9?auto=format&fit=crop&w=700&q=82",
     description: "Wood, vinyl, chain-link fencing & fence repairs",
     href: "/fencing",
     iconPath: "M3 7l3-4 3 4v14H3V7z M10 7l3-4 3 4v14h-6V7z M17 7l3-4 2 4v14h-5V7z",
