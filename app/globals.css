@@ -1914,3 +1914,20 @@ footer small {
 .servicesSection .serviceCard.concrete .serviceArtwork img {
   filter: brightness(1.08) contrast(1.05);
 }
+
+/* Mobile category readability: labels and pictograms approximately 30% larger */
+@media (max-width: 760px) {
+  .servicesSection .serviceCard h3 {
+    font-size: clamp(.936rem, 3.64vw, 1.157rem);
+    line-height: 1.16;
+    letter-spacing: -.018em;
+  }
+  .servicesSection .serviceTileIcon {
+    flex: 0 0 23.4px;
+    width: 23.4px;
+    height: 23.4px;
+  }
+  .servicesSection .serviceCardContent {
+    gap: 4px;
+  }
+}
