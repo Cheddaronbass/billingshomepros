@@ -5,7 +5,7 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    image: "https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "https://images.pexels.com/photos/32588548/pexels-photo-32588548/free-photo-of-plumber-repairing-pipe-with-wrench-indoors.jpeg?auto=compress&dpr=1&h=750&w=1260",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
     iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
@@ -29,7 +29,7 @@ const services = [
   },
   {
     name: "Roofing",
-    image: "https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "https://images.pexels.com/photos/33404248/pexels-photo-33404248/free-photo-of-professional-roofer-installing-shingles-on-new-roof.jpeg?auto=compress&dpr=1&h=750&w=1260",
     description: "Roof repair, replacement, inspections & storm damage",
     href: "/roofing",
     iconPath: "M2 11 12 3l10 8 M5 10v11h14V10 M9 21v-7h6v7",
@@ -61,7 +61,7 @@ const services = [
   },
   {
     name: "Concrete",
-    image: "https://images.pexels.com/photos/37121407/pexels-photo-37121407.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "https://images.pexels.com/photos/37121407/pexels-photo-37121407/free-photo-of-construction-workers-smoothing-wet-concrete.jpeg?auto=compress&dpr=1&h=750&w=1260",
     description: "Driveways, patios, foundations & decorative concrete",
     href: "/concrete",
     iconPath: "M4 5h16l2 14H2L4 5z M4 12h16 M10 5l-2 14 M16 5l2 14",
