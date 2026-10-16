@@ -5,7 +5,7 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    image: "https://images.pexels.com/photos/32588548/pexels-photo-32588548/free-photo-of-plumber-repairing-pipe-with-wrench-indoors.jpeg?auto=compress&dpr=1&h=750&w=1260",
+    image: "https://cdn.pixabay.com/photo/2015/07/11/14/53/plumbing-840835_1280.jpg",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
     iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
