@@ -93,6 +93,24 @@ export default function Home() {
         </nav>
       </header>
 
+      {/* Seasonal homepage link: update the label and href each season. */}
+      <a
+        href="/guides/winter-home-checklist"
+        aria-label="Read the Montana winter home preparation checklist"
+        style={{
+          display: "flex", alignItems: "center", justifyContent: "center",
+          flexWrap: "wrap", gap: "5px 9px", padding: "11px 18px",
+          background: "#142536", color: "#e6f2fa", textAlign: "center",
+          borderBottom: "1px solid #2b4b63", fontFamily: "Arial, Helvetica, sans-serif",
+          fontSize: "clamp(0.78rem, 2.5vw, 0.9rem)", lineHeight: 1.45,
+          textDecoration: "none"
+        }}
+      >
+        <span aria-hidden="true">❄</span>
+        <span>Winter is coming. Is your home ready?</span>
+        <span style={{ color: "#58caff", fontWeight: 800 }}>View the checklist →</span>
+      </a>
+
       <section className="hero">
         <div className="heroLogoWrap">
   <img
