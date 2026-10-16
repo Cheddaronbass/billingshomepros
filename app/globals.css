@@ -1931,3 +1931,11 @@ footer small {
     gap: 4px;
   }
 }
+
+/* Homepage photo color match — Painting and Concrete only */
+.servicesSection .serviceCard.painting .serviceArtwork img {
+  filter: sepia(0.16) saturate(1.10) contrast(1.02);
+}
+.servicesSection .serviceCard.concrete .serviceArtwork img {
+  filter: brightness(1.08) contrast(1.04) sepia(0.16) saturate(1.10);
+}
