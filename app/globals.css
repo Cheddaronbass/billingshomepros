@@ -1866,3 +1866,9 @@ footer small {
   .servicesSection .serviceBrowse,
   .servicesSection .serviceCard .serviceBrowse { width: 23px; min-width: 23px; height: 23px; flex-basis: 23px; }
 }
+
+/* Photographic category treatment — no icon-art cropping */
+.servicesSection .serviceArtwork img { transform: none; object-position: center; }
+.servicesSection .serviceCard::after {
+  background: linear-gradient(180deg, rgba(4,14,24,.03) 15%, rgba(4,14,24,.88) 100%);
+}
