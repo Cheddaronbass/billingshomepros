@@ -1761,3 +1761,108 @@ footer small {
   color: #4b5861;
   margin: 0 0 1rem;
 }
+
+
+/* HOMEPAGE CATEGORY TILES — option 4 (compact photo/image cards).
+   Scope to homepage service grid only; no changes to hero, header or category pages. */
+.servicesSection .serviceGrid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.servicesSection .serviceCard {
+  position: relative;
+  display: block;
+  height: 122px;
+  min-height: 0;
+  isolation: isolate;
+  border: 1px solid #48627a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  background: #15283b;
+  overflow: hidden;
+}
+.servicesSection .serviceCard:hover {
+  transform: translateY(-2px);
+  border-color: #25b9ff;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+.servicesSection .serviceArtwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #13283d;
+}
+.servicesSection .serviceArtwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.42);
+}
+.servicesSection .serviceCard::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,16,27,.04) 12%, rgba(5,16,27,.85) 100%);
+  pointer-events: none;
+}
+.servicesSection .serviceCardContent {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 10px;
+  text-align: left;
+}
+.servicesSection .serviceCard h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(.8rem, 1.15vw, .94rem);
+  line-height: 1.25;
+  font-weight: 800;
+  text-shadow: 0 1px 5px rgba(0,0,0,.85);
+}
+.servicesSection .serviceCard p {
+  display: none;
+}
+.servicesSection .serviceBrowse,
+.servicesSection .serviceCard .serviceBrowse {
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  flex: 0 0 26px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 50%;
+  background: rgba(22,48,72,.9);
+  color: transparent;
+  font-size: 0;
+}
+.servicesSection .serviceBrowse::after {
+  content: "›";
+  color: white;
+  font-size: 23px;
+  line-height: 1;
+  margin-top: -2px;
+}
+@media (max-width: 1050px) {
+  .servicesSection .serviceGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .servicesSection .serviceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .servicesSection .serviceCard { height: 102px; border-radius: 9px; }
+  .servicesSection .serviceCardContent { padding: 8px; min-height: 46px; }
+  .servicesSection .serviceCard h3 { font-size: clamp(.72rem, 2.8vw, .89rem); }
+  .servicesSection .serviceBrowse,
+  .servicesSection .serviceCard .serviceBrowse { width: 23px; min-width: 23px; height: 23px; flex-basis: 23px; }
+}
