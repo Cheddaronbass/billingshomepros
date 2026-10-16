@@ -1872,3 +1872,18 @@ footer small {
 .servicesSection .serviceCard::after {
   background: linear-gradient(180deg, rgba(4,14,24,.03) 15%, rgba(4,14,24,.88) 100%);
 }
+
+/* Clear white pictograms beside each homepage category title */
+.servicesSection .serviceCardContent { align-items: center; }
+.servicesSection .serviceTileIcon {
+  display: block;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  color: white;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,.8));
+}
+.servicesSection .serviceCard h3 { flex: 1; }
+@media (max-width: 760px) {
+ .servicesSection .serviceTileIcon { flex-basis: 18px; width: 18px; height: 18px; }
+}
