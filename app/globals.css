@@ -1887,3 +1887,30 @@ footer small {
 @media (max-width: 760px) {
  .servicesSection .serviceTileIcon { flex-basis: 18px; width: 18px; height: 18px; }
 }
+
+/* Oct 16 photo readability tune: keep images legible without hiding labels */
+.servicesSection .serviceCard::after {
+  background: linear-gradient(
+    180deg,
+    rgba(4,14,24,0) 0%,
+    rgba(4,14,24,0.07) 46%,
+    rgba(4,14,24,0.74) 100%
+  );
+}
+.servicesSection .serviceCard h3,
+.servicesSection .serviceTileIcon {
+  text-shadow: 0 2px 6px rgba(0,0,0,.85);
+}
+.servicesSection .serviceCard.fencing .serviceArtwork img {
+  filter: brightness(1.37) contrast(1.03) saturate(1.1);
+}
+.servicesSection .serviceCard.fencing::after {
+  background: linear-gradient(180deg, rgba(4,14,24,0) 0%, rgba(4,14,24,.60) 100%);
+}
+.servicesSection .serviceCard.hvac .serviceArtwork img {
+  object-position: 35% 50%;
+}
+.servicesSection .serviceCard.roofing .serviceArtwork img,
+.servicesSection .serviceCard.concrete .serviceArtwork img {
+  filter: brightness(1.08) contrast(1.05);
+}
