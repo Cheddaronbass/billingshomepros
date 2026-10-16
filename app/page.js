@@ -8,7 +8,7 @@ const services = [
     image: "https://cdn.pixabay.com/photo/2015/07/11/14/53/plumbing-840835_1280.jpg",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
-    iconPath: "M15 2h6v5h-4v4h-5V6h3V2z M12 10 3.4 18.6a2.1 2.1 0 0 0 3 3L15 13 M12 10l3 3",
+    iconPath: "M5 3h7v8H5z M12 9h9v4a7 7 0 0 1-7 7H9a4 4 0 0 1-4-4v-5 M9 20v2h9v-2",
     theme: "plumbing",
   },
   {
@@ -40,7 +40,7 @@ const services = [
     image: "https://unsplash.com/photos/J2AdfKkDY5s/download?w=700",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
-    iconPath: "M14 4 20 10 M12 6l6 6 M4 20l9-9 M13 11 10 8 M2 22l5-2-3-3-2 5z",
+    iconPath: "M3 6h5l3 3h10v5l-2 2-2-2-2 2-2-2-2 2-3-2H8 M3 6v11h5V9 M3 12h5",
     theme: "remodeling",
   },
   {
@@ -56,7 +56,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&q=78&fit=crop",
     description: "Interior, exterior, cabinet & commercial painting",
     href: "/painting",
-    iconPath: "M3 5h14v7H3z M17 8h4v4h-8v3 M13 15v7",
+    iconPath: "M14 11l7-7a2 2 0 0 0-3-3l-7 7 M14 11l-3-3-5 5 3 3z M6 14c-2 0-3 2-3 4 0 2-1 3-2 4 3 0 7-.5 9-3 1.5-2 0-5-4-5z",
     theme: "painting",
   },
   {
@@ -80,7 +80,7 @@ const services = [
     image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
-    iconPath: "M13 3h5l3 3-5 5-6-6 3-2z M10 9 3 16a2 2 0 0 0 3 3l8-8",
+    iconPath: "M14 2h8v5h-5l-4 4-4-4z M10 10 3 17a3 3 0 0 0 4 4l8-8",
     theme: "handyman",
   },
 ];
