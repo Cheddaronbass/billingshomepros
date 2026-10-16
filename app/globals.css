@@ -1946,3 +1946,10 @@ footer small {
   .servicesSection .desktopRemodelLabel { display: none; }
   .servicesSection .mobileRemodelLabel { display: inline; }
 }
+
+/* Center the tenth category card on three-column tablet / narrow-desktop grids. */
+@media (min-width: 761px) and (max-width: 1050px) {
+  .servicesSection .serviceGrid > .serviceCard:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
