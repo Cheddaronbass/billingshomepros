@@ -1939,3 +1939,10 @@ footer small {
 .servicesSection .serviceCard.concrete .serviceArtwork img {
   filter: brightness(1.08) contrast(1.04) sepia(0.16) saturate(1.10);
 }
+
+/* Use the shorter category name only on small screens. */
+.servicesSection .mobileRemodelLabel { display: none; }
+@media (max-width: 760px) {
+  .servicesSection .desktopRemodelLabel { display: none; }
+  .servicesSection .mobileRemodelLabel { display: inline; }
+}
