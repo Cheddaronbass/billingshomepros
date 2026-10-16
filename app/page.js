@@ -40,7 +40,7 @@ const services = [
     image: "https://unsplash.com/photos/J2AdfKkDY5s/download?w=700",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
-    iconPath: "M3 6h5l3 3h10v5l-2 2-2-2-2 2-2-2-2 2-3-2H8 M3 6v11h5V9 M3 12h5",
+    iconPath: "M3 6h5a2 2 0 0 1 2 2v2H7v9H3V6z M5 9h2v3H5z M10 8h11v5l-2 2-2-2-2 2-2-2-2 2-1-1",
     theme: "remodeling",
   },
   {
@@ -80,7 +80,7 @@ const services = [
     image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
-    iconPath: "M14 2h8v5h-5l-4 4-4-4z M10 10 3 17a3 3 0 0 0 4 4l8-8",
+    iconPath: "M3 7l4-4 5 5-4 4-5-5z M3 7l-1 4 3-1 2 2 3-3 M11 9l10 10-3 3-10-10",
     theme: "handyman",
   },
 ];
