@@ -5,7 +5,7 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    image: "https://images.unsplash.com/photo-1749532125405-70950966b0e5?auto=format&fit=crop&w=700&q=82",
+    image: "https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=900",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
     iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
@@ -13,7 +13,7 @@ const services = [
   },
   {
     name: "Heating & Cooling",
-    image: "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?auto=format&fit=crop&w=700&q=82",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/AirConditioner.jpg/960px-AirConditioner.jpg",
     description: "Furnaces, air conditioning, maintenance & repair",
     href: "/hvac",
     iconPath: "M12 2v20 M4.93 4.93l14.14 14.14 M2 12h20 M4.93 19.07 19.07 4.93 M9 5l3 3 3-3 M9 19l3-3 3 3",
@@ -29,7 +29,7 @@ const services = [
   },
   {
     name: "Roofing",
-    image: "https://unsplash.com/photos/bquoYvs3KtQ/download?w=700",
+    image: "https://images.pexels.com/photos/33404248/pexels-photo-33404248.jpeg?auto=compress&cs=tinysrgb&w=900",
     description: "Roof repair, replacement, inspections & storm damage",
     href: "/roofing",
     iconPath: "M2 11 12 3l10 8 M5 10v11h14V10 M9 21v-7h6v7",
@@ -61,7 +61,7 @@ const services = [
   },
   {
     name: "Concrete",
-    image: "https://unsplash.com/photos/GNClKls4ok8/download?w=700",
+    image: "https://images.pexels.com/photos/37121407/pexels-photo-37121407.jpeg?auto=compress&cs=tinysrgb&w=900",
     description: "Driveways, patios, foundations & decorative concrete",
     href: "/concrete",
     iconPath: "M4 5h16l2 14H2L4 5z M4 12h16 M10 5l-2 14 M16 5l2 14",
