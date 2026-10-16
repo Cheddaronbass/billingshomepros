@@ -8,13 +8,15 @@ const services = [
     image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=700&q=78&fit=crop",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
+    iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
     theme: "plumbing",
   },
   {
     name: "Heating & Cooling",
-    image: "https://images.unsplash.com/photo-1631545806609-21cfb08308cc?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/Q4f_0gKTMEk/download?w=700",
     description: "Furnaces, air conditioning, maintenance & repair",
     href: "/hvac",
+    iconPath: "M12 2v20 M4.93 4.93l14.14 14.14 M2 12h20 M4.93 19.07 19.07 4.93 M9 5l3 3 3-3 M9 19l3-3 3 3",
     theme: "hvac",
   },
   {
@@ -22,6 +24,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=78&fit=crop",
     description: "Repairs, panels, lighting, wiring & installation",
     href: "/electrical",
+    iconPath: "M13 2 4 14h7l-1 8 10-12h-7l1-8z",
     theme: "electrical",
   },
   {
@@ -29,6 +32,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=78&fit=crop",
     description: "Roof repair, replacement, inspections & storm damage",
     href: "/roofing",
+    iconPath: "M2 11 12 3l10 8 M5 10v11h14V10 M9 21v-7h6v7",
     theme: "roofing",
   },
   {
@@ -36,6 +40,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=78&fit=crop",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
+    iconPath: "M14 4 20 10 M12 6l6 6 M4 20l9-9 M13 11 10 8 M2 22l5-2-3-3-2 5z",
     theme: "remodeling",
   },
   {
@@ -43,6 +48,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=700&q=78&fit=crop",
     description: "Lawn care, irrigation, landscape design & tree services",
     href: "/landscaping",
+    iconPath: "M20 4C9 3 4 8 4 15c0 3 2 5 5 5 8 0 12-8 11-16z M4 20c3-5 7-8 13-11",
     theme: "landscaping",
   },
   {
@@ -50,6 +56,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&q=78&fit=crop",
     description: "Interior, exterior, cabinet & commercial painting",
     href: "/painting",
+    iconPath: "M3 5h14v7H3z M17 8h4v4h-8v3 M13 15v7",
     theme: "painting",
   },
   {
@@ -57,6 +64,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=700&q=78&fit=crop",
     description: "Driveways, patios, foundations & decorative concrete",
     href: "/concrete",
+    iconPath: "M4 5h16l2 14H2L4 5z M4 12h16 M10 5l-2 14 M16 5l2 14",
     theme: "concrete",
   },
   {
@@ -64,6 +72,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=78&fit=crop",
     description: "Wood, vinyl, chain-link fencing & fence repairs",
     href: "/fencing",
+    iconPath: "M3 7l3-4 3 4v14H3V7z M10 7l3-4 3 4v14h-6V7z M17 7l3-4 2 4v14h-5V7z",
     theme: "fencing",
   },
   {
@@ -71,6 +80,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1531835551805-16d864c8d311?w=700&q=78&fit=crop",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
+    iconPath: "M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-8l-4 4-4-4z",
     theme: "handyman",
   },
 ];
@@ -174,6 +184,7 @@ export default function Home() {
       </div>
 
       <div className="serviceCardContent">
+        <svg className="serviceTileIcon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"><path d={service.iconPath} /></svg>
         <h3>{service.name}</h3>
         <p>{service.description}</p>
 
