@@ -8,7 +8,7 @@ const services = [
     image: "https://cdn.pixabay.com/photo/2015/07/11/14/53/plumbing-840835_1280.jpg",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
-    iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
+    iconPath: "M15 2h6v5h-4v4h-5V6h3V2z M12 10 3.4 18.6a2.1 2.1 0 0 0 3 3L15 13 M12 10l3 3",
     theme: "plumbing",
   },
   {
@@ -80,7 +80,7 @@ const services = [
     image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
-    iconPath: "M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-8l-4 4-4-4z",
+    iconPath: "M13 3h5l3 3-5 5-6-6 3-2z M10 9 3 16a2 2 0 0 0 3 3l8-8",
     theme: "handyman",
   },
 ];
