@@ -185,7 +185,7 @@ export default function Home() {
 
       <div className="serviceCardContent">
         <svg className="serviceTileIcon" viewBox="0 0 24 24" aria-hidden="true" fill={service.theme === "handyman" || service.theme === "remodeling" ? "currentColor" : "none"} stroke={service.theme === "handyman" || service.theme === "remodeling" ? "none" : "currentColor"} strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"><path d={service.iconPath} /></svg>
-        <h3>{service.name}</h3>
+        <h3>{service.theme === "remodeling" ? <><span className="desktopRemodelLabel">Contractors & Remodeling</span><span className="mobileRemodelLabel">Remodeling</span></> : service.name}</h3>
         <p>{service.description}</p>
 
         <span className="serviceBrowse">
