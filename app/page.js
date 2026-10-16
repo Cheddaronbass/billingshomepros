@@ -5,7 +5,7 @@ import HomeSearch from "./components/HomeSearch";
 const services = [
   {
     name: "Plumbing",
-    image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/6rNTDKruMWU/download?w=700",
     description: "Repairs, water heaters, drains, fixtures & more",
     href: "/plumbing",
     iconPath: "M3 3v7a4 4 0 0 0 4 4h3v7m-4 0h8m-4-3h4a4 4 0 0 0 4-4V9h3M15 5h6M18 2v6",
@@ -29,7 +29,7 @@ const services = [
   },
   {
     name: "Roofing",
-    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/bquoYvs3KtQ/download?w=700",
     description: "Roof repair, replacement, inspections & storm damage",
     href: "/roofing",
     iconPath: "M2 11 12 3l10 8 M5 10v11h14V10 M9 21v-7h6v7",
@@ -37,7 +37,7 @@ const services = [
   },
   {
     name: "Contractors & Remodeling",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/J2AdfKkDY5s/download?w=700",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
     iconPath: "M14 4 20 10 M12 6l6 6 M4 20l9-9 M13 11 10 8 M2 22l5-2-3-3-2 5z",
@@ -61,7 +61,7 @@ const services = [
   },
   {
     name: "Concrete",
-    image: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/GNClKls4ok8/download?w=700",
     description: "Driveways, patios, foundations & decorative concrete",
     href: "/concrete",
     iconPath: "M4 5h16l2 14H2L4 5z M4 12h16 M10 5l-2 14 M16 5l2 14",
@@ -77,7 +77,7 @@ const services = [
   },
   {
     name: "Handyman",
-    image: "https://images.unsplash.com/photo-1531835551805-16d864c8d311?w=700&q=78&fit=crop",
+    image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
     iconPath: "M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 4 4l5-5a6 6 0 0 0 8-8l-4 4-4-4z",
