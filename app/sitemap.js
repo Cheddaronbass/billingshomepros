@@ -33,7 +33,7 @@ export default async function sitemap() {
   }
   return pages.map(({ path, priority }) => ({
     url: `${baseUrl}${path}`,
-    lastModified: new Date(),
+    // Omit lastModified until authoritative content update timestamps are available.
     changeFrequency: "weekly",
     priority,
   })).concat(profilePages);
