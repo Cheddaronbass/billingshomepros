@@ -15,7 +15,6 @@ const pages = [
   { path: "/hvac/furnace-repair", priority: 0.8 },
   { path: "/plumbing/water-heater-repair", priority: 0.8 },
   { path: "/roofing/roof-replacement", priority: 0.8 },
-  { path: "/guides/four-season-home-maintenance", priority: 0.7 },
   { path: "/guides/roof-replacement-cost-billings-mt", priority: 0.7 },
   { path: "/guides/winter-home-checklist", priority: 0.7 },
   { path: "/electrical", priority: 0.9 },
