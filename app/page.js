@@ -182,6 +182,8 @@ export default function Home() {
       <div className="serviceArtwork">
         <img
           src={service.image}
+          loading="lazy"
+          decoding="async"
           alt=""
           aria-hidden="true"
         />
