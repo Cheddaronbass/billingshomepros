@@ -12,6 +12,12 @@ const pages = [
   { path: "/plumbing", priority: 0.9 },
   { path: "/hvac", priority: 0.9 },
   { path: "/hvac/ac-repair", priority: 0.8 },
+  { path: "/hvac/furnace-repair", priority: 0.8 },
+  { path: "/plumbing/water-heater-repair", priority: 0.8 },
+  { path: "/roofing/roof-replacement", priority: 0.8 },
+  { path: "/guides/four-season-home-maintenance", priority: 0.7 },
+  { path: "/guides/roof-replacement-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/winter-home-checklist", priority: 0.7 },
   { path: "/electrical", priority: 0.9 },
   { path: "/roofing", priority: 0.9 },
   { path: "/contractors-remodeling", priority: 0.9 },
@@ -23,13 +29,25 @@ const pages = [
 ];
 
 export default async function sitemap() {
-  let profilePages = [];
-  try {
-    const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_PUBLISHABLE_KEY);
-    const { data, error } = await supabase.from("businesses").select("id").order("id");
-    if (!error && data) profilePages = data.map(({ id }) => ({ url: `${baseUrl}/pros/${id}`, changeFrequency: "monthly", priority: 0.6 }));
-  } catch (error) {
-    console.error("Unable to load contractor sitemap entries:", error);
+  // Never present an incomplete sitemap as successful when the database is unavailable.
+  const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_PUBLISHABLE_KEY);
+  const profilePages = [];
+  const batchSize = 1000;
+  for (let start = 0; ; start += batchSize) {
+    const { data, error } = await supabase
+      .from("businesses")
+      .select("id")
+      .order("id")
+      .range(start, start + batchSize - 1);
+    if (error) {
+      console.error("Unable to load contractor sitemap entries:", error);
+      throw new Error("Contractor sitemap generation failed");
+    }
+    if (!data) throw new Error("Contractor sitemap query returned no data");
+    profilePages.push(...data.map(({ id }) => ({
+      url: `${baseUrl}/pros/${id}`, changeFrequency: "monthly", priority: 0.6,
+    })));
+    if (data.length < batchSize) break;
   }
   return pages.map(({ path, priority }) => ({
     url: `${baseUrl}${path}`,
