@@ -102,6 +102,16 @@ export default function GetListedPage() {
 
       setStatus("success");
 
+      // Only track a conversion after the server confirms the request was saved.
+      if (typeof window.gtag === "function") {
+        window.gtag(
+          "event",
+          requestType === "claim"
+            ? "contractor_claim_submitted"
+            : "contractor_listing_submitted"
+        );
+      }
+
       setMessage(
         requestType === "claim"
           ? "Your claim request has been submitted. We'll review and verify your connection to the business. Once approved, your listing can be upgraded to Featured."
