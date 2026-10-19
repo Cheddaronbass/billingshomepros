@@ -3,6 +3,14 @@ import { createClient } from "@supabase/supabase-js";
 
 export async function POST(request) {
   try {
+    // Default closed: do not offer any checkout before LLC and live Stripe are ready.
+    if (process.env.NEXT_PUBLIC_FEATURED_CHECKOUT_ENABLED !== "true") {
+      return Response.json(
+        { error: "Featured upgrades are not available yet." },
+        { status: 503 }
+      );
+    }
+
     const { businessName } = await request.json();
 
     if (!businessName?.trim()) {
