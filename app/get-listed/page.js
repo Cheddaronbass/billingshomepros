@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 export default function GetListedPage() {
+  const featuredCheckoutEnabled =
+    process.env.NEXT_PUBLIC_FEATURED_CHECKOUT_ENABLED === "true";
   const [requestType, setRequestType] = useState("claim");
 
   const [featuredBusinessName, setFeaturedBusinessName] = useState("");
@@ -358,34 +360,43 @@ export default function GetListedPage() {
               <span>/ month</span>
             </div>
 
-            <input
-              type="text"
-              className="featuredBusinessInput"
-              placeholder="Enter your business name"
-              value={featuredBusinessName}
-              onChange={(event) =>
-                setFeaturedBusinessName(event.target.value)
-              }
-            />
-
-            <button
-              type="button"
-              className="featuredUpgradeButton"
-              onClick={handleFeaturedCheckout}
-              disabled={featuredStatus === "loading"}
-            >
-              {featuredStatus === "loading"
-                ? "Opening Checkout..."
-                : "Upgrade to Featured"}
-            </button>
-
-            {featuredMessage && (
+            {featuredCheckoutEnabled ? (
+              <>
+              <input
+                type="text"
+                className="featuredBusinessInput"
+                placeholder="Enter your business name"
+                value={featuredBusinessName}
+                onChange={(event) =>
+                  setFeaturedBusinessName(event.target.value)
+                }
+              />
+  
+              <button
+                type="button"
+                className="featuredUpgradeButton"
+                onClick={handleFeaturedCheckout}
+                disabled={featuredStatus === "loading"}
+              >
+                {featuredStatus === "loading"
+                  ? "Opening Checkout..."
+                  : "Upgrade to Featured"}
+              </button>
+  
+              {featuredMessage && (
+                <p className="featuredMessage">
+                  {featuredMessage}
+                </p>
+              )}
+  
+              <small>Cancel anytime.</small>
+              </>
+            ) : (
               <p className="featuredMessage">
-                {featuredMessage}
+                Featured upgrades are coming soon. You can claim or add your
+                business for free in the meantime.
               </p>
             )}
-
-            <small>Cancel anytime.</small>
           </div>
         </div>
       </section>
