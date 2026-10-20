@@ -18,12 +18,12 @@ export const metadata = {
     "roofers Billings MT",
     "remodeling contractors Billings MT",
   ],
-  metadataBase: new URL("https://billingshomepros.com"),
+  metadataBase: new URL("https://www.billingshomepros.com"),
   openGraph: {
     title: "Billings Home Pros | Local Contractors & Home Services",
     description:
       "Find local plumbers, HVAC technicians, electricians, roofers, and remodeling contractors serving Billings, Montana.",
-    url: "https://billingshomepros.com",
+    url: "https://www.billingshomepros.com",
     siteName: "Billings Home Pros",
     type: "website",
   },
