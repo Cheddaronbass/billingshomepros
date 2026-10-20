@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const baseUrl = "https://billingshomepros.com";
+const baseUrl = "https://www.billingshomepros.com";
 
 const pages = [
   { path: "", priority: 1.0 },
