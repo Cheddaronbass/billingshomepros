@@ -1954,9 +1954,20 @@ footer small {
   }
 }
 
-/* Layout balance for an 11th category tile, keeping existing card dimensions. */
+/* Desktop category tiles: four equal-width cards per row (4 / 4 / 3).
+   Flexbox naturally centers the last three without any spacer or new category.
+   Tablet and mobile retain their existing grid layouts. */
 @media (min-width: 1051px) {
-  .servicesSection .serviceGrid > .serviceCard:last-child:nth-child(5n + 1) {grid-column:3;}
+  .servicesSection .serviceGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .servicesSection .serviceGrid > .serviceCard {
+    flex: 0 0 calc((100% - 30px) / 4);
+    min-width: 0;
+  }
 }
 @media (min-width: 761px) and (max-width: 1050px) {
   .servicesSection .serviceGrid > .serviceCard:nth-last-child(2):nth-child(3n + 1) {grid-column:2;}
