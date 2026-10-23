@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { verifyTurnstileToken } from "../../lib/turnstile";
 
 export async function POST(request) {
   try {
@@ -15,6 +16,7 @@ export async function POST(request) {
       category,
       service_area,
       message,
+      turnstile_token,
     } = body;
 
     if (
@@ -33,6 +35,14 @@ export async function POST(request) {
       return Response.json(
         { error: "Invalid request type." },
         { status: 400 }
+      );
+    }
+
+    const verification = await verifyTurnstileToken(turnstile_token, "contractor_request");
+    if (!verification.ok) {
+      return Response.json(
+        { error: verification.error },
+        { status: verification.status }
       );
     }
 
