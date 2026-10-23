@@ -37,8 +37,15 @@ export default async function CategoryPage({
 
   let query = supabase
     .from("businesses")
-    .select("*")
-    .eq("category", category);
+    .select("*");
+
+  // A contractor can offer windows and doors without losing its primary
+  // trade category or being duplicated as a second business profile.
+  if (category === "windows-doors") {
+    query = query.or('category.eq.windows-doors,services.cs.{"Windows & Doors"}');
+  } else {
+    query = query.eq("category", category);
+  }
 
   if (supportsEmergency && selectedService === "emergency") {
     query = query.eq("emergency_service", true);

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/audit-window-directory.cjs",
+    "build": "next build && node scripts/import-window-installers.cjs",
     "start": "next start"
   },
   "dependencies": {
