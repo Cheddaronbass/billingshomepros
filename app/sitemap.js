@@ -19,6 +19,7 @@ const pages = [
   { path: "/guides/winter-home-checklist", priority: 0.7 },
   { path: "/electrical", priority: 0.9 },
   { path: "/roofing", priority: 0.9 },
+  { path: "/windows-doors", priority: 0.9 },
   { path: "/contractors-remodeling", priority: 0.9 },
   { path: "/landscaping", priority: 0.9 },
   { path: "/painting", priority: 0.9 },

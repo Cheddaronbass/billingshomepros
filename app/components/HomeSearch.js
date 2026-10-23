@@ -102,6 +102,13 @@ export default function HomeSearch() {
     ) {
       destination = "/electrical";
 
+    // WINDOWS & DOORS: check before "storm" roofing and "door repair" handyman.
+    } else if (
+      /\b(window(s)?|window\s+(replacement|installation|repair|installer|installers)|replacement\s+windows?|double[- ]pane|triple[- ]pane|energy[- ]efficient\s+windows?|glass\s+replacement|patio\s+doors?|sliding\s+(glass\s+)?doors?|entry\s+doors?|exterior\s+doors?|front\s+doors?|french\s+doors?|storm\s+doors?|door\s+(replacement|installation|repair|installer|installers))\b/.test(query) ||
+      (/\bdoors?\b/.test(query) && !/\bgarage\b/.test(query))
+    ) {
+      destination = "/windows-doors";
+
     // ROOFING — Storm damage
     } else if (
       query.includes("storm") ||
@@ -225,7 +232,7 @@ export default function HomeSearch() {
       </form>
 
       <p className="searchHint">
-        Try plumbing, furnace repair, roofing, electrical or remodeling
+        Try windows, plumbing, heating, roofing, electrical or remodeling
       </p>
     </>
   );

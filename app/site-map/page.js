@@ -12,6 +12,7 @@ const categories = [
   ["AC Repair", "/hvac/ac-repair"],
   ["Electrical", "/electrical"],
   ["Roofing", "/roofing"],
+  ["Windows & Doors", "/windows-doors"],
   ["Contractors & Remodeling", "/contractors-remodeling"],
   ["Landscaping", "/landscaping"],
   ["Painting", "/painting"],

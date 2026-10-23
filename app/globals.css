@@ -1953,3 +1953,16 @@ footer small {
     grid-column: 2;
   }
 }
+
+/* Layout balance for an 11th category tile, keeping existing card dimensions. */
+@media (min-width: 1051px) {
+  .servicesSection .serviceGrid > .serviceCard:last-child:nth-child(5n + 1) {grid-column:3;}
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  .servicesSection .serviceGrid > .serviceCard:nth-last-child(2):nth-child(3n + 1) {grid-column:2;}
+}
+@media (max-width: 760px) {
+  .servicesSection .serviceGrid > .serviceCard:last-child:nth-child(odd) {
+    grid-column:1/-1;width:calc(50% - 4px);justify-self:center;
+  }
+}

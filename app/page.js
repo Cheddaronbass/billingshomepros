@@ -76,6 +76,14 @@ const services = [
     theme: "fencing",
   },
   {
+    name: "Windows & Doors",
+    image: "https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&cs=tinysrgb&w=850",
+    description: "Window replacement, installation, repairs & exterior doors",
+    href: "/windows-doors",
+    iconPath: "M3 3h18v18H3z M12 3v18 M3 12h18",
+    theme: "windows-doors",
+  },
+  {
     name: "Handyman",
     image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
@@ -214,6 +222,7 @@ export default function Home() {
               ["Roofing", "/roofing", "Painting", "/painting"],
               ["Landscaping", "/landscaping", "Concrete", "/concrete"],
               ["Fencing", "/fencing", "Handyman", "/handyman"],
+              ["Windows & Doors", "/windows-doors", "Remodeling", "/contractors-remodeling"],
             ].map(([firstLabel, firstHref, secondLabel, secondHref]) => (
               <span key={firstHref} style={{ color: "#8296a8", whiteSpace: "nowrap" }}>
                 <a href={firstHref} style={{ color: "#25b9ff", fontWeight: 700, textDecoration: "underline", textUnderlineOffset: 3 }}>{firstLabel}</a>
