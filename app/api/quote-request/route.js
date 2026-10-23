@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { verifyTurnstileToken } from "../../lib/turnstile";
 
 export async function POST(request) {
   try {
@@ -13,6 +14,7 @@ export async function POST(request) {
       customer_phone,
       project_type,
       project_details,
+      turnstile_token,
     } = body;
 
     if (!business_name || !customer_name || !project_details) {
@@ -38,6 +40,14 @@ if (
     { status: 400 }
   );
 }
+    const verification = await verifyTurnstileToken(turnstile_token, "quote_request");
+    if (!verification.ok) {
+      return Response.json(
+        { error: verification.error },
+        { status: verification.status }
+      );
+    }
+
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.SUPABASE_PUBLISHABLE_KEY
