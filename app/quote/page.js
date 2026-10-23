@@ -2,6 +2,7 @@
 
 import { Suspense, useRef, useState } from "react";
 import TurnstileField from "../components/TurnstileField";
+import { formatUSPhoneNumber } from "../lib/formatUSPhoneNumber";
 
 const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 import { useSearchParams } from "next/navigation";
@@ -31,7 +32,7 @@ function QuoteForm() {
 
     setFormData((current) => ({
       ...current,
-      [name]: value,
+      [name]: name === "customer_phone" ? formatUSPhoneNumber(value) : value,
     }));
   }
 
@@ -141,6 +142,8 @@ function QuoteForm() {
               <input
                 type="tel"
                 name="customer_phone"
+                placeholder="406-555-0123"
+                inputMode="tel"
                 value={formData.customer_phone}
                 onChange={handleChange}
                 autoComplete="tel"
