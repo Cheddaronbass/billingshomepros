@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/audit-roofing-official-logos-once.cjs && next build",
+    "build": "node scripts/import-reviewed-roofing-logos-once.cjs && next build",
     "start": "next start"
   },
   "dependencies": {
