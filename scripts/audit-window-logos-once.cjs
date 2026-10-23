@@ -46,5 +46,6 @@ function extract(html,website){
   }));
   results.push(...out);
  }
- console.log("WINDOW_LOGO_AUDIT "+JSON.stringify({businesses:results.length,existingLogos:results.filter(x=>x.existing).length,verifiedLogos:results.filter(x=>x.verified).length,results}));
+ for(const row of results) console.log("WINDOW_LOGO_ITEM "+JSON.stringify(row));
+ console.log("WINDOW_LOGO_SUMMARY "+JSON.stringify({businesses:results.length,existingLogos:results.filter(x=>x.existing).length,verifiedLogos:results.filter(x=>x.verified).length}));
 })().catch(e=>{console.error("WINDOW_LOGO_AUDIT_FATAL",String(e.message));process.exitCode=1});
