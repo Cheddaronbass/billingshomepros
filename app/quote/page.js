@@ -1,6 +1,9 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
+import TurnstileField from "../components/TurnstileField";
+
+const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 import { useSearchParams } from "next/navigation";
 
 function QuoteForm() {
@@ -18,6 +21,8 @@ function QuoteForm() {
     project_details: "",
   });
 
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef(null);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
@@ -33,6 +38,12 @@ function QuoteForm() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    if (turnstileEnabled && !turnstileToken) {
+      setStatus("error");
+      setMessage("Complete the security verification before submitting.");
+      return;
+    }
+
     setStatus("submitting");
     setMessage("");
 
@@ -46,6 +57,7 @@ function QuoteForm() {
           business_id: businessId ? Number(businessId) : null,
           business_name: businessName,
           ...formData,
+          turnstile_token: turnstileToken,
         }),
       });
 
@@ -80,6 +92,9 @@ function QuoteForm() {
     } catch {
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
+    } finally {
+      // Turnstile responses expire after one verification attempt.
+      turnstileRef.current?.reset();
     }
   }
 
@@ -160,10 +175,16 @@ function QuoteForm() {
             />
           </label>
 
+          <TurnstileField
+            ref={turnstileRef}
+            action="quote_request"
+            onTokenChange={setTurnstileToken}
+          />
+
           <button
             type="submit"
             className="quoteSubmitButton"
-            disabled={status === "submitting"}
+            disabled={status === "submitting" || (turnstileEnabled && !turnstileToken)}
           >
             {status === "submitting"
               ? "Sending..."
