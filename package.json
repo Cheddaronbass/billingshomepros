@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/check-remaining-logo-files.cjs && next build",
+    "build": "node scripts/import-third-batch-window-logos.cjs && next build",
     "start": "next start"
   },
   "dependencies": {
