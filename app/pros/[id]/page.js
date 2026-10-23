@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import TrackedLink from "../../components/TrackedLink";
 import ContractorLogo from "../../components/ContractorLogo";
 
@@ -15,10 +15,32 @@ async function getBusiness(id) {
   return error ? null : data;
 }
 
+// Existing cross-category duplicates (kept in the database for audit history).
+// Redirect only while the two records demonstrably remain the same business,
+// and do not redirect claimed or featured profiles.
+const canonicalAliases = { 117: 55, 118: 63 };
+const digits = (s) => String(s || "").replace(/\D/g, "").slice(-10);
+const domain = (s) => { try { return new URL(s).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; } };
+async function confirmedCanonicalId(business) {
+  const canonicalId = canonicalAliases[business?.id];
+  if (!canonicalId || business.claimed || business.featured) return null;
+  const canonical = await getBusiness(canonicalId);
+  if (!canonical || canonical.claimed || canonical.featured) return null;
+  if (!digits(business.phone) || digits(business.phone) !== digits(canonical.phone)) return null;
+  if (!domain(business.website) || domain(business.website) !== domain(canonical.website)) return null;
+  return canonicalId;
+}
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const business = await getBusiness(id);
   if (!business) return { title: "Listing not found", robots: { index: false } };
+  const aliasId = await confirmedCanonicalId(business);
+  if (aliasId) return {
+    title: business.name + " | Billings Home Pros",
+    robots: { index: false, follow: true },
+    alternates: { canonical: `/pros/${aliasId}` },
+  };
   const title = `${business.name} | ${business.category.replaceAll("-", " ")} in Billings, MT`;
   const description = business.description || `Learn about ${business.name}, a home-service business serving the Billings area.`;
   return {
@@ -33,6 +55,8 @@ export default async function BusinessProfile({ params }) {
   const { id } = await params;
   const business = await getBusiness(id);
   if (!business) notFound();
+  const aliasId = await confirmedCanonicalId(business);
+  if (aliasId) permanentRedirect(`/pros/${aliasId}`);
 
   const categoryLabel = business.category.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const profileUrl = `https://www.billingshomepros.com/pros/${business.id}`;
