@@ -1710,6 +1710,26 @@ footer small {
   letter-spacing: -0.04em;
 }
 
+/* Windows & Doors: make official company marks and wide wordmarks legible
+   without changing the approved logo layout on other category pages. */
+.windowsDoorsPage .businessLogo {
+  flex: 0 0 94px;
+  width: 94px;
+  height: 78px;
+  background: #ffffff;
+}
+.windowsDoorsPage .businessLogo img {
+  padding: 3px;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .windowsDoorsPage .businessLogo {
+    flex-basis: 72px;
+    width: 72px;
+    height: 68px;
+  }
+}
+
 /* Secondary service landing-page link */
 .categorySeoLink {
   margin: 22px 0 24px;
