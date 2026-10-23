@@ -1,0 +1,160 @@
+[
+  {
+    "name": "Pierce Flooring & Cabinet Design Center",
+    "phone": "406-652-4666",
+    "website": "https://pierceflooring.com/",
+    "description": "Billings flooring design center offering professional installation of carpet, hardwood, laminate, luxury vinyl plank and tile, plus commercial flooring projects.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://pierceflooring.com/services/"
+  },
+  {
+    "name": "Carpet One Floor & Home of Billings",
+    "phone": "406-200-8014",
+    "website": "https://www.carpetonebillings.com/",
+    "description": "Billings flooring showroom offering professional residential and commercial flooring installation, including carpet, hardwood, tile, laminate and luxury vinyl.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://www.carpetonebillings.com/about-us"
+  },
+  {
+    "name": "World Famous Carpet Barn",
+    "phone": "406-656-2824",
+    "website": "https://cbarn.com/",
+    "description": "Billings flooring showroom with professional local installers for carpet, tile and other flooring products.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Tile Installation"
+    ],
+    "source": "https://cbarn.com/flooring/carpet/installation/"
+  },
+  {
+    "name": "Floors By Design",
+    "phone": "406-545-4757",
+    "website": "https://www.floorsbydesignmt.com/",
+    "description": "Locally operated Billings flooring showroom coordinating professional installation for carpet, tile, hardwood, vinyl and laminate.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://www.floorsbydesignmt.com/about/"
+  },
+  {
+    "name": "Soft Touch Designs",
+    "phone": "406-656-3613",
+    "website": "https://www.softtouchdesigns.net/",
+    "description": "Hardwood flooring contractor providing residential and commercial wood-floor installation, repair and refinishing in Billings.",
+    "services": [
+      "Flooring Installation",
+      "Hardwood Installation",
+      "Floor Refinishing"
+    ],
+    "source": "https://www.softtouchdesigns.net/"
+  },
+  {
+    "name": "Fischer Commercial Flooring",
+    "phone": "406-702-7070",
+    "website": "https://www.fischercommercialflooring.com/",
+    "description": "Billings commercial flooring contractor handling flooring and tile installation, project management and specialty commercial surfaces.",
+    "services": [
+      "Flooring Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://business.billingschamber.com/member-directory/Details/fischer-commercial-flooring-llc-4472595"
+  },
+  {
+    "name": "Choice Floors - Billings",
+    "phone": "406-697-4572",
+    "website": "https://www.choicefloors.com/",
+    "description": "Billings flooring showroom offering home estimates and connecting homeowners with professional installation teams for carpet, hardwood, tile and luxury vinyl.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://www.choicefloors.com/pages/flooring-installation"
+  },
+  {
+    "name": "Rich's Modern Flooring",
+    "phone": "406-247-0523",
+    "website": "https://www.richsflooring.com/",
+    "description": "Billings flooring retailer offering professionally installed carpet, hardwood, laminate, tile and vinyl flooring.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://www.richsflooring.com/career-opportunities/"
+  },
+  {
+    "name": "Montana Hardwood Floor Company",
+    "phone": "406-690-8773",
+    "website": "https://montanahardwoodfloorcompany.com/",
+    "description": "Billings-based hardwood flooring specialists offering installation, restoration, repairs and refinishing for homes, schools and businesses.",
+    "services": [
+      "Flooring Installation",
+      "Hardwood Installation",
+      "Floor Refinishing"
+    ],
+    "source": "https://montanahardwoodfloorcompany.com/services/"
+  },
+  {
+    "name": "The Floor Trader of Billings",
+    "phone": "406-552-0337",
+    "website": "https://www.floortraderbillings.com/",
+    "description": "Local flooring store coordinating professional flooring installation through its installers and preferred installer network.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation",
+      "Luxury Vinyl Installation"
+    ],
+    "source": "https://www.floortraderbillings.com/"
+  },
+  {
+    "name": "Rimrock Cabinet Co",
+    "phone": "406-651-8109",
+    "website": "https://www.rimrockcabinetandflooring.com/",
+    "description": "Billings cabinetry and flooring installer offering hardwood, tile and carpet installation for remodels and new homes.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation"
+    ],
+    "source": "https://www.rimrockcabinetandflooring.com/flooring"
+  },
+  {
+    "name": "Murray Floor & Window Coverings",
+    "phone": "406-373-0055",
+    "website": "https://www.floorsandwindowsmt.com/",
+    "description": "Billings family-operated flooring and window-covering business offering carpet, hardwood and tile solutions with installation services.",
+    "services": [
+      "Flooring Installation",
+      "Carpet Installation",
+      "Hardwood Installation",
+      "Tile Installation"
+    ],
+    "source": "https://www.floorsandwindowsmt.com/"
+  }
+]
