@@ -16,6 +16,7 @@ const categories = [
   ["Contractors & Remodeling", "/contractors-remodeling"],
   ["Landscaping", "/landscaping"],
   ["Painting", "/painting"],
+  ["Flooring", "/flooring"],
   ["Concrete", "/concrete"],
   ["Fencing", "/fencing"],
   ["Handyman", "/handyman"],
