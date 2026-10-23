@@ -102,7 +102,7 @@ export default function GooglePlacesAdminPage() {
         <p>Search five unmatched businesses at a time. Results are for review only; nothing is saved.</p>
         <label>Category
           <select value={category} onChange={(e) => { setCategory(e.target.value); setBatchOffset(0); setBatchResult(null); }} style={inputStyle}>
-            {["landscaping","painting","fencing","handyman","concrete","electrical","plumbing","hvac","roofing","contractors-remodeling"].map((item) => <option key={item} value={item}>{item}</option>)}
+            {["landscaping","painting","fencing","handyman","concrete","electrical","plumbing","hvac","roofing","contractors-remodeling","windows-doors"].map((item) => <option key={item} value={item}>{item}</option>)}
           </select>
         </label>
         <button type="button" disabled={!adminKey || batchLoading} onClick={() => searchBatch(0)} style={{ marginTop: 12, padding: 12 }}>
