@@ -38,6 +38,8 @@ export default async function sitemap() {
     const { data, error } = await supabase
       .from("businesses")
       .select("id")
+      // Duplicated cross-category profiles permanently redirect to canonical IDs.
+      .not("id", "in", "(117,118)")
       .order("id")
       .range(start, start + batchSize - 1);
     if (error) {
