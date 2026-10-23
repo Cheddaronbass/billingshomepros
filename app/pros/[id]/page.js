@@ -68,7 +68,7 @@ export default async function BusinessProfile({ params }) {
         <article className="contractorCard" style={{ maxWidth: 920, marginTop: 24 }}>
           <div className="contractorMain">
             <div className="contractorIdentity">
-              <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} />
+              <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} website={business.website} />
               <div className="contractorIdentityText">
                 <div className="businessNameRow">
                   <h2>{business.name}</h2>
