@@ -1997,3 +1997,187 @@ footer small {
     grid-column:1/-1;width:calc(50% - 4px);justify-self:center;
   }
 }
+
+
+/* OCT 23 2026 — COMPACT, RESULTS-FIRST CATEGORY PAGES */
+/* Scoped to CategoryPage. The homepage and other landing pages stay as approved. */
+.categoryDirectoryPage .categoryHero {
+  padding: 38px 7% 42px;
+}
+.categoryDirectoryPage .categoryHeroInner {
+  max-width: 1080px;
+}
+.categoryDirectoryPage .categoryHero .eyebrow {
+  margin: 0 0 12px;
+  color: #25b9ff;
+  font-size: .82rem;
+  letter-spacing: .16em;
+  line-height: 1.35;
+}
+.categoryDirectoryPage .categoryHero h1 {
+  max-width: 980px;
+  margin: 0 auto 12px;
+  font-size: clamp(2.2rem, 4.2vw, 3.65rem);
+  line-height: 1.07;
+  font-weight: 850;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.categoryDirectoryPage .categoryHero p {
+  max-width: 760px;
+  color: #cbd6e1;
+  font-size: clamp(.96rem, 1.2vw, 1.07rem);
+  line-height: 1.55;
+}
+.categoryDirectoryPage .categoryContent {
+  padding: 32px 7% 65px;
+}
+.categoryDirectoryPage .categoryIntro {
+  max-width: 1100px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 38px;
+  margin: 0 auto 22px;
+}
+.categoryDirectoryPage .categoryIntro .eyebrow {
+  margin-bottom: 7px;
+  font-size: .81rem;
+  line-height: 1.4;
+  letter-spacing: .12em;
+}
+.categoryDirectoryPage .categoryIntro h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+  line-height: 1.14;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.categoryDirectoryPage .categoryIntro > p {
+  margin: 0;
+  color: #485869;
+  font-size: clamp(.95rem, 1.12vw, 1.02rem);
+  line-height: 1.55;
+}
+.categoryDirectoryPage .filterBar {
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 auto 20px;
+  padding: 7px;
+  background: #f4f8fb;
+  border: 1px solid #dae6ee;
+  border-radius: 12px;
+}
+.categoryDirectoryPage .filterBar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #1e3448;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+.categoryDirectoryPage .filterBar a:hover {
+  background: #e4f2fb;
+  border-color: #c3d9e8;
+}
+.categoryDirectoryPage .filterBar a.activeFilter {
+  background: #087fbd !important;
+  border-color: #087fbd;
+  color: #fff !important;
+  box-shadow: 0 2px 7px rgba(8, 127, 189, .17);
+}
+.categoryDirectoryPage .categorySeoLink {
+  max-width: 1100px;
+  margin: 20px auto 6px;
+}
+.categoryDirectoryPage .categorySeoLink a {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #286486;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-color: #a8cadb;
+  text-underline-offset: 3px;
+}
+.categoryDirectoryPage .categorySeoLink a:hover,
+.categoryDirectoryPage .categorySeoLink a:focus-visible {
+  background: transparent;
+  border-color: transparent;
+  color: #087fbd;
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 760px) {
+  .categoryDirectoryPage .categoryHero {
+    padding: 30px 6% 33px;
+  }
+  .categoryDirectoryPage .categoryHero .eyebrow {
+    margin-bottom: 9px;
+    font-size: .7rem;
+    letter-spacing: .11em;
+  }
+  .categoryDirectoryPage .categoryHero h1 {
+    margin-bottom: 11px;
+    font-size: clamp(1.95rem, 7.6vw, 2.8rem);
+    line-height: 1.09;
+    letter-spacing: -.035em;
+  }
+  .categoryDirectoryPage .categoryHero p {
+    font-size: .94rem;
+    line-height: 1.48;
+  }
+  .categoryDirectoryPage .categoryContent {
+    padding: 25px 6% 55px;
+  }
+  .categoryDirectoryPage .categoryIntro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-bottom: 17px;
+  }
+  .categoryDirectoryPage .categoryIntro .eyebrow {
+    font-size: .73rem;
+    margin-bottom: 6px;
+  }
+  .categoryDirectoryPage .categoryIntro h2 {
+    font-size: clamp(1.42rem, 5.2vw, 1.85rem);
+    line-height: 1.17;
+  }
+  .categoryDirectoryPage .categoryIntro > p {
+    font-size: .92rem;
+    line-height: 1.5;
+  }
+  /* Preserve comfortable tap targets without wrapping five filters into tall rows. */
+  .categoryDirectoryPage .filterBar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding: 6px;
+  }
+  .categoryDirectoryPage .filterBar a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: .84rem;
+    min-height: 42px;
+  }
+  .categoryDirectoryPage .categorySeoLink {
+    margin-top: 17px;
+  }
+}
