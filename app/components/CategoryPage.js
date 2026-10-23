@@ -197,7 +197,7 @@ export default async function CategoryPage({
                   <div className="contractorTop">
                     <div className="contractorIdentity">
                       <a href={`/pros/${business.id}`} aria-label={`View ${business.name} contractor profile`} style={{ display: "flex", alignItems: "center", gap: 14, color: "inherit", textDecoration: "none" }}>
-                        <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} />
+                        <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} website={business.website} />
                         <div className="contractorIdentityText">
                           <div className="businessNameRow"><h2>{business.name}</h2></div>
                           <p className="contractorLocation">{business.service_area || "Billings, Montana"}</p>
