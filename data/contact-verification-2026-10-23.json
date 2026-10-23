@@ -1,0 +1,24 @@
+{
+  "reviewed_on": "2026-10-23",
+  "purpose": "Verified contact discrepancies; retain sources to prevent stale-directory data overriding business-published contact details.",
+  "businesses": [
+    {
+      "id": 88,
+      "name": "Paints Well with Colors",
+      "display_phone": "406-630-6350",
+      "source": "https://paintswellwithcolors.com/",
+      "google_place_id": "ChIJz99LqOySSFMRBuPOeAYGY8E",
+      "google_phone": "406-530-1200",
+      "decision": "Use the phone prominently published on the business-controlled website. Google Places still lists a different number; do not alter the Google match or assert telephone reachability.",
+      "follow_up": "Business confirmation of both phone numbers is appropriate if direct outreach becomes authorized."
+    },
+    {
+      "id": 72,
+      "name": "River Ridge Landscape Company",
+      "display_website": "http://www.riverridgelandscape.com/",
+      "source": "http://www.riverridgelandscape.com/",
+      "decision": "Use the canonical working public website. Both HTTPS variants were unreachable in live checks; the business must configure HTTPS independently.",
+      "follow_up": "Revisit HTTPS only after an actual HTTPS page works. Never silently rewrite to a nonworking secure URL."
+    }
+  ]
+}
