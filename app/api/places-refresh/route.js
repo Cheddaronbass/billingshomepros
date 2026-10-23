@@ -26,6 +26,12 @@ if (!manualAuthorized && !cronAuthorized) {
       process.env.SUPABASE_SECRET_KEY
     );
 
+    // Match up to five new window installers first. Keeping this before the
+    // legacy rating-refresh loop prevents slow Google reads from starving the
+    // new-listing queue; identity verification and request limit stay intact.
+    const windowMatches = await backfillWindowGoogleMatches(supabase);
+
+
     // Refresh the 10 businesses that have gone the longest
     // without a Google update.
     const { data: businesses, error } = await supabase
@@ -133,10 +139,6 @@ if (!manualAuthorized && !cronAuthorized) {
         });
       }
     }
-
-    // New window installers do not have Google Place IDs yet. Check at most
-    // five per authorized refresh, and persist only exact local name+phone matches.
-    const windowMatches = await backfillWindowGoogleMatches(supabase);
 
     return Response.json({
       businessesProcessed: results.length,
