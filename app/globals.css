@@ -2181,3 +2181,108 @@ footer small {
     margin-top: 17px;
   }
 }
+
+
+/* OCT 23 2026 — DENSE, RESULTS-FIRST CATEGORY BUSINESS CARDS */
+/* Keep profile pages and homepage styling unchanged. */
+.categoryDirectoryPage .contractorCard {
+  padding: 23px 25px;
+  border: 1px solid #b8cddc;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(11, 27, 45, 0.075);
+}
+.categoryDirectoryPage .contractorCard:hover {
+  border-color: #218bc4;
+  box-shadow: 0 9px 23px rgba(11, 27, 45, 0.12);
+}
+.categoryDirectoryPage .contractorCard h2 {
+  font-size: clamp(1.27rem, 2.1vw, 1.57rem);
+  line-height: 1.2;
+}
+.categoryDirectoryPage .contractorLocation {
+  font-size: .86rem;
+  line-height: 1.4;
+}
+.categoryDirectoryPage .serviceTags {
+  margin: 14px 0 11px;
+  gap: 6px;
+  align-items: center;
+}
+.categoryDirectoryPage .serviceTags span,
+.categoryDirectoryPage .serviceTags .serviceMoreLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 6px 10px;
+  font-size: .73rem;
+  line-height: 1.25;
+  border-radius: 100px;
+}
+.categoryDirectoryPage .serviceTags .serviceMoreLink {
+  background: #f2f6f9;
+  border: 1px solid #cfdee8;
+  color: #245b80;
+  font-weight: 700;
+  text-decoration: none;
+}
+.categoryDirectoryPage .serviceTags .serviceMoreLink:hover,
+.categoryDirectoryPage .serviceTags .serviceMoreLink:focus-visible {
+  color: #075b89;
+  background: #e5f4fc;
+  text-decoration: underline;
+}
+.categoryDirectoryPage .contractorDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 950px;
+  margin: 0;
+  color: #566370;
+  font-size: .93rem;
+  line-height: 1.52;
+}
+.categoryDirectoryPage .homeProsRating {
+  gap: 12px;
+  margin: 12px 0;
+  padding: 9px 12px;
+  font-size: .88rem;
+}
+.categoryDirectoryPage .contractorActions {
+  gap: 8px;
+  margin-top: 13px;
+}
+.categoryDirectoryPage .contractorActions .actionButton {
+  min-height: 42px;
+  padding: 9px 14px;
+  font-size: .85rem;
+}
+@media (max-width: 760px) {
+  .categoryDirectoryPage .contractorCard {
+    padding: 17px;
+    border-radius: 12px;
+  }
+  .categoryDirectoryPage .contractorCard h2 {
+    font-size: 1.28rem;
+  }
+  .categoryDirectoryPage .serviceTags {
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+  .categoryDirectoryPage .serviceTags span,
+  .categoryDirectoryPage .serviceTags .serviceMoreLink {
+    font-size: .72rem;
+    padding: 5px 9px;
+  }
+  .categoryDirectoryPage .contractorDescription {
+    font-size: .89rem;
+    line-height: 1.5;
+  }
+  .categoryDirectoryPage .contractorActions {
+    margin-top: 12px;
+  }
+  .categoryDirectoryPage .homeProsRating {
+    padding: 10px;
+    gap: 5px;
+  }
+}
