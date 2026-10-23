@@ -23,6 +23,7 @@ const pages = [
   { path: "/contractors-remodeling", priority: 0.9 },
   { path: "/landscaping", priority: 0.9 },
   { path: "/painting", priority: 0.9 },
+  { path: "/flooring", priority: 0.9 },
   { path: "/concrete", priority: 0.9 },
   { path: "/fencing", priority: 0.9 },
   { path: "/handyman", priority: 0.9 },
