@@ -107,7 +107,7 @@ export default async function CategoryPage({
   };
 
   return (
-    <main>
+    <main className={category === "windows-doors" ? "windowsDoorsPage" : undefined}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/">
