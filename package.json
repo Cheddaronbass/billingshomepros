@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/review-four-google-candidates.cjs && next build",
+    "build": "node scripts/approve-three-reviewed-google-matches.cjs && next build",
     "start": "next start"
   },
   "dependencies": {
