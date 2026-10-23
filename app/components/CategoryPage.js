@@ -65,7 +65,36 @@ export default async function CategoryPage({
     console.error("Supabase error:", error);
   }
 
-  const businesses = error ? [] : data || [];
+  // The Windows & Doors directory should lead with dedicated installers, not
+  // roofers or general trades that merely offer window work. Featured listings
+  // still retain their promised top placement within the category.
+  const businesses = (error ? [] : data || []).slice();
+  if (category === "windows-doors") {
+    businesses.sort((a, b) =>
+      Number(Boolean(b.featured)) - Number(Boolean(a.featured)) ||
+      Number(b.category === "windows-doors") - Number(a.category === "windows-doors") ||
+      a.name.localeCompare(b.name)
+    );
+  }
+
+  // The card is a preview. Show unique, relevant services and link to the
+  // complete profile instead of repeating the category or filling two rows.
+  const cardServices = businesses.map((business) => {
+    const seen = new Set([categoryLabel.toLowerCase().trim()]);
+    const services = (Array.isArray(business.services) ? business.services : [])
+      .filter((service) => {
+        if (typeof service !== "string" || !service.trim()) return false;
+        const normalized = service.toLowerCase().trim();
+        if (seen.has(normalized)) return false;
+        seen.add(normalized);
+        return true;
+      });
+    if (category === "windows-doors") {
+      const isRelevant = (service) => /window|door|glass/i.test(service);
+      services.sort((a, b) => Number(isRelevant(b)) - Number(isRelevant(a)));
+    }
+    return { shown: services.slice(0, 4), extra: Math.max(0, services.length - 4) };
+  });
 
   const googleRatings = await Promise.all(
     businesses.map((business) =>
@@ -203,16 +232,20 @@ export default async function CategoryPage({
                   <div className="serviceTags">
                     <span>{categoryLabel}</span>
 
-                    {business.services?.map(
-                      (service) => (
-                        <span key={service}>
-                          {service}
-                        </span>
-                      )
-                    )}
-
+                    {cardServices[index].shown.map((service) => (
+                      <span key={service}>{service}</span>
+                    ))}
                     {business.emergency_service && (
                       <span>Emergency Service</span>
+                    )}
+                    {cardServices[index].extra > 0 && (
+                      <a
+                        className="serviceMoreLink"
+                        href={`/pros/${business.id}`}
+                        aria-label={`View ${cardServices[index].extra} more services for ${business.name}`}
+                      >
+                        +{cardServices[index].extra} more
+                      </a>
                     )}
                   </div>
 
