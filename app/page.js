@@ -56,7 +56,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&q=78&fit=crop",
     description: "Interior, exterior, cabinet & commercial painting",
     href: "/painting",
-    iconPath: "M3 3h18v6H3z M7 3v6 M12 3v6 M17 3v6 M5 9h14v4H5z M10 13v3h4v-3 M11 16v6h2v-6",
+    iconPath: "M3 9h16v4H3z M19 11h2v5h-9v6",
     theme: "painting",
   },
   {
@@ -198,7 +198,7 @@ export default function Home() {
       </div>
 
       <div className="serviceCardContent">
-        <svg className="serviceTileIcon" viewBox="0 0 24 24" aria-hidden="true" fill={service.theme === "handyman" || service.theme === "remodeling" ? "currentColor" : "none"} stroke={service.theme === "handyman" || service.theme === "remodeling" ? "none" : "currentColor"} strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"><path d={service.iconPath} /></svg>
+        <svg className="serviceTileIcon" viewBox="0 0 24 24" aria-hidden="true" fill={service.theme === "handyman" || service.theme === "remodeling" ? "currentColor" : "none"} stroke={service.theme === "handyman" || service.theme === "remodeling" ? "none" : "currentColor"} strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round">{service.theme === "painting" && <rect x="3" y="2" width="16" height="5" fill="currentColor" stroke="none" />}<path d={service.iconPath} /></svg>
         <h3>{service.theme === "remodeling" ? <><span className="desktopRemodelLabel">Contractors & Remodeling</span><span className="mobileRemodelLabel">Remodeling</span></> : service.name}</h3>
         <p>{service.description}</p>
 
