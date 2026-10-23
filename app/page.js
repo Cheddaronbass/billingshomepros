@@ -84,6 +84,14 @@ const services = [
     theme: "windows-doors",
   },
   {
+    name: "Flooring",
+    image: "https://unsplash.com/photos/4qqjL0Ex3qc/download?w=700",
+    description: "Carpet, hardwood, tile, vinyl flooring & refinishing",
+    href: "/flooring",
+    iconPath: "M3 4h18v16H3z M3 10h18 M3 16h18 M9 4v6 M15 10v6 M10 16v4",
+    theme: "flooring",
+  },
+  {
     name: "Handyman",
     image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
     description: "Home repairs, drywall, maintenance & installations",
