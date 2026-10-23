@@ -85,7 +85,7 @@ const services = [
   },
   {
     name: "Flooring",
-    image: "https://unsplash.com/photos/4qqjL0Ex3qc/download?w=700",
+    image: "https://images.unsplash.com/photo-1737065189944-1b50964f4193?auto=format&fit=crop&w=700&q=82",
     description: "Carpet, hardwood, tile, vinyl flooring & refinishing",
     href: "/flooring",
     iconPath: "M3 4h18v16H3z M3 10h18 M3 16h18 M9 4v6 M15 10v6 M10 16v4",
