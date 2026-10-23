@@ -107,7 +107,7 @@ export default async function CategoryPage({
   };
 
   return (
-    <main className={category === "windows-doors" ? "windowsDoorsPage" : undefined}>
+    <main className={category === "windows-doors" ? "categoryDirectoryPage windowsDoorsPage" : "categoryDirectoryPage"}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/">
@@ -166,14 +166,6 @@ export default async function CategoryPage({
             );
           })}
         </div>
-
-        {seoLink && (
-          <div className="categorySeoLink">
-            <a href={seoLink.href}>
-              {seoLink.label} →
-            </a>
-          </div>
-        )}
 
         <div className="contractorList">
           {businesses.length === 0 ? (
@@ -288,6 +280,14 @@ export default async function CategoryPage({
             ))
           )}
         </div>
+        {seoLink && (
+          <div className="categorySeoLink">
+            <a href={seoLink.href}>
+              {seoLink.label} →
+            </a>
+          </div>
+        )}
+
         {localGuide && (
           <section aria-labelledby="local-roofing-guide" style={{ marginTop: "3rem", maxWidth: "850px", lineHeight: 1.7 }}>
             <h2 id="local-roofing-guide">{localGuide.title}</h2>
