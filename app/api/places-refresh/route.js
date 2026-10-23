@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { backfillWindowGoogleMatches } from "../../lib/backfillWindowGoogleMatches";
 
 export async function POST(request) {
   try {
@@ -10,6 +11,7 @@ const manualAuthorized =
   adminSecret === process.env.ADMIN_API_SECRET;
 
 const cronAuthorized =
+  Boolean(process.env.CRON_SECRET) &&
   authorization === `Bearer ${process.env.CRON_SECRET}`;
 
 if (!manualAuthorized && !cronAuthorized) {
@@ -132,9 +134,14 @@ if (!manualAuthorized && !cronAuthorized) {
       }
     }
 
+    // New window installers do not have Google Place IDs yet. Check at most
+    // five per authorized refresh, and persist only exact local name+phone matches.
+    const windowMatches = await backfillWindowGoogleMatches(supabase);
+
     return Response.json({
       businessesProcessed: results.length,
       results,
+      windowMatches,
     });
   } catch (error) {
     console.error("Places refresh error:", error);
