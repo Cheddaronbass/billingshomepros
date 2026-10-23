@@ -13,12 +13,46 @@ function getBusinessInitials(name = "") {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-export default function ContractorLogo({ name, logoUrl, logoVerified = false }) {
-  const [imageFailed, setImageFailed] = useState(false);
+// Show the contractor's supplied logo first. If one is missing, try the
+// icon published by its own official website. Never create an invented logo.
+function getWebsiteIcon(website) {
+  try {
+    const url = new URL(website);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return "";
+    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(url.hostname)}&sz=128`;
+  } catch {
+    return "";
+  }
+}
+
+export default function ContractorLogo({ name, logoUrl, logoVerified = false, website }) {
+  const [imageIndex, setImageIndex] = useState(0);
+  const websiteIcon = getWebsiteIcon(website);
+  const imageSources = [
+    ...(logoUrl ? [{ url: logoUrl, type: "logo" }] : []),
+    ...(websiteIcon ? [{ url: websiteIcon, type: "website icon" }] : []),
+  ];
+  const current = imageSources[imageIndex];
+  const imageLabel = current?.type === "website icon"
+    ? `${name} website icon`
+    : logoVerified ? `${name} verified logo` : `${name} logo candidate`;
   return (
-    <div className="businessLogo" aria-label={logoUrl && !imageFailed ? `${name} logo candidate` : `${name} initials`}>
-      {logoUrl && !imageFailed ? (
-        <img src={logoUrl} alt={`${name} logo`} loading="lazy" onError={() => setImageFailed(true)} />
+    <div className="businessLogo" aria-label={current ? imageLabel : `${name} initials`}>
+      {current ? (
+        <img
+          src={current.url}
+          alt={imageLabel}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setImageIndex((index) => index + 1)}
+          onLoad={(event) => {
+            // Google's generic missing-site globe is only 16px; prefer the
+            // honest initials placeholder rather than a fake brand mark.
+            if (current.type === "website icon" && event.currentTarget.naturalWidth <= 16) {
+              setImageIndex((index) => index + 1);
+            }
+          }}
+        />
       ) : (
         <span className="businessLogoFallback" aria-hidden="true">{getBusinessInitials(name)}</span>
       )}
