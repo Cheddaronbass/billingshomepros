@@ -64,9 +64,11 @@ function QuoteForm() {
           business_name: businessName,
         });
       }
+      // A saved quote request is not necessarily delivered to the contractor:
+      // contractor email forwarding requires a verified lead address.
       setMessage(
-   `Request sent! Your quote request for ${businessName} has been received.`
-);
+        `Request received by Billings Home Pros for ${businessName}. We'll forward it to the contractor when a verified contact is available.`
+      );
 
       setFormData({
         customer_name: "",
