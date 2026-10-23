@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/import-flooring-installers.cjs && next build",
     "start": "next start"
   },
   "dependencies": {
