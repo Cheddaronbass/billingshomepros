@@ -43,10 +43,29 @@ if (
       process.env.SUPABASE_PUBLISHABLE_KEY
     );
 
+    // Never trust the business name in a query string or client POST when a
+    // directory business ID was supplied. Resolve that identity server-side.
+    if (business_id != null && (!Number.isSafeInteger(business_id) || business_id <= 0)) {
+      return Response.json({ error: "Invalid business selection." }, { status: 400 });
+    }
+    const { data: targetBusiness, error: targetError } = business_id
+      ? await supabase.from("businesses")
+          .select("id,name,lead_email,lead_email_verified")
+          .eq("id", business_id).maybeSingle()
+      : { data: null, error: null };
+    if (targetError) {
+      console.error("Quote target lookup failed:", targetError);
+      return Response.json({ error: "Unable to verify the selected business." }, { status: 500 });
+    }
+    if (business_id && !targetBusiness) {
+      return Response.json({ error: "That business listing could not be found." }, { status: 404 });
+    }
+    const verifiedBusinessName = targetBusiness?.name || business_name;
+
     // Save the lead first. Supabase is our source of truth.
     const { error } = await supabase.from("quote_requests").insert({
       business_id,
-      business_name,
+      business_name: verifiedBusinessName,
       customer_name,
       customer_email: customer_email || null,
       customer_phone: customer_phone || null,
@@ -63,11 +82,6 @@ if (
       );
     }
 
-    const { data: targetBusiness } = business_id
-      ? await supabase.from("businesses").select("id,lead_email,lead_email_verified")
-          .eq("id", business_id).maybeSingle()
-      : { data: null };
-
     // Send the notification after the lead has been safely saved.
     // If email fails, we still keep the lead in Supabase.
     try {
@@ -77,7 +91,7 @@ if (
 NEW BILLINGS HOME PROS QUOTE REQUEST
 
 Business:
-${business_name}
+${verifiedBusinessName}
 
 Customer:
 ${customer_name}
@@ -101,7 +115,7 @@ Submitted through BillingsHomePros.com
       const { error: emailError } = await resend.emails.send({
         from: "Billings Home Pros <notifications@billingshomepros.com>",
         to: [process.env.NOTIFICATION_EMAIL],
-        subject: `New Quote Request - ${business_name}`,
+        subject: `New Quote Request - ${verifiedBusinessName}`,
         text: emailText,
         ...(customer_email
           ? { replyTo: customer_email }
@@ -114,7 +128,7 @@ Submitted through BillingsHomePros.com
         const { error: contractorError } = await resend.emails.send({
           from: "Billings Home Pros <notifications@billingshomepros.com>",
           to: [targetBusiness.lead_email],
-          subject: `New Quote Request - ${business_name}`,
+          subject: `New Quote Request - ${verifiedBusinessName}`,
           text: emailText,
           ...(customer_email ? { replyTo: customer_email } : {}),
         });
