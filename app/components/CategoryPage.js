@@ -43,6 +43,10 @@ export default async function CategoryPage({
   // trade category or being duplicated as a second business profile.
   if (category === "windows-doors") {
     query = query.or('category.eq.windows-doors,services.cs.{"Windows & Doors"}');
+  } else if (category === "flooring") {
+    // Existing remodeling firms can appear here through verified Flooring
+    // Installation services without a second business profile.
+    query = query.or('category.eq.flooring,services.cs.{"Flooring Installation"}');
   } else {
     query = query.eq("category", category);
   }
