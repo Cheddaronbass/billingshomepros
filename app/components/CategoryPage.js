@@ -44,9 +44,12 @@ export default async function CategoryPage({
   if (category === "windows-doors") {
     query = query.or('category.eq.windows-doors,services.cs.{"Windows & Doors"}');
   } else if (category === "flooring") {
-    // Existing remodeling firms can appear here through verified Flooring
-    // Installation services without a second business profile.
+    // Cross-list existing installation-capable firms without duplicate profiles.
     query = query.or('category.eq.flooring,services.cs.{"Flooring Installation"}');
+  } else if (category === "handyman") {
+    // Show the canonical remodeling profile for two confirmed cross-category
+    // duplicates. Retain the original public URLs as redirects.
+    query = query.or('category.eq.handyman,services.cs.{"Handyman"}');
   } else {
     query = query.eq("category", category);
   }
@@ -72,7 +75,11 @@ export default async function CategoryPage({
   // The Windows & Doors directory should lead with dedicated installers, not
   // roofers or general trades that merely offer window work. Featured listings
   // still retain their promised top placement within the category.
-  const businesses = (error ? [] : data || []).slice();
+  const businesses = (error ? [] : data || []).filter((business) =>
+    // Two confirmed unclaimed/unfeatured duplicate profiles have canonical
+    // counterparts; they stay in the DB but are omitted from category cards.
+    category !== "handyman" || ![117, 118].includes(business.id)
+  ).slice();
   if (category === "windows-doors") {
     // Some installer records use this category even when their main business
     // is general contracting. Prioritize clearly named window/door specialists,
