@@ -2286,3 +2286,16 @@ footer small {
     gap: 5px;
   }
 }
+
+/* Cloudflare Turnstile: responsive, optional while the production keys are pending. */
+.turnstileField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+  margin: 12px 0;
+}
+.turnstileField > div { max-width: 100%; }
+.turnstileField small { color: #64748b; font-size: .8rem; line-height: 1.4; }
