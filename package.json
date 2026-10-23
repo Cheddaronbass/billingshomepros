@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/review-ambiguous-bhp-google.cjs && next build",
+    "build": "node scripts/save-reviewed-bhp-google-matches.cjs && next build",
     "start": "next start"
   },
   "dependencies": {
