@@ -138,6 +138,20 @@ export default function HomeSearch() {
     ) {
       destination = "/roofing";
 
+    // FLOORING — Flooring material and refinishing searches before broad remodeling.
+    } else if (/\b(refinish(?:ing)?|floor sanding|hardwood restoration)\b/.test(query)) {
+      destination = "/flooring?service=refinishing";
+    } else if (/\b(carpet|carpeting)\b/.test(query)) {
+      destination = "/flooring?service=carpet";
+    } else if (/\b(hardwood|wood flooring|wood floor)\b/.test(query)) {
+      destination = "/flooring?service=hardwood";
+    } else if (/\b(tile flooring|floor tile|tiling|tile installer|tile installation)\b/.test(query)) {
+      destination = "/flooring?service=tile";
+    } else if (/\b(lvp|lvt|vinyl floor|vinyl flooring|luxury vinyl|vinyl plank)\b/.test(query)) {
+      destination = "/flooring?service=vinyl";
+    } else if (/\b(flooring|floor installer|floor installers|floor installation|new floor|floor replacement|floors)\b/.test(query)) {
+      destination = "/flooring";
+
     // CONTRACTORS — Additions
     } else if (
       query.includes("addition")
@@ -232,7 +246,7 @@ export default function HomeSearch() {
       </form>
 
       <p className="searchHint">
-        Try windows, plumbing, heating, roofing, electrical or remodeling
+        Try windows, flooring, plumbing, heating, roofing or remodeling
       </p>
     </>
   );
