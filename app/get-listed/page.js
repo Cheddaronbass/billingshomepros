@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import TurnstileField from "../components/TurnstileField";
+import { formatUSPhoneNumber } from "../lib/formatUSPhoneNumber";
 
 const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
@@ -35,7 +36,7 @@ export default function GetListedPage() {
 
     setFormData((current) => ({
       ...current,
-      [name]: value,
+      [name]: name === "contact_phone" ? formatUSPhoneNumber(value) : value,
     }));
   }
 
@@ -267,6 +268,8 @@ export default function GetListedPage() {
                 <input
                   type="tel"
                   name="contact_phone"
+                placeholder="406-555-0123"
+                inputMode="tel"
                   value={formData.contact_phone}
                   onChange={handleChange}
                 />
