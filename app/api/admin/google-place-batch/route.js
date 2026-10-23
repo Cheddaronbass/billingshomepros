@@ -4,7 +4,7 @@ import { findGooglePlaceCandidate } from "../../../lib/findGooglePlaceCandidate"
 
 export const dynamic = "force-dynamic";
 
-const categories = new Set(["landscaping","painting","fencing","handyman","concrete","electrical","plumbing","hvac","roofing","contractors-remodeling"]);
+const categories = new Set(["landscaping","painting","fencing","handyman","concrete","electrical","plumbing","hvac","roofing","contractors-remodeling","windows-doors"]);
 
 export async function POST(request) {
   const secret = process.env.BHP_VERIFICATION_ADMIN_KEY;
@@ -22,9 +22,14 @@ export async function POST(request) {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return NextResponse.json({ error: "Database not configured" }, { status: 503 });
   const db = createClient(url, key);
-  const { data, error } = await db.from("businesses")
-    .select("id,name,phone,category,google_match_status,google_place_id")
-    .eq("category", category).is("google_place_id", null)
+  let query = db.from("businesses")
+    .select("id,name,phone,category,google_match_status,google_place_id");
+  // The window/door category includes installers cross-listed under another trade.
+  query = category === "windows-doors"
+    ? query.or('category.eq.windows-doors,services.cs.{"Windows & Doors"}')
+    : query.eq("category", category);
+  const { data, error } = await query
+    .is("google_place_id", null)
     .order("id", { ascending: true }).range(offset, offset + 4);
   if (error) return NextResponse.json({ error: "Database lookup failed" }, { status: 502 });
   const results = [];
