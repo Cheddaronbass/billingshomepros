@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import TurnstileField from "../components/TurnstileField";
+
+const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
 export default function GetListedPage() {
   const featuredCheckoutEnabled =
@@ -22,6 +25,8 @@ export default function GetListedPage() {
     message: "",
   });
 
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef(null);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
@@ -77,6 +82,12 @@ export default function GetListedPage() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    if (turnstileEnabled && !turnstileToken) {
+      setStatus("error");
+      setMessage("Complete the security verification before submitting.");
+      return;
+    }
+
     setStatus("submitting");
     setMessage("");
 
@@ -89,6 +100,7 @@ export default function GetListedPage() {
         body: JSON.stringify({
           request_type: requestType,
           ...formData,
+          turnstile_token: turnstileToken,
         }),
       });
 
@@ -133,6 +145,9 @@ export default function GetListedPage() {
     } catch {
       setStatus("error");
       setMessage("Something went wrong. Please try again.");
+    } finally {
+      // Turnstile tokens are single-use and must be refreshed after any POST.
+      turnstileRef.current?.reset();
     }
   }
 
@@ -317,10 +332,16 @@ export default function GetListedPage() {
               />
             </label>
 
+            <TurnstileField
+              ref={turnstileRef}
+              action="contractor_request"
+              onTokenChange={setTurnstileToken}
+            />
+
             <button
               type="submit"
               className="quoteSubmitButton"
-              disabled={status === "submitting"}
+              disabled={status === "submitting" || (turnstileEnabled && !turnstileToken)}
             >
               {status === "submitting"
                 ? "Sending..."
