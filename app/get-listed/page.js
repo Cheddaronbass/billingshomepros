@@ -281,10 +281,14 @@ export default function GetListedPage() {
                 <option value="hvac">Heating & Cooling</option>
                 <option value="electrical">Electrical</option>
                 <option value="roofing">Roofing</option>
+                <option value="contractors-remodeling">Contractors &amp; Remodeling</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="painting">Painting</option>
+                <option value="flooring">Flooring</option>
+                <option value="concrete">Concrete</option>
+                <option value="fencing">Fencing</option>
                 <option value="windows-doors">Windows &amp; Doors</option>
-                <option value="contractors-remodeling">
-                  Contractors & Remodeling
-                </option>
+                <option value="handyman">Handyman</option>
                 <option value="other">Other</option>
               </select>
             </label>
