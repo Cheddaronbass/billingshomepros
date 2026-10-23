@@ -77,7 +77,7 @@ const services = [
   },
   {
     name: "Windows & Doors",
-    image: "https://images.unsplash.com/photo-1774177873629-4174653c2f5b?auto=format&fit=crop&w=900&q=82",
+    image: "/windows-doors-montana.jpg",
     description: "Window replacement, installation, repairs & exterior doors",
     href: "/windows-doors",
     iconPath: "M3 3h18v18H3z M12 3v18 M3 12h18",
