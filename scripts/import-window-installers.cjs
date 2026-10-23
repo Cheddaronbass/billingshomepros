@@ -46,7 +46,7 @@ async function main(){
    existing.push(data);inserted++;
   }
  }
- const {data:visible,error:visibleError}=await sb.from("businesses").select("id,name,category,services")
+ const {data:visible,error:visibleError}=await sb.from("businesses").select("id,name,phone,website,category,services")
   .or('category.eq.windows-doors,services.cs.{"Windows & Doors"}')
   .order("name");
  if(visibleError)throw new Error("Window directory visibility check failed: "+visibleError.message);
