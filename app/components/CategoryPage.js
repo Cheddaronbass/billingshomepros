@@ -70,9 +70,18 @@ export default async function CategoryPage({
   // still retain their promised top placement within the category.
   const businesses = (error ? [] : data || []).slice();
   if (category === "windows-doors") {
+    // Some installer records use this category even when their main business
+    // is general contracting. Prioritize clearly named window/door specialists,
+    // then glass firms, then other installers, then cross-listed trades.
+    const windowFocus = (business) => {
+      if (business.category !== "windows-doors") return 3;
+      if (/\b(window|windows|door|doors|pella|andersen)\b|win-dor/i.test(business.name)) return 0;
+      if (/\bglass\b/i.test(business.name)) return 1;
+      return 2;
+    };
     businesses.sort((a, b) =>
       Number(Boolean(b.featured)) - Number(Boolean(a.featured)) ||
-      Number(b.category === "windows-doors") - Number(a.category === "windows-doors") ||
+      windowFocus(a) - windowFocus(b) ||
       a.name.localeCompare(b.name)
     );
   }
