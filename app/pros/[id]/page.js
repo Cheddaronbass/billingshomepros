@@ -47,7 +47,8 @@ export async function generateMetadata({ params }) {
     title,
     description,
     alternates: { canonical: `/pros/${business.id}` },
-    openGraph: { title, description, url: `https://www.billingshomepros.com/pros/${business.id}` },
+    openGraph: { title, description, url: `https://billingshomepros.com/pros/${business.id}` },
+    twitter: { card: "summary", title, description },
   };
 }
 
@@ -59,7 +60,7 @@ export default async function BusinessProfile({ params }) {
   if (aliasId) permanentRedirect(`/pros/${aliasId}`);
 
   const categoryLabel = business.category.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
-  const profileUrl = `https://www.billingshomepros.com/pros/${business.id}`;
+  const profileUrl = `https://billingshomepros.com/pros/${business.id}`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",

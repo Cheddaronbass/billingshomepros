@@ -1,10 +1,11 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import InfoPageLayout from "../components/InfoPageLayout";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Site Map | Billings Home Pros",
   description: "Browse home service categories and useful pages on Billings Home Pros.",
   alternates: { canonical: "/site-map" },
-};
+});
 
 const categories = [
   ["Plumbing", "/plumbing"],

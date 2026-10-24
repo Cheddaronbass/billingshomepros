@@ -1,5 +1,6 @@
+import { withPageSocial } from "../../lib/seoMetadata";
 import CategoryPage from "../../components/CategoryPage";
-export const metadata = {title:"Water Heater Repair in Billings, MT | Local Plumbers",description:"Find Billings-area plumbing companies listing water heater services and ask about diagnosis, repair, or replacement.",alternates:{canonical:"/plumbing/water-heater-repair"}};
+export const metadata = withPageSocial( {title:"Water Heater Repair in Billings, MT | Local Plumbers",description:"Find Billings-area plumbing companies listing water heater services and ask about diagnosis, repair, or replacement.",alternates:{canonical:"/plumbing/water-heater-repair"}});
 export const dynamic="force-dynamic";
 export default function ServicePage(){
  return <CategoryPage

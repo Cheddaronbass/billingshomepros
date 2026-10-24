@@ -1,5 +1,6 @@
+import { withPageSocial } from "../../lib/seoMetadata";
 import CategoryPage from "../../components/CategoryPage";
-export const metadata = {title:"Roof Replacement in Billings, MT | Local Roofing Companies",description:"Find local Billings roofing companies listing roof replacement services. Compare businesses and request a written estimate.",alternates:{canonical:"/roofing/roof-replacement"}};
+export const metadata = withPageSocial( {title:"Roof Replacement in Billings, MT | Local Roofing Companies",description:"Find local Billings roofing companies listing roof replacement services. Compare businesses and request a written estimate.",alternates:{canonical:"/roofing/roof-replacement"}});
 export const dynamic="force-dynamic";
 export default function ServicePage(){
  return <CategoryPage

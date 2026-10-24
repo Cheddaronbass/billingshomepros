@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Concrete Contractors in Billings, MT",
   description:
     "Find concrete contractors in Billings, Montana for driveways, patios, foundations, sidewalks, and decorative concrete.",
   alternates: {
     canonical: "/concrete",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

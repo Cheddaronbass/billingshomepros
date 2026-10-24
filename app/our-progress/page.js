@@ -1,8 +1,9 @@
-export const metadata = {
+import { withPageSocial } from "../lib/seoMetadata";
+export const metadata = withPageSocial( {
   title: "Our Progress & Partnership Promise | Billings Home Pros",
   description: "See the improvements we're making to help homeowners discover local Billings service professionals.",
   alternates: { canonical: "/our-progress" },
-};
+});
 
 const groups = [
   {

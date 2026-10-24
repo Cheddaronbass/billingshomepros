@@ -1,6 +1,7 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import InfoPageLayout from "../components/InfoPageLayout";
 
-export const metadata = { title: "Privacy Policy", description: "How we handle information collected through our local directory.", alternates: { canonical: "/privacy" } };
+export const metadata = withPageSocial( { title: "Privacy Policy", description: "How we handle information collected through our local directory.", alternates: { canonical: "/privacy" } });
 
 export default function Page() {
   return <InfoPageLayout title="Privacy Policy" eyebrow="Billings Home Pros" intro="How we handle information collected through our local directory.">

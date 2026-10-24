@@ -105,8 +105,8 @@ export default function Home() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [
-    { "@context": "https://schema.org", "@type": "Organization", "@id": "https://www.billingshomepros.com/#organization", name: "Billings Home Pros", url: "https://www.billingshomepros.com/", description: "A local directory connecting Billings-area homeowners with home-service businesses." },
-    { "@context": "https://schema.org", "@type": "WebSite", "@id": "https://www.billingshomepros.com/#website", name: "Billings Home Pros", url: "https://www.billingshomepros.com/", publisher: { "@id": "https://www.billingshomepros.com/#organization" } }
+    { "@context": "https://schema.org", "@type": "Organization", "@id": "https://billingshomepros.com/#organization", name: "Billings Home Pros", url: "https://billingshomepros.com/", description: "A local directory connecting Billings-area homeowners with home-service businesses." },
+    { "@context": "https://schema.org", "@type": "WebSite", "@id": "https://billingshomepros.com/#website", name: "Billings Home Pros", url: "https://billingshomepros.com/", publisher: { "@id": "https://billingshomepros.com/#organization" } }
       ] }).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/">

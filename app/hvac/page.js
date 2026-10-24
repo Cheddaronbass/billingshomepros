@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "HVAC Repair, Heating & AC Companies in Billings, MT",
   description:
   "Find local HVAC repair companies in Billings, MT for AC repair, furnace repair, heating, air conditioning, installation, and maintenance. Compare local pros and request a quote.",
   alternates: {
     canonical: "/hvac",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const baseUrl = "https://www.billingshomepros.com";
+const baseUrl = "https://billingshomepros.com";
 
 const pages = [
   { path: "", priority: 1.0 },
@@ -16,6 +16,15 @@ const pages = [
   { path: "/plumbing/water-heater-repair", priority: 0.8 },
   { path: "/roofing/roof-replacement", priority: 0.8 },
   { path: "/guides/roof-replacement-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/furnace-replacement-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/water-heater-replacement-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/electrical-panel-upgrade-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/bathroom-remodel-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/landscaping-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/exterior-house-painting-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/concrete-driveway-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/fence-installation-cost-billings-mt", priority: 0.7 },
+  { path: "/guides/handyman-rates-billings-mt", priority: 0.7 },
   { path: "/guides/winter-home-checklist", priority: 0.7 },
   { path: "/electrical", priority: 0.9 },
   { path: "/roofing", priority: 0.9 },

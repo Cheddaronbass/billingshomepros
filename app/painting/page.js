@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Painting Contractors in Billings, MT",
   description:
     "Find professional painters in Billings, Montana for interior painting, exterior painting, cabinet painting, and commercial painting.",
   alternates: {
     canonical: "/painting",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

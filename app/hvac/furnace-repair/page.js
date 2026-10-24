@@ -1,5 +1,6 @@
+import { withPageSocial } from "../../lib/seoMetadata";
 import CategoryPage from "../../components/CategoryPage";
-export const metadata = {title:"Furnace Repair in Billings, MT | Local HVAC Pros",description:"Find Billings-area HVAC professionals listing furnace repair services. Compare options and request a quote.",alternates:{canonical:"/hvac/furnace-repair"}};
+export const metadata = withPageSocial( {title:"Furnace Repair in Billings, MT | Local HVAC Pros",description:"Find Billings-area HVAC professionals listing furnace repair services. Compare options and request a quote.",alternates:{canonical:"/hvac/furnace-repair"}});
 export const dynamic="force-dynamic";
 export default function ServicePage(){
  return <CategoryPage

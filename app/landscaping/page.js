@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Landscaping Companies in Billings, MT",
   description:
     "Find landscaping professionals in Billings, Montana for lawn care, irrigation, landscape design, tree services, and outdoor projects.",
   alternates: {
     canonical: "/landscaping",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

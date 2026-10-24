@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/api/", "/quote"],
     },
-    sitemap: "https://www.billingshomepros.com/sitemap.xml",
+    sitemap: "https://billingshomepros.com/sitemap.xml",
   };
 }

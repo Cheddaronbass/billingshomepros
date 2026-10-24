@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Fence Contractors in Billings, MT",
   description:
     "Find fencing contractors in Billings, Montana for wood fences, vinyl fences, chain-link fences, and fence repairs.",
   alternates: {
     canonical: "/fencing",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

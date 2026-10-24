@@ -1,10 +1,11 @@
+import { withPageSocial } from "../../lib/seoMetadata";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Montana Winter Home Preparation Checklist",
   description: "A practical Billings, Montana winter home checklist: sprinklers, outdoor faucets, heating, drafts, gutters, and cold-weather safety.",
   alternates: { canonical: "/guides/winter-home-checklist" },
-};
+});
 
 const tasks = [
   { title: "Disconnect hoses and protect outdoor faucets", detail: "Remove garden hoses, drain them, and store them indoors. Shut off and drain exterior faucet supply lines if your home has indoor shutoff valves. Use insulated faucet covers where appropriate.", href: "/plumbing", label: "Find local plumbers" },

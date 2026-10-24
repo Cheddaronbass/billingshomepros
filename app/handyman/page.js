@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Handyman Services in Billings, MT",
   description:
     "Find handyman services in Billings, Montana for home repairs, installations, drywall repairs, and general home maintenance.",
   alternates: {
     canonical: "/handyman",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

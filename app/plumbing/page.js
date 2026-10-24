@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Plumbers in Billings, MT | Repairs, Drains & Water Heaters",
   description:
     "Find local plumbers in Billings, Montana for plumbing repairs, water heaters, drain and sewer service, and emergency plumbing. Compare local professionals and request a quote.",
   alternates: {
     canonical: "/plumbing",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

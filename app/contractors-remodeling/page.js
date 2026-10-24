@@ -1,14 +1,15 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import Link from "next/link";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "General Contractors & Remodeling in Billings, MT",
   description:
     "Find general contractors and remodeling companies in Billings, Montana for renovations, home additions, repairs, and general contracting. Compare local professionals and request a quote.",
   alternates: {
     canonical: "/contractors-remodeling",
   },
-};
+});
 
 export const dynamic = "force-dynamic";
 

@@ -1,6 +1,7 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import InfoPageLayout from "../components/InfoPageLayout";
 
-export const metadata = { title: "Terms of Service", description: "Important information about using our directory and featured listings.", alternates: { canonical: "/terms" } };
+export const metadata = withPageSocial( { title: "Terms of Service", description: "Important information about using our directory and featured listings.", alternates: { canonical: "/terms" } });
 
 export default function Page() {
   return <InfoPageLayout title="Terms of Service" eyebrow="Billings Home Pros" intro="Important information about using our directory and featured listings.">

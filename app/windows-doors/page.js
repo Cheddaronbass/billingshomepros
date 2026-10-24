@@ -1,10 +1,11 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Windows & Doors in Billings, MT | Installation & Replacement",
   description: "Find Billings-area window replacement, window repair, and exterior door installation services. Explore local listings and helpful questions to ask.",
   alternates: { canonical: "/windows-doors" },
-};
+});
 export const dynamic = "force-dynamic";
 
 const filters = [

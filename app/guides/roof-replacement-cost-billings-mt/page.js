@@ -1,10 +1,11 @@
+import { withPageSocial } from "../../lib/seoMetadata";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "How Much Does a New Roof Cost in Billings, MT? (2026 Guide)",
   description: "Research-based 2026 roof replacement cost estimates for Billings, Montana, plus the factors that affect a quote and questions to ask local roofers.",
   alternates: { canonical: "/guides/roof-replacement-cost-billings-mt" },
-};
+});
 
 const page = { background: "#0b1117", color: "#e8f1f8", minHeight: "100vh", fontFamily: "Arial, Helvetica, sans-serif" };
 const container = { width: "min(100% - 36px, 850px)", margin: "0 auto" };

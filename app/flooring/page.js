@@ -1,10 +1,11 @@
+import { withPageSocial } from "../lib/seoMetadata";
 import CategoryPage from "../components/CategoryPage";
 
-export const metadata = {
+export const metadata = withPageSocial( {
   title: "Flooring Installers in Billings, MT | Carpet, Hardwood, LVP & Tile",
   description: "Find local Billings flooring installers for carpet, hardwood, tile, luxury vinyl plank, refinishing and flooring replacement. Compare installation-capable businesses.",
   alternates: { canonical: "/flooring" },
-};
+});
 
 export const dynamic = "force-dynamic";
 
