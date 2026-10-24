@@ -52,7 +52,7 @@ p {
 
 h1,
 h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -328,6 +328,8 @@ nav a:hover {
   margin-bottom: 15px;
   color: var(--forest);
   font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
   line-height: 1.08;
 }
 
@@ -498,6 +500,8 @@ nav a:hover {
 .proSection h2 {
   margin-bottom: 12px;
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
 }
 
 .proSection p {
