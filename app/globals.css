@@ -2314,3 +2314,37 @@ footer small {
 }
 .turnstileField > div { max-width: 100%; }
 .turnstileField small { color: #64748b; font-size: .8rem; line-height: 1.4; }
+
+
+/* Homepage trust section: tighter vertical rhythm without crowding copy. */
+.whySection {
+  padding-top: 62px;
+  padding-bottom: 66px;
+}
+.whySection .sectionHeading {
+  margin-bottom: 28px;
+}
+.whySection .sectionHeading h2 {
+  margin-bottom: 12px;
+}
+.whySection .sectionHeading p {
+  line-height: 1.58;
+}
+.whySection .featureGrid {
+  gap: 27px;
+}
+.whySection .feature {
+  padding-top: 17px;
+}
+@media (max-width: 760px) {
+  .whySection {
+    padding-top: 48px;
+    padding-bottom: 52px;
+  }
+  .whySection .sectionHeading {
+    margin-bottom: 24px;
+  }
+  .whySection .featureGrid {
+    gap: 24px;
+  }
+}
