@@ -249,8 +249,8 @@ export default function Home() {
           <h2>Local home services without the runaround.</h2>
 
           <p>
-            Billings Home Pros is being built to make finding local
-            home-service professionals simpler, faster and more useful.
+            Discover local home-service professionals, compare their services,
+            and find the right fit for your next project.
           </p>
         </div>
 

@@ -455,6 +455,12 @@ nav a:hover {
   color: #009de0;
 }
 
+.whySection .sectionHeading p {
+  max-width: 650px;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
 .featureGrid {
   max-width: 1000px;
   margin: 0 auto;
