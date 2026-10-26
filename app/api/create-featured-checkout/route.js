@@ -72,6 +72,12 @@ export async function POST(request) {
       );
     }
 
+    const featuredPriceId = process.env.STRIPE_FEATURED_MONTHLY_PRICE_ID;
+    if (!featuredPriceId) {
+      console.error("Featured checkout price not configured.");
+      return Response.json({ error: "Featured upgrades are not available yet." }, { status: 503 });
+    }
+
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     const session = await stripe.checkout.sessions.create({
@@ -79,7 +85,7 @@ export async function POST(request) {
 
       line_items: [
         {
-          price: "price_1UNF6V7SJw9ulIVuhBBv1Xf3",
+          price: featuredPriceId,
           quantity: 1,
         },
       ],
