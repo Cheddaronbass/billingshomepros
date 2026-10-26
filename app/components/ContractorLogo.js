@@ -17,8 +17,12 @@ function getBusinessInitials(name = "") {
 // icon published by its own official website. Never create an invented logo.
 function getWebsiteIcon(website) {
   try {
-    const url = new URL(website);
-    if (url.protocol !== "https:" && url.protocol !== "http:") return "";
+    const raw = typeof website === "string" ? website.trim() : "";
+    if (!raw || /^(mailto:|tel:|javascript:|data:)/i.test(raw)) return "";
+    // Directory records may store a hostname without a scheme.
+    const normalized = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+    const url = new URL(normalized);
+    if (!["https:", "http:"].includes(url.protocol) || !url.hostname.includes(".")) return "";
     return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(url.hostname)}&sz=128`;
   } catch {
     return "";
