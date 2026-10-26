@@ -31,9 +31,17 @@ function getWebsiteIcon(website) {
 
 export default function ContractorLogo({ name, logoUrl, logoVerified = false, website }) {
   const [imageIndex, setImageIndex] = useState(0);
+  // Specific verified brand assets for Billings landscaping directory entries.
+  const officialLogo =
+    /river ridge landscape/i.test(name)
+      ? "https://www.plantingmontana.com/Content/Pictures/UserPicture.ashx?id=1356467486&memberId=48826692&t=639125018161225440"
+      : /(?:the )?grounds guys/i.test(name)
+        ? "https://storage.googleapis.com/fh5/8b3e7594-a160-423a-81f3-54dbd3d53971.png"
+        : "";
   const websiteIcon = getWebsiteIcon(website);
   const imageSources = [
-    ...(logoUrl ? [{ url: logoUrl, type: "logo" }] : []),
+    ...(officialLogo ? [{ url: officialLogo, type: "logo" }] : []),
+    ...(logoUrl && logoUrl !== officialLogo ? [{ url: logoUrl, type: "logo" }] : []),
     ...(websiteIcon ? [{ url: websiteIcon, type: "website icon" }] : []),
   ];
   const current = imageSources[imageIndex];
