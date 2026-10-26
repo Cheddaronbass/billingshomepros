@@ -57,7 +57,7 @@ export default function ContractorsRemodelingPage({ searchParams }) {
       heroDescription="Find local professionals for remodeling, home additions, repairs, general contracting and more."
       eyebrow="FIND A LOCAL CONTRACTOR"
       introTitle="Contractors serving the Billings area"
-      introDescription="Browse local contractors and remodeling companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
+      introDescription="Explore Billings-area contractors for kitchen and bathroom renovations, home additions, and larger repair projects. Compare listed specialties and request written estimates directly from businesses that match your project."
       emptyTitle="No matching contractor listings yet."
       emptyDescription="Try another service or view all contractors serving the Billings area."
       localGuide={{
