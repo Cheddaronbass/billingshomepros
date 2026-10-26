@@ -74,6 +74,12 @@ export default function ContractorsRemodelingPage({ searchParams }) {
       contractorTitle="Own a contracting or remodeling business?"
       contractorDescription="Billings Home Pros is building a local directory designed to help homeowners find businesses like yours."
     />
+    <section aria-label="Related remodeling resources" style={{background:"#0b1117",padding:"20px 18px",borderTop:"1px solid #243c50"}}>
+      <div style={{maxWidth:1000,margin:"0 auto"}}>
+        <h2 style={{color:"#fff",fontSize:"clamp(19px,3vw,24px)",margin:"0 0 10px"}}>Find the right professional for your project</h2>
+        <p style={{color:"#c9d8e4",fontSize:16,lineHeight:1.65,margin:0}}>For smaller maintenance and repair jobs, compare <Link href="/handyman" style={{color:"#73d4ff",textUnderlineOffset:3}}>Billings handyman services</Link>. Planning a bathroom renovation? Start with our <Link href="/guides/bathroom-remodel-cost-billings-mt" style={{color:"#73d4ff",textUnderlineOffset:3}}>local bathroom remodeling cost guide</Link>. If your renovation includes exterior roof work, you can also <Link href="/roofing" style={{color:"#73d4ff",textUnderlineOffset:3}}>browse roofing companies</Link>.</p>
+      </div>
+    </section>
     <section style={{background:"#0b1117",padding:"22px 18px 40px"}}>
       <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 24px",border:"1px solid #2e5875",borderRadius:14,background:"#102638",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:18}}>
         <div><div style={{color:"#79d6ff",fontSize:12,fontWeight:800,letterSpacing:".1em"}}>FREE BILLINGS HOMEOWNER GUIDE</div><h2 style={{color:"#fff",fontSize:"clamp(20px,3vw,25px)",margin:"8px 0"}}>What does bathroom remodeling cost in Billings?</h2><p style={{color:"#c9d8e4",margin:0,lineHeight:1.5}}>Explore 2026 budget guidance and questions to ask local pros.</p></div>
