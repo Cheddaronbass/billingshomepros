@@ -58,7 +58,7 @@ export default function PaintingPage({ searchParams }) {
       heroDescription="Find local painting professionals for interior painting, exterior painting, cabinet refinishing, and commercial projects."
       eyebrow="FIND A LOCAL PAINTER"
       introTitle="Painting professionals serving the Billings area"
-      introDescription="Browse painting contractors serving Billings, Laurel, and surrounding communities."
+      introDescription="Compare local painting contractors for interior walls, exterior siding, cabinet refinishing, and commercial projects. Review their services and ask about preparation, materials, and cleanup."
       emptyTitle="No matching painting listings yet."
       emptyDescription="Try another painting service or view all painting contractors serving the Billings area."
       localGuide={{
