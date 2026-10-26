@@ -57,7 +57,7 @@ export default function PlumbingPage({ searchParams }) {
       heroDescription="Find local plumbing professionals for repairs, water heaters, clogged drains, fixtures, emergency service and more."
       eyebrow="FIND A LOCAL PLUMBER"
       introTitle="Plumbing professionals serving the Billings area"
-      introDescription="Browse local plumbing companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
+      introDescription="Compare Billings-area plumbing companies for leaking pipes, drain and sewer problems, water heater service, fixture repairs, and other home plumbing projects. Check each business’s listed specialties and confirm service availability before requesting an estimate."
       emptyTitle="No matching plumbing listings yet."
       emptyDescription="Try another plumbing service or view all plumbing professionals serving the Billings area."
       localGuide={{
