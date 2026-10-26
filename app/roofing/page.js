@@ -73,6 +73,12 @@ export default function RoofingPage({ searchParams }) {
       contractorTitle="Own a roofing business?"
       contractorDescription="Billings Home Pros is building a local directory designed to help homeowners find businesses like yours."
     />
+    <section aria-label="Related homeowner resources" style={{background:"#0b1117",padding:"22px 18px",borderTop:"1px solid #243c50"}}>
+      <div style={{maxWidth:1000,margin:"0 auto"}}>
+        <h2 style={{color:"#fff",fontSize:"clamp(19px,3vw,24px)",margin:"0 0 10px"}}>Planning a roofing project in Billings?</h2>
+        <p style={{color:"#c9d8e4",fontSize:16,lineHeight:1.65,margin:"0 0 12px"}}>If you're comparing bids for a new roof, review the <Link href="/guides/roof-replacement-cost-billings-mt" style={{color:"#73d4ff",textUnderlineOffset:3}}>Billings roof replacement cost guide</Link> and check the <Link href="/roofing/roof-replacement" style={{color:"#73d4ff",textUnderlineOffset:3}}>roof replacement service page</Link>. For projects that also involve structural repairs or renovations, browse <Link href="/contractors-remodeling" style={{color:"#73d4ff",textUnderlineOffset:3}}>Billings general contractors and remodelers</Link>.</p>
+      </div>
+    </section>
     <section aria-label="Specialist services" style={{background:"#0b1117",padding:"20px 18px",borderTop:"1px solid #243c50"}}>
       <div style={{maxWidth:1000,margin:"0 auto",display:"flex",alignItems:"center",gap:14,flexWrap:"wrap"}}>
         <strong style={{color:"#fff",fontSize:15}}>Looking for a specific service?</strong>
