@@ -57,7 +57,7 @@ export default function RoofingPage({ searchParams }) {
       heroDescription="Find local roofing professionals for roof repairs, replacements, inspections, storm damage and more."
       eyebrow="FIND A LOCAL ROOFER"
       introTitle="Roofing professionals serving the Billings area"
-      introDescription="Browse local roofing companies and find the services you need. Use Billings Home Pros to compare local businesses serving the Billings area."
+      introDescription="Compare Billings-area roofing companies for leak repairs, storm-damage inspections, shingle replacement, and full roof replacements. Review each business’s listed services and contact the contractor directly to confirm availability and request an estimate."
       emptyTitle="No matching roofing listings yet."
       emptyDescription="Try another roofing service or view all roofing professionals serving the Billings area."
       localGuide={{
