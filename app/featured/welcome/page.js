@@ -45,12 +45,12 @@ export default async function FeaturedWelcome({ searchParams }) {
           <div style={{ background: "linear-gradient(115deg, #0b3046 0%, #135479 62%, #0988bd 100%)", padding: "27px 20px", color: "#fff" }}>
             <span style={{ color: "#ffe0a0", fontSize: 14, fontWeight: 800, letterSpacing: 2 }}>★  THE FEATURED PROS  ★</span>
           </div>
-          <div style={{ padding: "clamp(30px, 6vw, 62px) clamp(22px, 6vw, 70px) 50px" }}>
+          <div style={{ padding: "clamp(30px, 6vw, 62px) clamp(22px, 6vw, 70px) 50px", textAlign: "center" }}>
             <div aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 86, height: 86, borderRadius: "50%", border: "3px solid #f4d58d", background: "linear-gradient(145deg, #fff8e7, #f3e0ad)", color: "#123f58", fontWeight: 900, fontSize: 39, boxShadow: "0 6px 22px #bd945329" }}>{confirmed ? "✓" : "★"}</div>
-            <p style={{ color: "#078fc6", letterSpacing: 1.8, fontWeight: 850, fontSize: 14, margin: "22px 0 12px" }}>BILLINGS HOME PROS · FEATURED MEMBERSHIP</p>
-            <h1 style={{ color: "#102b40", fontSize: "clamp(2.5rem, 5.2vw, 3.6rem)", lineHeight: 1.08, fontWeight: 900, letterSpacing: "-.035em", margin: "0 0 18px" }}>Welcome to the<br/><span style={{ color: "#058dc4" }}>Featured Pros!</span></h1>
+            <p style={{ color: "#078fc6", letterSpacing: 1.8, fontWeight: 850, fontSize: 14, margin: "22px auto 12px", textAlign: "center" }}>BILLINGS HOME PROS · FEATURED MEMBERSHIP</p>
+            <h1 style={{ color: "#102b40", fontSize: "clamp(2.5rem, 5.2vw, 3.6rem)", lineHeight: 1.12, fontWeight: 900, letterSpacing: "-.025em", margin: "0 auto 18px", textAlign: "center", width: "100%", maxWidth: 760 }}>Welcome to the<br/><span style={{ color: "#058dc4", display: "inline-block", textAlign: "center" }}>Featured Pros!</span></h1>
             {confirmed && businessName && <p style={{ fontSize: "clamp(20px, 2.8vw, 24px)", fontWeight: 800, color: "#184d6b", margin: "0 0 14px" }}>{businessName}</p>}
-            <p style={{ maxWidth: 590, margin: "0 auto", fontSize: "clamp(18px, 2vw, 20px)", lineHeight: 1.65, color: "#435d6d" }}>
+            <p style={{ maxWidth: 650, width: "100%", margin: "0 auto", fontSize: "clamp(18px, 2vw, 20px)", lineHeight: 1.65, color: "#435d6d", textAlign: "center" }}>
               {confirmed ? "Your payment is confirmed! Thank you for joining the Billings Home Pros community. We're excited to help your business stand out." : "Where outstanding local businesses get a little more spotlight. We're proud to help Billings-area pros connect with homeowners."}
             </p>
             {confirmed ? (
