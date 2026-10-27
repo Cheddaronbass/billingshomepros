@@ -71,12 +71,15 @@ export async function POST(request) {
         return Response.json({ received: true });
       }
 
+      // A paid subscription is not proof of business ownership. Keep
+      // unapproved listings out of Featured placement until review.
       const { error } = await supabase
         .from("businesses")
         .update({
           featured: true,
         })
-        .eq("id", businessId);
+        .eq("id", businessId)
+        .eq("claimed", true);
 
       if (error) {
         console.error(
