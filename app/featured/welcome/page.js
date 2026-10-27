@@ -80,8 +80,8 @@ export default async function FeaturedWelcome({ searchParams }) {
             </svg>
             <span style={{ height: 1, width: 75, background: "linear-gradient(90deg, #aac9da, transparent)" }} />
           </div>
-          <p style={{ fontSize: 15, fontWeight: 800, letterSpacing: 1.1, color: "#24516b", margin: "0 0 5px" }}>PROUDLY LOCAL · BILLINGS, MONTANA</p>
-          <p style={{ fontSize: 13, color: "#688394", margin: 0 }}>Built for the businesses and homeowners who make our community strong.</p>
+          <p style={{ fontSize: "clamp(17px, 2.6vw, 20px)", fontWeight: 800, letterSpacing: 0.8, color: "#24516b", margin: "0 0 5px" }}>PROUDLY LOCAL · BILLINGS, MONTANA</p>
+          <p style={{ fontSize: "clamp(15px, 2.2vw, 17px)", lineHeight: 1.5, color: "#506f82", margin: 0 }}>Built for the businesses and homeowners who make our community strong.</p>
         </footer>
       </div>
     </main>
