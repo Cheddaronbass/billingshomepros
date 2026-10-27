@@ -38,13 +38,7 @@ export default async function FeaturedWelcome({ searchParams }) {
     <main style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 50% 0%, #d7f2ff 0%, #f1faff 35%, #ffffff 78%)", color: "#10283a", padding: "clamp(24px, 5vw, 56px) 18px", fontFamily: "inherit" }}>
       <div style={{ maxWidth: 870, margin: "0 auto" }}>
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", color: "#102b3d", fontWeight: 850, letterSpacing: 1.2, fontSize: "clamp(17px, 2vw, 19px)" }}>
-          <span style={{ width: 48, height: 48, background: "#112b3d", borderRadius: 12, display: "inline-flex", justifyContent: "center", alignItems: "center" }} aria-hidden="true">
-            <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
-              <path d="M4 19 L18 7 L32 19" stroke="#55c9f4" strokeWidth="3.3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M9 18.5 V29 H27 V18.5" stroke="#55c9f4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 29 V22 H21 V29" stroke="#edc978" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
+          <img src="/icon.svg" alt="Billings Home Pros logo" width="48" height="48" style={{ width: 48, height: 48, borderRadius: 10, objectFit: "contain" }} />
           BILLINGS HOME PROS
         </Link>
         <section style={{ position: "relative", overflow: "hidden", marginTop: 28, borderRadius: 26, background: "#ffffff", border: "1px solid #cbe8f6", boxShadow: "0 24px 65px rgba(21, 97, 139, .14)", textAlign: "center" }}>
