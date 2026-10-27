@@ -28,43 +28,39 @@ export default async function FeaturedWelcome({ searchParams }) {
     }
   }
 
+  const hasSessionLink = Boolean(sessionId);
   return (
-    <main style={{ minHeight: "100vh", background: "linear-gradient(160deg, #f3faff 0%, #ffffff 53%, #e9f6fc 100%)", color: "#142536", padding: "clamp(28px, 6vw, 76px) 20px", fontFamily: "inherit" }}>
-      <div style={{ maxWidth: 790, margin: "0 auto" }}>
-        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 9, color: "#116b92", textDecoration: "none", fontWeight: 850, fontSize: 17, letterSpacing: 0.8 }}>
-          <span style={{ color: "#13a9e3", fontSize: 23 }} aria-hidden="true">⌂</span> BILLINGS HOME PROS
+    <main style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 50% 0%, #d7f2ff 0%, #f1faff 35%, #ffffff 78%)", color: "#10283a", padding: "clamp(24px, 5vw, 56px) 18px", fontFamily: "inherit" }}>
+      <div style={{ maxWidth: 870, margin: "0 auto" }}>
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", color: "#102b3d", fontWeight: 850, letterSpacing: 1.2, fontSize: "clamp(15px, 2vw, 19px)" }}>
+          <span style={{ width: 44, height: 44, background: "#112b3d", color: "#57cbfa", borderRadius: 12, display: "inline-flex", justifyContent: "center", alignItems: "center", fontSize: 27 }} aria-hidden="true">⌂</span>
+          BILLINGS HOME PROS
         </Link>
-        <section style={{ marginTop: 28, padding: "clamp(30px, 6vw, 64px)", border: "1px solid #d5e9f3", borderRadius: 24, background: "#ffffff", boxShadow: "0 16px 55px rgba(23, 99, 135, .10)", textAlign: "center" }}>
-          <div aria-hidden="true" style={{ width: 72, height: 72, margin: "0 auto 18px", borderRadius: "50%", background: confirmed ? "#d8f8e8" : "#e8f5fc", color: confirmed ? "#15815c" : "#248db9", display: "flex", justifyContent: "center", alignItems: "center", fontSize: 38, fontWeight: 700 }}>
-            {confirmed ? "✓" : "i"}
+        <section style={{ position: "relative", overflow: "hidden", marginTop: 28, borderRadius: 26, background: "#ffffff", border: "1px solid #cbe8f6", boxShadow: "0 24px 65px rgba(21, 97, 139, .14)", textAlign: "center" }}>
+          <div style={{ background: "linear-gradient(115deg, #0b3046 0%, #135479 62%, #0988bd 100%)", padding: "27px 20px", color: "#fff" }}>
+            <span style={{ color: "#ffe0a0", fontSize: 13, fontWeight: 800, letterSpacing: 3 }}>★  THE FEATURED PROS  ★</span>
           </div>
-          <p style={{ color: "#087eae", letterSpacing: 2.3, fontSize: 13, fontWeight: 800, margin: "10px 0 14px" }}>BILLINGS HOME PROS · FEATURED</p>
-          <h1 style={{ color: "#112c42", fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, margin: "0 0 22px", fontWeight: 850 }}>
-            {confirmed ? "Welcome to Featured!" : "Your Featured Membership"}
-          </h1>
-          {confirmed ? (
-            <>
-              {businessName && <p style={{ color: "#136d94", fontSize: 24, fontWeight: 800, margin: "0 0 18px" }}>{businessName}</p>}
-              <p style={{ fontSize: 19, lineHeight: 1.65, color: "#455c6b", margin: "0 auto", maxWidth: 550 }}>
-                You're officially on your way to standing out to Billings-area homeowners. Thank you for choosing to grow with us!
-              </p>
-              <div style={{ margin: "32px auto 0", padding: "22px 26px", background: "#edf8fd", borderRadius: 16, maxWidth: 560, textAlign: "left", color: "#29465a", lineHeight: 1.7 }}>
-                <strong style={{ color: "#12344a", fontSize: 18 }}>What happens next?</strong>
-                <p style={{ margin: "7px 0 0" }}>We'll review your listing and contact information. Your Featured placement begins after approval, and there's nothing else you need to submit.</p>
+          <div style={{ padding: "clamp(30px, 6vw, 62px) clamp(22px, 6vw, 70px) 50px" }}>
+            <div aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 86, height: 86, borderRadius: "50%", border: "3px solid #f4d58d", background: "linear-gradient(145deg, #fff8e7, #f3e0ad)", color: "#123f58", fontWeight: 900, fontSize: 39, boxShadow: "0 6px 22px #bd945329" }}>{confirmed ? "✓" : "★"}</div>
+            <p style={{ color: "#078fc6", letterSpacing: 2.2, fontWeight: 850, fontSize: 13, margin: "22px 0 12px" }}>BILLINGS HOME PROS · FEATURED MEMBERSHIP</p>
+            <h1 style={{ color: "#102b40", fontSize: "clamp(2.2rem, 5.5vw, 3.8rem)", lineHeight: 1.08, fontWeight: 900, letterSpacing: "-.035em", margin: "0 0 18px" }}>Welcome to the<br/><span style={{ color: "#058dc4" }}>Featured Pros!</span></h1>
+            {confirmed && businessName && <p style={{ fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 800, color: "#184d6b", margin: "0 0 14px" }}>{businessName}</p>}
+            <p style={{ maxWidth: 590, margin: "0 auto", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.65, color: "#435d6d" }}>
+              {confirmed ? "Your payment is confirmed! Thank you for joining the Billings Home Pros community. We're excited to help your business stand out." : "Where outstanding local businesses get a little more spotlight. We're proud to help Billings-area pros connect with homeowners."}
+            </p>
+            {confirmed ? (
+              <div style={{ maxWidth: 600, margin: "30px auto 0", border: "1px solid #c4e6f4", borderRadius: 17, padding: "22px 26px", background: "#eef9fe", textAlign: "left", lineHeight: 1.65, color: "#35566a" }}>
+                <strong style={{ color: "#11384c", fontSize: 18 }}>What happens next?</strong>
+                <p style={{ margin: "6px 0 0" }}>We’ll review your listing and contact details, then activate Featured placement after approval. No new forms or repeated information needed.</p>
               </div>
-            </>
-          ) : (
-            <>
-              <p style={{ fontSize: 18, lineHeight: 1.7, maxWidth: 575, margin: "0 auto", color: "#455c6b" }}>This is the welcome page our Featured members see after checkout.</p>
-              <div style={{ margin: "28px auto 0", padding: "18px 24px", background: "#f1f7fb", borderRadius: 13, maxWidth: 555, textAlign: "left", color: "#4a6374", lineHeight: 1.65 }}>
-                <strong style={{ color: "#193a50" }}>Already completed a payment?</strong>
-                <p style={{ margin: "5px 0 0" }}>We couldn't confirm a payment from this particular link. If you just subscribed, check your Stripe receipt or contact us before trying again.</p>
-              </div>
-            </>
-          )}
-          <Link href="/" style={{ display: "inline-block", marginTop: 32, padding: "15px 26px", borderRadius: 11, background: "#16a8e3", color: "#052d40", textDecoration: "none", fontWeight: 800, boxShadow: "0 6px 17px rgba(17, 153, 207, .18)" }}>Explore Billings Home Pros</Link>
+            ) : hasSessionLink ? (
+              <p style={{ margin: "25px auto 0", maxWidth: 560, fontSize: 14, color: "#6a7780" }}>We can’t confirm payment from this link. If you've just checked out, please check your receipt or contact us before paying again.</p>
+            ) : null}
+            <Link href="/" style={{ display: "inline-block", marginTop: 32, padding: "16px 28px", background: "#0ea8e3", color: "#082b3c", borderRadius: 12, textDecoration: "none", fontWeight: 850, boxShadow: "0 8px 20px rgba(11,150,201,.22)" }}>Explore Billings Home Pros</Link>
+          </div>
+          <div style={{ height: 7, background: "linear-gradient(90deg, #e6c881 0%, #22b4ed 55%, #0d496b 100%)" }} />
         </section>
-        <p style={{ textAlign: "center", fontSize: 14, color: "#647b89", marginTop: 25 }}>Proudly connecting local businesses and local homeowners in Billings, Montana.</p>
+        <p style={{ textAlign: "center", margin: "23px 0 0", color: "#607c8c", fontSize: 14 }}>Proudly local · Billings, Montana</p>
       </div>
     </main>
   );
