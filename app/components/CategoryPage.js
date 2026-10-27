@@ -2,6 +2,7 @@
 import { createClient } from "@supabase/supabase-js";
 import TrackedLink from "./TrackedLink";
 import ContractorLogo from "./ContractorLogo";
+import ContactStatus from "./ContactStatus";
 import { getGooglePlaceRating } from "../lib/googlePlaces";
 
 
@@ -246,6 +247,7 @@ export default async function CategoryPage({
                       </a>
                       {business.featured && <span className="featuredBadge">Featured</span>}
                       {business.claimed && <span className="claimedBadge">✓ Claimed</span>}
+                      <ContactStatus business={business} />
                     </div>
                   </div>
 
