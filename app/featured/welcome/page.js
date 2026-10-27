@@ -13,6 +13,7 @@ export default async function FeaturedWelcome({ searchParams }) {
   const sessionId = typeof params?.session_id === "string" ? params.session_id : "";
   let confirmed = false;
   let businessName = "";
+  let businessId = null;
 
   if (sessionId.startsWith("cs_") && process.env.STRIPE_SECRET_KEY) {
     try {
@@ -22,7 +23,11 @@ export default async function FeaturedWelcome({ searchParams }) {
         session.status === "complete" &&
         session.payment_status === "paid" &&
         session.livemode === true;
-      if (confirmed) businessName = session.metadata?.business_name || "";
+      if (confirmed) {
+        businessName = session.metadata?.business_name || "";
+        const rawId = session.metadata?.business_id;
+        if (/^[1-9][0-9]*$/.test(rawId || "")) businessId = rawId;
+      }
     } catch (error) {
       console.error("Unable to verify Featured welcome session", error);
     }
@@ -33,7 +38,13 @@ export default async function FeaturedWelcome({ searchParams }) {
     <main style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 50% 0%, #d7f2ff 0%, #f1faff 35%, #ffffff 78%)", color: "#10283a", padding: "clamp(24px, 5vw, 56px) 18px", fontFamily: "inherit" }}>
       <div style={{ maxWidth: 870, margin: "0 auto" }}>
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", color: "#102b3d", fontWeight: 850, letterSpacing: 1.2, fontSize: "clamp(15px, 2vw, 19px)" }}>
-          <span style={{ width: 44, height: 44, background: "#112b3d", color: "#57cbfa", borderRadius: 12, display: "inline-flex", justifyContent: "center", alignItems: "center", fontSize: 27 }} aria-hidden="true">⌂</span>
+          <span style={{ width: 48, height: 48, background: "#112b3d", borderRadius: 12, display: "inline-flex", justifyContent: "center", alignItems: "center" }} aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+              <path d="M4 19 L18 7 L32 19" stroke="#55c9f4" strokeWidth="3.3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18.5 V29 H27 V18.5" stroke="#55c9f4" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 29 V22 H21 V29" stroke="#edc978" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
           BILLINGS HOME PROS
         </Link>
         <section style={{ position: "relative", overflow: "hidden", marginTop: 28, borderRadius: 26, background: "#ffffff", border: "1px solid #cbe8f6", boxShadow: "0 24px 65px rgba(21, 97, 139, .14)", textAlign: "center" }}>
@@ -56,7 +67,7 @@ export default async function FeaturedWelcome({ searchParams }) {
             ) : hasSessionLink ? (
               <p style={{ margin: "25px auto 0", maxWidth: 560, fontSize: 14, color: "#6a7780" }}>We can’t confirm payment from this link. If you've just checked out, please check your receipt or contact us before paying again.</p>
             ) : null}
-            <Link href="/" style={{ display: "inline-block", marginTop: 32, padding: "16px 28px", background: "#0ea8e3", color: "#082b3c", borderRadius: 12, textDecoration: "none", fontWeight: 850, boxShadow: "0 8px 20px rgba(11,150,201,.22)" }}>Explore Billings Home Pros</Link>
+            <Link href={confirmed && businessId ? `/pros/${businessId}` : "/"} style={{ display: "inline-block", marginTop: 32, padding: "16px 28px", background: "#0ea8e3", color: "#082b3c", borderRadius: 12, textDecoration: "none", fontWeight: 850, boxShadow: "0 8px 20px rgba(11,150,201,.22)" }}>{confirmed && businessId ? "View Your Business Listing" : "Explore Billings Home Pros"}</Link>
           </div>
           <div style={{ height: 7, background: "linear-gradient(90deg, #e6c881 0%, #22b4ed 55%, #0d496b 100%)" }} />
         </section>
