@@ -9,23 +9,27 @@ const groups = [
   {
     title: "What we've improved",
     items: [
-      "October 13, 2026 — Added a public site map to make our service categories easier to discover.",
-      "October 13, 2026 — Improved canonical URL settings to help search engines identify the right pages.",
-      "October 13, 2026 — Expanded the XML sitemap to include more useful site pages.",
+      "October 27, 2026 — Expanded direct outreach to Billings community organizations, neighborhood groups and homeowners' associations, asking permission to share useful homeowner resources. Emails sent do not mean the organizations have endorsed or shared the site.",
+      "October 26–27, 2026 — Verified live Featured subscription payment, webhook behavior and cancellation/reversal handling. No customer results or ongoing subscriber count are claimed.",
+      "October 23–24, 2026 — Added server-side Cloudflare Turnstile verification to key submission flows and improved phone-number formatting.",
+      "October 22–24, 2026 — Expanded and refined the Windows & Doors category, with an emphasis on businesses that actually perform installations.",
+      "October 13, 2026 — Improved canonical URLs, expanded the XML sitemap and published a public site map.",
     ],
   },
   {
-    title: "What we're reviewing",
+    title: "What we're monitoring",
     items: [
-      "Google Search Console visibility, search queries, and indexing every week.",
-      "Ways to make contractor listings more useful and easier to find.",
+      "Search Console indexing, ranking and click performance; the site is still new and meaningful organic search traffic remains limited.",
+      "Homeowner traffic sources and the usefulness of local service listings.",
+      "Community outreach replies and opportunities to share homeowner resources with permission.",
     ],
   },
   {
-    title: "Our next priority",
+    title: "Our next priorities",
     items: [
-      "Audit individual listing titles and descriptions, then evaluate appropriate structured data.",
-      "If no improvement is ready to implement, research and select the next measurable opportunity.",
+      "Improve visibility for relevant Billings home-service searches without making unsupported ranking or lead promises.",
+      "Help more area homeowners discover the winter home-preparation checklist and local contractors.",
+      "Keep business information accurate and continue adding relevant local professionals.",
     ],
   },
 ];
@@ -39,7 +43,7 @@ export default function OurProgressPage() {
           <p style={{ color: "#527080", fontWeight: 700, fontSize: 15, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Weekly Progress &amp; Transparency Report</p>
           <h1 style={{ fontSize: "clamp(30px, 6vw, 44px)", lineHeight: 1.12, margin: "0 0 12px" }}>Our Progress &amp; Partnership Promise</h1>
           <p style={{ fontSize: "clamp(18px, 3vw, 21px)", lineHeight: 1.45, margin: 0 }}>Our promise is to report what we actually improve, distinguish completed work from plans, and never guarantee rankings or leads. We review search performance weekly and keep looking for practical ways to help more homeowners discover local professionals.</p>
-          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: October 13, 2026 at 8:18 AM MDT · Reviewed weekly</p>
+          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: October 27, 2026 · Reviewed weekly</p>
         </header>
         <div style={{ display: "grid", gap: 14 }}>
           {groups.map((group) => (
