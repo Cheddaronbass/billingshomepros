@@ -71,15 +71,31 @@ export async function POST(request) {
         return Response.json({ received: true });
       }
 
-      // A paid subscription is not proof of business ownership. Keep
-      // unapproved listings out of Featured placement until review.
+      // Keep paid entitlement separate from public Featured placement.
+      // A late invoice event must never revive a canceled subscription.
+      if (subscription.status !== "active") {
+        console.log("Skipping invoice for inactive subscription:", subscriptionId);
+        return Response.json({ received: true });
+      }
+
+      const { data: listing, error: lookupError } = await supabase
+        .from("businesses")
+        .select("claimed")
+        .eq("id", businessId)
+        .single();
+
+      if (lookupError || !listing) {
+        console.error("Unable to find Featured business:", lookupError);
+        return Response.json({ error: "Business lookup failed." }, { status: 500 });
+      }
+
       const { error } = await supabase
         .from("businesses")
         .update({
-          featured: true,
+          featured_payment_active: true,
+          featured: listing.claimed === true,
         })
-        .eq("id", businessId)
-        .eq("claimed", true);
+        .eq("id", businessId);
 
       if (error) {
         console.error(
@@ -122,6 +138,7 @@ export async function POST(request) {
         .from("businesses")
         .update({
           featured: false,
+          featured_payment_active: false,
         })
         .eq("id", businessId);
 
