@@ -71,7 +71,18 @@ export default async function FeaturedWelcome({ searchParams }) {
           </div>
           <div style={{ height: 7, background: "linear-gradient(90deg, #e6c881 0%, #22b4ed 55%, #0d496b 100%)" }} />
         </section>
-        <p style={{ textAlign: "center", margin: "23px 0 0", color: "#607c8c", fontSize: 14 }}>Proudly local · Billings, Montana</p>
+        <footer style={{ textAlign: "center", margin: "28px auto 0", padding: "20px 18px 8px", maxWidth: 620, color: "#45677b" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, marginBottom: 14 }} aria-hidden="true">
+            <span style={{ height: 1, width: 75, background: "linear-gradient(90deg, transparent, #aac9da)" }} />
+            <svg width="82" height="29" viewBox="0 0 82 29" fill="none">
+              <path d="M2 24 L18 9 L29 20 L43 3 L62 24 L72 14 L80 24" stroke="#2e7397" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M39 10 L43 3 L48 11" stroke="#d6a94e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span style={{ height: 1, width: 75, background: "linear-gradient(90deg, #aac9da, transparent)" }} />
+          </div>
+          <p style={{ fontSize: 15, fontWeight: 800, letterSpacing: 1.1, color: "#24516b", margin: "0 0 5px" }}>PROUDLY LOCAL · BILLINGS, MONTANA</p>
+          <p style={{ fontSize: 13, color: "#688394", margin: 0 }}>Built for the businesses and homeowners who make our community strong.</p>
+        </footer>
       </div>
     </main>
   );
