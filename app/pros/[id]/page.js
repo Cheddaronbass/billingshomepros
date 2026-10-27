@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound, permanentRedirect } from "next/navigation";
 import TrackedLink from "../../components/TrackedLink";
 import ContractorLogo from "../../components/ContractorLogo";
+import ContactStatus from "../../components/ContactStatus";
 
 export const dynamic = "force-dynamic";
 
@@ -99,6 +100,7 @@ export default async function BusinessProfile({ params }) {
                   <h2>{business.name}</h2>
                   {business.featured && <span className="featuredBadge">Featured</span>}
                   {business.claimed && <span className="claimedBadge">✓ Claimed</span>}
+                  <ContactStatus business={business} />
                 </div>
                 <p className="contractorLocation">{business.service_area || "Billings, Montana"}</p>
               </div>
