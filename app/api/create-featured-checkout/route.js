@@ -143,7 +143,7 @@ export async function POST(request) {
       ],
 
       success_url:
-        "https://www.billingshomepros.com/get-listed?featured=success",
+        "https://www.billingshomepros.com/featured/welcome?session_id={CHECKOUT_SESSION_ID}",
 
       cancel_url:
         "https://www.billingshomepros.com/get-listed?featured=cancelled",
