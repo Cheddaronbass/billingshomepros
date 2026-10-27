@@ -25,15 +25,36 @@ export async function POST(request) {
       process.env.SUPABASE_SECRET_KEY
     );
 
-    const { data: businesses, error: businessError } = await supabase
+    // Compare normalized names so punctuation, case and spacing do not
+    // prevent legitimate contractors from finding an existing listing.
+    // Require an unambiguous match; never guess which business to charge.
+    const normalizeName = (value) =>
+      value.normalize("NFKC").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const requestedName = normalizeName(businessName.trim());
+
+    let { data: businesses, error: businessError } = await supabase
       .from("businesses")
       .select("id, name, claimed")
       .ilike("name", businessName.trim())
-      .limit(2);
+      .limit(3);
+
+    if (!businessError && (!businesses || businesses.length === 0)) {
+      const prefix = requestedName.slice(0, 4);
+      if (prefix.length >= 3) {
+        const { data: candidates, error: candidateError } = await supabase
+          .from("businesses")
+          .select("id, name, claimed")
+          .ilike("name", `%${prefix}%`)
+          .limit(200);
+        businessError = candidateError;
+        businesses = (candidates || []).filter(
+          (candidate) => normalizeName(candidate.name) === requestedName
+        );
+      }
+    }
 
     if (businessError) {
       console.error("Business lookup error:", businessError);
-
       return Response.json(
         { error: "Unable to look up the business." },
         { status: 500 }
