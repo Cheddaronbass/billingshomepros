@@ -34,7 +34,7 @@ export async function POST(request) {
 
     let { data: businesses, error: businessError } = await supabase
       .from("businesses")
-      .select("id, name, claimed")
+      .select("id, name, claimed, contact_status, contact_verified_at")
       .ilike("name", businessName.trim())
       .limit(3);
 
@@ -115,7 +115,9 @@ export async function POST(request) {
       hasSubmittedClaim = Boolean(namedClaims?.length);
     }
 
-    if (!business.claimed && !hasSubmittedClaim) {
+    const hasEstablishedContact = business.contact_status === "contact_verified" && Boolean(business.contact_verified_at);
+
+    if (!business.claimed && !hasSubmittedClaim && !hasEstablishedContact) {
       return Response.json(
         { error: "Claim your listing using the free form above, then return here to upgrade. No second form is needed." },
         { status: 403 }
