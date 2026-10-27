@@ -71,7 +71,7 @@ export default async function FeaturedWelcome({ searchParams }) {
           </div>
           <div style={{ height: 7, background: "linear-gradient(90deg, #e6c881 0%, #22b4ed 55%, #0d496b 100%)" }} />
         </section>
-        <footer style={{ textAlign: "center", margin: "28px auto 0", padding: "20px 18px 8px", maxWidth: 620, color: "#45677b" }}>
+        <div style={{ textAlign: "center", margin: "22px auto 0", padding: "16px 18px 26px", maxWidth: 690, color: "#45677b", background: "transparent", border: "none", boxShadow: "none" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 14, marginBottom: 14 }} aria-hidden="true">
             <span style={{ height: 1, width: 75, background: "linear-gradient(90deg, transparent, #aac9da)" }} />
             <svg width="82" height="29" viewBox="0 0 82 29" fill="none">
@@ -82,7 +82,7 @@ export default async function FeaturedWelcome({ searchParams }) {
           </div>
           <p style={{ fontSize: "clamp(17px, 2.6vw, 20px)", fontWeight: 800, letterSpacing: 0.8, color: "#24516b", margin: "0 0 5px" }}>PROUDLY LOCAL · BILLINGS, MONTANA</p>
           <p style={{ fontSize: "clamp(15px, 2.2vw, 17px)", lineHeight: 1.5, color: "#506f82", margin: 0 }}>Built for the businesses and homeowners who make our community strong.</p>
-        </footer>
+        </div>
       </div>
     </main>
   );
