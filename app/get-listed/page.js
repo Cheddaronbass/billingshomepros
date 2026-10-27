@@ -228,7 +228,7 @@ export default function GetListedPage() {
             </button>
           </div>
 
-          <form onSubmit={handleSubmit} className="quoteForm">
+          <form onSubmit={handleSubmit} className="quoteForm compactContractorForm">
             <label>
               Business Name *
               <input
@@ -329,7 +329,7 @@ export default function GetListedPage() {
 
               <textarea
                 name="message"
-                rows="5"
+                rows="2"
                 value={formData.message}
                 onChange={handleChange}
               />
