@@ -62,12 +62,23 @@ export async function POST(request) {
 
     const business = businesses[0];
 
-    if (business.claimed !== true) {
+    // Existing contractors with a submitted claim may purchase before
+    // manual ownership review; do not activate public promotion until approved.
+    const { data: pendingClaims, error: claimError } = await supabase
+      .from("contractor_requests")
+      .select("id")
+      .eq("business_id", business.id)
+      .in("status", ["new", "reviewing", "pending"])
+      .limit(1);
+
+    if (claimError) {
+      console.error("Claim lookup error:", claimError);
+      return Response.json({ error: "Unable to check claim status." }, { status: 500 });
+    }
+
+    if (!business.claimed && !pendingClaims?.length) {
       return Response.json(
-        {
-          error:
-            "This business must be claimed and verified before upgrading to Featured.",
-        },
+        { error: "Claim your listing using the free form above, then return here to upgrade. No second form is needed." },
         { status: 403 }
       );
     }
@@ -101,12 +112,14 @@ export async function POST(request) {
       metadata: {
         business_id: String(business.id),
         business_name: business.name,
+        review_pending: business.claimed ? "false" : "true",
       },
 
       subscription_data: {
         metadata: {
           business_id: String(business.id),
           business_name: business.name,
+          review_pending: business.claimed ? "false" : "true",
         },
       },
     });
