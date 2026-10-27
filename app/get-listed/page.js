@@ -129,7 +129,7 @@ export default function GetListedPage() {
 
       setMessage(
         requestType === "claim"
-          ? "Your claim request has been submitted. We'll review and verify your connection to the business. Once approved, your listing can be upgraded to Featured."
+          ? "Your claim request has been submitted. You can upgrade to Featured now using your business name below. Featured placement begins after we review your claim."
           : "Your business listing request has been submitted for review."
       );
 
@@ -376,7 +376,7 @@ export default function GetListedPage() {
             <p>
               Put your business above standard listings and make it easier
               for Billings-area homeowners to find you. Your business must
-              already be listed on Billings Home Pros before upgrading.
+              already be listed on Billings Home Pros. You can upgrade after submitting a claim; Featured placement starts after claim review.
             </p>
 
                 <div className="featuredBenefits">
