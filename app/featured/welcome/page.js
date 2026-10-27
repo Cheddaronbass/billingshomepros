@@ -37,9 +37,14 @@ export default async function FeaturedWelcome({ searchParams }) {
   return (
     <main style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 50% 0%, #d7f2ff 0%, #f1faff 35%, #ffffff 78%)", color: "#10283a", padding: "clamp(24px, 5vw, 56px) 18px", fontFamily: "inherit" }}>
       <div style={{ maxWidth: 870, margin: "0 auto" }}>
-        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", color: "#102b3d", fontWeight: 850, letterSpacing: 1.2, fontSize: "clamp(17px, 2vw, 19px)" }}>
-          <img src="/icon.svg" alt="Billings Home Pros logo" width="48" height="48" style={{ width: 48, height: 48, borderRadius: 10, objectFit: "contain" }} />
-          BILLINGS HOME PROS
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: 14, textDecoration: "none", color: "#102b3d" }}>
+          <img src="/icon.svg" alt="Billings Home Pros logo" width="48" height="48" style={{ width: 48, height: 48, borderRadius: 10, objectFit: "contain", flexShrink: 0 }} />
+          <span style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <span style={{ fontSize: "clamp(20px, 3vw, 26px)", letterSpacing: "-.035em", fontWeight: 850, lineHeight: 1.08 }}>
+              <span>Billings</span><span style={{ color: "#078fc6" }}>HomePros</span>
+            </span>
+            <span style={{ color: "#527185", fontSize: "clamp(11px, 1.6vw, 13px)", fontWeight: 700, letterSpacing: 1.1, lineHeight: 1.25 }}>LOCAL PROS · BILLINGS, MT</span>
+          </span>
         </Link>
         <section style={{ position: "relative", overflow: "hidden", marginTop: 28, borderRadius: 26, background: "#ffffff", border: "1px solid #cbe8f6", boxShadow: "0 24px 65px rgba(21, 97, 139, .14)", textAlign: "center" }}>
           <div style={{ background: "linear-gradient(115deg, #0b3046 0%, #135479 62%, #0988bd 100%)", padding: "27px 20px", color: "#fff" }}>
