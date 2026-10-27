@@ -76,7 +76,25 @@ export async function POST(request) {
       return Response.json({ error: "Unable to check claim status." }, { status: 500 });
     }
 
-    if (!business.claimed && !pendingClaims?.length) {
+    // A freshly submitted claim may not yet be linked to its listing.
+    // Match the already-submitted business name instead of asking again.
+    let hasSubmittedClaim = Boolean(pendingClaims?.length);
+    if (!business.claimed && !hasSubmittedClaim) {
+      const { data: namedClaims, error: namedClaimError } = await supabase
+        .from("contractor_requests")
+        .select("id")
+        .ilike("business_name", business.name)
+        .eq("request_type", "claim")
+        .in("status", ["new", "reviewing", "pending"])
+        .limit(1);
+      if (namedClaimError) {
+        console.error("Unlinked claim lookup error:", namedClaimError);
+        return Response.json({ error: "Unable to check claim status." }, { status: 500 });
+      }
+      hasSubmittedClaim = Boolean(namedClaims?.length);
+    }
+
+    if (!business.claimed && !hasSubmittedClaim) {
       return Response.json(
         { error: "Claim your listing using the free form above, then return here to upgrade. No second form is needed." },
         { status: 403 }
