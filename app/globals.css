@@ -2348,3 +2348,17 @@ footer small {
     gap: 24px;
   }
 }
+
+/* Compact contractor submission; retain comfortable mobile touch targets. */
+.contractorRequestChoices { margin: 16px 0 20px; }
+.compactContractorForm { gap: 12px; }
+.compactContractorForm label { gap: 5px; }
+.compactContractorForm input,
+.compactContractorForm select { padding: 10px 12px; min-height: 45px; }
+.compactContractorForm textarea { padding: 10px 12px; min-height: 70px; }
+.compactContractorForm .quoteFormRow { gap: 12px; }
+@media (max-width: 600px) {
+  .contractorRequestChoices { gap: 8px; }
+  .requestChoice { padding: 10px 8px; min-height: 48px; }
+  .compactContractorForm .quoteFormRow { grid-template-columns: 1fr; }
+}
