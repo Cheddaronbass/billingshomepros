@@ -61,6 +61,7 @@ export default function HandymanPage({ searchParams }) {
       introDescription="Compare handyman services in Billings and Laurel for drywall patches, door repairs, fixture installations, small home repairs, and routine maintenance. Confirm each provider’s specialties and ask about the scope and price before booking."
       emptyTitle="No matching handyman listings yet."
       emptyDescription="Try another service or view all handyman professionals serving the Billings area."
+      guideJump
       localGuide={{
         "title": "Choosing a Handyman in Billings, MT",
         "paragraphs": [
@@ -75,7 +76,7 @@ export default function HandymanPage({ searchParams }) {
       contractorTitle="Own a handyman business?"
       contractorDescription="Billings Home Pros helps homeowners discover local handyman services."
     />
-    <section style={{background:"#0b1117",padding:"22px 18px 40px"}}>
+    <section id="homeowner-guide-card" style={{background:"#0b1117",padding:"22px 18px 40px",scrollMarginTop:12}}>
       <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 24px",border:"1px solid #2e5875",borderRadius:14,background:"#102638",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:18}}>
         <div><div style={{color:"#79d6ff",fontSize:12,fontWeight:800,letterSpacing:".1em"}}>FREE BILLINGS HOMEOWNER GUIDE</div><h2 style={{color:"#fff",fontSize:"clamp(20px,3vw,25px)",margin:"8px 0"}}>How much do handyman services cost in Billings?</h2><p style={{color:"#c9d8e4",margin:0,lineHeight:1.5}}>Explore 2026 budget guidance and questions to ask local pros.</p></div>
         <Link href="/guides/handyman-rates-billings-mt" style={{background:"#24baff",color:"#07151f",borderRadius:9,fontWeight:800,textDecoration:"none",padding:"13px 18px"}}>Read the Free Guide →</Link>
