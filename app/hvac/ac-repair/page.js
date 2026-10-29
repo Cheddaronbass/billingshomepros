@@ -58,6 +58,16 @@ export default function ACRepairPage() {
       eyebrow="AIR CONDITIONING REPAIR IN BILLINGS"
       introTitle="Find AC repair professionals serving Billings"
       introDescription="Compare Billings-area HVAC companies listing air conditioner repairs, cooling diagnostics, and maintenance. Contact each business to confirm the equipment they service, availability, and written estimates before scheduling."
+      localGuide={{
+        title: "Before Hiring an AC Repair Company in Billings",
+        paragraphs: [
+          "If your air conditioner is running but not cooling, note whether the indoor unit and outdoor unit start, whether airflow is weak, and whether the issue happens continuously or only during hot afternoons. Share those symptoms with the HVAC company when requesting service.",
+          "Ask whether the technician diagnoses refrigerant leaks, electrical faults, airflow problems, and thermostat issues. Confirm that the company services your system type and your Billings-area address before scheduling.",
+          "Request an explanation of the diagnosis and a written repair estimate before approving work. Compare repair cost, equipment condition, warranty coverage, and replacement options if major repairs are proposed.",
+          "If the system is leaking near electrical components or a breaker repeatedly trips, stop operating it and ask a qualified professional to assess the problem. Avoid opening electrical panels or handling refrigerant yourself."
+        ]
+      }}
+      guideJump
       emptyTitle="No matching AC repair listings yet."
       emptyDescription="Browse all HVAC professionals serving the Billings area."
       icon="❄️"
