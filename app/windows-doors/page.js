@@ -38,6 +38,8 @@ export default function WindowsDoorsPage({ searchParams }) {
       emptyTitle="We're building our Windows & Doors listings."
       emptyDescription="There are no matching window and door businesses in this category yet. Check back or explore general remodeling companies, and confirm directly which services they offer."
       seoLink={{ href: "/contractors-remodeling", label: "Browse remodeling contractors (confirm window and door services directly)" }}
+      guideJump
+      guideJumpTarget="homeowner-guide"
       localGuide={{
         title: "Choosing Window and Door Installers in Billings",
         paragraphs: [
