@@ -54,10 +54,10 @@ export default function HVACPage({ searchParams }) {
       filters={filters}
       serviceNames={serviceNames}
       heroTitle="HVAC Companies in Billings, Montana"
-      heroDescription="Find local HVAC professionals for heating, air conditioning, furnace repair, maintenance and more."
+      heroDescription="Compare local heating and cooling companies for furnace repair, AC repair, HVAC installation, and maintenance in Billings and nearby communities."
       eyebrow="FIND A LOCAL HVAC PROFESSIONAL"
-      introTitle="HVAC professionals serving the Billings area"
-introDescription="Compare local HVAC companies serving Billings for AC repair, furnace repair, heating and cooling, installation, and routine maintenance. Find the right local professional for your home and request a quote."
+      introTitle="Find heating and cooling contractors in Billings"
+introDescription="Browse Billings-area HVAC companies offering furnace repair, AC diagnostics, heating and cooling installation, and maintenance. Check each contractor’s listed services, then contact them directly to confirm equipment experience, service area, availability, and written estimates."
 seoLink={{
   href: "/hvac/ac-repair",
   label: "Looking for AC repair in Billings? View local AC repair professionals",
@@ -69,7 +69,9 @@ emptyTitle="No matching HVAC listings yet."
         "paragraphs": [
                 "Billings homeowners depend on heating through cold winters and cooling during hot summer weather. If your furnace or air conditioner struggles, ask an HVAC professional whether maintenance or a repair is appropriate before considering replacement.",
                 "When comparing heating and cooling companies, request a written estimate, ask about equipment sizing and efficiency, and confirm applicable credentials and warranty terms.",
-                "For a furnace that stops heating, describe the symptoms and ask about service availability. If you suspect a gas leak or carbon monoxide, leave the area and contact emergency services or your gas utility rather than troubleshooting it yourself."
+                "For a furnace that stops heating, describe the symptoms and ask about service availability. If you suspect a gas leak or carbon monoxide, leave the area and contact emergency services or your gas utility rather than troubleshooting it yourself.",
+                "Repair or replace? If heating or cooling problems recur, ask the technician to explain the cause, expected repair cost, equipment condition, and replacement options. Compare total estimates and warranty coverage instead of relying on a single age cutoff.",
+                "Before requesting HVAC service, note the equipment type, symptoms, and whether the problem is heating, cooling, or airflow. Ask companies whether they serve your address in Billings, Laurel, Lockwood, or surrounding Yellowstone County, and whether they service your brand of equipment."
         ]
 }}
 
