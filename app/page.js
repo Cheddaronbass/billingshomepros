@@ -242,6 +242,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-label="Free homeowner planning guides" style={{background:"#0b1117",padding:"0 7% 32px"}}>
+        <div style={{maxWidth:1100,margin:"0 auto",textAlign:"center",borderTop:"1px solid #273d50",paddingTop:22}}>
+          <p style={{color:"#c4d2df",fontSize:15,margin:"0 0 12px"}}>Planning a project? Explore our free Billings homeowner guides:</p>
+          <nav aria-label="Homeowner cost guides" style={{display:"flex",justifyContent:"center",gap:"10px 26px",flexWrap:"wrap",fontSize:15,lineHeight:1.7}}>
+            <a href="/guides/roof-replacement-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Roof Replacement Costs</a>
+            <a href="/guides/furnace-replacement-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Furnace Replacement Costs</a>
+            <a href="/guides/bathroom-remodel-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Bathroom Remodel Costs</a>
+          </nav>
+        </div>
+      </section>
+
       <section className="whySection" id="why">
         <div className="sectionHeading">
           <div className="eyebrow builtForBillings">BUILT FOR BILLINGS</div>
