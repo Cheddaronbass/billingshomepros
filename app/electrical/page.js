@@ -72,7 +72,7 @@ export default function ElectricalPage({ searchParams }) {
         "paragraphs": [
                 "Whether you need lighting, wiring, a panel upgrade, or an electrical repair, describe the project and ask an electrician to assess the work before beginning.",
                 "Compare written estimates that describe materials, permits when applicable, timing, and cleanup. Verify licensing and insurance requirements for the specific job.",
-                "Flickering lights, warm outlets, or repeatedly tripping breakers can signal a problem worth professional inspection. Avoid opening panels or attempting unsafe electrical repairs yourself.,
+                "Flickering lights, warm outlets, or repeatedly tripping breakers can signal a problem worth professional inspection. Avoid opening panels or attempting unsafe electrical repairs yourself.",
                 "For panel and breaker work, describe whether you need a repair, added circuits, or a larger service upgrade. Ask the electrician to explain whether permits, inspections, or utility coordination may be needed.",
                 "For lighting or wiring work in Billings and Yellowstone County, share fixture locations, relevant photos, and your schedule. Confirm the company handles residential projects of your size before requesting an estimate."
         ]
