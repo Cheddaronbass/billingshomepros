@@ -198,7 +198,7 @@ export default async function CategoryPage({
           </div>
 
           <p>{introDescription}</p>
-          {guideJump && localGuide && <a href="#homeowner-guide" style={{display:"inline-block",marginTop:10,color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Homeowner Guide ↓</a>}
+          {guideJump && localGuide && <a href="#homeowner-guide-card" style={{display:"inline-block",marginTop:10,color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Homeowner Guide ↓</a>}
         </div>
 
         <div className="filterBar">
