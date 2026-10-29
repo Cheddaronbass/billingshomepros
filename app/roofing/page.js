@@ -60,6 +60,7 @@ export default function RoofingPage({ searchParams }) {
       introDescription="Compare Billings-area roofing companies for leak repairs, storm-damage inspections, shingle replacement, and full roof replacements. Review each business’s listed services and contact the contractor directly to confirm availability and request an estimate."
       emptyTitle="No matching roofing listings yet."
       emptyDescription="Try another roofing service or view all roofing professionals serving the Billings area."
+      guideJump
       localGuide={{
         title: "Choosing a Roofing Contractor in Billings, MT",
         paragraphs: [
