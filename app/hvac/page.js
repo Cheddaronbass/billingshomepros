@@ -64,6 +64,7 @@ seoLink={{
 }}
 emptyTitle="No matching HVAC listings yet."
       emptyDescription="Try another HVAC service or view all HVAC professionals serving the Billings area."
+      guideJump
       localGuide={{
         "title": "Choosing an HVAC Company in Billings, MT",
         "paragraphs": [
