@@ -1,9 +1,11 @@
 import { withPageSocial } from "../../lib/seoMetadata";
 import CategoryPage from "../../components/CategoryPage";
+import Link from "next/link";
 export const metadata = withPageSocial( {title:"Roof Replacement in Billings, MT | Local Roofing Companies",description:"Find local Billings roofing companies listing roof replacement services. Compare businesses and request a written estimate.",alternates:{canonical:"/roofing/roof-replacement"}});
 export const dynamic="force-dynamic";
 export default function ServicePage(){
- return <CategoryPage
+ return <>
+ <CategoryPage
    category="roofing" categoryLabel="Roofing"
    fixedService="roof-replacement"
    filters={[{label:"All Roofing",href:"/roofing"},{label:"Roof Replacement",href:"/roofing/roof-replacement",value:"roof-replacement"}]}
@@ -20,5 +22,13 @@ export default function ServicePage(){
    contractorEyebrow="LOCAL ROOFING COMPANIES"
    contractorTitle="Own a local service business?"
    contractorDescription="Billings Home Pros helps homeowners discover local professionals."
- />;
+ />
+ <section aria-label="Roof replacement cost guide" style={{background:"#0b1117",padding:"20px 18px 40px",borderTop:"1px solid #243c50"}}>
+   <div style={{maxWidth:1000,margin:"0 auto",border:"1px solid #2e5875",borderRadius:14,padding:"22px 24px",background:"#102638"}}>
+     <h2 style={{fontSize:"clamp(20px,3vw,25px)",color:"#fff",margin:"0 0 10px"}}>Planning a roof replacement in Billings?</h2>
+     <p style={{color:"#c9d8e4",fontSize:16,lineHeight:1.6,margin:"0 0 14px"}}>Understand the factors behind roof replacement estimates, then compare written quotes from local roofing companies.</p>
+     <Link href="/guides/roof-replacement-cost-billings-mt" style={{color:"#73d4ff",fontWeight:800,textUnderlineOffset:3}}>Read the Billings Roof Replacement Cost Guide →</Link>
+   </div>
+ </section>
+ </>;
 }
