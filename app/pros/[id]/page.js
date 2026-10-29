@@ -80,7 +80,7 @@ export default async function BusinessProfile({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/"><span className="brandMain">Billings Home Pros</span><span className="brandSub">LOCAL HOME SERVICES • BILLINGS, MT</span></a>
-        <nav><a href="/">Home</a><a href="/#services">Services</a><a href="/#pros">For Contractors</a></nav>
+        <nav><a href="/">Home</a><a href="/#services">Services</a><a href="/#pros">For Contractors</a><a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "11px 17px", borderRadius: 10, background: "#24baff", color: "#071521", fontWeight: 800, textDecoration: "none" }}>List Your Business</a></nav>
       </header>
       <section className="categoryHero">
         <div className="categoryHeroInner">
@@ -91,6 +91,10 @@ export default async function BusinessProfile({ params }) {
       </section>
       <section className="categoryContent" style={{ minHeight: "45vh" }}>
         <p><a href={`/${business.category}`} style={{ color: "#25b9ff" }}>← Browse {categoryLabel} businesses</a></p>
+        <aside style={{ maxWidth: 920, marginTop: 22, padding: "22px 24px", borderRadius: 16, border: "1px solid rgba(37,185,255,.45)", background: "linear-gradient(110deg, #102638, #0b1722)", color: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 18 }}>
+          <div><strong style={{ display: "block", fontSize: "1.16rem" }}>Own a home-service business in Billings?</strong><span style={{ display: "block", marginTop: 5, color: "#d3e5ee" }}>Add your business to Billings Home Pros. Basic listings are free.</span></div>
+          <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "13px 20px", borderRadius: 10, background: "#25b9ff", color: "#06131d", fontWeight: 800, textDecoration: "none", minHeight: 46 }}>List Your Business →</a>
+        </aside>
         <article className="contractorCard" style={{ maxWidth: 920, marginTop: 24 }}>
           <div className="contractorMain">
             <div className="contractorIdentity">
