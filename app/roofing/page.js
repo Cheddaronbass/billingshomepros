@@ -53,10 +53,10 @@ export default function RoofingPage({ searchParams }) {
       categoryLabel="Roofing"
       filters={filters}
       serviceNames={serviceNames}
-      heroTitle="Roofers in Billings, Montana"
-      heroDescription="Find local roofing professionals for roof repairs, replacements, inspections, storm damage and more."
+      heroTitle="Roofing Companies in Billings, Montana"
+      heroDescription="Compare Billings-area roofers for leak repairs, roof replacement, inspections, and storm-damage work. Explore local business profiles and contact contractors directly."
       eyebrow="FIND A LOCAL ROOFER"
-      introTitle="Roofing professionals serving the Billings area"
+      introTitle="Find local roofers in Billings and Yellowstone County"
       introDescription="Compare Billings-area roofing companies for leak repairs, storm-damage inspections, shingle replacement, and full roof replacements. Review each business’s listed services and contact the contractor directly to confirm availability and request an estimate."
       emptyTitle="No matching roofing listings yet."
       emptyDescription="Try another roofing service or view all roofing professionals serving the Billings area."
@@ -65,7 +65,9 @@ export default function RoofingPage({ searchParams }) {
         paragraphs: [
           "Billings-area roofs face changing seasons, wind, hail, and winter weather. If you notice missing shingles, leaks, or possible storm damage, ask a local roofing contractor to inspect the roof and explain the condition before deciding on repairs or replacement.",
           "When comparing roofing companies, ask for a written estimate that explains materials, labor, cleanup, and timing. Confirm insurance, applicable licensing or registration, and warranty terms, and compare more than one estimate when possible.",
-          "For storm damage, document visible issues safely from the ground and ask how the contractor handles inspections and repair timelines. Browse the Billings-area roofers listed above to find companies offering roof repair, replacement, inspections, or storm-damage services."
+          "For storm damage, document visible issues safely from the ground and ask how the contractor handles inspections and repair timelines. Browse the Billings-area roofers listed above to find companies offering roof repair, replacement, inspections, or storm-damage services.",
+          "Roof repair or replacement? If damage is confined to a small area, ask whether a targeted repair is practical. For recurring leaks, widespread shingle wear, or storm damage, request an inspection and compare repair costs with replacement estimates. The right choice depends on roof condition, not just age.",
+          "Before calling a roofer, have your address, approximate roof age, and a description of leaks or storm damage ready. Ask which roofing materials the company works with, whether it serves your neighborhood in Billings, Laurel, or the surrounding Yellowstone County area, and when an inspection could be scheduled."
         ]
       }}
       icon="🏠"
