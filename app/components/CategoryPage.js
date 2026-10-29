@@ -25,6 +25,7 @@ export default async function CategoryPage({
   contractorDescription,
   seoLink,
   localGuide,
+  guideJump = false,
   supportsEmergency = false,
   fixedService = "",
 }) {
@@ -158,6 +159,7 @@ export default async function CategoryPage({
 
   return (
     <main className={category === "windows-doors" ? "categoryDirectoryPage windowsDoorsPage" : "categoryDirectoryPage"}>
+      {guideJump && <style>{`html:has(.categoryDirectoryPage) { scroll-behavior: smooth; }`}</style>}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/">
@@ -196,6 +198,7 @@ export default async function CategoryPage({
           </div>
 
           <p>{introDescription}</p>
+          {guideJump && localGuide && <a href="#homeowner-guide" style={{display:"inline-block",marginTop:10,color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Homeowner Guide ↓</a>}
         </div>
 
         <div className="filterBar">
@@ -349,8 +352,8 @@ export default async function CategoryPage({
         )}
 
         {localGuide && (
-          <section aria-labelledby="local-roofing-guide" style={{ marginTop: "3rem", maxWidth: "850px", lineHeight: 1.7 }}>
-            <h2 id="local-roofing-guide">{localGuide.title}</h2>
+          <section id="homeowner-guide" aria-labelledby="homeowner-guide-heading" style={{ marginTop: "3rem", maxWidth: "850px", lineHeight: 1.7, scrollMarginTop: 24 }}>
+            <h2 id="homeowner-guide-heading">{localGuide.title}</h2>
             {localGuide.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
