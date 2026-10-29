@@ -68,6 +68,7 @@ export default function ACRepairPage() {
         ]
       }}
       guideJump
+      guideJumpTarget="homeowner-guide"
       emptyTitle="No matching AC repair listings yet."
       emptyDescription="Browse all HVAC professionals serving the Billings area."
       icon="❄️"
