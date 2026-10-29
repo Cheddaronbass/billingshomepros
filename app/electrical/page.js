@@ -66,6 +66,7 @@ export default function ElectricalPage({ searchParams }) {
       introDescription="Compare Billings-area electricians for panel upgrades, breaker problems, lighting installations, wiring, and electrical repairs. Review each contractor’s listed services, confirm licensing for the work, and request a written estimate."
       emptyTitle="No matching electrical listings yet."
       emptyDescription="Try another electrical service or view all electricians serving the Billings area."
+      guideJump
       localGuide={{
         "title": "Choosing an Electrician in Billings, MT",
         "paragraphs": [
@@ -80,7 +81,7 @@ export default function ElectricalPage({ searchParams }) {
       contractorTitle="Own an electrical business?"
       contractorDescription="Billings Home Pros is building a local directory designed to help homeowners find businesses like yours."
     />
-    <section style={{background:"#0b1117",padding:"22px 18px 40px"}}>
+    <section id="homeowner-guide-card" style={{background:"#0b1117",padding:"22px 18px 40px",scrollMarginTop:12}}>
       <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 24px",border:"1px solid #2e5875",borderRadius:14,background:"#102638",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:18}}>
         <div><div style={{color:"#79d6ff",fontSize:12,fontWeight:800,letterSpacing:".1em"}}>FREE BILLINGS HOMEOWNER GUIDE</div><h2 style={{color:"#fff",fontSize:"clamp(20px,3vw,25px)",margin:"8px 0"}}>What does an electrical panel upgrade cost in Billings?</h2><p style={{color:"#c9d8e4",margin:0,lineHeight:1.5}}>Explore 2026 budget guidance and questions to ask local pros.</p></div>
         <Link href="/guides/electrical-panel-upgrade-cost-billings-mt" style={{background:"#24baff",color:"#07151f",borderRadius:9,fontWeight:800,textDecoration:"none",padding:"13px 18px"}}>Read the Free Guide →</Link>
