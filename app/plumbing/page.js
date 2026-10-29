@@ -66,7 +66,9 @@ export default function PlumbingPage({ searchParams }) {
         "paragraphs": [
                 "For leaks, clogged drains, or water-heater trouble, describe the symptoms and ask whether a plumber offers diagnosis, repair, or replacement. For active leaks, locate your water shutoff and avoid affected electrical areas.",
                 "Before hiring, ask for a written estimate, expected timing, and any applicable license or insurance information. Compare the scope of work, parts, and warranty details—not just the price.",
-                "For urgent plumbing problems, confirm emergency availability and any after-hours charges before scheduling."
+                "For urgent plumbing problems, confirm emergency availability and any after-hours charges before scheduling.",
+                "If you have a leaking water heater, describe the tank type, approximate age, and where water is appearing. Ask whether a repair is practical or replacement is recommended, and whether disposal and permit-related work are included in the estimate.",
+                "For recurring clogs or slow drains, tell the plumber which fixtures are affected and whether the problem keeps returning. Ask whether drain cleaning, a camera inspection, or further diagnosis makes sense before approving major sewer work."
         ]
 }}
 
