@@ -54,12 +54,13 @@ export default function ContractorsRemodelingPage({ searchParams }) {
       filters={filters}
       serviceNames={serviceNames}
       heroTitle="General Contractors & Remodeling in Billings, Montana"
-      heroDescription="Find local professionals for remodeling, home additions, repairs, general contracting and more."
+      heroDescription="Compare Billings-area general contractors for kitchen and bathroom remodeling, home additions, renovation projects, and larger repairs."
       eyebrow="FIND A LOCAL CONTRACTOR"
-      introTitle="Contractors serving the Billings area"
+      introTitle="Find general contractors and remodelers in Billings"
       introDescription="Explore Billings-area contractors for kitchen and bathroom renovations, home additions, and larger repair projects. Compare listed specialties and request written estimates directly from businesses that match your project."
       emptyTitle="No matching contractor listings yet."
       emptyDescription="Try another service or view all contractors serving the Billings area."
+      guideJump
       localGuide={{
         "title": "Choosing a Remodeling Contractor in Billings, MT",
         "paragraphs": [
@@ -80,7 +81,7 @@ export default function ContractorsRemodelingPage({ searchParams }) {
         <p style={{color:"#c9d8e4",fontSize:16,lineHeight:1.65,margin:0}}>For smaller maintenance and repair jobs, compare <Link href="/handyman" style={{color:"#73d4ff",textUnderlineOffset:3}}>Billings handyman services</Link>. Planning a bathroom renovation? Start with our <Link href="/guides/bathroom-remodel-cost-billings-mt" style={{color:"#73d4ff",textUnderlineOffset:3}}>local bathroom remodeling cost guide</Link>. If your renovation includes exterior roof work, you can also <Link href="/roofing" style={{color:"#73d4ff",textUnderlineOffset:3}}>browse roofing companies</Link>.</p>
       </div>
     </section>
-    <section style={{background:"#0b1117",padding:"22px 18px 40px"}}>
+    <section id="homeowner-guide-card" style={{background:"#0b1117",padding:"22px 18px 40px",scrollMarginTop:12}}>
       <div style={{maxWidth:1000,margin:"0 auto",padding:"20px 24px",border:"1px solid #2e5875",borderRadius:14,background:"#102638",display:"flex",alignItems:"center",justifyContent:"space-between",flexWrap:"wrap",gap:18}}>
         <div><div style={{color:"#79d6ff",fontSize:12,fontWeight:800,letterSpacing:".1em"}}>FREE BILLINGS HOMEOWNER GUIDE</div><h2 style={{color:"#fff",fontSize:"clamp(20px,3vw,25px)",margin:"8px 0"}}>What does bathroom remodeling cost in Billings?</h2><p style={{color:"#c9d8e4",margin:0,lineHeight:1.5}}>Explore 2026 budget guidance and questions to ask local pros.</p></div>
         <Link href="/guides/bathroom-remodel-cost-billings-mt" style={{background:"#24baff",color:"#07151f",borderRadius:9,fontWeight:800,textDecoration:"none",padding:"13px 18px"}}>Read the Free Guide →</Link>
