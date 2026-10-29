@@ -66,7 +66,9 @@ export default function ContractorsRemodelingPage({ searchParams }) {
         "paragraphs": [
                 "For kitchen updates, home additions, or major repairs, begin with a clear description of your goals, budget, and desired schedule. Ask contractors about experience with similar projects in the Billings area.",
                 "Request detailed written proposals showing the scope, materials, payment schedule, and how changes will be handled. Check references and confirm any necessary permits, insurance, and registrations.",
-                "Comparing the same project scope across bids can help you spot missing work and choose a contractor based on fit and communication, not price alone."
+                "Comparing the same project scope across bids can help you spot missing work and choose a contractor based on fit and communication, not price alone.",
+                "The right specialist depends on the job: a bathroom remodel may involve waterproofing and plumbing coordination, while a kitchen renovation can require cabinetry, electrical work, and ventilation. For additions or whole-home remodeling, ask who coordinates subcontractors and inspections.",
+                "When contacting Billings remodeling contractors, share your address, a short project description, photos if useful, and your approximate timeline. Ask whether they take on projects of your size and provide itemized estimates before scheduling an in-home consultation."
         ]
 }}
 
