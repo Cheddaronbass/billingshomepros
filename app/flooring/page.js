@@ -41,6 +41,8 @@ export default function FlooringPage({ searchParams }) {
       introDescription="Installation-capable specialists and flooring showrooms that coordinate professional installation—not materials-only suppliers. Confirm the exact flooring service and availability with each business."
       emptyTitle="No flooring installers match that filter yet."
       emptyDescription="Try All Flooring or another material to browse local installation-capable businesses."
+      guideJump
+      guideJumpTarget="homeowner-guide"
       localGuide={{
         title: "Choosing a Flooring Installer in Billings, MT",
         paragraphs: [
