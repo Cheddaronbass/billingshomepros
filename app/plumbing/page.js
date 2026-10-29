@@ -68,7 +68,8 @@ export default function PlumbingPage({ searchParams }) {
                 "Before hiring, ask for a written estimate, expected timing, and any applicable license or insurance information. Compare the scope of work, parts, and warranty details—not just the price.",
                 "For urgent plumbing problems, confirm emergency availability and any after-hours charges before scheduling.",
                 "If you have a leaking water heater, describe the tank type, approximate age, and where water is appearing. Ask whether a repair is practical or replacement is recommended, and whether disposal and permit-related work are included in the estimate.",
-                "For recurring clogs or slow drains, tell the plumber which fixtures are affected and whether the problem keeps returning. Ask whether drain cleaning, a camera inspection, or further diagnosis makes sense before approving major sewer work."
+                "For recurring clogs or slow drains, tell the plumber which fixtures are affected and whether the problem keeps returning. Ask whether drain cleaning, a camera inspection, or further diagnosis makes sense before approving major sewer work.",
+                "During Billings cold snaps, frozen or burst supply lines can require urgent attention. Know the main water shutoff location, avoid using an open flame to thaw pipes, and tell a plumber which fixtures have stopped flowing or where leaks have appeared."
         ]
 }}
 
