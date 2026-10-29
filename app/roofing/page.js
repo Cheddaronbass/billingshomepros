@@ -88,7 +88,7 @@ export default function RoofingPage({ searchParams }) {
         <Link href="/roofing/roof-replacement" style={{color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Roof replacement in Billings →</Link>
       </div>
     </section>
-    <section style={{ background: "#0b1117", padding: "24px 18px 42px", borderTop: "1px solid #254059" }}>
+    <section id="homeowner-guide-card" style={{ background: "#0b1117", padding: "24px 18px 42px", borderTop: "1px solid #254059", scrollMarginTop: 12 }}>
       <div style={{ maxWidth: 1000, margin: "0 auto", border: "1px solid #2e5875", background: "#102638", borderRadius: 14, padding: "22px 26px", display: "flex", gap: 20, justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
         <div>
           <div style={{ color: "#79d6ff", fontSize: 12, fontWeight: 800, letterSpacing: ".1em" }}>FREE BILLINGS HOMEOWNER GUIDE</div>
