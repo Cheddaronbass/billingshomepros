@@ -23,6 +23,11 @@ function normalizeName(name) {
 }
 
 export async function GET() {
+  // Paid Google Places imports are paused; re-enabling requires an explicit decision.
+  if (process.env.GOOGLE_PLACES_IMPORTS_ENABLED !== "true") {
+    return Response.json({ paused: true, message: "Google Places imports are paused." }, { status: 503 });
+  }
+
   try {
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
