@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TurnstileField from "../components/TurnstileField";
 import { formatUSPhoneNumber } from "../lib/formatUSPhoneNumber";
 
@@ -30,6 +30,15 @@ export default function GetListedPage() {
   const turnstileRef = useRef(null);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const businessName = new URLSearchParams(window.location.search).get("businessName");
+    if (businessName) {
+      setFormData((current) => ({ ...current, business_name: businessName.slice(0, 200) }));
+      setFeaturedBusinessName(businessName.slice(0, 200));
+      setRequestType("claim");
+    }
+  }, []);
 
   function handleChange(event) {
     const { name, value } = event.target;
