@@ -90,6 +90,7 @@ export default async function BusinessProfile({ params }) {
         </div>
       </section>
       <section className="categoryContent" style={{ minHeight: "45vh" }}>
+        <div style={{ maxWidth: 920, marginInline: "auto" }}>
         <p><a href={`/${business.category}`} style={{ color: "#25b9ff" }}>← Browse {categoryLabel} businesses</a></p>
         <aside style={{ maxWidth: 920, marginTop: 22, padding: "22px 24px", borderRadius: 16, border: "1px solid rgba(37,185,255,.45)", background: "linear-gradient(110deg, #102638, #0b1722)", color: "#fff", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 18 }}>
           <div><strong style={{ display: "block", fontSize: "1.16rem" }}>Own a home-service business in Billings?</strong><span style={{ display: "block", marginTop: 5, color: "#d3e5ee" }}>Add your business to Billings Home Pros. Basic listings are free.</span></div>
@@ -123,6 +124,7 @@ export default async function BusinessProfile({ params }) {
           </div>
         </article>
         <p style={{ marginTop: 24, maxWidth: 800 }}>Business information is provided for directory reference. Confirm services, availability, and qualifications directly with the contractor.</p>
+        </div>
       </section>
       <footer><strong>Billings Home Pros</strong><p>Connecting Billings-area homeowners with local home-service professionals.</p><small>© 2026 BillingsHomePros.com</small></footer>
     </main>
