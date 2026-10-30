@@ -7,6 +7,11 @@ function normalizedPhone(value) {
 }
 
 export async function findGooglePlaceCandidate({ name, phone, city = "Billings", state = "MT" }) {
+  // Paid Google Places imports are paused; re-enabling requires an explicit decision.
+  if (process.env.GOOGLE_PLACES_IMPORTS_ENABLED !== "true") {
+    return { candidates: [], paused: true };
+  }
+
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   if (!apiKey) throw new Error("Google Places API key is not configured");
   if (!name || !phone) throw new Error("Business name and phone are required");
