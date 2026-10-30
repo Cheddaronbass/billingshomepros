@@ -2362,3 +2362,13 @@ footer small {
   .requestChoice { padding: 10px 8px; min-height: 48px; }
   .compactContractorForm .quoteFormRow { grid-template-columns: 1fr; }
 }
+
+/* Contractor contact status and owner claim action. */
+.bhpContactBadge { display: inline-flex; align-items: center; gap: 8px; padding: 11px 15px; border: 1px solid #b6dcec; border-radius: 999px; background: #eaf7fd; color: #095c80; font-size: .9rem; font-weight: 750; line-height: 1.4; flex-shrink: 0; }
+.bhpContactBadge > span { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #087da8; color: white; }
+.bhpClaimPrompt { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; flex-shrink: 0; }
+.bhpClaimPrompt > span { color: #596876; font-size: .85rem; }
+.bhpClaimPrompt a { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 15px; border: 1px solid #aacbdf; border-radius: 10px; color: #075d85; font-weight: 700; text-decoration: none; background: #f8fcff; }
+.bhpClaimPrompt a:hover { background: #eaf7fd; border-color: #087da8; }
+.bhpClaimPrompt a:focus-visible { outline: 3px solid #087da8; outline-offset: 3px; }
+@media (max-width: 900px) { .contractorTop { flex-wrap: wrap; gap: 16px; } .bhpClaimPrompt { align-items: flex-start; } .bhpContactBadge { white-space: normal; } }
