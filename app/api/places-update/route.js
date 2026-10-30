@@ -54,6 +54,11 @@ async function searchGoogle(textQuery) {
 }
 
 export async function POST(request) {
+  // Paid Google Places imports are paused; re-enabling requires an explicit decision.
+  if (process.env.GOOGLE_PLACES_IMPORTS_ENABLED !== "true") {
+    return Response.json({ paused: true, message: "Google Places imports are paused." }, { status: 503 });
+  }
+
   try {
     const adminSecret = request.headers.get("x-admin-secret");
 
