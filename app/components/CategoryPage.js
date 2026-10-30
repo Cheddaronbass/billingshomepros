@@ -256,8 +256,8 @@ export default async function CategoryPage({
                       </a>
                       {business.featured && <span className="featuredBadge">Featured</span>}
                       {business.claimed && <span className="claimedBadge">✓ Claimed</span>}
-                      <ContactStatus business={business} />
                     </div>
+                    <ContactStatus business={business} card />
                   </div>
 
                   <div className="serviceTags">
