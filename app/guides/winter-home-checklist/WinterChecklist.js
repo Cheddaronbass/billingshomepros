@@ -199,7 +199,7 @@ export default function WinterChecklist() {
           </article>)}</div>
         </section>)}
         <section className={styles.help}><p className={styles.eyebrow}>LOCAL HELP, WHEN YOU NEED IT</p><h2>Some jobs need a second set of hands.</h2><p>Find Billings-area professionals for heating, plumbing, roofing, and home maintenance.</p><Link className={styles.primary} href="/">Find a local pro →</Link></section>
-        <footer className={styles.footer}><p>General homeowner information. Follow equipment manuals, local codes, and professional guidance for your property. Listed businesses are independent providers.</p><p>Safety resources: <a href="https://www.ready.gov/winter-weather">Ready.gov winter weather</a> · <a href="https://www.cdc.gov/carbon-monoxide/prevention/index.html">CDC carbon monoxide prevention</a></p><Link href="/">← Billings Home Pros</Link></footer>
+        <footer className={styles.footer}><p>General homeowner information. Follow equipment manuals, local codes, and professional guidance for your property. Listed businesses are independent providers.</p><p>Safety resources: <a href="https://www.ready.gov/winter-weather">Ready.gov winter weather</a> · <a href="https://www.cdc.gov/carbon-monoxide/about/">CDC carbon monoxide safety</a></p><Link href="/">← Billings Home Pros</Link></footer>
       </div>
     </main>
   );
