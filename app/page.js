@@ -242,13 +242,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-label="Free homeowner planning guides" style={{background:"#0b1117",padding:"0 7% 32px"}}>
-        <div style={{maxWidth:1100,margin:"0 auto",textAlign:"center",borderTop:"1px solid #273d50",paddingTop:22}}>
-          <p style={{color:"#c4d2df",fontSize:15,margin:"0 0 12px"}}>Planning a project? Explore our free Billings homeowner guides:</p>
-          <nav aria-label="Homeowner cost guides" style={{display:"flex",justifyContent:"center",gap:"10px 26px",flexWrap:"wrap",fontSize:15,lineHeight:1.7}}>
-            <a href="/guides/roof-replacement-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Roof Replacement Costs</a>
-            <a href="/guides/furnace-replacement-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Furnace Replacement Costs</a>
-            <a href="/guides/bathroom-remodel-cost-billings-mt" style={{color:"#73d4ff",fontWeight:700}}>Bathroom Remodel Costs</a>
+      <section id="planning" aria-labelledby="planning-title" style={{ background: "#f0f6fa", padding: "clamp(34px, 5vw, 56px) 7%", borderBottom: "1px solid #dce7ee", fontFamily: "Arial, Helvetica, sans-serif" }}>
+        <style>{`
+          #planning .planning-card:hover { border-color: #009cda !important; box-shadow: 0 8px 24px rgba(15, 55, 80, .10); }
+          #planning .planning-card:focus-visible { outline: 3px solid #007eaf; outline-offset: 4px; }
+        `}</style>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 26 }}>
+            <p style={{ color: "#007da8", fontSize: 13, fontWeight: 800, letterSpacing: "0.14em", margin: "0 0 10px" }}>FREE BILLINGS HOMEOWNER GUIDES</p>
+            <h2 id="planning-title" style={{ color: "#101b27", fontSize: "clamp(30px, 4vw, 42px)", fontWeight: 850, lineHeight: 1.15, letterSpacing: "-0.035em", margin: "0 0 12px" }}>Planning a project?</h2>
+            <p style={{ color: "#485b6a", fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.5, margin: 0 }}>Understand costs before you call a contractor.</p>
+          </div>
+          <nav aria-label="Homeowner cost guides" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: 18 }}>
+            {[
+              ["Roof Replacement", "Compare roofing materials, project scope, and what to ask when gathering estimates.", "/guides/roof-replacement-cost-billings-mt"],
+              ["Furnace Replacement", "Explore equipment choices, installation factors, and questions for your HVAC pro.", "/guides/furnace-replacement-cost-billings-mt"],
+              ["Bathroom Remodeling", "Plan your scope, understand cost factors, and prepare for contractor estimates.", "/guides/bathroom-remodel-cost-billings-mt"],
+            ].map(([title, description, href]) => (
+              <a className="planning-card" key={href} href={href} style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", background: "#fff", border: "1px solid #d3e2ec", borderTop: "4px solid #00a8e8", borderRadius: 12, padding: "24px", textDecoration: "none", minWidth: 0, textAlign: "left" }}>
+                <h3 style={{ color: "#101b27", fontSize: 22, fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.02em", margin: "0 0 12px" }}>{title}</h3>
+                <p style={{ color: "#485b6a", fontSize: 16, lineHeight: 1.6, margin: "0 0 20px" }}>{description}</p>
+                <span style={{ color: "#007da8", fontSize: 16, fontWeight: 800, marginTop: "auto" }}>Read guide <span aria-hidden="true">→</span></span>
+              </a>
+            ))}
           </nav>
         </div>
       </section>
