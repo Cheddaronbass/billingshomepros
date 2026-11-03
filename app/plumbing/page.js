@@ -62,6 +62,24 @@ export default function PlumbingPage({ searchParams }) {
       emptyDescription="Try another plumbing service or view all plumbing professionals serving the Billings area."
       guideJump
       localGuide={{
+        "faqs": [
+  [
+    "Can I get a plumbing estimate over the phone?",
+    "A plumber may be able to explain call-out fees or give a preliminary range, but diagnosis and a written estimate may require a visit. Describe the problem, share photos if requested, and ask what you will owe before work begins."
+  ],
+  [
+    "What should a plumbing estimate include?",
+    "Ask for the work being proposed, labor and materials, any diagnostic or after-hours fees, cleanup, and warranty terms. For replacements, confirm who handles removal and any required permits, and how unexpected work will be approved."
+  ],
+  [
+    "Do plumbers serve homes outside the city?",
+    "Coverage varies by business. Give your exact service address before booking and ask about travel charges, arrival windows, and whether emergency appointments are available in your community."
+  ],
+  [
+    "What information should I have ready when I call?",
+    "Note which fixtures are affected, when the problem started, and whether it is recurring. For water-heater issues, have the equipment type and model available if accessible. Mention any active leak immediately and ask what to do while waiting."
+  ]
+],
         "title": "Choosing a Plumber in Billings, MT",
         "paragraphs": [
                 "For leaks, clogged drains, or water-heater trouble, describe the symptoms and ask whether a plumber offers diagnosis, repair, or replacement. For active leaks, locate your water shutoff and avoid affected electrical areas.",
