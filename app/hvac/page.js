@@ -66,6 +66,24 @@ emptyTitle="No matching HVAC listings yet."
       emptyDescription="Try another HVAC service or view all HVAC professionals serving the Billings area."
       guideJump
       localGuide={{
+        "faqs": [
+  [
+    "What should I have ready before booking heating or cooling service?",
+    "Describe the symptoms, when they began, and whether the issue affects the whole home. If accessible, note the equipment brand and model. Ask whether the company services that equipment and what its diagnostic visit costs."
+  ],
+  [
+    "Does an emergency-service listing guarantee a same-day visit?",
+    "No. Contact the provider to confirm current staffing, service coverage, arrival timing, and after-hours charges. A listed service describes what a business offers; it does not show live appointment availability."
+  ],
+  [
+    "What should I compare in HVAC replacement estimates?",
+    "Compare the proposed equipment, sizing assessment, installation work, controls, removal, permit responsibilities, and labor and equipment warranties. Ask what is excluded and how changes to the quoted scope are handled."
+  ],
+  [
+    "Can I book HVAC service for a home outside the city?",
+    "Ask the contractor to confirm your exact address and equipment type before booking. Rural coverage, travel charges, and emergency availability vary by business, even when its listing mentions surrounding communities."
+  ]
+],
         "title": "Choosing an HVAC Company in Billings, MT",
         "paragraphs": [
                 "Billings homeowners depend on heating through cold winters and cooling during hot summer weather. If your furnace or air conditioner struggles, ask an HVAC professional whether maintenance or a repair is appropriate before considering replacement.",
