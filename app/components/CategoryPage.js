@@ -358,6 +358,17 @@ export default async function CategoryPage({
             {localGuide.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            {localGuide.faqs?.length > 0 && (
+              <div style={{ marginTop: "2rem" }}>
+                <h2>Common questions about {category === "hvac" ? "heating and cooling" : "plumbing"} services</h2>
+                {localGuide.faqs.map(([question, answer]) => (
+                  <details key={question} style={{ borderTop: "1px solid #466176", padding: "16px 0" }}>
+                    <summary style={{ cursor: "pointer", fontWeight: 700, fontSize: "1.1rem" }}>{question}</summary>
+                    <p style={{ margin: "12px 0 0" }}>{answer}</p>
+                  </details>
+                ))}
+              </div>
+            )}
           </section>
         )}
       </section>
