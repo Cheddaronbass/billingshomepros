@@ -271,7 +271,7 @@ export default function Home() {
         </div>
 
         <div className="featureGrid">
-          <div className="feature">
+          <div className="feature" style={{ textAlign: "center" }}>
             <strong>Local Focus</strong>
             <p>
               Find professionals serving Billings, Laurel and nearby Yellowstone
@@ -286,7 +286,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="feature">
+          <div className="feature" style={{ textAlign: "center" }}>
             <strong>Easy to Compare</strong>
             <p>
               Browse by the work you need and compare services and business
