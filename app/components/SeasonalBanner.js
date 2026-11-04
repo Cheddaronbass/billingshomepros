@@ -1,5 +1,9 @@
+"use client";
+import { useEffect, useState } from "react";
+
 export default function SeasonalBanner() {
-  const month = Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/Denver", month: "numeric" }).format(new Date()));
+  const [month, setMonth] = useState(11);
+  useEffect(() => { setMonth(Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/Denver", month: "numeric" }).format(new Date()))); }, []);
   const winter = month >= 9 || month <= 2;
   const message = winter ? "Cold weather is here. Is your home ready?" : month <= 5 ? "Time for a spring home checkup." : "Keep your home ready for summer.";
   return (
