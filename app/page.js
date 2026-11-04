@@ -270,6 +270,11 @@ export default function Home() {
           </p>
         </div>
 
+        <style>{`
+          #why .feature { text-align: center; }
+          #why .feature > strong { display: flex; align-items: center; justify-content: center; min-height: 2.4em; line-height: 1.2; }
+          @media (max-width: 760px) { #why .feature > strong { min-height: 0; } }
+        `}</style>
         <div className="featureGrid">
           <div className="feature" style={{ textAlign: "center" }}>
             <strong>Local Focus</strong>
@@ -280,7 +285,7 @@ export default function Home() {
           </div>
 
           <div className="feature">
-            <strong style={{ display: "flex", alignItems: "center", gap: 10 }}><span aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#9199a3", fontSize: 32, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>✓</span><span>What the Silver Checkmark Means</span></strong>
+            <strong style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}><span aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#9199a3", fontSize: 32, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>✓</span><span>What the Silver Checkmark Means</span></strong>
             <p>
               The business has contacted Billings Home Pros directly. This does not verify licensing, insurance, workmanship or availability.
             </p>
