@@ -303,15 +303,15 @@ export default function Home() {
               <h2 style={{ margin: "0 0 8px", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.25rem, 2.2vw, 1.6rem)", fontWeight: 850, lineHeight: 1.2, color: "#fff", letterSpacing: "-0.02em" }}>Handymen welcome!</h2>
               <p style={{ margin: 0, color: "#d3e1ea", fontSize: "0.96rem", lineHeight: 1.6 }}>Work for yourself? No website? No problem. Get your business listed on Home Pros.</p>
             </div>
-            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", textAlign: "center", flexShrink: 0 }}>Get Your Free Listing →</a>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, minWidth: 225, fontSize: 16, padding: "12px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", textAlign: "center", flexShrink: 0 }}>Get Your Free Listing →</a>
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "22px 32px", padding: "42px 4px 0" }}>
-            <div style={{ flex: "1 1 380px", minWidth: 0 }}>
-              <div style={{ color: "#25b9ff", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.13em", marginBottom: 12 }}>BILLINGS CONTRACTORS</div>
-              <h2 style={{ color: "#fff", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.35rem)", fontWeight: 850, letterSpacing: "-0.035em", lineHeight: 1.2, margin: "0 0 12px" }}>Are you a local home-service professional?</h2>
-              <p style={{ color: "#c4d2df", lineHeight: 1.65, margin: 0 }}>Basic listings are free. Share your services and contact details so Billings-area homeowners can find your business. No website required.</p>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "18px 28px", padding: "28px 26px 0" }}>
+            <div style={{ flex: "1 1 340px", minWidth: 0 }}>
+              <div style={{ color: "#25b9ff", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.13em", marginBottom: 8 }}>BILLINGS CONTRACTORS</div>
+              <h2 style={{ color: "#fff", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.25rem, 2.2vw, 1.6rem)", fontWeight: 850, letterSpacing: "-0.02em", lineHeight: 1.2, margin: "0 0 8px" }}>Are you a local home-service professional?</h2>
+              <p style={{ color: "#d3e1ea", fontSize: "0.96rem", lineHeight: 1.6, margin: 0 }}>Basic listings are free. Share your services and contact details so Billings-area homeowners can find your business. No website required.</p>
             </div>
-            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 24px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", flexShrink: 0 }}>Get Your Free Listing →</a>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, minWidth: 225, fontSize: 16, padding: "12px 20px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", flexShrink: 0 }}>Get Your Free Listing →</a>
           </div>
         </div>
       </section>
