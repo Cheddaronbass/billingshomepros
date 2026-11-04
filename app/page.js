@@ -1,6 +1,7 @@
 export const metadata = { alternates: { canonical: "/" } };
 
 import HomeSearch from "./components/HomeSearch";
+import SeasonalBanner from "./components/SeasonalBanner";
 
 const services = [
   {
@@ -123,23 +124,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Seasonal homepage link: update the label and href each season. */}
-      <a
-        href="/guides/winter-home-checklist"
-        aria-label="Read the Montana winter home preparation checklist"
-        style={{
-          display: "flex", alignItems: "center", justifyContent: "center",
-          flexWrap: "wrap", gap: "5px 9px", padding: "11px 18px",
-          background: "#142536", color: "#e6f2fa", textAlign: "center",
-          borderBottom: "1px solid #2b4b63", fontFamily: "Arial, Helvetica, sans-serif",
-          fontSize: "clamp(0.78rem, 2.5vw, 0.9rem)", lineHeight: 1.45,
-          textDecoration: "none"
-        }}
-      >
-        <span aria-hidden="true">❄</span>
-        <span>Winter is coming. Is your home ready?</span>
-        <span style={{ color: "#58caff", fontWeight: 800 }}>View the checklist →</span>
-      </a>
+      <SeasonalBanner />
 
       <section className="hero">
         <div className="heroLogoWrap">
@@ -291,10 +276,9 @@ export default function Home() {
           </div>
 
           <div className="feature">
-            <strong>Useful Details</strong>
+            <strong>What the Silver Checkmark Means</strong>
             <p>
-              See services, service areas and contact information in one
-              straightforward place.
+              The business has contacted Billings Home Pros directly. This does not verify licensing, insurance, workmanship or availability.
             </p>
           </div>
 
@@ -321,9 +305,9 @@ export default function Home() {
             <div style={{ flex: "1 1 380px", minWidth: 0 }}>
               <div style={{ color: "#25b9ff", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.13em", marginBottom: 12 }}>BILLINGS CONTRACTORS</div>
               <h2 style={{ color: "#fff", fontFamily: "Arial, Helvetica, sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.35rem)", fontWeight: 850, letterSpacing: "-0.035em", lineHeight: 1.2, margin: "0 0 12px" }}>Are you a local home-service professional?</h2>
-              <p style={{ color: "#c4d2df", lineHeight: 1.65, margin: 0 }}>Get your business in front of Billings-area homeowners searching for the services you provide.</p>
+              <p style={{ color: "#c4d2df", lineHeight: 1.65, margin: 0 }}>Basic listings are free. Share your services and contact details so Billings-area homeowners can find your business. No website required.</p>
             </div>
-            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 24px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", flexShrink: 0 }}>Get Listed →</a>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 24px", background: "#25b9ff", color: "#0b1117", borderRadius: 8, fontWeight: 800, textDecoration: "none", flexShrink: 0 }}>Get Your Free Listing →</a>
           </div>
         </div>
       </section>
