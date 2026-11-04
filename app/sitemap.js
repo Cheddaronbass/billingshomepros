@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 const baseUrl = "https://billingshomepros.com";
 
 const pages = [
+  { path: "/guides/furnace-wont-light", priority: 0.7 },
   { path: "", priority: 1.0 },
   { path: "/site-map", priority: 0.5 },
   { path: "/our-progress", priority: 0.5 },
