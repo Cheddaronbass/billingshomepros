@@ -264,7 +264,7 @@ export default function Home() {
 
           <h2>Local home services without the runaround.</h2>
 
-          <p style={{ color: "var(--blue)", maxWidth: 850, marginInline: "auto", lineHeight: 1.65 }}>
+          <p style={{ color: "#009de0", maxWidth: 850, marginInline: "auto", lineHeight: 1.65 }}>
             Discover local home-service professionals, compare their services,
             and find the right fit for your next project.
           </p>
