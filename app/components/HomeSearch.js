@@ -238,6 +238,8 @@ export default function HomeSearch() {
           type="text"
           placeholder="What do you need help with?"
           aria-label="Search home services"
+          list="home-service-suggestions"
+          autoComplete="off"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
@@ -245,6 +247,9 @@ export default function HomeSearch() {
         <button type="submit">Find a Pro</button>
       </form>
 
+      <datalist id="home-service-suggestions">
+        {["Plumbing", "Water heaters", "Drain cleaning", "Heating", "Furnace repair", "Air conditioning", "Electrical", "Roofing", "Remodeling", "Landscaping", "Painting", "Concrete", "Fencing", "Windows & Doors", "Flooring", "Handyman"].map((service) => <option key={service} value={service} />)}
+      </datalist>
       <p className="searchHint">
         Try windows, flooring, plumbing, heating, roofing or remodeling
       </p>
