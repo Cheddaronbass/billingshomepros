@@ -222,7 +222,7 @@ export default async function CategoryPage({
           })}
         </div>
 
-        <aside style={{ margin: "22px 0 28px", padding: "20px 24px", border: "1px solid rgba(37,185,255,.4)", borderRadius: 16, background: "linear-gradient(110deg, #102638, #0b1722)", color: "#fff", display: "flex", flexWrap: "wrap", gap: 18, alignItems: "center", justifyContent: "space-between" }}>
+        <aside style={{ maxWidth: 1100, margin: "22px auto 28px", padding: "20px 24px", border: "1px solid rgba(37,185,255,.4)", borderRadius: 16, background: "linear-gradient(110deg, #102638, #0b1722)", color: "#fff", display: "flex", flexWrap: "wrap", gap: 18, alignItems: "center", justifyContent: "space-between" }}>
           <div><strong style={{ display: "block", fontSize: "1.15rem" }}>Are you a local {categoryLabel.toLowerCase()} professional?</strong><span style={{ display: "block", marginTop: 5, color: "#d3e5ee" }}>Join the directory. Basic business listings are free.</span></div>
           <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "13px 20px", borderRadius: 10, background: "#25b9ff", color: "#06131d", fontWeight: 800, textDecoration: "none", minHeight: 46 }}>List Your Business →</a>
         </aside>
