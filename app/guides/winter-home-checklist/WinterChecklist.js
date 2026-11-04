@@ -189,7 +189,7 @@ export default function WinterChecklist() {
           <progress aria-label="Winter checklist completion" max={ids.length} value={checked.length}/>
         </div>
         <nav className={styles.jump} aria-label="Checklist stages">{groups.map((group, index) => <a key={group.id} href={"#" + group.id}><span>0{index + 1}</span>{group.title} ↓</a>)}</nav>
-        <aside className={styles.note}><strong>Start with what your home needs now.</strong> If freezing weather has already arrived, prioritize exposed water lines and reliable heat. Use qualified professionals for gas, electrical, chimney, and elevated work.</aside>
+        <aside className={styles.note}><Link href="/guides/furnace-wont-light"><strong>Furnace won’t light? Start with our safe first checks →</strong></Link><br/><strong>Start with what your home needs now.</strong> If freezing weather has already arrived, prioritize exposed water lines and reliable heat. Use qualified professionals for gas, electrical, chimney, and elevated work.</aside>
         {groups.map((group, index) => <section key={group.id} id={group.id} className={styles.stage}>
           <div className={styles.stageHeading}><span className={styles.number}>0{index + 1}</span><div><h2>{group.title}</h2><p>{group.intro}</p></div></div>
           <div className={styles.grid}>{group.tasks.map(([id, title, detail, tip, href, label]) => <article key={id} className={styles.card} data-complete={checked.includes(id)}>
