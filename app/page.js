@@ -158,6 +158,10 @@ export default function Home() {
           </p>
 
           <HomeSearch />
+          <div style={{ marginTop: 20, textAlign: "center" }}>
+            <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 22px", background: "#25b9ff", color: "#071521", borderRadius: 9, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>Get Your Free Listing →</a>
+            <p style={{ color: "#e0edf5", fontSize: 14, lineHeight: 1.5, margin: "9px 0 0" }}>For local home-service businesses. No website required.</p>
+          </div>
         </div>
       </section>
 
