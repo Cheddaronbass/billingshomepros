@@ -280,7 +280,7 @@ export default function Home() {
           </div>
 
           <div className="feature">
-            <strong>What the Silver Checkmark Means</strong>
+            <strong style={{ display: "flex", alignItems: "center", gap: 10 }}><span aria-hidden="true" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#9199a3", fontSize: 32, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>✓</span><span>What the Silver Checkmark Means</span></strong>
             <p>
               The business has contacted Billings Home Pros directly. This does not verify licensing, insurance, workmanship or availability.
             </p>
