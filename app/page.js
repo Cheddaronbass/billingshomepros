@@ -274,8 +274,8 @@ export default function Home() {
           <div className="feature">
             <strong>Local Focus</strong>
             <p>
-              Find professionals serving Billings and nearby Yellowstone
-              County communities.
+              Find professionals serving Billings, Laurel and nearby Yellowstone
+              County communities. Review each business’s service area and contact details to find local help for repairs, maintenance and larger home projects.
             </p>
           </div>
 
@@ -289,8 +289,8 @@ export default function Home() {
           <div className="feature">
             <strong>Easy to Compare</strong>
             <p>
-              Browse by the work you actually need instead of sorting through
-              unrelated businesses.
+              Browse by the work you actually need, then compare listed services,
+              business details and ways to get in touch. Visit profiles and contact professionals directly to ask about estimates, scheduling and your project.
             </p>
           </div>
         </div>
