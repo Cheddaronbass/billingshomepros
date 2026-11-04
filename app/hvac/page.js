@@ -27,7 +27,7 @@ const filters = [
   },
   {
     label: "Furnace Repair",
-    href: "/hvac?service=furnace-repair",
+    href: "/hvac/furnace-repair",
     value: "furnace-repair",
   },
   {
@@ -102,7 +102,6 @@ emptyTitle="No matching HVAC listings yet."
     <section aria-label="Specialist services" style={{background:"#0b1117",padding:"20px 18px",borderTop:"1px solid #243c50"}}>
       <div style={{maxWidth:1000,margin:"0 auto",display:"flex",alignItems:"center",gap:14,flexWrap:"wrap"}}>
         <strong style={{color:"#fff",fontSize:15}}>Looking for a specific service?</strong>
-        <Link href="/hvac/furnace-repair" style={{color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>Furnace repair in Billings →</Link>
         <Link href="/hvac/ac-repair" style={{color:"#73d4ff",fontWeight:700,textUnderlineOffset:3}}>AC repair in Billings →</Link>
       </div>
     </section>
