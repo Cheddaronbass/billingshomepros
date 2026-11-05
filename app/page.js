@@ -126,12 +126,53 @@ export default function Home() {
 
       <section className="hero skylineHero">
         <img className="skylinePhoto" src="/billings-rims-sunset.webp" alt="Golden evening light on the Rimrocks above Billings, photographed by Shawn Eby" width="2048" height="1365" fetchPriority="high" />
+
+        <style>{`
+          /* Keep the authentic photograph intact and leave downtown below the controls. */
+          .skylineHero.hero { min-height: max(850px, 66.65vw); padding: 30px 5% 340px; background: #426583; }
+          .skylineHero .skylinePhoto { object-position: center top; }
+          .skylineHero .heroCopy { max-width: 1100px; }
+          .skylineHeroLogo { display: block; width: 200px; height: auto; margin: 0 auto 16px; filter: drop-shadow(0 2px 5px #16365055); }
+          .skylineHero .eyebrow { margin-bottom: 10px; font-size: 13px; }
+          .skylineHero h1 { font-size: clamp(38px, 3.15vw, 54px); margin-bottom: 10px; }
+          .skylineHero .heroText { font-size: clamp(18px, 1.45vw, 23px); line-height: 1.4; margin-bottom: 18px; }
+          .skylineHero .searchBox { max-width: 800px; }
+          .skylineHero .searchHint { margin-top: 8px; }
+          .skylineHero .heroListing { margin-top: 12px; text-align: center; }
+          @media (max-width: 1100px) and (min-width: 761px) {
+            .skylineHero.hero { min-height: 980px; }
+          }
+          @media (max-width: 760px) {
+            .skylineHero.hero { min-height: 900px; padding: 28px 6% 340px; }
+            .skylineHeroLogo { width: 165px; margin-bottom: 16px; }
+            .skylineHero .skylinePhoto { inset: auto auto 0 50%; width: auto; max-width: none; height: 440px; transform: translateX(-56%); object-fit: contain; }
+            .skylineHero::before { background: linear-gradient(180deg, rgba(4,31,58,.25) 0%, rgba(4,31,58,.18) 45%, rgba(4,31,58,0) 76%); }
+            .skylineHero h1 { font-size: clamp(32px, 8.2vw, 44px); line-height: 1.1; }
+            .skylineHero .eyebrow { font-size: 10px; letter-spacing: .14em; }
+            .skylineHero .heroText { font-size: 18px; }
+            .skylineHero .searchHint { font-size: 13px; }
+          }
+        `}</style>
         <div className="heroCopy">
+          <svg className="skylineHeroLogo" viewBox="0 0 1356 775" role="img" aria-label="Billings Home Pros">
+            <defs>
+              <filter id="hero-logo-colors" colorInterpolationFilters="sRGB">
+                <feColorMatrix type="matrix" values="0 1 0 0 0  0 1 0 0 0  0 1 0 0 0  0 0 0 1 0" />
+                <feComponentTransfer>
+                  <feFuncR type="table" tableValues="1 1 0 0 1" />
+                  <feFuncG type="table" tableValues="1 1 .62 .62 1" />
+                  <feFuncB type="table" tableValues="1 1 1 1 1" />
+                </feComponentTransfer>
+              </filter>
+            </defs>
+            <image href="/bhp-logo-clean.png" width="1356" height="775" filter="url(#hero-logo-colors)" />
+          </svg>
+
           <div className="eyebrow">BILLINGS • YELLOWSTONE COUNTY</div>
           <h1>Local pros. Right here in Billings.</h1>
           <p className="heroText">Find local help for your home, from repairs to renovations.</p>
           <HomeSearch />
-          <div style={{ marginTop: 20, textAlign: "center" }}>
+          <div className="heroListing">
             <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 22px", background: "#25b9ff", color: "#071521", borderRadius: 9, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>Get Your Free Listing →</a>
             <p style={{ color: "#e0edf5", fontSize: 14, lineHeight: 1.5, margin: "9px 0 0" }}>For local home-service businesses. No website required.</p>
           </div>
