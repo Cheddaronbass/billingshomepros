@@ -145,7 +145,7 @@ export default function Home() {
           @media (max-width: 760px) {
             .skylineHero.hero { min-height: 900px; padding: 28px 6% 340px; }
             .skylineHeroLogo { width: 165px; margin-bottom: 16px; }
-            .skylineHero .skylinePhoto { inset: auto auto 0 50%; width: auto; max-width: none; height: 440px; transform: translateX(-56%); object-fit: contain; }
+            .skylineHero .skylinePhoto { inset: auto auto 0 50%; width: auto; max-width: none; height: 440px; transform: translateX(-56%); object-fit: contain; mask-image: linear-gradient(180deg, transparent 0%, #000 24%); }
             .skylineHero::before { background: linear-gradient(180deg, rgba(4,31,58,.25) 0%, rgba(4,31,58,.18) 45%, rgba(4,31,58,0) 76%); }
             .skylineHero h1 { font-size: clamp(32px, 8.2vw, 44px); line-height: 1.1; }
             .skylineHero .eyebrow { font-size: 10px; letter-spacing: .14em; }
