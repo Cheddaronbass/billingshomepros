@@ -129,30 +129,30 @@ export default function Home() {
 
         <style>{`
           /* Keep the authentic photograph intact and leave downtown below the controls. */
-          .skylineHero.hero { min-height: max(960px, 66.65vw); padding: 30px 5% 65px; background: #426583; }
-          .skylineHero .skylinePhoto { object-position: center top; }
+          .skylineHero.hero { min-height: max(768px, 53.32vw); padding: 30px 5% 30px; background: #426583; }
+          .skylineHero .skylinePhoto { height: 125%; object-position: center top; }
           .skylineHero .heroCopy { max-width: 1100px; }
           .skylineHeroLogo { display: block; width: 320px; height: auto; margin: 0 auto 18px; filter: drop-shadow(0 2px 5px #16365055); }
           .skylineHero .eyebrow { margin-bottom: 14px; font-size: 18px; }
-          .skylineHero .heroSearchDock { margin-top: clamp(170px, 17vw, 285px); }
+          .skylineHero .heroSearchDock { margin-top: clamp(130px, 11.5vw, 195px); }
           .skylineHero h1 { font-size: clamp(38px, 3.15vw, 54px); margin-bottom: 10px; }
           .skylineHero .heroText { font-size: clamp(18px, 1.45vw, 23px); line-height: 1.4; margin-bottom: 18px; }
           .skylineHero .searchBox { max-width: 800px; }
           .skylineHero .searchHint { margin-top: 8px; }
           .skylineHero .heroListing { margin-top: 12px; text-align: center; }
           @media (max-width: 1100px) and (min-width: 761px) {
-            .skylineHero.hero { min-height: 1080px; }
+            .skylineHero.hero { min-height: 864px; }
           }
           @media (max-width: 760px) {
-            .skylineHero.hero { min-height: 945px; padding: 28px 6% 45px; }
+            .skylineHero.hero { min-height: 756px; padding: 28px 6% 30px; }
             .skylineHeroLogo { width: 240px; margin-bottom: 18px; }
             .skylineHero .skylinePhoto { inset: auto auto 0 50%; width: auto; max-width: none; height: 640px; transform: translateX(-56%); object-fit: contain; mask-image: linear-gradient(180deg, transparent 0%, #000 24%); }
             .skylineHero::before { background: linear-gradient(180deg, rgba(4,31,58,.25) 0%, rgba(4,31,58,.18) 45%, rgba(4,31,58,0) 76%); }
             .skylineHero h1 { font-size: clamp(32px, 8.2vw, 44px); line-height: 1.1; }
             .skylineHero .eyebrow { font-size: 10px; letter-spacing: .14em; }
             .skylineHero .heroText { font-size: 18px; }
-            .skylineHero .heroSearchDock { margin-top: 310px; }
-            .skylineHero .skylinePhoto { bottom: 0; }
+            .skylineHero .heroSearchDock { margin-top: 180px; }
+            .skylineHero .skylinePhoto { bottom: -128px; }
             .skylineHero .heroListing p { text-shadow: 0 1px 5px #102a46; }
             .skylineHero .searchHint { font-size: 13px; }
           }
