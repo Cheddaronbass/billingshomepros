@@ -104,59 +104,32 @@ const services = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="skylineHome">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [
     { "@context": "https://schema.org", "@type": "Organization", "@id": "https://billingshomepros.com/#organization", name: "Billings Home Pros", url: "https://billingshomepros.com/", description: "A local directory connecting Billings-area homeowners with home-service businesses." },
     { "@context": "https://schema.org", "@type": "WebSite", "@id": "https://billingshomepros.com/#website", name: "Billings Home Pros", url: "https://billingshomepros.com/", publisher: { "@id": "https://billingshomepros.com/#organization" } }
       ] }).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
-        <a className="textBrand" href="/">
-          <span className="brandMain">Billings Home Pros</span>
-          <span className="brandSub">
-            LOCAL HOME SERVICES • BILLINGS, MT
-          </span>
+        <a className="skylineBrand" href="/" aria-label="Billings Home Pros home">
+          <img src="/bhp-logo-clean.png" alt="" width="1356" height="775" />
+          <span>Billings Home Pros</span>
         </a>
-
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="#services">Find a Pro</a>
-          <a href="#why">Why Home Pros?</a>
-          <a href="#pros">For Contractors</a>
+          <a href="#planning">Homeowner Guides</a>
+          <a href="#why">About</a>
+          <a className="headerListing" href="/get-listed">List Your Business</a>
         </nav>
       </header>
 
       <SeasonalBanner />
 
-      <section className="hero">
-        <div className="heroLogoWrap">
-  <img
-    className="heroLogo"
-    src="/bhp-logo-clean.png"
-    alt="Billings Home Pros — local home services in Billings, Montana"
-    style={{
-      width: "100%",
-      maxWidth: "500px",
-      height: "auto",
-      display: "block",
-      margin: "0 auto"
-    }}
-  />
-</div>
-
+      <section className="hero skylineHero">
+        <img className="skylinePhoto" src="/billings-rims-sunset.webp" alt="Golden evening light on the Rimrocks above Billings, photographed by Shawn Eby" width="2048" height="1365" fetchPriority="high" />
         <div className="heroCopy">
-          <div className="eyebrow builtForBillings">
-  BILLINGS • LAUREL • YELLOWSTONE COUNTY
-</div>
-          <h1>
-          Find the Right
-<br />
-<span>Home Pro.</span>
-          </h1>
-
-          <p className="heroText">
-            Find local home-service professionals serving Billings and the
-            surrounding Yellowstone County area.
-          </p>
-
+          <div className="eyebrow">BILLINGS • YELLOWSTONE COUNTY</div>
+          <h1>Local pros. Right here in Billings.</h1>
+          <p className="heroText">Find local help for your home, from repairs to renovations.</p>
           <HomeSearch />
           <div style={{ marginTop: 20, textAlign: "center" }}>
             <a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: "12px 22px", background: "#25b9ff", color: "#071521", borderRadius: 9, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>Get Your Free Listing →</a>
@@ -169,7 +142,7 @@ export default function Home() {
         <div className="sectionHeading">
           <div className="eyebrow builtForBillings">START YOUR SEARCH</div>
 
-          <h2>What does your home need?</h2>
+          <h2>What can we help you with?</h2>
 
           <p>
             Start with one of our main home-service categories and find
