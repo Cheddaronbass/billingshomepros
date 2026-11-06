@@ -141,14 +141,17 @@ export default async function CategoryPage({
       itemListElement: businesses.map((business, index) => ({
         "@type": "ListItem",
         position: index + 1,
+        url: `https://billingshomepros.com/pros/${business.id}`,
         item: {
           "@type": "LocalBusiness",
+          "@id": `https://billingshomepros.com/pros/${business.id}#business`,
+          mainEntityOfPage: `https://billingshomepros.com/pros/${business.id}`,
           name: business.name,
           ...(business.description ? { description: business.description } : {}),
           ...(business.phone ? { telephone: business.phone } : {}),
           ...(business.website && business.website.startsWith("https://") || business.website && business.website.startsWith("http://")
             ? { url: business.website }
-            : {}),
+            : { url: `https://billingshomepros.com/pros/${business.id}` }),
           areaServed: business.service_area || "Billings, Montana",
           ...(Array.isArray(business.services) && business.services.length
             ? { knowsAbout: business.services }

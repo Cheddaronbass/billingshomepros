@@ -233,7 +233,7 @@ export default function HomeSearch() {
 
   return (
     <>
-      <form className="searchBox" onSubmit={handleSearch}>
+      <form className="searchBox" role="search" aria-label="Find local home services" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="What do you need help with?"

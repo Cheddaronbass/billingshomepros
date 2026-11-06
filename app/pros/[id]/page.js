@@ -69,15 +69,30 @@ export default async function BusinessProfile({ params }) {
     name: business.name,
     description: business.description || undefined,
     telephone: business.phone || undefined,
-    url: business.website?.startsWith("https://") || business.website?.startsWith("http://") ? business.website : undefined,
+    url: business.website?.startsWith("https://") || business.website?.startsWith("http://") ? business.website : profileUrl,
     areaServed: business.service_area || "Billings, Montana",
     knowsAbout: Array.isArray(business.services) ? business.services : undefined,
-    mainEntityOfPage: profileUrl,
+    mainEntityOfPage: { "@id": `${profileUrl}#webpage` },
+  };
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      schema,
+      {
+        "@type": "WebPage",
+        "@id": `${profileUrl}#webpage`,
+        url: profileUrl,
+        name: business.name,
+        mainEntity: { "@id": `${profileUrl}#business` },
+        isPartOf: { "@id": "https://billingshomepros.com/#website" },
+        publisher: { "@id": "https://billingshomepros.com/#organization" },
+      },
+    ],
   };
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="textBrand" href="/"><span className="brandMain">Billings Home Pros</span><span className="brandSub">LOCAL HOME SERVICES • BILLINGS, MT</span></a>
         <nav><a href="/">Home</a><a href="/#services">Services</a><a href="/#pros">For Contractors</a><a href="/get-listed" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "11px 17px", borderRadius: 10, background: "#24baff", color: "#071521", fontWeight: 800, textDecoration: "none" }}>List Your Business</a></nav>
