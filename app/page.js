@@ -38,7 +38,7 @@ const services = [
   },
   {
     name: "Contractors & Remodeling",
-    image: "https://unsplash.com/photos/J2AdfKkDY5s/download?w=700",
+    image: "/services/contractors-remodeling.webp",
     description: "Remodeling, additions, repairs & general contracting",
     href: "/contractors-remodeling",
     iconPath: "M9.8,17L5.9,11.6L20,2L22,5V8H19V11H16V14H13V17M9.7,18.7L9.2,21.5L7.6,22.7C6.7,23.3 5.5,23.1 4.8,22.2L1.3,17.3C0.7,16.4 0.9,15.2 1.8,14.5L5.1,12.2L9.7,18.7M4.6,15L3,16.1L6.5,21L8.1,19.8L4.6,15Z",
@@ -94,7 +94,7 @@ const services = [
   },
   {
     name: "Handyman",
-    image: "https://unsplash.com/photos/Klby0nxseY8/download?w=700",
+    image: "/services/handyman.webp",
     description: "Home repairs, drywall, maintenance & installations",
     href: "/handyman",
     iconPath: "M2 19.63L13.43 8.2L12.72 7.5L14.14 6.07L12 3.89C13.2 2.7 15.09 2.7 16.27 3.89L19.87 7.5L18.45 8.91H21.29L22 9.62L18.45 13.21L17.74 12.5V9.62L16.27 11.04L15.56 10.33L4.13 21.76L2 19.63Z",
