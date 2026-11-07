@@ -133,7 +133,7 @@ export default function Home() {
           .skylineHero .skylinePhoto { height: 125%; object-position: center top; }
           .skylineHero .heroCopy { max-width: 1100px; }
           @media (min-width: 761px) {
-            .skylineHero .heroCopy { transform: translateY(90px); }
+            .skylineHero .heroBrandCopy { transform: translateY(90px); }
           }
           .skylineHeroLogo { display: block; width: 320px; height: auto; margin: 0 auto 18px; filter: drop-shadow(0 2px 5px #16365055); }
           .skylineHero .eyebrow { margin-bottom: 14px; font-size: 18px; }
@@ -161,6 +161,7 @@ export default function Home() {
           }
         `}</style>
         <div className="heroCopy">
+          <div className="heroBrandCopy">
           <svg className="skylineHeroLogo" viewBox="0 0 1356 775" role="img" aria-label="Billings Home Pros">
             <defs>
               <filter id="hero-logo-colors" colorInterpolationFilters="sRGB">
@@ -178,6 +179,7 @@ export default function Home() {
           <div className="eyebrow">BILLINGS • YELLOWSTONE COUNTY</div>
           <h1>Local pros. Right here in Billings.</h1>
           <p className="heroText">Find local help for your home, from repairs to renovations.</p>
+          </div>
           <div className="heroSearchDock">
           <HomeSearch />
           <div className="heroListing">
