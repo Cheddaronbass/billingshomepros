@@ -132,6 +132,9 @@ export default function Home() {
           .skylineHero.hero { min-height: max(768px, 53.32vw); padding: 30px 5% 30px; background: #426583; }
           .skylineHero .skylinePhoto { height: 125%; object-position: center top; }
           .skylineHero .heroCopy { max-width: 1100px; }
+          @media (min-width: 761px) {
+            .skylineHero .heroCopy { transform: translateY(90px); }
+          }
           .skylineHeroLogo { display: block; width: 320px; height: auto; margin: 0 auto 18px; filter: drop-shadow(0 2px 5px #16365055); }
           .skylineHero .eyebrow { margin-bottom: 14px; font-size: 18px; }
           .skylineHero .heroSearchDock { margin-top: clamp(130px, 11.5vw, 195px); }
