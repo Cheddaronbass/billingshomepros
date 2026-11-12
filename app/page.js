@@ -1,3 +1,4 @@
+import MountainLogo from "./components/MountainLogo";
 export const metadata = { alternates: { canonical: "/" } };
 
 import HomeSearch from "./components/HomeSearch";
@@ -111,7 +112,7 @@ export default function Home() {
       ] }).replace(/</g, "\\u003c") }} />
       <header className="siteHeader">
         <a className="skylineBrand" href="/" aria-label="Billings Home Pros home">
-          <img src="/bhp-logo-clean.png" alt="" width="1356" height="775" />
+          <MountainLogo className="skylineHeaderLogo" dark />
           <span>Billings Home Pros</span>
         </a>
         <nav aria-label="Main navigation">
@@ -162,19 +163,7 @@ export default function Home() {
         `}</style>
         <div className="heroCopy">
           <div className="heroBrandCopy">
-          <svg className="skylineHeroLogo" viewBox="0 0 1356 775" role="img" aria-label="Billings Home Pros">
-            <defs>
-              <filter id="hero-logo-colors" colorInterpolationFilters="sRGB">
-                <feColorMatrix type="matrix" values="0 1 0 0 0  0 1 0 0 0  0 1 0 0 0  0 0 0 1 0" />
-                <feComponentTransfer>
-                  <feFuncR type="table" tableValues="1 1 0 0 1" />
-                  <feFuncG type="table" tableValues="1 1 .62 .62 1" />
-                  <feFuncB type="table" tableValues="1 1 1 1 1" />
-                </feComponentTransfer>
-              </filter>
-            </defs>
-            <image href="/bhp-logo-clean.png" width="1356" height="775" filter="url(#hero-logo-colors)" />
-          </svg>
+          <MountainLogo className="skylineHeroLogo" />
 
           <div className="eyebrow">BILLINGS • YELLOWSTONE COUNTY</div>
           <h1>Local pros. Right here in Billings.</h1>

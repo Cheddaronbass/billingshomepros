@@ -9,6 +9,7 @@ const groups = [
   {
     title: "What we've improved",
     items: [
+      "November 12, 2026 — Updated our homepage branding with the mountain-and-roof BHP logo to match our Facebook cover.",
       "November 12, 2026 — Enriched four unclaimed listings (Houser Plumbing, G&T Plumbing & Mechanical, Homewerx Services, and The Patch Guys) with specific services and service areas from the businesses’ own websites. Clarified G&T’s published night/weekend emergency availability. Licensing status, ratings, reviews, and customer outcomes were not added or implied.",
       "October 27, 2026 — Expanded direct outreach to Billings community organizations, neighborhood groups and homeowners' associations, asking permission to share useful homeowner resources. Emails sent do not mean the organizations have endorsed or shared the site.",
       "October 26–27, 2026 — Verified live Featured subscription payment, webhook behavior and cancellation/reversal handling. No customer results or ongoing subscriber count are claimed.",

@@ -2379,7 +2379,7 @@ footer small {
   box-shadow: none; border-bottom: 1px solid #dce7ee; gap: 24px;
 }
 .skylineBrand { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
-.skylineBrand img { width: 112px; height: auto; display: block; }
+.skylineBrand .skylineHeaderLogo { width: 112px; height: auto; display: block; }
 .skylineBrand span { border-left: 1px solid #acbcc9; padding-left: 20px; font-size: 23px; font-weight: 800; letter-spacing: -.025em; }
 .skylineHome .siteHeader nav { display: flex; gap: 26px; font-size: 15px; }
 .skylineHome .siteHeader nav a { color: #101b27; }
@@ -2409,7 +2409,7 @@ footer small {
 }
 @media (max-width: 760px) {
   .skylineHome .siteHeader { padding: 10px 5%; min-height: 76px; gap: 12px; }
-  .skylineBrand img { width: 92px; }
+  .skylineBrand .skylineHeaderLogo { width: 92px; }
   .skylineHome .siteHeader nav { gap: 0; font-size: 14px; }
   .skylineHome .siteHeader nav a:not(.headerListing) { display: none; }
   .skylineHome .headerListing { padding: 10px 12px; }
