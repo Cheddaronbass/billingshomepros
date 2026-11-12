@@ -9,6 +9,7 @@ const groups = [
   {
     title: "What we've improved",
     items: [
+      "November 12, 2026 — Enriched four unclaimed listings (Houser Plumbing, G&T Plumbing & Mechanical, Homewerx Services, and The Patch Guys) with specific services and service areas from the businesses’ own websites. Clarified G&T’s published night/weekend emergency availability. Licensing status, ratings, reviews, and customer outcomes were not added or implied.",
       "October 27, 2026 — Expanded direct outreach to Billings community organizations, neighborhood groups and homeowners' associations, asking permission to share useful homeowner resources. Emails sent do not mean the organizations have endorsed or shared the site.",
       "October 26–27, 2026 — Verified live Featured subscription payment, webhook behavior and cancellation/reversal handling. No customer results or ongoing subscriber count are claimed.",
       "October 23–24, 2026 — Added server-side Cloudflare Turnstile verification to key submission flows and improved phone-number formatting.",
@@ -43,7 +44,7 @@ export default function OurProgressPage() {
           <p style={{ color: "#527080", fontWeight: 700, fontSize: 15, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 }}>Weekly Progress &amp; Transparency Report</p>
           <h1 style={{ fontSize: "clamp(30px, 6vw, 44px)", lineHeight: 1.12, margin: "0 0 12px" }}>Our Progress &amp; Partnership Promise</h1>
           <p style={{ fontSize: "clamp(18px, 3vw, 21px)", lineHeight: 1.45, margin: 0 }}>Our promise is to report what we actually improve, distinguish completed work from plans, and never guarantee rankings or leads. We review search performance weekly and keep looking for practical ways to help more homeowners discover local professionals.</p>
-          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: October 27, 2026 · Reviewed weekly</p>
+          <p style={{ fontSize: 15, color: "#526575", margin: "12px 0 0" }}>Last published: November 12, 2026 · Reviewed weekly</p>
         </header>
         <div style={{ display: "grid", gap: 14 }}>
           {groups.map((group) => (
