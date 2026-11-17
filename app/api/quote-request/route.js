@@ -60,7 +60,7 @@ if (
     }
     const { data: targetBusiness, error: targetError } = business_id
       ? await supabase.from("businesses")
-          .select("id,name,lead_email,lead_email_verified")
+          .select("id,name")
           .eq("id", business_id).maybeSingle()
       : { data: null, error: null };
     if (targetError) {
@@ -134,16 +134,8 @@ Submitted through BillingsHomePros.com
 
       if (emailError) console.error("Quote notification email error:", emailError);
 
-      if (targetBusiness?.lead_email_verified && targetBusiness.lead_email) {
-        const { error: contractorError } = await resend.emails.send({
-          from: "Billings Home Pros <notifications@billingshomepros.com>",
-          to: [targetBusiness.lead_email],
-          subject: `New Quote Request - ${verifiedBusinessName}`,
-          text: emailText,
-          ...(customer_email ? { replyTo: customer_email } : {}),
-        });
-        if (contractorError) console.error("Contractor lead email error:", contractorError);
-      }
+      // BHP handles all quote leads directly. Do not email contractors here.
+      // Contractor automation requires a separately approved future workflow.
     } catch (emailError) {
       console.error("Quote notification email error:", emailError);
     }
