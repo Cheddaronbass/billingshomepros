@@ -2423,3 +2423,42 @@ footer small {
   .skylineHero .searchBox button { padding: 14px; font-size: 16px; }
   .skylineHero .searchHint { font-size: 13px; }
 }
+
+
+/* Mobile contractor directory cards: tighter vertical rhythm (Nov 2026) */
+@media (max-width: 600px) {
+  .categoryDirectoryPage .contractorCard {
+    padding: 13px 14px;
+  }
+  .categoryDirectoryPage .contractorTop {
+    gap: 9px;
+  }
+  .categoryDirectoryPage .contractorIdentity {
+    gap: 9px;
+  }
+  .categoryDirectoryPage .serviceTags {
+    margin: 8px 0 7px;
+    gap: 5px;
+  }
+  .categoryDirectoryPage .serviceTags span,
+  .categoryDirectoryPage .serviceTags .serviceMoreLink {
+    min-height: 27px;
+    padding: 5px 8px;
+  }
+  .categoryDirectoryPage .contractorDescription {
+    line-height: 1.4;
+  }
+  .categoryDirectoryPage .homeProsRating {
+    margin: 8px 0;
+    padding: 8px 10px;
+    gap: 4px;
+  }
+  .categoryDirectoryPage .contractorActions {
+    margin-top: 9px;
+    gap: 6px;
+  }
+  .categoryDirectoryPage .contractorActions .actionButton {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+}
