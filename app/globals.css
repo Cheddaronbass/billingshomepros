@@ -2490,3 +2490,40 @@ footer small {
 @media (prefers-reduced-motion: reduce) {
   .categoryDirectoryPage .contractorCard { transition: none; }
 }
+
+
+/* Mobile directory typography: readable labels without restoring excess spacing. */
+@media (max-width: 600px) {
+  .categoryDirectoryPage .contractorLocation {
+    font-size: .95rem;
+    line-height: 1.4;
+    color: #405365;
+  }
+  .categoryDirectoryPage .contractorDescription {
+    font-size: 1rem;
+    line-height: 1.45;
+    color: #394c5c;
+  }
+  .categoryDirectoryPage .serviceTags span,
+  .categoryDirectoryPage .serviceTags .serviceMoreLink {
+    font-size: .84rem;
+    line-height: 1.25;
+    min-height: 30px;
+  }
+  .categoryDirectoryPage .homeProsRating {
+    font-size: .93rem;
+    line-height: 1.45;
+  }
+  .categoryDirectoryPage .contractorActions .actionButton {
+    font-size: .94rem;
+    line-height: 1.3;
+  }
+  .categoryDirectoryPage .claimedBadge,
+  .categoryDirectoryPage .featuredBadge {
+    font-size: .82rem;
+  }
+  .categoryDirectoryPage .bhpContactBadge,
+  .categoryDirectoryPage .bhpClaimPrompt > span {
+    font-size: .92rem;
+  }
+}
