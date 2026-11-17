@@ -1,3 +1,4 @@
+import { businessProfilePath } from "../lib/businessProfile";
 import { createClient } from "@supabase/supabase-js";
 import { withPageSocial } from "../lib/seoMetadata";
 import InfoPageLayout from "../components/InfoPageLayout";
@@ -58,7 +59,7 @@ export default async function SiteMapPage() {
           <h2 id="local-business-profiles" style={{ color: "#101b27", fontFamily: "Arial, Helvetica, sans-serif", fontSize: 25 }}>Local Business Profiles</h2>
           <p>Browse individual home-service business profiles serving the Billings area.</p>
           <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "10px 22px", paddingLeft: 22, marginBottom: 36 }}>
-            {profiles.map((business) => <li key={business.id}><a href={`/pros/${business.id}`} style={{ color: "#087fbd", textDecoration: "underline" }}>{business.name}</a></li>)}
+            {profiles.map((business) => <li key={business.id}><a href={businessProfilePath(business)} style={{ color: "#087fbd", textDecoration: "underline" }}>{business.name}</a></li>)}
           </ul>
         </section>
       )}

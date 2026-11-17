@@ -1,3 +1,4 @@
+import { businessProfilePath } from "./lib/businessProfile";
 import { createClient } from "@supabase/supabase-js";
 
 // Pick up newly approved database listings without requiring another deployment.
@@ -51,7 +52,7 @@ export default async function sitemap() {
   for (let start = 0; ; start += batchSize) {
     const { data, error } = await supabase
       .from("businesses")
-      .select("id")
+      .select("id,name")
       // Duplicated cross-category profiles permanently redirect to canonical IDs.
       .not("id", "in", "(117,118)")
       .order("id")
@@ -61,8 +62,8 @@ export default async function sitemap() {
       throw new Error("Contractor sitemap generation failed");
     }
     if (!data) throw new Error("Contractor sitemap query returned no data");
-    profilePages.push(...data.map(({ id }) => ({
-      url: `${baseUrl}/pros/${id}`, changeFrequency: "monthly", priority: 0.6,
+    profilePages.push(...data.map((business) => ({
+      url: `${baseUrl}${businessProfilePath(business)}`, changeFrequency: "monthly", priority: 0.6,
     })));
     if (data.length < batchSize) break;
   }

@@ -27,7 +27,7 @@ const filters = [
   },
   {
     label: "Furnace Repair",
-    href: "/hvac?service=furnace-repair",
+    href: "/hvac/furnace-repair",
     value: "furnace-repair",
   },
   {

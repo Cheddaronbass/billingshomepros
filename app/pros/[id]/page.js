@@ -1,4 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
+import { cache } from "react";
+import { businessProfilePath } from "../../lib/businessProfile";
 import { notFound, permanentRedirect } from "next/navigation";
 import TrackedLink from "../../components/TrackedLink";
 import ContractorLogo from "../../components/ContractorLogo";
@@ -10,10 +12,16 @@ function db() {
   return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_PUBLISHABLE_KEY);
 }
 
-async function getBusiness(id) {
-  if (!/^[0-9]+$/.test(String(id))) return null;
-  const { data, error } = await db().from("businesses").select("*").eq("id", Number(id)).maybeSingle();
-  return error ? null : data;
+const getBusiness = cache(async (id) => {
+  const { data, error } = await db().from("businesses").select("*").eq("id", id).maybeSingle();
+  if (error) throw error;
+  return data;
+});
+
+function getProfileId(segment) {
+  const match = /^(?:[a-z0-9]+(?:-[a-z0-9]+)*-)?([0-9]+)$/.exec(segment);
+  const id = Number(match?.[1]);
+  return Number.isSafeInteger(id) ? id : null;
 }
 
 // Existing cross-category duplicates (kept in the database for audit history).
@@ -22,46 +30,44 @@ async function getBusiness(id) {
 const canonicalAliases = { 117: 55, 118: 63 };
 const digits = (s) => String(s || "").replace(/\D/g, "").slice(-10);
 const domain = (s) => { try { return new URL(s).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; } };
-async function confirmedCanonicalId(business) {
+const getCanonicalBusiness = cache(async (id) => {
+  if (id === null) return null;
+  const business = await getBusiness(id);
+  if (!business) return null;
   const canonicalId = canonicalAliases[business?.id];
-  if (!canonicalId || business.claimed || business.featured) return null;
+  if (!canonicalId || business.claimed || business.featured) return business;
   const canonical = await getBusiness(canonicalId);
-  if (!canonical || canonical.claimed || canonical.featured) return null;
-  if (!digits(business.phone) || digits(business.phone) !== digits(canonical.phone)) return null;
-  if (!domain(business.website) || domain(business.website) !== domain(canonical.website)) return null;
-  return canonicalId;
-}
+  if (!canonical || canonical.claimed || canonical.featured) return business;
+  if (!digits(business.phone) || digits(business.phone) !== digits(canonical.phone)) return business;
+  if (!domain(business.website) || domain(business.website) !== domain(canonical.website)) return business;
+  return canonical;
+});
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
-  const business = await getBusiness(id);
+  const business = await getCanonicalBusiness(getProfileId(id));
   if (!business) return { title: "Listing not found", robots: { index: false } };
-  const aliasId = await confirmedCanonicalId(business);
-  if (aliasId) return {
-    title: business.name + " | Billings Home Pros",
-    robots: { index: false, follow: true },
-    alternates: { canonical: `/pros/${aliasId}` },
-  };
+  const profilePath = businessProfilePath(business);
   const title = `${business.name} | ${business.category.replaceAll("-", " ")} in Billings, MT`;
   const description = business.description || `Learn about ${business.name}, a home-service business serving the Billings area.`;
   return {
     title,
     description,
-    alternates: { canonical: `/pros/${business.id}` },
-    openGraph: { title, description, url: `https://billingshomepros.com/pros/${business.id}` },
+    alternates: { canonical: profilePath },
+    openGraph: { title, description, url: `https://billingshomepros.com${profilePath}` },
     twitter: { card: "summary", title, description },
   };
 }
 
 export default async function BusinessProfile({ params }) {
   const { id } = await params;
-  const business = await getBusiness(id);
+  const business = await getCanonicalBusiness(getProfileId(id));
   if (!business) notFound();
-  const aliasId = await confirmedCanonicalId(business);
-  if (aliasId) permanentRedirect(`/pros/${aliasId}`);
+  const profilePath = businessProfilePath(business);
+  if (`/pros/${id}` !== profilePath) permanentRedirect(profilePath);
 
   const categoryLabel = business.category.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
-  const profileUrl = `https://billingshomepros.com/pros/${business.id}`;
+  const profileUrl = `https://billingshomepros.com${profilePath}`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",

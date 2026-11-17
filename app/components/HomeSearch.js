@@ -53,7 +53,7 @@ export default function HomeSearch() {
     } else if (
       query.includes("furnace")
     ) {
-      destination = "/hvac?service=furnace-repair";
+      destination = "/hvac/furnace-repair";
 
     // HVAC — Air conditioning
     } else if (

@@ -1,3 +1,4 @@
+import { businessProfilePath } from "../lib/businessProfile";
 
 import { createClient } from "@supabase/supabase-js";
 import TrackedLink from "./TrackedLink";
@@ -134,30 +135,33 @@ export default async function CategoryPage({
     "@type": "CollectionPage",
     name: heroTitle,
     description: heroDescription,
-    about: { "@type": "Service", name: categoryLabel, areaServed: { "@type": "Place", name: "Billings, Montana" } },
+    about: { "@type": "Service", name: serviceNames[selectedService] || categoryLabel, areaServed: { "@type": "Place", name: "Billings, Montana" } },
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: businesses.length,
-      itemListElement: businesses.map((business, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        url: `https://billingshomepros.com/pros/${business.id}`,
-        item: {
-          "@type": "LocalBusiness",
-          "@id": `https://billingshomepros.com/pros/${business.id}#business`,
-          mainEntityOfPage: `https://billingshomepros.com/pros/${business.id}`,
-          name: business.name,
-          ...(business.description ? { description: business.description } : {}),
-          ...(business.phone ? { telephone: business.phone } : {}),
-          ...(business.website && business.website.startsWith("https://") || business.website && business.website.startsWith("http://")
-            ? { url: business.website }
-            : { url: `https://billingshomepros.com/pros/${business.id}` }),
-          areaServed: business.service_area || "Billings, Montana",
-          ...(Array.isArray(business.services) && business.services.length
-            ? { knowsAbout: business.services }
-            : {}),
-        },
-      })),
+      itemListElement: businesses.map((business, index) => {
+        const profileUrl = `https://billingshomepros.com${businessProfilePath(business)}`;
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          url: profileUrl,
+          item: {
+            "@type": "LocalBusiness",
+            "@id": `${profileUrl}#business`,
+            mainEntityOfPage: profileUrl,
+            name: business.name,
+            ...(business.description ? { description: business.description } : {}),
+            ...(business.phone ? { telephone: business.phone } : {}),
+            ...(business.website && business.website.startsWith("https://") || business.website && business.website.startsWith("http://")
+              ? { url: business.website }
+              : { url: profileUrl }),
+            areaServed: business.service_area || "Billings, Montana",
+            ...(Array.isArray(business.services) && business.services.length
+              ? { knowsAbout: business.services }
+              : {}),
+          },
+        };
+      }),
     },
   };
 
@@ -250,7 +254,7 @@ export default async function CategoryPage({
                 <div className="contractorMain">
                   <div className="contractorTop">
                     <div className="contractorIdentity">
-                      <a href={`/pros/${business.id}`} aria-label={`View ${business.name} contractor profile`} style={{ display: "flex", alignItems: "center", gap: 14, color: "inherit", textDecoration: "none" }}>
+                      <a href={businessProfilePath(business)} aria-label={`View ${business.name} contractor profile`} style={{ display: "flex", alignItems: "center", gap: 14, color: "inherit", textDecoration: "none" }}>
                         <ContractorLogo name={business.name} logoUrl={business.logo_url} logoVerified={business.logo_verified} website={business.website} />
                         <div className="contractorIdentityText">
                           <div className="businessNameRow"><h2>{business.name}</h2></div>
@@ -275,7 +279,7 @@ export default async function CategoryPage({
                     {cardServices[index].extra > 0 && (
                       <a
                         className="serviceMoreLink"
-                        href={`/pros/${business.id}`}
+                        href={businessProfilePath(business)}
                         aria-label={`View ${cardServices[index].extra} more services for ${business.name}`}
                       >
                         +{cardServices[index].extra} more
