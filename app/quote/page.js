@@ -77,10 +77,9 @@ function QuoteForm() {
           business_name: businessName,
         });
       }
-      // A saved quote request is not necessarily delivered to the contractor:
-      // contractor email forwarding requires a verified lead address.
+      // BHP handles all quote leads directly; contractor forwarding is not automatic.
       setMessage(
-        `Request received by Billings Home Pros for ${businessName}. We'll forward it to the contractor when a verified contact is available.`
+        `Request received by Billings Home Pros for ${businessName}. We'll review your request and follow up with you.`
       );
 
       setFormData({
