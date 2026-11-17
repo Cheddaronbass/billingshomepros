@@ -2462,3 +2462,31 @@ footer small {
     padding: 8px 12px;
   }
 }
+
+
+/* Category directory contrast and finishing touches — November 2026 */
+/* A cooler canvas lets the existing white cards stand out without sacrificing readability. */
+.categoryDirectoryPage .categoryContent {
+  background: #e8eef3;
+}
+.categoryDirectoryPage .contractorCard {
+  background: #ffffff;
+  border-color: #a9becc;
+  box-shadow: 0 4px 14px rgba(12, 35, 55, .09), 0 1px 2px rgba(12, 35, 55, .06);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.categoryDirectoryPage .contractorCard:hover,
+.categoryDirectoryPage .contractorCard:focus-within {
+  border-color: #168dbd;
+  box-shadow: 0 7px 20px rgba(12, 35, 55, .13), 0 1px 3px rgba(12, 35, 55, .08);
+}
+.categoryDirectoryPage .serviceTags span {
+  background: #e3f3fd;
+  color: #075b89;
+}
+.categoryDirectoryPage .contractorActions .quoteButton {
+  box-shadow: 0 2px 5px rgba(0, 116, 174, .13);
+}
+@media (prefers-reduced-motion: reduce) {
+  .categoryDirectoryPage .contractorCard { transition: none; }
+}
