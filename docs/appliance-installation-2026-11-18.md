@@ -15,3 +15,8 @@
 - No outreach sent; no claim/contact verification asserted. Follow up on business contacts and installation specialties separately.
 - Sources: https://solidgroundpropertyservices.com/ ; https://www.bbb.org/us/mt/billings/profile/general-contractor/solid-ground-property-services-inc-1296-1000194421 ; public business directory records for MT Delivery, Radio Equipment Co, Homewerx and Handy Home Services.
 - Pending final deployment and live rendering verification.
+
+## Listing follow-up — 2026-11-18
+- MT Delivery (Supabase ID 161): attached confirmed official website https://www.mtdeliveryllc.com/ . Official company logo remains pending: no verifiable downloadable brand asset was obtained; do not substitute an invented mark or unrelated delivery icon.
+- Radio Equipment Co (ID 160): old listed site http://radioappliance.com/ could not be opened by user. Flag as potential website repair/replacement outreach opportunity, subject to confirming contact and prior outreach history before sending. Do not describe as definitively offline or without a website.
+- No outreach sent in this update.
