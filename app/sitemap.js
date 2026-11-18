@@ -41,7 +41,7 @@ const pages = [
   { path: "/flooring", priority: 0.9 },
   { path: "/concrete", priority: 0.9 },
   { path: "/fencing", priority: 0.9 },
-  { path: "/handyman", priority: 0.9 },
+  { path: "/handyman", priority: 0.9 },\n  { path: "/appliance-installation", priority: 0.8 },
 ];
 
 export default async function sitemap() {
