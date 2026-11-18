@@ -47,3 +47,8 @@
 - Fred's official site confirms delivery and installation for purchased appliances; some appliances require certified installation partners. Description reflects this limitation.
 - Published service email SVC.Requests@fredsappliances.com recorded as lead_email, but NOT contact-verified. No outreach sent.
 - Logo pending authentic verified asset; no logo fabricated.
+
+## MT Delivery forwarded contact and Fred's outreach — 2026-11-18
+- MT Delivery old Gmail sent automated notice forwarding to mattg@mtdeliveryllc.com (message 1a1efc726a725826). Original address said no longer active; NOT a delivery failure. Existing BHP business ID 161 retained; lead_email updated to new address, still unverified/unclaimed.
+- Sent new confirmation request to mattg@mtdeliveryllc.com, Gmail message ID 1a1efcd36f20a9ea; do not send again until reply/follow-up review.
+- Fred's Appliance business ID 162 remains unclaimed. Drafted tailored email to SVC.Requests@fredsappliances.com; NOT sent pending user review.
