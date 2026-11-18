@@ -32,3 +32,11 @@
 - Gmail pre-send searches found no previous matching outreach to these businesses.
 - Radio Equipment Co: website-help draft prepared but NOT sent; no reliable email recipient found. Email-first only; no cold calls.
 - Existing Homewerx and Handy Home were cross-listed, not newly added businesses; no new confirmation email sent to them in this batch.
+
+## Replacement prospect audit — 2026-11-18
+- Per owner direction, deleted Radio Equipment Co (ID 160) from Supabase listings; no outreach sent.
+- Cross-listed existing Houser Plumbing LLC (ID 4) and Elevated Handyman and Construction LLC (ID 63) with `Appliance Installation` service tag, preserving their original profiles and avoiding duplicate entries. Houser official kitchen plumbing page explicitly advertises dishwasher installation; BBB profile for Elevated explicitly lists appliance installation.
+- Houser website https://www.houserplumbing.com/kitchen-plumbing publishes jeffh@houserplumbing.com; Gmail history shows prior BHP outreach to this address. Do not resend generic confirmation.
+- Elevated website https://elevatedconstructionbillings.com/ and BBB business contact channel exist; no confirmed direct email yet. Gmail searches showed no previous messages matching company/domain.
+- Additional candidates researched but not added without stronger local service/contact verification: A&M Mobile Handyman (info@ammobilehandyman.com, appliance-specific scope unconfirmed), A-1 Appliance Repair (appliance install listed but no verified email).
+- No new outreach sent during replacement audit.
