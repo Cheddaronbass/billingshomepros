@@ -232,7 +232,8 @@ export default function Home() {
               ["Electrical", "/electrical", "HVAC", "/hvac"],
               ["Roofing", "/roofing", "Painting", "/painting"],
               ["Landscaping", "/landscaping", "Concrete", "/concrete"],
-              ["Fencing", "/fencing", "Handyman", "/handyman"],\n              ["Appliance Installation", "/appliance-installation", "Plumbing", "/plumbing"],
+              ["Fencing", "/fencing", "Handyman", "/handyman"],
+              ["Appliance Installation", "/appliance-installation", "Plumbing", "/plumbing"],
               ["Windows & Doors", "/windows-doors", "Remodeling", "/contractors-remodeling"],
             ].map(([firstLabel, firstHref, secondLabel, secondHref]) => (
               <span key={firstHref} style={{ color: "#8296a8", whiteSpace: "nowrap" }}>
