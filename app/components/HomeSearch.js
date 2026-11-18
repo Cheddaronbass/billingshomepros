@@ -19,8 +19,12 @@ export default function HomeSearch() {
 
     let destination = null;
 
-    // APPLIANCE INSTALLATION — match specific appliance searches before plumbing/electrical.\n    if (/\\b(appliance(s)?|dishwasher(s)?|refrigerator(s)?|fridge|washer(s)?|dryer(s)?|washing machine|range hood|cooktop|stove|oven|microwave)\\b/.test(query) && !/\\b(repair|broken|fix|diagnos|service call)\\b/.test(query)) {\n      destination = "/appliance-installation";\n\n    // PLUMBING — Water heaters
-    if (
+    // APPLIANCE INSTALLATION — match installation intent before plumbing and electrical.
+    if (/\b(appliance|appliances|dishwasher|dishwashers|refrigerator|refrigerators|fridge|washer|washers|dryer|dryers|washing machine|range hood|cooktop|stove|oven|microwave)\b/.test(query) && !/\b(repair|broken|fix|diagnos|service call)\b/.test(query)) {
+      destination = "/appliance-installation";
+
+    // PLUMBING — Water heaters
+    } else if (
       query.includes("water heater") ||
       query.includes("waterheater") ||
       query.includes("waater heater") ||
