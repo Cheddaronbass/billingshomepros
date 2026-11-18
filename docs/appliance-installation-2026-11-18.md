@@ -52,3 +52,5 @@
 - MT Delivery old Gmail sent automated notice forwarding to mattg@mtdeliveryllc.com (message 1a1efc726a725826). Original address said no longer active; NOT a delivery failure. Existing BHP business ID 161 retained; lead_email updated to new address, still unverified/unclaimed.
 - Sent new confirmation request to mattg@mtdeliveryllc.com, Gmail message ID 1a1efcd36f20a9ea; do not send again until reply/follow-up review.
 - Fred's Appliance business ID 162 remains unclaimed. Drafted tailored email to SVC.Requests@fredsappliances.com; NOT sent pending user review.
+
+- Fred's Appliance: user sent tailored outreach via writing block 63821; independently confirmed in Gmail Sent, recipient SVC.Requests@fredsappliances.com, subject 'Fred's Appliance + Billings Home Pros | A local opportunity', message ID 1a1efce9f14be4e4. Awaiting reply; do not resend.
