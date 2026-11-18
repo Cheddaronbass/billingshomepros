@@ -25,3 +25,10 @@
 - Gmail searches for Radio Equipment, radioappliance.com and John Eastman did not identify prior relevant contractor correspondence (some unrelated name matches).
 - Confirmed phone (406) 256-9778 and business address 1205 Monad Rd, Billings, MT 59101 from public directory/business results. Listed website radioappliance.com not opening for user; no assumption of permanent outage.
 - Prepared personalized website-update / Eby Media website-help email; not sent because no verified recipient email was found. Next action: obtain confirmed email via phone or official business contact channel, then send and log message ID. Avoid duplicates.
+
+## Confirmation outreach sent — 2026-11-18
+- MT Delivery: sent confirmation email to mtdeliveryllc@gmail.com, Gmail message ID 1a1efc7143f54d27. Asked for listing confirmation, logo, and installation specifics.
+- Solid Ground Property Services: sent confirmation email to support@solidgroundpropertyservices.com, Gmail message ID 1a1efc71b6c822c6. Asked for listing and services confirmation and logo.
+- Gmail pre-send searches found no previous matching outreach to these businesses.
+- Radio Equipment Co: website-help draft prepared but NOT sent; no reliable email recipient found. Email-first only; no cold calls.
+- Existing Homewerx and Handy Home were cross-listed, not newly added businesses; no new confirmation email sent to them in this batch.
