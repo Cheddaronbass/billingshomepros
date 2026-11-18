@@ -20,3 +20,8 @@
 - MT Delivery (Supabase ID 161): attached confirmed official website https://www.mtdeliveryllc.com/ . Official company logo remains pending: no verifiable downloadable brand asset was obtained; do not substitute an invented mark or unrelated delivery icon.
 - Radio Equipment Co (ID 160): old listed site http://radioappliance.com/ could not be opened by user. Flag as potential website repair/replacement outreach opportunity, subject to confirming contact and prior outreach history before sending. Do not describe as definitively offline or without a website.
 - No outreach sent in this update.
+
+## Radio Equipment Co outreach preparation — 2026-11-18
+- Gmail searches for Radio Equipment, radioappliance.com and John Eastman did not identify prior relevant contractor correspondence (some unrelated name matches).
+- Confirmed phone (406) 256-9778 and business address 1205 Monad Rd, Billings, MT 59101 from public directory/business results. Listed website radioappliance.com not opening for user; no assumption of permanent outage.
+- Prepared personalized website-update / Eby Media website-help email; not sent because no verified recipient email was found. Next action: obtain confirmed email via phone or official business contact channel, then send and log message ID. Avoid duplicates.
