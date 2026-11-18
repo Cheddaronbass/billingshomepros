@@ -19,7 +19,7 @@ export default function HomeSearch() {
 
     let destination = null;
 
-    // PLUMBING — Water heaters
+    // APPLIANCE INSTALLATION — match specific appliance searches before plumbing/electrical.\n    if (/\\b(appliance(s)?|dishwasher(s)?|refrigerator(s)?|fridge|washer(s)?|dryer(s)?|washing machine|range hood|cooktop|stove|oven|microwave)\\b/.test(query) && !/\\b(repair|broken|fix|diagnos|service call)\\b/.test(query)) {\n      destination = "/appliance-installation";\n\n    // PLUMBING — Water heaters
     if (
       query.includes("water heater") ||
       query.includes("waterheater") ||
@@ -248,7 +248,7 @@ export default function HomeSearch() {
       </form>
 
       <datalist id="home-service-suggestions">
-        {["Plumbing", "Water heaters", "Drain cleaning", "Heating", "Furnace repair", "Air conditioning", "Electrical", "Roofing", "Remodeling", "Landscaping", "Painting", "Concrete", "Fencing", "Windows & Doors", "Flooring", "Handyman"].map((service) => <option key={service} value={service} />)}
+        {["Plumbing", "Water heaters", "Drain cleaning", "Heating", "Furnace repair", "Air conditioning", "Electrical", "Roofing", "Remodeling", "Landscaping", "Painting", "Concrete", "Fencing", "Windows & Doors", "Flooring", "Handyman", "Appliance Installation"].map((service) => <option key={service} value={service} />)}
       </datalist>
       <p className="searchHint">
         Try windows, flooring, plumbing, heating, roofing or remodeling
