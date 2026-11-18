@@ -40,3 +40,10 @@
 - Elevated website https://elevatedconstructionbillings.com/ and BBB business contact channel exist; no confirmed direct email yet. Gmail searches showed no previous messages matching company/domain.
 - Additional candidates researched but not added without stronger local service/contact verification: A&M Mobile Handyman (info@ammobilehandyman.com, appliance-specific scope unconfirmed), A-1 Appliance Repair (appliance install listed but no verified email).
 - No new outreach sent during replacement audit.
+
+## Fred's Appliance listing — 2026-11-18
+- Added new unclaimed Fred's Appliance Billings listing, Supabase business ID 162, category appliance-installation. Confirmed row after insert.
+- Official Billings storefront: 2649 King Ave W, Billings MT 59102, (406) 894-2310; https://www.fredsappliances.com/locations/billings.
+- Fred's official site confirms delivery and installation for purchased appliances; some appliances require certified installation partners. Description reflects this limitation.
+- Published service email SVC.Requests@fredsappliances.com recorded as lead_email, but NOT contact-verified. No outreach sent.
+- Logo pending authentic verified asset; no logo fabricated.
