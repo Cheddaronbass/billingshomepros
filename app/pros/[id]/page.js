@@ -43,15 +43,23 @@ const getCanonicalBusiness = cache(async (id) => {
   return canonical;
 });
 
+const profileTitleServices = {
+  15: "Water Heaters & Repairs",
+  30: "Panel & Wiring Services",
+};
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const business = await getCanonicalBusiness(getProfileId(id));
   if (!business) return { title: "Listing not found", robots: { index: false } };
   const profilePath = businessProfilePath(business);
-  const title = `${business.name} | ${business.category.replaceAll("-", " ")} in Billings, MT`;
+  const services = profileTitleServices[business.id];
+  const title = services
+    ? `${business.name} in Billings, MT | ${services}`
+    : `${business.name} | ${business.category.replaceAll("-", " ")} in Billings, MT`;
   const description = business.description || `Learn about ${business.name}, a home-service business serving the Billings area.`;
   return {
-    title,
+    title: services ? { absolute: title } : title,
     description,
     alternates: { canonical: profilePath },
     openGraph: { title, description, url: `https://billingshomepros.com${profilePath}` },
