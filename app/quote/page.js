@@ -10,6 +10,7 @@ import { useSearchParams } from "next/navigation";
 function QuoteForm() {
   const searchParams = useSearchParams();
 
+  const initialProjectType = searchParams.get("projectType") === "roofing" ? "Roofing" : "";
   const businessId = searchParams.get("businessId");
   const businessName =
     searchParams.get("businessName") || "a local contractor";
@@ -18,7 +19,7 @@ function QuoteForm() {
     customer_name: "",
     customer_email: "",
     customer_phone: "",
-    project_type: "",
+    project_type: initialProjectType,
     project_details: "",
   });
 
@@ -86,7 +87,7 @@ function QuoteForm() {
         customer_name: "",
         customer_email: "",
         customer_phone: "",
-        project_type: "",
+        project_type: initialProjectType,
         project_details: "",
       });
     } catch {
@@ -106,7 +107,7 @@ function QuoteForm() {
         <h1>Tell us about your project</h1>
 
         <p className="quoteBusiness">
-          Requesting a quote from <strong>{businessName}</strong>
+          {businessId ? <>Requesting a quote from <strong>{businessName}</strong></> : "Billings Home Pros will review your request and follow up with you."}
         </p>
 
         <form onSubmit={handleSubmit} className="quoteForm">
