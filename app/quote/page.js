@@ -10,7 +10,12 @@ import { useSearchParams } from "next/navigation";
 function QuoteForm() {
   const searchParams = useSearchParams();
 
-  const initialProjectType = searchParams.get("projectType") === "roofing" ? "Roofing" : "";
+  const projectTypes = new Map([
+    ["roofing", "Roofing"],
+    ["furnace-replacement", "Furnace replacement"],
+    ["bathroom-remodeling", "Bathroom remodeling"],
+  ]);
+  const initialProjectType = projectTypes.get(searchParams.get("projectType")) || "";
   const businessId = searchParams.get("businessId");
   const businessName =
     searchParams.get("businessName") || "a local contractor";
