@@ -1,4 +1,5 @@
 import { withPageSocial } from "../../lib/seoMetadata";
+import RoofQuoteLink from "./RoofQuoteLink";
 import Link from "next/link";
 
 export const metadata = withPageSocial( {
@@ -35,6 +36,10 @@ export default function BillingsRoofCostGuide() {
           <div style={{ fontSize: 13, fontWeight: 800, color: "#8cdaff", letterSpacing: ".09em" }}>2026 RESEARCH-BASED PLANNING RANGE</div>
           <div style={{ color: "white", fontSize: "clamp(30px, 6vw, 46px)", fontWeight: 800, margin: "8px 0" }}>$12,000–$23,000</div>
           <p style={{ ...p, margin: 0 }}>A broad estimate for an asphalt-shingle replacement on a typical single-family home around 2,000 square feet of living area. This is <strong>not a contractor quote or a verified Billings transaction average</strong>. Smaller, simpler roofs may cost less; steep, large, damaged, or premium-material roofs may cost more.</p>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginTop: 18 }}>
+            <RoofQuoteLink />
+            <Link href="/roofing" style={link}>Browse Billings Roofers</Link>
+          </div>
         </div>
 
         <h2 style={heading}>What does that estimate include?</h2>
