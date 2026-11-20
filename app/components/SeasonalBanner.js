@@ -13,6 +13,7 @@ export default function SeasonalBanner() {
       </a>
       {winter && (
         <a className="snow-link" href="/landscaping?service=snow-removal">
+          <span aria-hidden="true" style={{ marginRight: 6, fontSize: 14 }}>❄︎</span>
           Snow coming? Find snow removal →
         </a>
       )}
