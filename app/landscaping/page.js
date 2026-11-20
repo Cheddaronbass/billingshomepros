@@ -15,6 +15,7 @@ export const dynamic = "force-dynamic";
 
 const filters = [
   { label: "All Landscaping", href: "/landscaping" },
+  { label: "Snow Removal", href: "/landscaping?service=snow-removal", value: "snow-removal" },
   {
     label: "Lawn Care",
     href: "/landscaping?service=lawn-care",
@@ -38,6 +39,7 @@ const filters = [
 ];
 
 const serviceNames = {
+  "snow-removal": "Snow Removal",
   "lawn-care": "Lawn Care",
   irrigation: "Irrigation",
   "landscape-design": "Landscape Design",
