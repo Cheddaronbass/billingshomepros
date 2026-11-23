@@ -363,7 +363,7 @@ export default async function CategoryPage({
         )}
 
         {localGuide && (
-          <section id="homeowner-guide" aria-labelledby="homeowner-guide-heading" style={{ marginTop: "3rem", maxWidth: "850px", lineHeight: 1.7, scrollMarginTop: 24 }}>
+          <section id="homeowner-guide" aria-labelledby="homeowner-guide-heading" style={{ marginTop: "3rem", marginInline: "auto", maxWidth: "850px", lineHeight: 1.7, scrollMarginTop: 24 }}>
             <h2 id="homeowner-guide-heading">{localGuide.title}</h2>
             {localGuide.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
