@@ -24,17 +24,16 @@ function getProfileId(segment) {
   return Number.isSafeInteger(id) ? id : null;
 }
 
-// Existing cross-category duplicates (kept in the database for audit history).
-// Redirect only while the two records demonstrably remain the same business,
-// and do not redirect claimed or featured profiles.
+// Audited cross-category duplicates. Retired IDs still resolve to the surviving listing.
+// When both records still exist, verify identity and preserve claimed or featured profiles.
 const canonicalAliases = { 117: 55, 118: 63 };
 const digits = (s) => String(s || "").replace(/\D/g, "").slice(-10);
 const domain = (s) => { try { return new URL(s).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; } };
 const getCanonicalBusiness = cache(async (id) => {
   if (id === null) return null;
   const business = await getBusiness(id);
-  if (!business) return null;
-  const canonicalId = canonicalAliases[business?.id];
+  const canonicalId = canonicalAliases[id];
+  if (!business) return canonicalId ? getBusiness(canonicalId) : null;
   if (!canonicalId || business.claimed || business.featured) return business;
   const canonical = await getBusiness(canonicalId);
   if (!canonical || canonical.claimed || canonical.featured) return business;

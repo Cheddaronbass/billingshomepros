@@ -7,7 +7,6 @@ export const revalidate = 3600;
 const baseUrl = "https://billingshomepros.com";
 
 const pages = [
-  { path: "/guides/four-season-home-maintenance", priority: 0.7 },
   { path: "/guides/furnace-wont-light", priority: 0.7 },
   { path: "", priority: 1.0 },
   { path: "/site-map", priority: 0.5 },
