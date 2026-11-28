@@ -310,6 +310,7 @@ export default function GetListedPage() {
                 <option value="roofing">Roofing</option>
                 <option value="contractors-remodeling">Contractors &amp; Remodeling</option>
                 <option value="landscaping">Landscaping</option>
+                <option value="property-maintenance">Property Maintenance</option>
                 <option value="painting">Painting</option>
                 <option value="flooring">Flooring</option>
                 <option value="concrete">Concrete</option>

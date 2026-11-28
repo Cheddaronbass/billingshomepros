@@ -19,8 +19,19 @@ export default function HomeSearch() {
 
     let destination = null;
 
+    if (/\b(junk|hauling|dump runs?|haul[- ]?away|garage clean[- ]?outs?|furniture removal|bamn)\b/.test(query)) {
+      destination = "/property-maintenance?service=junk-removal";
+    } else if (/\b(windows? (clean(?:ing|ers?)?|wash(?:ing|ers?)?)|(?:wash|clean)(?:ing)? (?:my |the )?windows?)\b/.test(query)) {
+      destination = "/property-maintenance?service=window-cleaning";
+    } else if (/\b(gutters? clean(?:ing|ers?)?|clean(?:ing)? (?:my |the )?gutters?)\b/.test(query)) {
+      destination = "/property-maintenance?service=gutter-cleaning";
+    } else if (/\b(pressure|power)[- ]wash(?:ing|ers?)?\b/.test(query)) {
+      destination = "/property-maintenance?service=pressure-washing";
+    } else if (/\b(property|building) maintenance\b/.test(query)) {
+      destination = "/property-maintenance";
+
     // APPLIANCE INSTALLATION — match installation intent before plumbing and electrical.
-    if (/\b(appliance|appliances|dishwasher|dishwashers|refrigerator|refrigerators|fridge|washer|washers|dryer|dryers|washing machine|range hood|cooktop|stove|oven|microwave)\b/.test(query) && !/\b(repair|broken|fix|diagnos|service call)\b/.test(query)) {
+    } else if (/\b(appliance|appliances|dishwasher|dishwashers|refrigerator|refrigerators|fridge|washer|washers|dryer|dryers|washing machine|range hood|cooktop|stove|oven|microwave)\b/.test(query) && !/\b(repair|broken|fix|diagnos|service call)\b/.test(query)) {
       destination = "/appliance-installation";
 
     // PLUMBING — Water heaters
@@ -252,7 +263,7 @@ export default function HomeSearch() {
       </form>
 
       <datalist id="home-service-suggestions">
-        {["Plumbing", "Water heaters", "Drain cleaning", "Heating", "Furnace repair", "Air conditioning", "Electrical", "Roofing", "Remodeling", "Landscaping", "Painting", "Concrete", "Fencing", "Windows & Doors", "Flooring", "Handyman", "Appliance Installation"].map((service) => <option key={service} value={service} />)}
+        {["Plumbing", "Water heaters", "Drain cleaning", "Heating", "Furnace repair", "Air conditioning", "Electrical", "Roofing", "Remodeling", "Landscaping", "Painting", "Concrete", "Fencing", "Windows & Doors", "Flooring", "Handyman", "Appliance Installation", "Property Maintenance", "Junk Removal & Hauling", "Window Cleaning", "Gutter Cleaning", "Pressure Washing"].map((service) => <option key={service} value={service} />)}
       </datalist>
       <p className="searchHint">
         Try windows, flooring, plumbing, heating, roofing or remodeling

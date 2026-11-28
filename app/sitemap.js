@@ -36,6 +36,7 @@ const pages = [
   { path: "/windows-doors", priority: 0.9 },
   { path: "/contractors-remodeling", priority: 0.9 },
   { path: "/landscaping", priority: 0.9 },
+  { path: "/property-maintenance", priority: 0.9 },
   { path: "/painting", priority: 0.9 },
   { path: "/flooring", priority: 0.9 },
   { path: "/concrete", priority: 0.9 },

@@ -46,6 +46,14 @@ const services = [
     theme: "remodeling",
   },
   {
+    name: "Property Maintenance",
+    image: "/windows-doors-montana.jpg",
+    description: "Junk hauling, window and gutter cleaning, pressure washing",
+    href: "/property-maintenance",
+    iconPath: "M3 11l9-8 9 8 M5 10v11h14V10 M10 21v-7h4v7",
+    theme: "property-maintenance",
+  },
+  {
     name: "Landscaping",
     image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=700&q=78&fit=crop",
     description: "Lawn care, irrigation, landscape design & tree services",

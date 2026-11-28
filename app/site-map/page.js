@@ -18,6 +18,7 @@ const categories = [
   ["Windows & Doors", "/windows-doors"],
   ["Contractors & Remodeling", "/contractors-remodeling"],
   ["Landscaping", "/landscaping"],
+  ["Property Maintenance", "/property-maintenance"],
   ["Painting", "/painting"],
   ["Flooring", "/flooring"],
   ["Concrete", "/concrete"],

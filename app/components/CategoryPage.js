@@ -53,6 +53,9 @@ export default async function CategoryPage({
   } else if (category === "appliance-installation") {
     // Include only businesses with explicitly documented appliance installation.
     query = query.or('category.eq.appliance-installation,services.cs.{"Appliance Installation"}');
+  } else if (category === "property-maintenance") {
+    const matches = Object.values(serviceNames).map(name => `services.cs.{"${name}"}`);
+    query = query.or(["category.eq.property-maintenance", ...matches].join(","));
   } else if (category === "handyman") {
     // Show the canonical remodeling profile for two confirmed cross-category
     // duplicates. Retain the original public URLs as redirects.
